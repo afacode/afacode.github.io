@@ -77,7 +77,7 @@ plugin:
 feed:
   type: atom
   path: atom.xml
-  limit: 20
+  limit: 0
 ## Themes: https://hexo.io/themes/
 # theme: yilia
 theme: indigo
