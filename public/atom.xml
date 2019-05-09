@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>afacode的博客</title>
+  
+  <subtitle>一个喜欢折腾的人</subtitle>
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://afacode.github.io/"/>
+  <updated>2019-05-06T06:31:11.083Z</updated>
+  <id>http://afacode.github.io/</id>
+  
+  <author>
+    <name>afacode</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>test demo</title>
+    <link href="http://afacode.github.io/2019/05/06/test-demo-1/"/>
+    <id>http://afacode.github.io/2019/05/06/test-demo-1/</id>
+    <published>2019-05-06T06:30:40.000Z</published>
+    <updated>2019-05-06T06:31:11.083Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="demo"><a href="#demo" class="headerlink" title="demo"></a>demo</h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;demo&quot;&gt;&lt;a href=&quot;#demo&quot; class=&quot;headerlink&quot; title=&quot;demo&quot;&gt;&lt;/a&gt;demo&lt;/h2&gt;
+      
+    
+    </summary>
+    
+    
+  </entry>
+  
+  <entry>
+    <title>test demo</title>
+    <link href="http://afacode.github.io/2019/05/06/test-demo/"/>
+    <id>http://afacode.github.io/2019/05/06/test-demo/</id>
+    <published>2019-05-06T06:24:56.000Z</published>
+    <updated>2019-05-06T06:31:55.891Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Test"><a href="#Test" class="headerlink" title="Test"></a>Test</h2><figure class="highlight ebnf"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="attribute">hello world</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Test&quot;&gt;&lt;a href=&quot;#Test&quot; class=&quot;headerlink&quot; title=&quot;Test&quot;&gt;&lt;/a&gt;Test&lt;/h2&gt;&lt;figure class=&quot;highlight ebnf&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://afacode.github.io/tags/hexo/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>hello-hexo</title>
+    <link href="http://afacode.github.io/2018/07/17/hello-hexo/"/>
+    <id>http://afacode.github.io/2018/07/17/hello-hexo/</id>
+    <published>2018-07-17T09:32:25.000Z</published>
+    <updated>2019-05-06T06:47:14.006Z</updated>
+    
+    <content type="html"><![CDATA[<p>这是我的第一篇测试文章</p><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">npm install -g hexo</span><br><span class="line">npm install -g hexo-cli</span><br><span class="line">npm install -g hexo-server</span><br><span class="line"></span><br><span class="line">hexo init</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">1.</span><br><span class="line">  hexo clean</span><br><span class="line">  hexo generate</span><br><span class="line">  hexo server</span><br><span class="line"></span><br><span class="line">2.</span><br><span class="line">  hexo clean</span><br><span class="line">  hexo generate</span><br><span class="line">  hexo deploy</span><br><span class="line"></span><br><span class="line">hexo new [layout] &lt;title&gt;  新建文章 在 /<span class="built_in">source</span>/_posts/</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;这是我的第一篇测试文章&lt;/p&gt;
+&lt;figure class=&quot;highlight bash&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/sp
+      
+    
+    </summary>
+    
+    
+      <category term="hexo" scheme="http://afacode.github.io/tags/hexo/"/>
+    
+      <category term="测试" scheme="http://afacode.github.io/tags/%E6%B5%8B%E8%AF%95/"/>
+    
+  </entry>
+  
+</feed>
