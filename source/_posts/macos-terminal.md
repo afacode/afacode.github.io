@@ -4,7 +4,6 @@ title: Mac os Terminal 使用
 date: 2018-07-19 16:22:02
 categories: 
   - tools
-  - macos
 tags:
   - tool
   - macos

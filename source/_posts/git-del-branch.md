@@ -4,7 +4,6 @@ title: git删除远程分支和本地分支
 date: 2018-11-10 21:07:39
 categories: 
   - tools
-  - git 
 tags:
   - tool
   - git
