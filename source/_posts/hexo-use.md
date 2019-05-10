@@ -1,9 +1,11 @@
 ---
 layout: post
 title: hexo use
-date: 2019-05-09 16:10:53
+date: 2017-02-11 16:10:53
+categories: 
+  - tools
 tags:
-  - 工具
+  - tool
   - hexo
 ---
 [hexo.io官网](https://hexo.io/zh-cn/docs/)

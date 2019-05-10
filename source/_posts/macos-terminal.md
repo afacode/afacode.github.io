@@ -1,9 +1,11 @@
 ---
 layout: post
-title: macos terminal
-date: 2019-05-09 16:22:02
+title: Mac os Terminal 使用 
+date: 2018-07-19 16:22:02
+categories: 
+  - tools
 tags:
-  - 工具
+  - tool
   - macos
 ---
 ## macOS 设置

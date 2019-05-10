@@ -1,12 +1,12 @@
 ---
-title: hello-hexo
+title: demo
 date: 2018-07-17 17:32:25
 tags: 
-  - 测试
+  - tool
   - hexo
 ---
 
-这是我的第一篇测试文章
+## 这是我的第一篇测试文章
 
 ``` bash
 npm install -g hexo
@@ -14,7 +14,6 @@ npm install -g hexo-cli
 npm install -g hexo-server
 
 hexo init
-
 
 1.
   hexo clean
