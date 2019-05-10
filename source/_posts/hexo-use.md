@@ -1,6 +1,6 @@
 ---
 layout: post
-title: hexo use
+title: hexo的使用
 date: 2017-02-11 16:10:53
 categories: 
   - tools
