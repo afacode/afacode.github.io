@@ -95,9 +95,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
@@ -152,6 +152,33 @@
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
       <category term="markdown" scheme="https://blog.afacode.top/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git 清空所有(历史)commit记录</title>
+    <link href="https://blog.afacode.top/2017/05/11/git-clean-log/"/>
+    <id>https://blog.afacode.top/2017/05/11/git-clean-log/</id>
+    <published>2017-05-11T14:34:45.000Z</published>
+    <updated>2019-05-11T14:44:49.455Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="git-清空所有-历史-commit记录"><a href="#git-清空所有-历史-commit记录" class="headerlink" title="git 清空所有(历史)commit记录"></a>git 清空所有(历史)commit记录</h2><p>例如: 将代码提交到git仓库，将一些敏感信息提交，所以需要删除提交记录以彻底清除提交信息，以得到一个干净的仓库且代码不变</p><ul><li><blockquote><p><code>git checkout --orphan tmp_branch</code> tmp_branch 临时的分支</p></blockquote></li><li><blockquote><p><code>git add -A</code> 或 <code>git add .</code> </p></blockquote></li><li><blockquote><p><code>git commit -m &quot;删除git历史，整理第一次提交&quot;</code></p></blockquote></li><li><blockquote><p><code>git branch -D master</code> 删除分支</p></blockquote></li><li><blockquote><p><code>git branch -m master</code> 重命名tmp_branch为master</p></blockquote></li><li><blockquote><p><code>git push -f origin master</code> 强制推送到远程</p></blockquote></li></ul><p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top">https://blog.afacode.top</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;git-清空所有-历史-commit记录&quot;&gt;&lt;a href=&quot;#git-清空所有-历史-commit记录&quot; class=&quot;headerlink&quot; title=&quot;git 清空所有(历史)commit记录&quot;&gt;&lt;/a&gt;git 清空所有(历史)commit记录&lt;/h2&gt;&lt;
+      
+    
+    </summary>
+    
+      <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
+    
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
