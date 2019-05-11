@@ -14,7 +14,7 @@
     
     
     
-    <title>react-native 集成极光推送, iOS/andriod | afacode的博客 | 一个喜欢折腾的人</title>
+    <title>react-native 集成极光推送, iOS/andriod | afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -25,7 +25,7 @@
 <meta name="keywords" content="react native,极光推送,app">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react-native 集成极光推送, iOS&#x2F;andriod">
-<meta property="og:url" content="http://afacode.github.io/2019/04/10/react-native-jpush/index.html">
+<meta property="og:url" content="https://blog.afacode.top/2019/04/10/react-native-jpush/index.html">
 <meta property="og:site_name" content="afacode的博客">
 <meta property="og:description" content="react-native 集成极光推送，iOS/andriodreact-native 集成极光推送官方demo  极光 appkey  123456&quot;jcore-react-native&quot;: &quot;^1.3.2&quot;,&quot;jpush-react-native&quot;: &quot;^2.5.3&quot;,&quot;react&quot;: &quot;16.6.0-alpha.8af6728&quot;,&quot;react-native&quot;: &quot;0.57.4&quot;,Xcode:">
 <meta property="og:locale" content="zh-CN">
@@ -59,7 +59,7 @@
           <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
-          <h5 class="nickname">afacode</h5>
+          <h5 class="nickname">afacode(阿发)</h5>
           <a href="mailto:lfqdalian@outlook.com" title="lfqdalian@outlook.com" class="mail">lfqdalian@outlook.com</a>
         </hgroup>
       </div>
@@ -99,6 +99,13 @@
               <a href="https://github.com/afacode" target="_blank" >
                 <i class="icon icon-lg icon-github"></i>
                 Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
               </a>
             </li>
         
@@ -230,7 +237,7 @@
 <figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// 查看是否写入，没有就写入，导入如下头文件</span></span><br><span class="line">#import &lt;RCTJPushModule.h&gt;</span><br><span class="line">#ifdef NSFoundationVersionNumber_iOS_9_x_Max</span><br><span class="line">#import &lt;UserNotifications/UserNotifications.h&gt;</span><br><span class="line">#endif</span><br><span class="line"></span><br><span class="line"><span class="comment">// didFinishLaunchingWithOptions 方法里面添加如下代码</span></span><br><span class="line">- (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions</span><br><span class="line">&#123; </span><br><span class="line">  <span class="comment">// 新加的，没有就写入</span></span><br><span class="line">  JPUSHRegisterEntity * entity = [[JPUSHRegisterEntity alloc] init];</span><br><span class="line">     entity.types = UNAuthorizationOptionAlert|UNAuthorizationOptionBadge|UNAuthorizationOptionSound;</span><br><span class="line">     [JPUSHService registerForRemoteNotificationConfig:entity delegate:self];</span><br><span class="line"></span><br><span class="line">  [JPUSHService setupWithOption:launchOptions appKey:@<span class="string">"你的极光appkey"</span></span><br><span class="line">                        channel:nil apsForProduction:nil];</span><br><span class="line"></span><br><span class="line">  NSURL *jsCodeLocation;</span><br><span class="line">  ...    </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 这些代码，一般不需要手动添加，会自动写入</span></span><br><span class="line">...</span><br><span class="line">- (<span class="keyword">void</span>)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken</span><br><span class="line">&#123;</span><br><span class="line">  [JPUSHService registerDeviceToken:deviceToken];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo</span><br><span class="line">  <span class="comment">// 取得 APNs 标准信息内容</span></span><br><span class="line">&#123;</span><br><span class="line">  [[NSNotificationCenter defaultCenter] postNotificationName:kJPFDidReceiveRemoteNotification object:userInfo];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification</span><br><span class="line">&#123;</span><br><span class="line">  [[NSNotificationCenter defaultCenter] postNotificationName:kJPFDidReceiveRemoteNotification object: notification.userInfo];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">- (<span class="keyword">void</span>)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)userInfo fetchCompletionHandler:(<span class="keyword">void</span> (^)   (UIBackgroundFetchResult))completionHandler</span><br><span class="line">&#123;</span><br><span class="line">  [[NSNotificationCenter defaultCenter] postNotificationName:kJPFDidReceiveRemoteNotification object:userInfo];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// iOS 10 Support</span></span><br><span class="line">- (<span class="keyword">void</span>)jpushNotificationCenter:(UNUserNotificationCenter *)center willPresentNotification:(UNNotification *)notification withCompletionHandler:(<span class="keyword">void</span> (^)(NSInteger))completionHandler</span><br><span class="line">&#123;</span><br><span class="line">  NSDictionary * userInfo = notification.request.content.userInfo;</span><br><span class="line">  if ([notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) &#123;</span><br><span class="line">    [JPUSHService handleRemoteNotification:userInfo];</span><br><span class="line">    [[NSNotificationCenter defaultCenter] postNotificationName:kJPFDidReceiveRemoteNotification object:userInfo];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  completionHandler(UNNotificationPresentationOptionAlert); <span class="comment">// 需要执行这个方法，选择是否提醒用户，有Badge、Sound、Alert三种类型可以选择设置</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// iOS 10 Support</span></span><br><span class="line">- (<span class="keyword">void</span>)jpushNotificationCenter:(UNUserNotificationCenter *)center didReceiveNotificationResponse:(UNNotificationResponse *)response withCompletionHandler:(<span class="keyword">void</span> (^)())completionHandler</span><br><span class="line">&#123;</span><br><span class="line">  NSDictionary * userInfo = response.notification.request.content.userInfo;</span><br><span class="line">  if ([response.notification.request.trigger isKindOfClass:[UNPushNotificationTrigger class]]) &#123;</span><br><span class="line">    [JPUSHService handleRemoteNotification:userInfo];</span><br><span class="line">    [[NSNotificationCenter defaultCenter] postNotificationName:kJPFOpenNotification object:userInfo];</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  completionHandler();</span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
 </li>
 </ul>
-<p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top" target="_blank" rel="noopener">https://blog.afacode.top</a></p>
+<p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top">https://blog.afacode.top</a></p>
 
         </div>
 
@@ -240,14 +247,14 @@
         
 
         
-        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/10/react-native-jpush/" target="_blank" rel="external">http://afacode.github.io/2019/04/10/react-native-jpush/</a>
+        这里可以写作者留言，标签和 hexo 中所有变量及辅助函数等均可调用，示例：<a href="/2019/04/10/react-native-jpush/" target="_blank" rel="external">https://blog.afacode.top/2019/04/10/react-native-jpush/</a>
         
     </div>
     
     <footer>
-        <a href="http://afacode.github.io">
-            <img src="/img/avatar.jpg" alt="afacode">
-            afacode
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
         </a>
     </footer>
 </blockquote>
@@ -267,7 +274,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://afacode.github.io/2019/04/10/react-native-jpush/&title=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&pic=http://afacode.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/04/10/react-native-jpush/&title=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -277,22 +284,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://afacode.github.io/2019/04/10/react-native-jpush/&title=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/04/10/react-native-jpush/&title=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://afacode.github.io/2019/04/10/react-native-jpush/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/04/10/react-native-jpush/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&url=http://afacode.github.io/2019/04/10/react-native-jpush/&via=http://afacode.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&url=https://blog.afacode.top/2019/04/10/react-native-jpush/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://afacode.github.io/2019/04/10/react-native-jpush/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/04/10/react-native-jpush/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -375,7 +382,7 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>afacode &copy; 2017 - 2019</span>
+        <p><span>afacode(阿发) &copy; 2017 - 2019</span>
             <span>
                 
                 <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
@@ -395,7 +402,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=http://afacode.github.io/2019/04/10/react-native-jpush/&title=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&pic=http://afacode.github.io/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/04/10/react-native-jpush/&title=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -405,22 +412,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=http://afacode.github.io/2019/04/10/react-native-jpush/&title=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/04/10/react-native-jpush/&title=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=http://afacode.github.io/2019/04/10/react-native-jpush/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/04/10/react-native-jpush/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&url=http://afacode.github.io/2019/04/10/react-native-jpush/&via=http://afacode.github.io" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-native 集成极光推送, iOS/andriod》 — afacode的博客&url=https://blog.afacode.top/2019/04/10/react-native-jpush/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=http://afacode.github.io/2019/04/10/react-native-jpush/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/04/10/react-native-jpush/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -431,7 +438,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACL0lEQVR42u3a0WrDMAwF0P7/T3ewp0HX7F45G4tz/FTS4PikoFqSH494PD/H189fr7xefx3Hsx3PfNrAwMC4LCN5fL7o48Xlc7avBgMD4w6MPMgmAXGFdEx9ex0DAwMjXtbxQteDMgYGBkYbcNev5MEXAwMDIw+XxdRlfawN6BgYGPdhzBoDf/P51/sbGBgY/57xLEc+w+zO52hgYGDszThuJR4vpd3kHc8/K9JFk2JgYFyc8Xvl+yTVnJXqlibCwMC4IGO2uHy2tqiXPKWoGmJgYGzEmG3j8gQ1gSWBGAMDA2O4ISvvzxsAw0YpBgbGpoy2BJ8X1GabzvyJ3zQGMDAwtmO0ieWshXBWCe/t/RgYGFszfvgiKNbnZf02fNeJMQYGxqaMPI1sl9gWy5KAjoGBcU9Gu6AiM46PVuTluRPKbRgYGBdk5OFsVsmbbfXqwI2BgbE1I2lAtulrG6zb5sHb1WJgYNyAkZfpZ/cn6etSowIDA+MGjDzAJaE5H7MgW/xvYGBgXJyxcoRipZ0wQw5/BwwMjC0YSSm/Db4rxy/azBQDA2NvRnsYIg+RLW82c5SLY2BgXJzxLEe7dcsbCXkDAAMD426Mc5PJhL2y0PWUGAMD47qM2ZGsvAHZbjFPOBaGgYGxKWNW6pq1FlbS47o9gIGBcTPGrG05K8PVgRsDAwNjOSfOebMSHgYGxh0YSRK7koK2JbnhYQsMDIxNGbPGQLtBbGH568DAwNia8QFZEMdlTTYtpwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACI0lEQVR42u3aS47CMBAFQO5/aeYACHivHUaKXV6NFJK4sujpjx+PeD1f1uer79a7J78+5/GLhYGBcVtG8uL2N8m7PmPy92JgYJzDSEJhgs/DdBJwk7swMDAwVkjJXZ/DMQYGBsZKwG2ry+QqBgYGxmdGHi7zYDpLH39ei2NgYNyQ0QbN//z7J/MNDAyMWzGe5Vpp7rdpaLErDAyMrRl5gEvSuwSZp575fjAwMPZmXDWYTFr8s48SwTAwMA5gtMe5ZkfBZo25qOWHgYFxGCNpzbelbJ72tR+onmxgYGDckHHt6/PiMw/E7dENDAyM/RgrSeFsc20vMEpeMTAwjmHMxgPr9ybh9cvnw8DAOICxEuzaYN0OL6MSGgMDY2vGetMth7Vhug7BGBgYmzJWmmjtQYq8AK6PX2BgYBzDaAcDbarXBvRiOIqBgXEAY5YO5oGyfU49QsDAwDiA0R53yF/ZNtfawxYYGBgnMPKRwPoRiuTqLAHFwMA4jTE7KJanlfknGzbdMDAwtmbkTbd2E/mGkmL40UZuDAyM7RgrvPyV0bbKkhgDA2NXxrNcSXBsN9qmlXWuioGBcXPGLNi1wXcGu+ppGBgYezDaQjQJssOvtRLQMTAwDmC0w8VZK20d/PYuDAwMjDjJa8vOdhjwpSLHwMDAKEvNPOzmW7/4/wYGBsatGPkwYHZIoi1Kf1iLY2Bg3JCRl47tMGB2+qMdNmBgYGzN+AOAMGqYwyHdoAAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 
@@ -480,7 +487,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
     var OriginTitile = document.title, titleTime;
     document.addEventListener('visibilitychange', function() {
         if (document.hidden) {
-            document.title = '死鬼去哪里了！';
+            document.title = '你怎么走了！';
             clearTimeout(titleTime);
         } else {
             document.title = '欢迎!';
