@@ -4,16 +4,16 @@
 
 # Site
 title: afacode的博客
-subtitle: 一个喜欢折腾的人
+subtitle: 人懒，日常记录
 description:
 keywords: "前端开发, 小程序, node, react, vue, react-native, electron, python爬虫, afacode"
-author: afacode
+author: afacode(阿发)
 language: zh-CN
 timezone:
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://afacode.github.io
+url: https://blog.afacode.top
 root: /
 permalink: :year/:month/:day/:title/  # 文章的永久链接格式
 permalink_defaults:     # 永久链接中各部分的默认值
