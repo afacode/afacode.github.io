@@ -19,4 +19,16 @@ tags:
 > - 3.1 切换到master分支 `git checkout  master`
 > - 3.2 `git branch -D demo` 可以删除本地demo分支（在主分支中）
 
+## git删除远程tag和本地tag
+> 新建tag
+
+> 上线代码需要打tag，在master分支打tag 打版本v1.0.0.0, 提交版本v1.0.0.0
+  ``` 
+  1. git tag -a v1.0.0.0 -m '注解打新版本v1.0.0.0'
+  2. git push origin v1.0.0.0
+  ```
+> 删除本地tag `git tag -d v1.0.0.0`
+
+> 删除git远程tag `git push origin --delete tag v1.0.0.0`
+
 
