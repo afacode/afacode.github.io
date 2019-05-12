@@ -79,9 +79,9 @@
     <link href="https://blog.afacode.top/2018/11/10/git-del-branch/"/>
     <id>https://blog.afacode.top/2018/11/10/git-del-branch/</id>
     <published>2018-11-10T13:07:39.000Z</published>
-    <updated>2019-05-10T05:46:56.225Z</updated>
+    <updated>2019-05-11T23:56:19.534Z</updated>
     
-    <content type="html"><![CDATA[<h2 id="git删除远程分支和本地分支"><a href="#git删除远程分支和本地分支" class="headerlink" title="git删除远程分支和本地分支"></a>git删除远程分支和本地分支</h2><p>当我们集体进行项目时，将自定义分支push到主分支master之后，如何删除远程的自定义分支呢</p><blockquote><ol><li><code>git branch -a</code> 查看所有分支<br><code>remote/origin/master</code>表示的是远程分支</li><li>删除远程分支<br><code>git push origin --delete demo</code>   可以删除远程分支demo</li><li>删除本地分支</li></ol><ul><li>3.1 切换到master分支 <code>git checkout  master</code></li><li>3.2 <code>git branch -D demo</code> 可以删除本地demo分支（在主分支中）</li></ul></blockquote>]]></content>
+    <content type="html"><![CDATA[<h2 id="git删除远程分支和本地分支"><a href="#git删除远程分支和本地分支" class="headerlink" title="git删除远程分支和本地分支"></a>git删除远程分支和本地分支</h2><p>当我们集体进行项目时，将自定义分支push到主分支master之后，如何删除远程的自定义分支呢</p><blockquote><ol><li><code>git branch -a</code> 查看所有分支<br><code>remote/origin/master</code>表示的是远程分支</li><li>删除远程分支<br><code>git push origin --delete demo</code>   可以删除远程分支demo</li><li>删除本地分支</li></ol><ul><li>3.1 切换到master分支 <code>git checkout  master</code></li><li>3.2 <code>git branch -D demo</code> 可以删除本地demo分支（在主分支中）</li></ul></blockquote><h2 id="git删除远程tag和本地tag"><a href="#git删除远程tag和本地tag" class="headerlink" title="git删除远程tag和本地tag"></a>git删除远程tag和本地tag</h2><blockquote><p>新建tag</p></blockquote><blockquote><p>上线代码需要打tag，在master分支打tag 打版本v1.0.0.0, 提交版本v1.0.0.0<br>  <figure class="highlight lsl"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">1.</span> git tag -a v1<span class="number">.0</span><span class="number">.0</span><span class="number">.0</span> -m '注解打新版本v1<span class="number">.0</span><span class="number">.0</span><span class="number">.0</span>'</span><br><span class="line"><span class="number">2.</span> git push origin v1<span class="number">.0</span><span class="number">.0</span><span class="number">.0</span></span><br></pre></td></tr></table></figure></p></blockquote><blockquote><p>删除本地tag <code>git tag -d v1.0.0.0</code></p></blockquote><blockquote><p>删除git远程tag <code>git push origin --delete tag v1.0.0.0</code></p></blockquote>]]></content>
     
     <summary type="html">
     
@@ -152,6 +152,34 @@
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
       <category term="markdown" scheme="https://blog.afacode.top/tags/markdown/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>git代码分支合并(merge)，tag提交</title>
+    <link href="https://blog.afacode.top/2017/08/22/git-merge-and-tag/"/>
+    <id>https://blog.afacode.top/2017/08/22/git-merge-and-tag/</id>
+    <published>2017-08-21T23:48:19.000Z</published>
+    <updated>2019-05-12T00:07:55.306Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="git代码分支合并，tag提交"><a href="#git代码分支合并，tag提交" class="headerlink" title="git代码分支合并，tag提交"></a>git代码分支合并，tag提交</h2><ul><li><p>将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支</p><blockquote><p><code>git checkout dev</code></p></blockquote></li><li><p>当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突</p><blockquote><p><code>git merge afacode</code></p></blockquote></li><li>提交dev分支合并的代码到远程dev分支上<blockquote><p><code>git push origin dev</code></p></blockquote></li><li>测试通过，上线代码需要打tag,在master分支打tag 打版本v1.0.0.0<blockquote><p><code>git tag -a 版本号 -m &#39;注解&#39;</code></p></blockquote></li><li>提交版本v1.0.0.0到仓库<blockquote><p><code>git push origin v1.0.0.0</code></p></blockquote></li></ul><p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top">https://blog.afacode.top</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;git代码分支合并，tag提交&quot;&gt;&lt;a href=&quot;#git代码分支合并，tag提交&quot; class=&quot;headerlink&quot; title=&quot;git代码分支合并，tag提交&quot;&gt;&lt;/a&gt;git代码分支合并，tag提交&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;将自己分支代码合并
+      
+    
+    </summary>
+    
+      <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
+    
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
