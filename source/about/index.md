@@ -29,3 +29,6 @@ tags:
 
 ## 联系方式
 > Email: lfqdalian@qq.com 或 lfqdalian@outlook.com
+
+> 微信: ![afacode](http://imgs.afacode.top/WechatIMG4-2019515171327.jpg)
+
