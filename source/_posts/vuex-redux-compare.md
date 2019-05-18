@@ -1,0 +1,63 @@
+---
+layout: post
+title: vuex和redux记录
+date: 2019-05-18 17:57:25
+categories:
+  - js
+tags:
+  - vuex
+  - redux
+---
+
+vuex和redux的用法，区别
+<!-- more -->
+
+## vuex
+
+![vuex@2x-20195181406](http://imgs.afacode.top/vuex@2x-20195181406.png)
+1. vuex 通过 commit 提交 mutations 修改 state. 只能进行**同步操作**，且方法名只能全局唯一
+2. vuex 通过 dispatch 触发 actions, 然后由 commit 来触发 mutation 的调用, 间接更新 state。包含**同步/异步**操作，支持多个同名方法，按照注册的顺序依次触发
+3. vuex 的 getters 读取 state 在操作，同 computed, **缓存**，只有相关 state 改变才会更新，**不会改变 state**
+
+### vuex/localStorage
+vuex 是 vue 的状态管理器，存储的数据是响应式的。但是并不会保存起来，刷新之后就回到了初始状态，具体做法应该在vuex里数据改变的时候把数据拷贝一份保存到localStorage里面，刷新之后，如果localStorage里有保存的数据，取出来再替换store里的state
+```
+let defaultCity = "上海"
+try {   // 用户关闭了本地存储功能，此时在外层加个try...catch
+  if (!defaultCity){
+    defaultCity = JSON.parse(window.localStorage.getItem('defaultCity'))
+  }
+}catch(e){}
+export default new Vuex.Store({
+  state: {
+    city: defaultCity
+  },
+  mutations: {
+    changeCity(state, city) {
+      state.city = city
+      try {
+      window.localStorage.setItem('defaultCity', JSON.stringify(state.city));
+      // 数据改变的时候把数据拷贝一份保存到localStorage里面
+      } catch (e) {}
+    }
+  }
+})
+
+```
+
+由于vuex里，我们保存的状态，都是数组，而localStorage只支持字符串，所以需要用JSON转换
+```
+JSON.stringify(state.subscribeList);   // array -> string 序列化
+JSON.parse(window.localStorage.getItem("subscribeList"));    // string -> array 反序列号
+```
+
+## redux
+Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript。
+
+## 异同
+1. 都是单向数据
+2. action都可异步
+3. redux是只能通过dispatch触发action，从而用reducer更新state, 类似vuex的commit
+
+---
+待更新

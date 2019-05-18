@@ -11,6 +11,8 @@ tags:
 vue组件之间的通信:父-->子、子-->父、非父子
 <!-- more -->
 
+[vue组件间通信六种方式（完整版）](https://segmentfault.com/a/1190000019208626?_ea=11267445)转载
+
 ## vue组件之间的通信
 [vue.js官网prop](https://cn.vuejs.org/v2/guide/components-props.html)
 (不谈vuex)
