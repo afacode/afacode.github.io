@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-05-21T05:56:03.066Z</updated>
+  <updated>2019-05-21T09:35:46.244Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>项目开发工作</title>
+    <link href="https://blog.afacode.top/2019/05/21/project-summary/"/>
+    <id>https://blog.afacode.top/2019/05/21/project-summary/</id>
+    <published>2019-05-21T09:33:50.000Z</published>
+    <updated>2019-05-21T09:35:46.244Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="开发工作"><a href="#开发工作" class="headerlink" title="开发工作"></a>开发工作</h2><h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><ol><li>必须对开发过程中的各种事件（例如：谁到什么时间完成了什么事情）进行管理和共享。</li><li>各类工作成果以及新的知识技巧等必须在团队<strong>内部共享</strong>。</li><li>管理工作成果的变更，既要防止成果被破坏，又要保证各个成员利用现有成果并行作业。</li><li>能够证明团队开发出的软件在<strong>任何时候</strong>都是可以<strong>正常运行</strong>的。</li><li>尽可能的使用<strong>自动化</strong>的工作流程，让团队成员能够正确的实施开发、测试和部署</li></ol><h3 id="项目遵循流程"><a href="#项目遵循流程" class="headerlink" title="项目遵循流程"></a>项目遵循流程</h3><blockquote><p>需求评审 -&gt; 视觉评审 -&gt; 接口约定 -&gt; 需求评估 -&gt; TC评审 -&gt; 并行独立开发 -&gt; 联调 -&gt; 测试 -&gt; 发布</p></blockquote><ol><li>模块划分</li><li>任务分配</li><li>项目进度表（每日更新）</li></ol><blockquote><p>一般发布的流程： 1. 代码提交 2. 打包构建 3. 备份服务器当前文件 - 回滚使用 4. 将构建结果同步到服务器目录 5. 合并代码到Master - 保证后续的代码都是最新的</p></blockquote><h3 id="团队开发工具"><a href="#团队开发工具" class="headerlink" title="团队开发工具"></a>团队开发工具</h3><ul><li>版本控制：Git</li><li>代码托管：<a href="https://about.gitlab.com/" target="_blank" rel="noopener">Gitlab</a>、Github</li><li>敏捷闭环工具：<a href="https://www.zentao.net/" target="_blank" rel="noopener">禅道</a>、<a href="https://www.atlassian.com/software/jira/features" target="_blank" rel="noopener">JIRA</a></li><li>持续集成：<a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins</a>、<a href="https://travis-ci.org/" target="_blank" rel="noopener">ravis-CI</a></li></ul><h2 id="公司组织架构图"><a href="#公司组织架构图" class="headerlink" title="公司组织架构图"></a>公司组织架构图</h2><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/company_architecture-201952117729.png" alt="技术部门组织" title="">                </div>                <div class="image-caption">技术部门组织</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;开发工作&quot;&gt;&lt;a href=&quot;#开发工作&quot; class=&quot;headerlink&quot; title=&quot;开发工作&quot;&gt;&lt;/a&gt;开发工作&lt;/h2&gt;&lt;h3 id=&quot;原则&quot;&gt;&lt;a href=&quot;#原则&quot; class=&quot;headerlink&quot; title=&quot;原则&quot;&gt;&lt;/a&gt;原则&lt;/h
+      
+    
+    </summary>
+    
+      <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>修改Mac系统的默认截图保存路径</title>
@@ -146,11 +169,11 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
+    
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
-    
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
   </entry>
   
@@ -321,7 +344,7 @@
     <link href="https://blog.afacode.top/2018/09/14/vue-router/"/>
     <id>https://blog.afacode.top/2018/09/14/vue-router/</id>
     <published>2018-09-14T14:34:55.000Z</published>
-    <updated>2019-05-15T01:39:40.566Z</updated>
+    <updated>2019-05-21T09:07:36.426Z</updated>
     
     <content type="html"><![CDATA[<h2 id="vue-router"><a href="#vue-router" class="headerlink" title="vue router"></a>vue router</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;router-link to=<span class="string">"/foo"</span>&gt;Go to Foo&lt;/router-link&gt;</span><br><span class="line"></span><br><span class="line">this.<span class="variable">$route</span>.params</span><br><span class="line"></span><br><span class="line">this.<span class="variable">$router</span>.go(-<span class="number">1</span>)</span><br><span class="line">this.<span class="variable">$router</span>.push(<span class="string">'/'</span>)</span><br><span class="line"></span><br><span class="line">routes: [</span><br><span class="line">    <span class="comment">// 动态路径参数 以冒号开头</span></span><br><span class="line">    &#123; path: <span class="string">'/user/:id'</span>, component: User &#125;</span><br><span class="line">]</span><br><span class="line">&lt;div&gt;User &#123;&#123; <span class="variable">$route</span><span class="selector-class">.params</span><span class="selector-class">.id</span> &#125;&#125;&lt;/div&gt;</span><br></pre></td></tr></table></figure><p>vue里的路由钩子</p><p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top">https://blog.afacode.top</a></p>]]></content>
     

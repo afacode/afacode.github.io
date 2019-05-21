@@ -19,25 +19,27 @@
     
     
     
-    <title>git代码分支合并(merge)，tag提交 | afacode的博客 | 人懒，日常记录</title>
+    <title>项目开发工作 | afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="git,tool">
-    <meta name="description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
-<meta name="keywords" content="git,tool">
+    <meta name="keywords" content="">
+    <meta name="description" content="开发工作原则 必须对开发过程中的各种事件（例如：谁到什么时间完成了什么事情）进行管理和共享。 各类工作成果以及新的知识技巧等必须在团队内部共享。 管理工作成果的变更，既要防止成果被破坏，又要保证各个成员利用现有成果并行作业。 能够证明团队开发出的软件在任何时候都是可以正常运行的。 尽可能的使用自动化的工作流程，让团队成员能够正确的实施开发、测试和部署  项目遵循流程 需求评审 -&amp;gt; 视觉评审">
+<meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, python爬虫, afacode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git代码分支合并(merge)，tag提交">
-<meta property="og:url" content="https://blog.afacode.top/2017/08/22/git-merge-and-tag/index.html">
+<meta property="og:title" content="项目开发工作">
+<meta property="og:url" content="https://blog.afacode.top/2019/05/21/project-summary/index.html">
 <meta property="og:site_name" content="afacode的博客">
-<meta property="og:description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
+<meta property="og:description" content="开发工作原则 必须对开发过程中的各种事件（例如：谁到什么时间完成了什么事情）进行管理和共享。 各类工作成果以及新的知识技巧等必须在团队内部共享。 管理工作成果的变更，既要防止成果被破坏，又要保证各个成员利用现有成果并行作业。 能够证明团队开发出的软件在任何时候都是可以正常运行的。 尽可能的使用自动化的工作流程，让团队成员能够正确的实施开发、测试和部署  项目遵循流程 需求评审 -&amp;gt; 视觉评审">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T00:07:55.306Z">
+<meta property="og:image" content="http://imgs.afacode.top/company_architecture-201952117729.png">
+<meta property="og:updated_time" content="2019-05-21T09:35:46.244Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git代码分支合并(merge)，tag提交">
-<meta name="twitter:description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
+<meta name="twitter:title" content="项目开发工作">
+<meta name="twitter:description" content="开发工作原则 必须对开发过程中的各种事件（例如：谁到什么时间完成了什么事情）进行管理和共享。 各类工作成果以及新的知识技巧等必须在团队内部共享。 管理工作成果的变更，既要防止成果被破坏，又要保证各个成员利用现有成果并行作业。 能够证明团队开发出的软件在任何时候都是可以正常运行的。 尽可能的使用自动化的工作流程，让团队成员能够正确的实施开发、测试和部署  项目遵循流程 需求评审 -&amp;gt; 视觉评审">
+<meta name="twitter:image" content="http://imgs.afacode.top/company_architecture-201952117729.png">
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
@@ -125,7 +127,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">git代码分支合并(merge)，tag提交</div>
+        <div class="flex-col header-title ellipsis">项目开发工作</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -147,11 +149,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">git代码分支合并(merge)，tag提交</h1>
+        <h1 class="title">项目开发工作</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-08-21T23:48:19.000Z" itemprop="datePublished" class="page-time">
-  2017-08-22
+                <time datetime="2019-05-21T09:33:50.000Z" itemprop="datePublished" class="page-time">
+  2019-05-21
 </time>
 
 
@@ -172,18 +174,18 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git代码分支合并，tag提交"><span class="post-toc-number">1.</span> <span class="post-toc-text">git代码分支合并，tag提交</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#开发工作"><span class="post-toc-number">1.</span> <span class="post-toc-text">开发工作</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#原则"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">原则</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#项目遵循流程"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">项目遵循流程</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#团队开发工具"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">团队开发工具</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#公司组织架构图"><span class="post-toc-number">2.</span> <span class="post-toc-text">公司组织架构图</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-git-merge-and-tag"
+<article id="post-project-summary"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">git代码分支合并(merge)，tag提交</h1>
+        <h1 class="post-card-title">项目开发工作</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-08-22 07:48:19" datetime="2017-08-21T23:48:19.000Z"  itemprop="datePublished">2017-08-22</time>
+            <time class="post-time" title="2019-05-21 17:33:50" datetime="2019-05-21T09:33:50.000Z"  itemprop="datePublished">2019-05-21</time>
 
             
 	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
@@ -198,32 +200,37 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="git代码分支合并，tag提交"><a href="#git代码分支合并，tag提交" class="headerlink" title="git代码分支合并，tag提交"></a>git代码分支合并，tag提交</h2><ul>
-<li><p>将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支</p>
+            <h2 id="开发工作"><a href="#开发工作" class="headerlink" title="开发工作"></a>开发工作</h2><h3 id="原则"><a href="#原则" class="headerlink" title="原则"></a>原则</h3><ol>
+<li>必须对开发过程中的各种事件（例如：谁到什么时间完成了什么事情）进行管理和共享。</li>
+<li>各类工作成果以及新的知识技巧等必须在团队<strong>内部共享</strong>。</li>
+<li>管理工作成果的变更，既要防止成果被破坏，又要保证各个成员利用现有成果并行作业。</li>
+<li>能够证明团队开发出的软件在<strong>任何时候</strong>都是可以<strong>正常运行</strong>的。</li>
+<li>尽可能的使用<strong>自动化</strong>的工作流程，让团队成员能够正确的实施开发、测试和部署</li>
+</ol>
+<h3 id="项目遵循流程"><a href="#项目遵循流程" class="headerlink" title="项目遵循流程"></a>项目遵循流程</h3><blockquote>
+<p>需求评审 -&gt; 视觉评审 -&gt; 接口约定 -&gt; 需求评估 -&gt; TC评审 -&gt; 并行独立开发 -&gt; 联调 -&gt; 测试 -&gt; 发布</p>
+</blockquote>
+<ol>
+<li>模块划分</li>
+<li>任务分配</li>
+<li>项目进度表（每日更新）</li>
+</ol>
 <blockquote>
-<p><code>git checkout dev</code></p>
+<p>一般发布的流程： 1. 代码提交 2. 打包构建 3. 备份服务器当前文件 - 回滚使用 4. 将构建结果同步到服务器目录 5. 合并代码到Master - 保证后续的代码都是最新的</p>
 </blockquote>
-</li>
-<li><p>当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突</p>
-<blockquote>
-<p><code>git merge afacode</code></p>
-</blockquote>
-</li>
-<li>提交dev分支合并的代码到远程dev分支上<blockquote>
-<p><code>git push origin dev</code></p>
-</blockquote>
-</li>
-<li>测试通过，上线代码需要打tag,在master分支打tag 打版本v1.0.0.0<blockquote>
-<p><code>git tag -a 版本号 -m &#39;注解&#39;</code></p>
-</blockquote>
-</li>
-<li>提交版本v1.0.0.0到仓库<blockquote>
-<p><code>git push origin v1.0.0.0</code></p>
-</blockquote>
-</li>
+<h3 id="团队开发工具"><a href="#团队开发工具" class="headerlink" title="团队开发工具"></a>团队开发工具</h3><ul>
+<li>版本控制：Git</li>
+<li>代码托管：<a href="https://about.gitlab.com/" target="_blank" rel="noopener">Gitlab</a>、Github</li>
+<li>敏捷闭环工具：<a href="https://www.zentao.net/" target="_blank" rel="noopener">禅道</a>、<a href="https://www.atlassian.com/software/jira/features" target="_blank" rel="noopener">JIRA</a></li>
+<li>持续集成：<a href="https://jenkins.io/" target="_blank" rel="noopener">Jenkins</a>、<a href="https://travis-ci.org/" target="_blank" rel="noopener">ravis-CI</a></li>
 </ul>
-<p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top">https://blog.afacode.top</a></p>
-
+<h2 id="公司组织架构图"><a href="#公司组织架构图" class="headerlink" title="公司组织架构图"></a>公司组织架构图</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/company_architecture-201952117729.png" alt="技术部门组织" title="">
+                </div>
+                <div class="image-caption">技术部门组织</div>
+            </figure>
         </div>
 
         <blockquote class="post-copyright">
@@ -249,8 +256,6 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
-
 
             
 <div class="page-share-wrap">
@@ -259,7 +264,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/21/project-summary/&title=《项目开发工作》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -269,22 +274,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/21/project-summary/&title=《项目开发工作》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/05/21/project-summary/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git代码分支合并(merge)，tag提交》 — afacode的博客&url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《项目开发工作》 — afacode的博客&url=https://blog.afacode.top/2019/05/21/project-summary/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/05/21/project-summary/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -304,21 +309,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/11/16/python-class/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">python类(学习)</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/05/11/git-clean-log/" id="post-next" class="post-nav-link">
+      <a href="/2019/05/21/macos-screen/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">git 清空所有(历史)commit记录</h4>
+        <h4 class="title">修改Mac系统的默认截图保存路径</h4>
       </a>
     </div>
   
@@ -394,7 +392,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/21/project-summary/&title=《项目开发工作》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -404,22 +402,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/21/project-summary/&title=《项目开发工作》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/05/21/project-summary/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git代码分支合并(merge)，tag提交》 — afacode的博客&url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《项目开发工作》 — afacode的博客&url=https://blog.afacode.top/2019/05/21/project-summary/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/05/21/project-summary/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -430,7 +428,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGUlEQVR42u3aS3ICMQwFQO5/aXIAauA9eUgVdnuV4mf1LBTJ8uMRr+fLen396pOvn3n95atfu3lhYGD8LCPZuA0ufxBXmHpfDAyMAxhJKswDmqXRq+++jw0DAwNjhXRv8sXAwMBYYaw0pUlLjIGBgZE3se1mbSm51DxjYGBszciLuf//+yvzDQwMjJ9iPMv17aO352hhYGDszcgTXHu4n4c4S7gYGBjnMNoU2ba1Oen9g/gAw8DAOICRbJ8HnYQ+i+TyXQwMjAMYs1IvH2fmB/rDAQAGBsbWjDxd5pckZqm5PcLDwMA4h9GOAW5Ii/HjKB4xBgbGAYzZsX6ObAcD9TgBAwPjAEbeWOYJ94aKNU/NGBgYWzNmh/Ir4baJuxgwYGBgbMpYuUjRns+3D6LoUjEwMA5jrBR8swKxHXB+qHAxMDC2Y+Sl2L1DhdnVjaLOxcDA2I6RjyGf8VoZKtzWi2NgYGzESNrF9vV8y9llCwwMjNMY7Wazo/z2klk9rsDAwDiGMVt5sp5dO6sTLgYGxqaMtkxsj9JmvOJbGBgYmzJmiTVvON8XnTck2dl/DAwMjJ9i5GsW9PtQ2qa3PcjDwMDYidE2qO3AMkm7eQGKgYFxMmN2SavebKGJ/YDEwMDAiNNlfqli/TJHPRjAwMA4jNEWjrOmtyhMMTAwDmDkG+SbLTWlbUmKgYGxNWNW2LXInNQmcQwMjK0Zfw6FqHastpqMAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJElEQVR42u3aS27DMAxFUe9/0+60RWH5PjEOYPJqFASOpZMBwY+OA6/zYpEnf39/9fz/3x5PLBkyZLyWcS4Xf6ayyxU42FeGDBkDGCQUrg/Hf0Wo/GwyZMiQQRI4HjTXKaAMGTJkPBFw62AZMmTI4AxeWKZp37r4/FjxLEOGjNYMfpTvf35kviFDhoxXMc5wrYMv/75+kj9vliFDRmsGD3AkafvUpYq988iQIaMrg4dR/mpeuPLy+GZ3GTJktGbsBbu9BDG9tJGOHGTIkNGbsXe1izTr04Z+KdTKkCFjAIOXrOngc6/0jUtcGTJkNGVUGvFpYckDOi+GZciQMYfBX1dp/e8loCiFlSFDxhjGXgpYSSJ5SL3ZRYYMGQMYvClWSeN48I1HCDJkyBjA4Jct+DP8oGS+evONDBkyWjPSzlUaatNwzMN9qQEnQ4aMFzIq5SW/tMH/Gj5ykCFDxgRGPY0j2+9dsODFsAwZMnozKpe3SHDkz9SvkcmQIWMyI23M1Q+KDp0GXBkyZLRjpAPOYNwYNvKCEYIMGTIGMPiQgF/5qhS0cTtPhgwZTRlnuNLmfqUNF+wrQ4aM1gy+0ssQfKhZD/QyZMiYwEiDLA+U6XWN9C+TIUPGNAYPfHtJXuX9CClDhgwZ4TiTJI58LIGGCjJkyJARFqj8AgcJ0CQxlSFDxgQGKWL58DIdc+6llTJkyJjD4KXjXkM/baVVElMZMmS0Y/wAMvyyUOb75lIAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
