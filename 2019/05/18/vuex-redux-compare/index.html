@@ -35,7 +35,7 @@
 <meta property="og:description" content="vuex和redux的用法，区别">
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://imgs.afacode.top/vuex@2x-20195181406.png">
-<meta property="og:updated_time" content="2019-05-18T09:04:15.929Z">
+<meta property="og:updated_time" content="2019-05-18T09:37:31.342Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="vuex和redux记录">
 <meta name="twitter:description" content="vuex和redux的用法，区别">
@@ -174,7 +174,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vuex"><span class="post-toc-number">1.</span> <span class="post-toc-text">vuex</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vuex-localStorage"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">vuex/localStorage</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#redux"><span class="post-toc-number">2.</span> <span class="post-toc-text">redux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异同"><span class="post-toc-number">3.</span> <span class="post-toc-text">异同</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#状态管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">状态管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vuex"><span class="post-toc-number">2.</span> <span class="post-toc-text">vuex</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vuex-localStorage"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">vuex/localStorage</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#redux"><span class="post-toc-number">3.</span> <span class="post-toc-text">redux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异同"><span class="post-toc-number">4.</span> <span class="post-toc-text">异同</span></a></li></ol>
         </nav>
     </aside>
 
@@ -201,6 +201,17 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>vuex和redux的用法，区别<br><a id="more"></a></p>
+<h2 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h2><p>状态管理库，无论是Redux，还是Mobx，vuex这些，其本质都是为了解决状态管理混乱，无法有效同步的问题，它们都支持：</p>
+<ul>
+<li>统一维护管理应用状态；</li>
+<li>某一状态只有一个可信数据来源（通常命名为store，指状态容器）；</li>
+<li>操作更新状态方式统一，并且可控（通常以action方式提供更新状态的途径）；<br>react </li>
+<li>支持将store与React组件连接，如react-redux，mobx-react；通常使用状态管理库后，我们将React组件从业务上划分为两类：<ul>
+<li>容器组件（Container Components）：负责处理具体业务和状态数据，将业务或状态处理函数传入展示型组件；</li>
+<li>展示型组件（Presentation Components）：负责展示视图，视图交互回调内调用传入的处理函数；</li>
+</ul>
+</li>
+</ul>
 <h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
@@ -213,6 +224,9 @@
 <li>vuex 通过 dispatch 触发 actions, 然后由 commit 来触发 mutation 的调用, 间接更新 state。包含<strong>同步/异步</strong>操作，支持多个同名方法，按照注册的顺序依次触发</li>
 <li>vuex 的 getters 读取 state 在操作，同 computed, <strong>缓存</strong>，只有相关 state 改变才会更新，<strong>不会改变 state</strong></li>
 </ol>
+<blockquote>
+<p>State =&gt; (commit) =&gt; mutation=&gt; state <br><br>​&gt; State =&gt; (getter) =&gt; tmp(state) <br><br>​&gt; State =&gt; (dispatch) =&gt; action =&gt; (commit) =&gt; state <br> </p>
+</blockquote>
 <h3 id="vuex-localStorage"><a href="#vuex-localStorage" class="headerlink" title="vuex/localStorage"></a>vuex/localStorage</h3><p>vuex 是 vue 的状态管理器，存储的数据是响应式的。但是并不会保存起来，刷新之后就回到了初始状态，具体做法应该在vuex里数据改变的时候把数据拷贝一份保存到localStorage里面，刷新之后，如果localStorage里有保存的数据，取出来再替换store里的state<br><figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">let <span class="keyword">default</span>City = <span class="string">"上海"</span></span><br><span class="line">try &#123;   // 用户关闭了本地存储功能，此时在外层加个try...catch</span><br><span class="line">  if (!<span class="keyword">default</span>City)&#123;</span><br><span class="line">    <span class="keyword">default</span>City = JSON.parse(window.localStorage.getItem('<span class="keyword">default</span>City'))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;catch(e)&#123;&#125;</span><br><span class="line">export <span class="keyword">default</span> new Vuex.Store(&#123;</span><br><span class="line">  <span class="keyword">state</span>: &#123;</span><br><span class="line">    city: <span class="keyword">default</span>City</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    changeCity(<span class="keyword">state</span>, city) &#123;</span><br><span class="line">      <span class="keyword">state</span>.city = city</span><br><span class="line">      try &#123;</span><br><span class="line">      window.localStorage.<span class="built_in">set</span>Item('<span class="keyword">default</span>City', JSON.stringify(<span class="keyword">state</span>.city));</span><br><span class="line">      // 数据改变的时候把数据拷贝一份保存到localStorage里面</span><br><span class="line">      &#125; catch (e) &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>由于vuex里，我们保存的状态，都是数组，而localStorage只支持字符串，所以需要用JSON转换<br><figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(state.subscribe<span class="class">List);</span>   //<span class="built_in"> array </span>-&gt; string 序列化</span><br><span class="line">JSON.parse(window.localStorage.getItem(<span class="string">"subscribeList"</span>));    // string -&gt;<span class="built_in"> array </span>反序列号</span><br></pre></td></tr></table></figure></p>
 <h2 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h2><p>Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript。</p>
@@ -304,7 +318,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/20/aliyun-ssl/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">阿里云配置ssl证书</h4>
+      </a>
+    </div>
   
 
   
