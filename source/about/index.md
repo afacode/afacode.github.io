@@ -17,9 +17,9 @@ tags:
 
 > 2017.07-2018.05 某软装设计公司 杭州 前端开发(vue等)
 
-
 > 2018.06-至今 某大宗贸易细分公司 杭州+深圳 前端开发(vue)+小程序(wepy)+APP(react native)等
 
+![狗子](http://7u2mve.com2.z0.glb.qiniucdn.com/f2elibs/winter-is-comming.jpeg)
 
 ## 关于我
 本人专职前端开发
