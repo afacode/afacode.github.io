@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-05-22T07:40:56.555Z</updated>
+  <updated>2019-05-25T14:32:07.517Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mac Python Selenium+WebDriver(chromedriver)安装下载</title>
+    <link href="https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/"/>
+    <id>https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/</id>
+    <published>2019-05-25T14:21:55.000Z</published>
+    <updated>2019-05-25T14:32:07.517Z</updated>
+    
+    <content type="html"><![CDATA[<p>Selenium 是一个开源测试框架，用来对web应用(比如网站)做自动化测试用的，因为它可以驱动浏览器，诸如Chrome，Firefox，IE等，所以可以较为真实的模拟人自动去点击网站的各个按钮，翻页，填写表单等，这样节省了很多测试时间<br><a id="more"></a></p><h2 id="selenium安装"><a href="#selenium安装" class="headerlink" title="selenium安装"></a>selenium安装</h2><blockquote><p>pip3 install selenium<br>pip3 list 查看</p></blockquote><h2 id="chromedriver安装"><a href="#chromedriver安装" class="headerlink" title="chromedriver安装"></a>chromedriver安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank" rel="noopener">chromedriver下载地址|镜像</a> 注意chrome对应的版本</p><h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul><li>将可执行文件配置到环境变量或将文件移动到属于环境变量的目录里</li></ul><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mv chromedriver /usr/<span class="built_in">local</span>/bin</span><br><span class="line">或修改~/.profile文件</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/bin/chromedriver"</span></span><br><span class="line"><span class="built_in">source</span> ~/.profile</span><br></pre></td></tr></table></figure><h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>命令行下直接执行chromedriver命令了打印出</p><blockquote><p>chromedriver<br><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Starting ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@&#123;#29&#125;) on<span class="built_in"> port </span>9515</span><br><span class="line">Only local connections are allowed.</span><br><span class="line">Please protect ports used by ChromeDriver <span class="keyword">and</span> related test frameworks <span class="keyword">to</span> prevent access by malicious code.</span><br></pre></td></tr></table></figure></p></blockquote><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/mac-afacode%202019-05-25%2022.31.15-2019525223137.png" alt="mac-afacode 2019-05-25 22.31.15-2019525223137" title="">                </div>                <div class="image-caption">mac-afacode 2019-05-25 22.31.15-2019525223137</div>            </figure><h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><figure class="highlight arduino"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from selenium <span class="keyword">import</span> webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line">browser.<span class="built_in">get</span>(<span class="string">'https://www.baidu.com'</span>)</span><br><span class="line"><span class="built_in">print</span>(browser.page_source)</span><br><span class="line">browser.<span class="built_in">close</span>()</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;Selenium 是一个开源测试框架，用来对web应用(比如网站)做自动化测试用的，因为它可以驱动浏览器，诸如Chrome，Firefox，IE等，所以可以较为真实的模拟人自动去点击网站的各个按钮，翻页，填写表单等，这样节省了很多测试时间&lt;br&gt;
+    
+    </summary>
+    
+      <category term="python" scheme="https://blog.afacode.top/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://blog.afacode.top/tags/python/"/>
+    
+      <category term="selenium" scheme="https://blog.afacode.top/tags/selenium/"/>
+    
+      <category term="webDriver" scheme="https://blog.afacode.top/tags/webDriver/"/>
+    
+      <category term="chromedriver" scheme="https://blog.afacode.top/tags/chromedriver/"/>
+    
+  </entry>
   
   <entry>
     <title>项目开发工作</title>
@@ -305,9 +333,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
@@ -466,9 +494,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
@@ -493,9 +521,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
