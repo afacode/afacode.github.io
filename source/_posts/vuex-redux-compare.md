@@ -66,6 +66,91 @@ JSON.parse(window.localStorage.getItem("subscribeList"));    // string -> array 
 
 ## redux
 Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript。
+* redux
+  * 有Actions、Reducer、Store这三层
+  * 通过createStore(reducer)得到store，换名话说store包含了reducer的逻辑实现
+  * 通过store.dispath(action)去调用reducer，从而改变state
+  * 通过store.getState()获取在reducer改变的state
+* react-redux
+  * react-redux作用就是本来没有关系的 Redux 和 React 关联在一起
+  * 它有组件Provier和方法connect
+  * connect将 React 的state和 Redux 的actions合并成一个对象props，再将这个对象和component生成一个新的组件
+  * Provider负责将 Redux 的store当属性传connect的新组件，从面将 React 和 Redux 关联到了一起
+  * 当新组件调用action的时候，Provider.store就会映射调用reducer从而改变state，当state发生改变，就会触发新组件的render，重新更新组件
+* redux-thunk
+  * `redux-thunk`异步
+> 目录：
+* src/index.js
+* src/store/store.js
+* src/store/actions/...
+* src/store/reducers/...
+* src/store/reducers/index.js
+> src/index.js 引入store
+
+```
+import { Provider } from 'react-redux'
+import store from './store/store'
+ReactDOM.render(
+  <Provider store={store}>
+    <Demo />
+  </Provider>, 
+  document.getElementById('root')
+)
+```
+> src/store/store.js 统一一个store
+
+```
+import  { createStore, applyMiddleware } from 'redux'
+import thunk from 'redux-thunk'
+import { composeWithDevTools } from 'redux-devtools-extension'
+import rootReducer from './reducers'
+
+let store = createStore(
+  rootReducer, 
+  composeWithDevTools(applyMiddleware(thunk))
+  )
+// 第二个参数为thunk中间件 用来处理函数类型的action
+export default store
+```
+> src/store/reducers/index.js 合并多个reducer
+
+```
+import { combineReducers } from 'redux'
+import productsReducer from './products-reducer'
+import cartReducer from './cart-reducer'
+import asyncNumReducer from './async-num-reducer'
+
+const allReducers = {
+  products: productsReducer,
+  shoppingCart: cartReducer,
+  asyncCount: asyncNumReducer
+}
+// 多个reducer合并成一个rootReducer
+const rootReducer = combineReducers(allReducers)
+
+export default rootReducer
+```
+> 在业务组建使用 使用`this.props.count` 读取store状态，`this.props.plus()`使用reducer
+
+```
+import { connect } from 'react-redux'
+import { plus } from '../store/actions/async-num-actions'
+import { addToCart } from '../store/actions/cart-actions'
+const mapStateToProps = (state) => {
+  return {
+    count: state.asyncCount.count,
+    cart: state.shoppingCart.cart
+  }
+}
+const mapDispatchToProps = {
+  plus, addToCart
+}
+
+Demo = connect(mapStateToProps, mapDispatchToProps)(Demo)
+export default Demo
+```
+
+
 
 ## 异同
 1. 都是单向数据
