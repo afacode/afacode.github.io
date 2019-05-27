@@ -19,7 +19,7 @@
     
     
     
-    <title>python-scrapy-text | afacode的博客 | 人懒，日常记录</title>
+    <title>scrapy爬虫总体笔记记录 | afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
@@ -29,14 +29,14 @@
     <meta name="description" content="scrapy爬虫 - 记忆笔记 - 只供自己查找">
 <meta name="keywords" content="python,scrapy,mysql,mongodb">
 <meta property="og:type" content="article">
-<meta property="og:title" content="python-scrapy-text">
+<meta property="og:title" content="scrapy爬虫总体笔记记录">
 <meta property="og:url" content="https://blog.afacode.top/2019/05/27/python-scrapy-text/index.html">
 <meta property="og:site_name" content="afacode的博客">
 <meta property="og:description" content="scrapy爬虫 - 记忆笔记 - 只供自己查找">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-27T11:57:09.306Z">
+<meta property="og:updated_time" content="2019-05-27T12:00:35.203Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="python-scrapy-text">
+<meta name="twitter:title" content="scrapy爬虫总体笔记记录">
 <meta name="twitter:description" content="scrapy爬虫 - 记忆笔记 - 只供自己查找">
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
@@ -125,7 +125,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">python-scrapy-text</div>
+        <div class="flex-col header-title ellipsis">scrapy爬虫总体笔记记录</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -147,7 +147,7 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">python-scrapy-text</h1>
+        <h1 class="title">scrapy爬虫总体笔记记录</h1>
         <h5 class="subtitle">
             
                 <time datetime="2019-05-27T15:53:25.000Z" itemprop="datePublished" class="page-time">
@@ -172,7 +172,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-1"><a class="post-toc-link" href="#scrapy"><span class="post-toc-number">1.</span> <span class="post-toc-text">scrapy</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建项目"><span class="post-toc-number">1.2.1.</span> <span class="post-toc-text">创建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建爬虫"><span class="post-toc-number">1.2.2.</span> <span class="post-toc-text">创建爬虫</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运行"><span class="post-toc-number">1.2.3.</span> <span class="post-toc-text">运行</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选择器-提取数据"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">选择器(提取数据)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#css"><span class="post-toc-number">1.3.1.</span> <span class="post-toc-text">css</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#regx"><span class="post-toc-number">1.3.2.</span> <span class="post-toc-text">regx</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#xpath"><span class="post-toc-number">1.3.3.</span> <span class="post-toc-text">xpath</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#spider-函数解析"><span class="post-toc-number">1.4.</span> <span class="post-toc-text">spider 函数解析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求-打开页面"><span class="post-toc-number">1.4.1.</span> <span class="post-toc-text">请求(打开页面)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#中间件-pipeline"><span class="post-toc-number">1.5.</span> <span class="post-toc-text">中间件(pipeline)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图片下载中间件"><span class="post-toc-number">1.5.1.</span> <span class="post-toc-text">图片下载中间件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图片重命名、放入不同文件夹"><span class="post-toc-number">1.5.2.</span> <span class="post-toc-text">图片重命名、放入不同文件夹</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图片防盗链下载-middlewares-py"><span class="post-toc-number">1.5.3.</span> <span class="post-toc-text">图片防盗链下载 middlewares.py</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mysql"><span class="post-toc-number">1.5.4.</span> <span class="post-toc-text">mysql</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mongodb"><span class="post-toc-number">1.5.5.</span> <span class="post-toc-text">mongodb</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署-scrapyd"><span class="post-toc-number">1.6.</span> <span class="post-toc-text">部署 scrapyd</span></a></li></ol></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建项目"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">创建项目</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#创建爬虫"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">创建爬虫</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#运行"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">运行</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#选择器-提取数据"><span class="post-toc-number">3.</span> <span class="post-toc-text">选择器(提取数据)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#css"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">css</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#regx"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">regx</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#xpath"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">xpath</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#spider-函数解析"><span class="post-toc-number">4.</span> <span class="post-toc-text">spider 函数解析</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#请求-打开页面"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">请求(打开页面)</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#中间件-pipeline"><span class="post-toc-number">5.</span> <span class="post-toc-text">中间件(pipeline)</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图片下载中间件"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">图片下载中间件</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图片重命名、放入不同文件夹"><span class="post-toc-number">5.2.</span> <span class="post-toc-text">图片重命名、放入不同文件夹</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#图片防盗链下载-middlewares-py"><span class="post-toc-number">5.3.</span> <span class="post-toc-text">图片防盗链下载 middlewares.py</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mysql"><span class="post-toc-number">5.4.</span> <span class="post-toc-text">mysql</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#mongodb"><span class="post-toc-number">5.5.</span> <span class="post-toc-text">mongodb</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#部署-scrapyd"><span class="post-toc-number">6.</span> <span class="post-toc-text">部署 scrapyd</span></a></li></ol>
         </nav>
     </aside>
 
@@ -181,7 +181,7 @@
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">python-scrapy-text</h1>
+        <h1 class="post-card-title">scrapy爬虫总体笔记记录</h1>
         <div class="post-meta">
             <time class="post-time" title="2019-05-27 23:53:25" datetime="2019-05-27T15:53:25.000Z"  itemprop="datePublished">2019-05-27</time>
 
@@ -199,7 +199,7 @@
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
             <p>scrapy爬虫 - 记忆笔记 - 只供自己查找<br><a id="more"></a></p>
-<h1 id="scrapy"><a href="#scrapy" class="headerlink" title="scrapy"></a>scrapy</h1><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>pip3 install scrapy</code></p>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>pip3 install scrapy</code></p>
 <h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><h3 id="创建项目"><a href="#创建项目" class="headerlink" title="创建项目"></a>创建项目</h3><p><code>scrapy startproject example</code></p>
 <h3 id="创建爬虫"><a href="#创建爬虫" class="headerlink" title="创建爬虫"></a>创建爬虫</h3><p><code>scrapy genspider book_spider</code></p>
 <h3 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h3><p><code>scrapy crawl book_spider -o books.csv</code></p>
@@ -294,7 +294,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&title=《python-scrapy-text》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&title=《scrapy爬虫总体笔记记录》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -304,7 +304,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&title=《python-scrapy-text》 — afacode的博客&source=scrapy爬虫 - 记忆笔记 - 只供自己查找" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&title=《scrapy爬虫总体笔记记录》 — afacode的博客&source=scrapy爬虫 - 记忆笔记 - 只供自己查找" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -314,7 +314,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python-scrapy-text》 — afacode的博客&url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《scrapy爬虫总体笔记记录》 — afacode的博客&url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
@@ -422,7 +422,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&title=《python-scrapy-text》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&title=《scrapy爬虫总体笔记记录》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -432,7 +432,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&title=《python-scrapy-text》 — afacode的博客&source=scrapy爬虫 - 记忆笔记 - 只供自己查找" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&title=《scrapy爬虫总体笔记记录》 — afacode的博客&source=scrapy爬虫 - 记忆笔记 - 只供自己查找" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -442,7 +442,7 @@
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《python-scrapy-text》 — afacode的博客&url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《scrapy爬虫总体笔记记录》 — afacode的博客&url=https://blog.afacode.top/2019/05/27/python-scrapy-text/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
