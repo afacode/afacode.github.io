@@ -19,25 +19,25 @@
     
     
     
-    <title>git代码分支合并(merge)，tag提交 | afacode的博客 | 人懒，日常记录</title>
+    <title>修改SSH端口与端口分配规则分类 | afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="git,tool">
-    <meta name="description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
-<meta name="keywords" content="git,tool">
+    <meta name="keywords" content="linux,ssh">
+    <meta name="description" content="修改SSH默认端口 打开 vi /etc/ssh/sshd_config   Port 22 修改22端口号为自己的 1098   保存重启 service sshd restart   修改防火墙了 阿里云服务器，可以到安全组配置里增加相应端口：端口范围1098/1098   测试  12345678# 使用root账户、默认的22端口登录ssh IP# 使用test账户、默认的22端口登录ss">
+<meta name="keywords" content="linux,ssh">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git代码分支合并(merge)，tag提交">
-<meta property="og:url" content="https://blog.afacode.top/2017/08/22/git-merge-and-tag/index.html">
+<meta property="og:title" content="修改SSH端口与端口分配规则分类">
+<meta property="og:url" content="https://blog.afacode.top/2019/06/05/linux-ssh-port/index.html">
 <meta property="og:site_name" content="afacode的博客">
-<meta property="og:description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
+<meta property="og:description" content="修改SSH默认端口 打开 vi /etc/ssh/sshd_config   Port 22 修改22端口号为自己的 1098   保存重启 service sshd restart   修改防火墙了 阿里云服务器，可以到安全组配置里增加相应端口：端口范围1098/1098   测试  12345678# 使用root账户、默认的22端口登录ssh IP# 使用test账户、默认的22端口登录ss">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T00:07:55.306Z">
+<meta property="og:updated_time" content="2019-06-05T06:13:20.629Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git代码分支合并(merge)，tag提交">
-<meta name="twitter:description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
+<meta name="twitter:title" content="修改SSH端口与端口分配规则分类">
+<meta name="twitter:description" content="修改SSH默认端口 打开 vi /etc/ssh/sshd_config   Port 22 修改22端口号为自己的 1098   保存重启 service sshd restart   修改防火墙了 阿里云服务器，可以到安全组配置里增加相应端口：端口范围1098/1098   测试  12345678# 使用root账户、默认的22端口登录ssh IP# 使用test账户、默认的22端口登录ss">
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
@@ -125,7 +125,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">git代码分支合并(merge)，tag提交</div>
+        <div class="flex-col header-title ellipsis">修改SSH端口与端口分配规则分类</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -147,15 +147,13 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">git代码分支合并(merge)，tag提交</h1>
+        <h1 class="title">修改SSH端口与端口分配规则分类</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-08-21T23:48:19.000Z" itemprop="datePublished" class="page-time">
-  2017-08-22
+                <time datetime="2019-06-05T15:11:54.000Z" itemprop="datePublished" class="page-time">
+  2019-06-05
 </time>
 
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
 
             
         </h5>
@@ -172,22 +170,20 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git代码分支合并，tag提交"><span class="post-toc-number">1.</span> <span class="post-toc-text">git代码分支合并，tag提交</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#修改SSH默认端口"><span class="post-toc-number">1.</span> <span class="post-toc-text">修改SSH默认端口</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#端口分配规则分类"><span class="post-toc-number">2.</span> <span class="post-toc-text">端口分配规则分类</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-git-merge-and-tag"
+<article id="post-linux-ssh-port"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">git代码分支合并(merge)，tag提交</h1>
+        <h1 class="post-card-title">修改SSH端口与端口分配规则分类</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-08-22 07:48:19" datetime="2017-08-21T23:48:19.000Z"  itemprop="datePublished">2017-08-22</time>
+            <time class="post-time" title="2019-06-05 23:11:54" datetime="2019-06-05T15:11:54.000Z"  itemprop="datePublished">2019-06-05</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
-
 
 
             
@@ -198,31 +194,45 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="git代码分支合并，tag提交"><a href="#git代码分支合并，tag提交" class="headerlink" title="git代码分支合并，tag提交"></a>git代码分支合并，tag提交</h2><ul>
-<li><p>将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支</p>
+            <h2 id="修改SSH默认端口"><a href="#修改SSH默认端口" class="headerlink" title="修改SSH默认端口"></a>修改SSH默认端口</h2><blockquote>
+<p>打开 <code>vi /etc/ssh/sshd_config</code></p>
+</blockquote>
 <blockquote>
-<p><code>git checkout dev</code></p>
+<p><code>Port 22</code> 修改22端口号为自己的 1098</p>
 </blockquote>
-</li>
-<li><p>当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突</p>
 <blockquote>
-<p><code>git merge afacode</code></p>
+<p>保存重启 <code>service sshd restart</code></p>
 </blockquote>
-</li>
-<li>提交dev分支合并的代码到远程dev分支上<blockquote>
-<p><code>git push origin dev</code></p>
+<blockquote>
+<p>修改防火墙了 阿里云服务器，可以到安全组配置里增加相应端口：<strong>端口范围1098/1098</strong></p>
 </blockquote>
-</li>
-<li>测试通过，上线代码需要打tag,在master分支打tag 打版本v1.0.0.0<blockquote>
-<p><code>git tag -a 版本号 -m &#39;注解&#39;</code></p>
+<blockquote>
+<p>测试</p>
 </blockquote>
-</li>
-<li>提交版本v1.0.0.0到仓库<blockquote>
-<p><code>git push origin v1.0.0.0</code></p>
-</blockquote>
-</li>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用root账户、默认的22端口登录</span></span><br><span class="line">ssh IP</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用test账户、默认的22端口登录</span></span><br><span class="line">ssh test@IP</span><br><span class="line"></span><br><span class="line"><span class="comment"># 使用test账户、自定义的1098端口登录</span></span><br><span class="line">ssh -p 1098 test@IP</span><br></pre></td></tr></table></figure>
+<h2 id="端口分配规则分类"><a href="#端口分配规则分类" class="headerlink" title="端口分配规则分类"></a>端口分配规则分类</h2><p>TCP/IP 协议中的端口在报头中占2个字节即16位，范围是从0-65535。端口号用来表示和区别网络中的不同应用程序 </p>
+<ol>
+<li>公认端口（Well Known Ports）：0-1023之间的端口号。这些端口由 IANA 分配管理。IANA 把这些端口分配给最重要的一些应用程序，让所有的用户都知道，当一种新的应用程序出现后，IANA必须为它指派一个公认端口。</li>
+</ol>
+<blockquote>
+<p>常用的公认端口有： </p>
+<ul>
+<li>FTP : 21 </li>
+<li>TELNET : 23 </li>
+<li>SMTP : 25 </li>
+<li>DNS : 53 </li>
+<li>TFTP : 69 </li>
+<li>HTTP : 80 </li>
+<li>SNMP : 161 </li>
 </ul>
-<p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top">https://blog.afacode.top</a></p>
+<ol start="2">
+<li>注册端口（Registered Ports）：从1024-49151。是公司和其他用户向互联网名称与数字地址分配机构（ICANN）登记的端口号，利用因特网的传输控制协议（TCP）和用户数据报协议（UDP）进行通信的应用软件需要使用这些端口。在大多数情况下，这些应用软件和普通程序一样可以被非特权用户打开。 </li>
+<li>客户端使用的端口号：49152~65535.这类端口号仅在客户进程运行时才动态选择，因此又叫做短暂端口号。被保留给客户端进程选择暂时使用的。也可以理解为，客户端启动的时候操作系统随机分配一个端口用来和服务器通信，客户端进程关闭下次打开时，又重新分配一个新的端口</li>
+</ol>
+</blockquote>
+<blockquote>
+<p>我们一般是使用1024-49151</p>
+</blockquote>
 
         </div>
 
@@ -249,7 +259,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/linux/">linux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/ssh/">ssh</a></li></ul>
 
 
             
@@ -259,7 +269,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/06/05/linux-ssh-port/&title=《修改SSH端口与端口分配规则分类》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -269,22 +279,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/06/05/linux-ssh-port/&title=《修改SSH端口与端口分配规则分类》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/06/05/linux-ssh-port/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git代码分支合并(merge)，tag提交》 — afacode的博客&url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《修改SSH端口与端口分配规则分类》 — afacode的博客&url=https://blog.afacode.top/2019/06/05/linux-ssh-port/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/06/05/linux-ssh-port/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -304,21 +314,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/11/16/python-class/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">python类(学习)</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/05/11/git-clean-log/" id="post-next" class="post-nav-link">
+      <a href="/2019/05/27/python-scrapy-text/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">git 清空所有(历史)commit记录</h4>
+        <h4 class="title">scrapy爬虫总体笔记记录</h4>
       </a>
     </div>
   
@@ -394,7 +397,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/06/05/linux-ssh-port/&title=《修改SSH端口与端口分配规则分类》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -404,22 +407,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/06/05/linux-ssh-port/&title=《修改SSH端口与端口分配规则分类》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/06/05/linux-ssh-port/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git代码分支合并(merge)，tag提交》 — afacode的博客&url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《修改SSH端口与端口分配规则分类》 — afacode的博客&url=https://blog.afacode.top/2019/06/05/linux-ssh-port/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/06/05/linux-ssh-port/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -430,7 +433,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGUlEQVR42u3aS3ICMQwFQO5/aXIAauA9eUgVdnuV4mf1LBTJ8uMRr+fLen396pOvn3n95atfu3lhYGD8LCPZuA0ufxBXmHpfDAyMAxhJKswDmqXRq+++jw0DAwNjhXRv8sXAwMBYYaw0pUlLjIGBgZE3se1mbSm51DxjYGBszciLuf//+yvzDQwMjJ9iPMv17aO352hhYGDszcgTXHu4n4c4S7gYGBjnMNoU2ba1Oen9g/gAw8DAOICRbJ8HnYQ+i+TyXQwMjAMYs1IvH2fmB/rDAQAGBsbWjDxd5pckZqm5PcLDwMA4h9GOAW5Ii/HjKB4xBgbGAYzZsX6ObAcD9TgBAwPjAEbeWOYJ94aKNU/NGBgYWzNmh/Ir4baJuxgwYGBgbMpYuUjRns+3D6LoUjEwMA5jrBR8swKxHXB+qHAxMDC2Y+Sl2L1DhdnVjaLOxcDA2I6RjyGf8VoZKtzWi2NgYGzESNrF9vV8y9llCwwMjNMY7Wazo/z2klk9rsDAwDiGMVt5sp5dO6sTLgYGxqaMtkxsj9JmvOJbGBgYmzJmiTVvON8XnTck2dl/DAwMjJ9i5GsW9PtQ2qa3PcjDwMDYidE2qO3AMkm7eQGKgYFxMmN2SavebKGJ/YDEwMDAiNNlfqli/TJHPRjAwMA4jNEWjrOmtyhMMTAwDmDkG+SbLTWlbUmKgYGxNWNW2LXInNQmcQwMjK0Zfw6FqHastpqMAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJ0lEQVR42u3azXLCMAxFYd7/pdNtGVpzrkSYsXyy6kCI/WWh6sePB76ul4vcs/7V6+fr53/gkiFDxrYMsnBtW78/51sn6/5BlSFDxgGM/yIYuYfA+Cp8XRkyZMggj0sDN8fLkCFDRoeRlp3ppmXIkCGjU8QSPCl6eXl8Sy0uQ4aMDRm86/79v2+Zb8iQIWMrxhVe5Dn9bcW7kiFDxmhGrZXGRwW1YrW2HxkyZExl1IIpb9V1Bp+8YJYhQ8YJjNqj07SPw3jx/BRwZciQcQBjnbSl2+2PE4LXJEOGjNEMnpD100c+qmyFeBkyZAxlkAOm/PhFek+6k+J/DxkyZGzOSLtYa2pnzJky4vxXhgwZ2zJqj+YJZW20kL5WGTJknMPo97XIdnkSGRTMMmTIGM3oFKU81NZ48YBBhgwZQxmkodYvQXkxnCadMmTImM1IR4Z8Qzzsrp+PElMZMmSMZvCv0yZaGl77r1WGDBmzGRe+aqGQpJVpCw8VsTJkyBjK4BtND62m6WN8mFWGDBlHMtKilLftUnZQuMqQIWM0owYIUrewACa/fdM7lCFDxgjGFV786EPajKsNNeMqXIYMGRsyasGuP07oDE35a5IhQ8YkRhpka8e/Oikgeq0yZMg4gJGezkgDaO1oRYCUIUOGjHCZzq/iYxYyZMiQgTeUNtd4QkmacTJkyDiBUVuAN8V4ollMN2XIkDGa8anUjQdl0s67ZagpQ4aM/Rg/M2VVgwE2u7EAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
