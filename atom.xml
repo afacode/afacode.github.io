@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-06-05T06:15:41.468Z</updated>
+  <updated>2019-06-11T13:09:56.199Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>React does not recognize the computedMatch prop on a DOM element</title>
+    <link href="https://blog.afacode.top/2019/06/11/react-router-fragment-err/"/>
+    <id>https://blog.afacode.top/2019/06/11/react-router-fragment-err/</id>
+    <published>2019-06-11T15:05:58.000Z</published>
+    <updated>2019-06-11T13:09:56.199Z</updated>
+    
+    <content type="html"><![CDATA[<p>完整的警告是：<br>Warning: React does not recognize the computedMatch prop on a DOM element. If you intentionally want it to appear in the DOM as a custom attribute, spell it as lowercase computedmatch instead. If you accidentally passed it from a parent component, remove it from the DOM element.</p><blockquote><p>版本：</p></blockquote><figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"react"</span>: <span class="string">"^16.8.6"</span>,</span><br><span class="line"><span class="string">"react-dom"</span>: <span class="string">"^16.8.6"</span>,</span><br><span class="line"><span class="string">"react-redux"</span>: <span class="string">"^7.0.3"</span>,</span><br><span class="line"><span class="string">"react-router-dom"</span>: <span class="string">"^5.0.1"</span>,</span><br></pre></td></tr></table></figure><p><strong>引起警告的原因是</strong>： 在<code>react-router-dom</code>的<code>&lt;Switch&gt;</code>中使用了<code>&lt;div&gt;</code></p><p>解决办法很简单，把<code>&lt;Switch&gt;</code>增加一层<code>&lt;Fragment&gt;</code>就行了<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      <span class="tag">&lt;<span class="name">Switch</span>&gt;</span></span><br><span class="line">+       <span class="tag">&lt;<span class="name">Fragment</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"App"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">header</span> <span class="attr">className</span>=<span class="string">"App-header"</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">'/'</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">'/about'</span>&gt;</span>About<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">'/users'</span>&gt;</span>Users<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">exact</span> <span class="attr">path</span>=<span class="string">'/'</span> <span class="attr">component</span>=<span class="string">&#123;Index&#125;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">exact</span> <span class="attr">path</span>=<span class="string">'/about'</span> <span class="attr">component</span>=<span class="string">&#123;About&#125;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">exact</span> <span class="attr">path</span>=<span class="string">'/users'</span> <span class="attr">component</span>=<span class="string">&#123;Users&#125;</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">+       <span class="tag">&lt;/<span class="name">Fragment</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">Switch</span>&gt;</span></span><br><span class="line">    )</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;完整的警告是：&lt;br&gt;Warning: React does not recognize the computedMatch prop on a DOM element. If you intentionally want it to appear in the DOM a
+      
+    
+    </summary>
+    
+      <category term="js" scheme="https://blog.afacode.top/categories/js/"/>
+    
+    
+      <category term="react-router" scheme="https://blog.afacode.top/tags/react-router/"/>
+    
+      <category term="react" scheme="https://blog.afacode.top/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>修改SSH端口与端口分配规则分类</title>
