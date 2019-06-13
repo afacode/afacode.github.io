@@ -1,6 +1,6 @@
 ---
 layout: post
-title: python-scrapy-text
+title: scrapy爬虫总体笔记记录
 date: 2019-05-27 23:53:25
 categories: 
   - python
@@ -12,7 +12,7 @@ tags:
 ---
 scrapy爬虫 - 记忆笔记 - 只供自己查找
 <!-- more -->
-# scrapy
+
 ## 安装
 `pip3 install scrapy`
 ## 使用
@@ -26,8 +26,67 @@ scrapy爬虫 - 记忆笔记 - 只供自己查找
 ## 选择器(提取数据)
 ### css
 [css选择器](http://www.scrapyd.cn/doc/146.html)
-
+```
+# 选中所有的img
+>>> response.css('img')
+# 选中div后代中的img（后代元素包括子代、孙代等）
+>>> response.css('div img')
+# 选中body子元素中的div元素
+>>> response.css('body>div')
+# 选中包含style属性的元素
+>>> response.css('[style]')
+# 选中属性id值为images-1的元素
+>>> response.css('[id=images-1]')
+# 选中CLASS属性包含img的a元素
+>>> response.css('a.img')
+# 选中CLASS属性包含img的元素
+>>> response.css('.img')
+# 选中所有a的文本
+>>> response.css('a::text').extract()
+# 选中所有a的href属性文本 extract_first()
+>>> response.css('a::attr(href)').extract()
+```
 ### regx
+### Splash
+Splash 是 Scrapy 官方推荐的 JavaScript 渲染引擎，是一款轻量级的无界面浏览器，类似于 PhantomJS
+> pip3 install scrapy-splash
+
+* SplashRequest,用户只需使用scrapy_splash.SplashRequest（替代scrapy.Request）提交请求即可
+```
+from scrapy_splash import SplashRequest
+SplashRequest()
+```
+* 下面是 SplashRequest 构造器方法中的一些常用参数。 
+    * ① url ：与scrapy.Request中的url相同，也就是待爬取页面的url（注意，不是Splash服务器地址）。
+    * ② headers: 与scrapy.Request中的headers相同。
+    * ③ cookies：与scrapy.Request中的cookies相同。
+    * ④ args：传递给Splash的参数（除url以外），如wait、timeout、images、js_source等。
+
+---
+* 创建项目
+* setting.py
+```
+# 1. Splash服务器地址
+SPLASH_URL = 'http://localhost:8050'
+
+# 2. 开启Splash的两个下载中间件并调整HttpCompressionMiddleware的次序
+DOWNLOADER_MIDDLEWARES = {
+'scrapy_splash.SplashCookiesMiddleware': 723,
+'scrapy_splash.SplashMiddleware': 725,
+'scrapy.downloadermiddlewares.httpcompression.HttpCompressionMiddleware': 810,
+}
+
+# 3. 设置去重过滤器
+DUPEFILTER_CLASS = 'scrapy_splash.SplashAwareDupeFilter'
+
+# 4. 用来支持cache_args（可选）
+SPIDER_MIDDLEWARES = {
+'scrapy_splash.SplashDeduplicateArgsMiddleware': 100,
+}
+```
+* 修改Spider
+`# 把 ScrapyRequest(url) 改为SplashRequest(url, args={'images':0,'timeout'=3})`
+
 
 ### xpath
 [xpath](http://www.scrapyd.cn/doc/186.html)
@@ -51,7 +110,36 @@ class simpleUrl(scrapy.Spider):
     def parse(self, response):
 ...
 ```
+### 抓取数据
+* 有些数据信息需要提取两个页面才能完成，那么如何把上一个def中的数据，传入下一个def中呢
+```
+# 构造字典 meta={'_book_item':book_item}，通过scrapy.Request传入
+# 下一个def 通过book_item = response.meta['_book_item']获得数据
+def parse(self, response):
+    ...
+    yield scrapy.Request(url, headers= {'User-Agent':'Mozilla/5.0'}, callback=self.book_parse, meta={'_book_item':book_item})
+
+def parse_book(self, response):
+    book_item = response.meta['_book_item']
+```
+* scrapy 爬网站 显示 Filtered offsite request to 错误
+
+官方对这个的解释，是你要request的地址和allow_domain里面的冲突，从而被过滤掉。可以停用过滤功能
+`yield Request(url, callback=self.parse_item, dont_filter=True)`
+
 ## 中间件(pipeline)
+1. Item Pipeline 可以处理、存储数据
+2. 处理从 spider 发送的，由Item 封装的数据
+3. 页面数据抓取用spider解析，其他用Item Pipeline
+4. 主要的三个模块： 
+    * ① process_item(item, spider)：处理数据 
+    * ② open_spider(self, spider)：打开文件或数据库 
+    * ③ close_spider(self, spider)：关闭文件或数据库
+    * 
+5. 处理数据步骤： 
+    * ① 打开pipelines.py，修改文件 
+    * ② 打开setting.py，修改配置文件
+
 ### 图片下载中间件
 打开`pipeline.py`进行中间件编写，这里的话主要继承了scrapy的：`ImagesPipeline`这个类，我们需要在里面实现：`def get_media_requests(self, item, info)`这个方法，这个方法主要是把蜘蛛yield过来的图片链接执行下载
 ```
@@ -200,6 +288,7 @@ scrapy存入mongodb比起存入mysql要简单得多，我们不用创建表，�
 
 * scrapyd的话一般安装在Linux上面，负责开启Linux端口，供scrapyd-client调用
 > pip3 install scrapyd 
+
 
 
 
