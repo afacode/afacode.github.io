@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-06-11T13:09:56.199Z</updated>
+  <updated>2019-06-13T14:12:52.485Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>selenium 不加载图片</title>
+    <link href="https://blog.afacode.top/2019/06/13/python-spdier-selenium-tips-1/"/>
+    <id>https://blog.afacode.top/2019/06/13/python-spdier-selenium-tips-1/</id>
+    <published>2019-06-13T15:11:14.000Z</published>
+    <updated>2019-06-13T14:12:52.485Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="python-selenium-不加载图片"><a href="#python-selenium-不加载图片" class="headerlink" title="python selenium 不加载图片"></a>python selenium 不加载图片</h2><figure class="highlight makefile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">from selenium import webdriver</span><br><span class="line"></span><br><span class="line">chrome_options = webdriver.ChromeOptions()</span><br><span class="line">prefs = &#123;<span class="string">"profile.managed_default_content_settings.images"</span>:2&#125;</span><br><span class="line">chrome_options.add_experimental_option(<span class="string">"prefs"</span>,prefs)</span><br><span class="line">            </span><br><span class="line">driver = webdriver.Chrome(chrome_options=chrome_options)</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;python-selenium-不加载图片&quot;&gt;&lt;a href=&quot;#python-selenium-不加载图片&quot; class=&quot;headerlink&quot; title=&quot;python selenium 不加载图片&quot;&gt;&lt;/a&gt;python selenium 不加载图片&lt;/
+      
+    
+    </summary>
+    
+      <category term="python" scheme="https://blog.afacode.top/categories/python/"/>
+    
+    
+      <category term="python" scheme="https://blog.afacode.top/tags/python/"/>
+    
+      <category term="selenium" scheme="https://blog.afacode.top/tags/selenium/"/>
+    
+  </entry>
   
   <entry>
     <title>React does not recognize the computedMatch prop on a DOM element</title>
@@ -414,9 +441,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -575,9 +602,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -602,9 +629,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
