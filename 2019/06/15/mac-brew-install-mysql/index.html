@@ -36,9 +36,11 @@
 <meta property="og:locale" content="zh-CN">
 <meta property="og:image" content="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.15.02-2019615171527.png">
 <meta property="og:image" content="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.08.36-201961517166.png">
-<meta property="og:image" content="http://imgs.afacode.top/WX20190615-184558@2x-2019615184646.png">
 <meta property="og:image" content="http://imgs.afacode.top/WX20190615-184621@2x-2019615184655.png">
-<meta property="og:updated_time" content="2019-06-15T10:51:40.204Z">
+<meta property="og:image" content="http://imgs.afacode.top/WX20190615-184558@2x-2019615184646.png">
+<meta property="og:image" content="http://imgs.afacode.top/WX20190616-100036@2x-201961610056.png">
+<meta property="og:image" content="http://imgs.afacode.top/WX20190616-095947@2x-201961610116.png">
+<meta property="og:updated_time" content="2019-06-16T02:03:13.657Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="mac+brew 安装 mysql">
 <meta name="twitter:description" content="brew 工具，如果没有的话12# 安装 homebrew，是的你没看错，在终端里粘贴以下命令即可/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)&quot; 查看mysql包情况 查看当前最新稳定包brew info mysql">
@@ -175,7 +177,7 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#brew-工具，如果没有的话"><span class="post-toc-number">1.</span> <span class="post-toc-text">brew 工具，如果没有的话</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看mysql包情况"><span class="post-toc-number">2.</span> <span class="post-toc-text">查看mysql包情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装mysql"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装mysql</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MYSQL使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">MYSQL使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置密码"><span class="post-toc-number">5.</span> <span class="post-toc-text">设置密码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#登陆"><span class="post-toc-number">6.</span> <span class="post-toc-text">登陆</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#远程连接"><span class="post-toc-number">7.</span> <span class="post-toc-text">远程连接</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#brew-工具，如果没有的话"><span class="post-toc-number">1.</span> <span class="post-toc-text">brew 工具，如果没有的话</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看mysql包情况"><span class="post-toc-number">2.</span> <span class="post-toc-text">查看mysql包情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装mysql"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装mysql</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MYSQL使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">MYSQL使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置密码"><span class="post-toc-number">5.</span> <span class="post-toc-text">设置密码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#登陆"><span class="post-toc-number">6.</span> <span class="post-toc-text">登陆</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#navicat连接"><span class="post-toc-number">7.</span> <span class="post-toc-text">navicat连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#报错-2059-Authentication-plugin-39-caching-sha2-password-39-cannot-be-loaded-dlope"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">报错 2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded dlope</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">解决方法</span></a></li></ol></li></ol>
         </nav>
     </aside>
 
@@ -226,9 +228,9 @@
 <li>如果遇到权限问题，会有提示,按照提示完成<figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.08.36-201961517166.png" alt="mac-afacode 2019-06-15 17.08.36-201961517166" title="">
+                    <img src="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.08.36-201961517166.png" alt="权限问题" title="">
                 </div>
-                <div class="image-caption">mac-afacode 2019-06-15 17.08.36-201961517166</div>
+                <div class="image-caption">权限问题</div>
             </figure>
 <figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) <span class="regexp">/usr/</span>local<span class="regexp">/share/m</span>an<span class="regexp">/man5 /u</span>sr<span class="regexp">/local/</span>share<span class="regexp">/man/m</span>an7</span><br><span class="line">chmod u+w <span class="regexp">/usr/</span>local<span class="regexp">/share/m</span>an<span class="regexp">/man5 /u</span>sr<span class="regexp">/local/</span>share<span class="regexp">/man/m</span>an</span><br></pre></td></tr></table></figure>
 </li>
@@ -247,16 +249,16 @@
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://imgs.afacode.top/WX20190615-184558@2x-2019615184646.png" alt="WX20190615-184558@2x-2019615184646" title="">
+                    <img src="http://imgs.afacode.top/WX20190615-184621@2x-2019615184655.png" alt="安装过程" title="">
                 </div>
-                <div class="image-caption">WX20190615-184558@2x-2019615184646</div>
+                <div class="image-caption">安装过程</div>
             </figure>
 <figure class="image-bubble">
                 <div class="img-lightbox">
                     <div class="overlay"></div>
-                    <img src="http://imgs.afacode.top/WX20190615-184621@2x-2019615184655.png" alt="WX20190615-184621@2x-2019615184655" title="">
+                    <img src="http://imgs.afacode.top/WX20190615-184558@2x-2019615184646.png" alt="安装过程2" title="">
                 </div>
-                <div class="image-caption">WX20190615-184621@2x-2019615184655</div>
+                <div class="image-caption">安装过程2</div>
             </figure>
 <h2 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h2><blockquote>
 <p>mysql -uroot -p</p>
@@ -273,7 +275,22 @@
 <blockquote>
 <p>exit;</p>
 </blockquote>
-<h2 id="远程连接"><a href="#远程连接" class="headerlink" title="远程连接"></a>远程连接</h2>
+<h2 id="navicat连接"><a href="#navicat连接" class="headerlink" title="navicat连接"></a>navicat连接</h2><h3 id="报错-2059-Authentication-plugin-39-caching-sha2-password-39-cannot-be-loaded-dlope"><a href="#报错-2059-Authentication-plugin-39-caching-sha2-password-39-cannot-be-loaded-dlope" class="headerlink" title="报错 2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded dlope"></a>报错 <code>2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded dlope</code></h3><p><code>2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded: dlopen(../Frameworks/caching_sha2_password.so, 2): image not found</code><br><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WX20190616-100036@2x-201961610056.png" alt="2059 error" title="">
+                </div>
+                <div class="image-caption">2059 error</div>
+            </figure></p>
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">USER</span> <span class="string">'root'</span>@<span class="string">'localhost'</span> <span class="keyword">IDENTIFIED</span> <span class="keyword">WITH</span> mysql_native_password <span class="keyword">BY</span> <span class="string">'密码'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">FLUSH</span> <span class="keyword">PRIVILEGES</span>;</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WX20190616-095947@2x-201961610116.png" alt="success" title="">
+                </div>
+                <div class="image-caption">success</div>
+            </figure>
+
         </div>
 
         <blockquote class="post-copyright">
