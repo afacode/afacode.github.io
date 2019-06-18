@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-06-16T02:03:13.657Z</updated>
+  <updated>2019-06-18T09:24:57.356Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>scrapy导出JSON格式</title>
+    <link href="https://blog.afacode.top/2019/06/18/scrapy-save-to-json/"/>
+    <id>https://blog.afacode.top/2019/06/18/scrapy-save-to-json/</id>
+    <published>2019-06-18T15:13:34.000Z</published>
+    <updated>2019-06-18T09:24:57.356Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="创建json保存的pipeline"><a href="#创建json保存的pipeline" class="headerlink" title="创建json保存的pipeline"></a>创建json保存的pipeline</h2><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">import json</span><br><span class="line">import codecs <span class="comment"># 可以处理好编码，避免各种编码繁杂工作</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">JsonPipeline</span>(<span class="title">object</span>):</span></span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">self</span>.file = codecs.open(<span class="string">'demo.json'</span>, <span class="string">'w'</span>, encoding=<span class="string">'utf-8'</span>)</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(<span class="keyword">self</span>, item, spider)</span></span><span class="symbol">:</span></span><br><span class="line">    line = json.dumps(dict(item), ensure_ascii=False) + <span class="string">"\n"</span></span><br><span class="line">    <span class="keyword">self</span>.file.write(line)</span><br><span class="line">    <span class="keyword">return</span> item</span><br><span class="line">  </span><br><span class="line">  <span class="function"><span class="keyword">def</span> <span class="title">spider_closed</span><span class="params">(<span class="keyword">self</span>, spider)</span></span><span class="symbol">:</span></span><br><span class="line">    <span class="keyword">self</span>.file.close()</span><br></pre></td></tr></table></figure><h2 id="Scrapy自带写入json"><a href="#Scrapy自带写入json" class="headerlink" title="Scrapy自带写入json"></a>Scrapy自带写入json</h2><p>scrapy.exports中提供的导出方式:<br><figure class="highlight scheme"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  <span class="symbol">'BaseItemExporter</span>', </span><br><span class="line">  <span class="symbol">'PprintItemExporter</span>', </span><br><span class="line">  <span class="symbol">'PickleItemExporter</span>',        </span><br><span class="line">  <span class="symbol">'CsvItemExporter</span>', </span><br><span class="line">  <span class="symbol">'XmlItemExporter</span>', </span><br><span class="line">  <span class="symbol">'JsonLinesItemExporter</span>',     </span><br><span class="line">  <span class="symbol">'JsonItemExporter</span>', </span><br><span class="line">  <span class="symbol">'MarshalItemExporter</span>'</span><br><span class="line">]</span><br></pre></td></tr></table></figure></p><figure class="highlight ruby"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">from scrapy.exporters import JsonItemExporter</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(<span class="keyword">self</span>)</span></span>: </span><br><span class="line">  <span class="keyword">self</span>.file = open(<span class="string">'demo.json'</span>, <span class="string">'wb'</span>) </span><br><span class="line">  <span class="keyword">self</span>.exporter = JsonItemExporter(<span class="keyword">self</span>.file, encoding=<span class="string">"utf-8"</span>, ensure_ascii=False) </span><br><span class="line">  <span class="keyword">self</span>.exporter.start_exporting() </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">start_exporting</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">  <span class="keyword">self</span>.file.write(b<span class="string">"[\n"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">finish_exporting</span><span class="params">(<span class="keyword">self</span>)</span></span><span class="symbol">:</span></span><br><span class="line">  <span class="keyword">self</span>.file.write(b<span class="string">"\n]"</span>)</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">close_spider</span><span class="params">(<span class="keyword">self</span>, spider)</span></span>: </span><br><span class="line">  <span class="keyword">self</span>.exporter.finish_exporting() </span><br><span class="line">  <span class="keyword">self</span>.file.close() </span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">process_item</span><span class="params">(<span class="keyword">self</span>, item, spider)</span></span>: </span><br><span class="line">  <span class="keyword">self</span>.exporter.export_item(item) </span><br><span class="line">  <span class="keyword">return</span> item</span><br></pre></td></tr></table></figure><blockquote><p>在settings 设置 ITEM_PIPELINES 开启</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;创建json保存的pipeline&quot;&gt;&lt;a href=&quot;#创建json保存的pipeline&quot; class=&quot;headerlink&quot; title=&quot;创建json保存的pipeline&quot;&gt;&lt;/a&gt;创建json保存的pipeline&lt;/h2&gt;&lt;figure class
+      
+    
+    </summary>
+    
+    
+      <category term="scrapy" scheme="https://blog.afacode.top/tags/scrapy/"/>
+    
+      <category term="json" scheme="https://blog.afacode.top/tags/json/"/>
+    
+  </entry>
   
   <entry>
     <title>mac+brew 安装 mysql</title>
