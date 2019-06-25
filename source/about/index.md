@@ -23,12 +23,24 @@ tags:
 
 ## 关于我
 本人专职前端开发
-> 公司项目主要使用vue, react, react native, 小程序等开发小程序，APP，网页， 微信生态
+> 公司项目主要使用vue, react, react native, 小程序等开发 小程序，APP，网页， 微信生态
 
 > 个人一些学习项目主要增加使用node, python(scrapy), mysql, mongodb, linux(ubuntu)等
 
+* typescript gulp bable webpack jest 各种lint
+* 小程序
+* react redux mobx react hook
+* react native
+* vue vuex
+* node (koa apollo-server)
+* mysql mongodb redis graphql
+* python (scrapy scrapy-redis)
+* docker travisCI pm2 nginx
+
 ## 联系方式
+> [github/afacode](https://github.com/afacode)
+
 > Email: lfqdalian@qq.com 或 lfqdalian@outlook.com
 
-> 微信: ![afacode](http://imgs.afacode.top/WechatIMG4-2019515171327.jpg)
+> 微信: ![afacode 的微信](http://imgs.afacode.top/WechatIMG4-2019515171327.jpg){:height="200px" width="200px"}
 
