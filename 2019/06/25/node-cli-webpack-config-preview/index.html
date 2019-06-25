@@ -19,27 +19,25 @@
     
     
     
-    <title>vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云 | afacode的博客 | 人懒，日常记录</title>
+    <title>(预告)前端脚手架工具cli与webpack自定义react环境 | afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="vscode,七牛云,hexo">
-    <meta name="description" content="推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链">
-<meta name="keywords" content="vscode,七牛云,hexo">
+    <meta name="keywords" content="-cli - webpack">
+    <meta name="description" content="以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。 先预定下来  目标：   一个cli,可以选择一些loader与lint，react第三方库选择：如 redux,mobx TS|JS + w">
+<meta name="keywords" content="-cli - webpack">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云">
-<meta property="og:url" content="https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/index.html">
+<meta property="og:title" content="(预告)前端脚手架工具cli与webpack自定义react环境">
+<meta property="og:url" content="https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/index.html">
 <meta property="og:site_name" content="afacode的博客">
-<meta property="og:description" content="推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链">
+<meta property="og:description" content="以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。 先预定下来  目标：   一个cli,可以选择一些loader与lint，react第三方库选择：如 redux,mobx TS|JS + w">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://imgs.afacode.top/1557910868343-201951517225.jpg">
-<meta property="og:updated_time" content="2019-05-15T09:20:02.479Z">
+<meta property="og:updated_time" content="2019-06-25T11:30:09.336Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云">
-<meta name="twitter:description" content="推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链">
-<meta name="twitter:image" content="http://imgs.afacode.top/1557910868343-201951517225.jpg">
+<meta name="twitter:title" content="(预告)前端脚手架工具cli与webpack自定义react环境">
+<meta name="twitter:description" content="以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。 先预定下来  目标：   一个cli,可以选择一些loader与lint，react第三方库选择：如 redux,mobx TS|JS + w">
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
@@ -127,7 +125,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</div>
+        <div class="flex-col header-title ellipsis">(预告)前端脚手架工具cli与webpack自定义react环境</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -149,15 +147,13 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</h1>
+        <h1 class="title">(预告)前端脚手架工具cli与webpack自定义react环境</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-04-23T14:53:43.000Z" itemprop="datePublished" class="page-time">
-  2019-04-23
+                <time datetime="2019-06-25T15:16:16.000Z" itemprop="datePublished" class="page-time">
+  2019-06-25
 </time>
 
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
 
             
         </h5>
@@ -171,25 +167,16 @@
 
 <div class="container body-wrap">
     
-    <aside class="post-widget">
-        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
-            <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vscode插件-写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云"><span class="post-toc-number">1.</span> <span class="post-toc-text">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</span></a></li></ol>
-        </nav>
-    </aside>
 
-
-<article id="post-hexo-vscode-qiniu-upload"
+<article id="post-node-cli-webpack-config-preview"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</h1>
+        <h1 class="post-card-title">(预告)前端脚手架工具cli与webpack自定义react环境</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-04-23 22:53:43" datetime="2019-04-23T14:53:43.000Z"  itemprop="datePublished">2019-04-23</time>
+            <time class="post-time" title="2019-06-25 23:16:16" datetime="2019-06-25T15:16:16.000Z"  itemprop="datePublished">2019-06-25</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
-
 
 
             
@@ -200,31 +187,15 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链<br><a id="more"></a></p>
-<h2 id="vscode插件-写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云"><a href="#vscode插件-写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云" class="headerlink" title="vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云"></a>vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</h2><ul>
-<li><p>github地址<a href="https://github.com/yscoder/vscode-qiniu-upload-image" target="_blank" rel="noopener">vscode-qiniu-upload-imag</a></p>
-</li>
-<li><p><a href="https://imys.net/20160726/vscode-extension-qiniu-upload.html" target="_blank" rel="noopener">作者的博客介绍</a></p>
-</li>
+            <p>以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。</p>
+<p><strong>先预定下来</strong></p>
+<ul>
+<li>目标：</li>
 </ul>
-<p>配置如下(自己的):</p>
-<blockquote>
-<p>七牛图片上传空间: 你的七牛云存储空间名称</p>
-</blockquote>
-<blockquote>
-<p>七牛图床域名: 你自己图片对外链接的域名</p>
-</blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://imgs.afacode.top/1557910868343-201951517225.jpg" alt="1557910868343-201951517225" title="=300x300">
-                </div>
-                <div class="image-caption">=300x300</div>
-            </figure>
-<p>配置完成重启一下vs code即可使用</p>
-<blockquote>
-<p>推荐一个Markdown预览插件 <code>Markdown Preview Enhanced</code></p>
-</blockquote>
+<ol>
+<li>一个cli,可以选择一些loader与lint，react第三方库选择：如 redux,mobx</li>
+<li>TS|JS + webpack + react + mobx|redux</li>
+</ol>
 
         </div>
 
@@ -251,7 +222,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/">vscode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/七牛云/">七牛云</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cli-webpack/">-cli - webpack</a></li></ul>
 
 
             
@@ -261,7 +232,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&title=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&title=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -271,22 +242,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&title=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&source=推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&title=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -306,21 +277,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/05/09/vue-computed-watch/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Vue 的 computed 和 watch 的区别</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/04/14/vue-props/" id="post-next" class="post-nav-link">
+      <a href="/2019/06/20/webpack-dist-node-env/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">vue组件之间的通信</h4>
+        <h4 class="title">webpack打包，文件删除</h4>
       </a>
     </div>
   
@@ -396,7 +360,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&title=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&title=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -406,22 +370,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&title=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&source=推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&title=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -432,7 +396,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aS46DQAxF0ex/0/S0JQS5zy4ilbmMolaAOhm4/ft88HWcrv9/v//m+a7zN6/+sviSIUPGtgzy4nvA/Yv5868+kx9FhgwZb2BcvT4NrCRMEzA/mwwZMmTcM1JY/70yZMiQQR5HErsa5qcBV4YMGRsyeJFJCtdO+vh4LS5DhowNGbzr/vvPj8w3ZMiQsRXjCC9SvqbJ34JTyZAhYzSjluT1W/mdgejleWTIkDGaETe2wgWLVSOHOIeVIUPGCAZfj+g0vMhdnXUxGTJkzGaQkPrE+ilJGeMBgAwZMoYyyKNTau2IvIX3ZQYrQ4aMcQwSu/jqAyelbbji/xAZMmSMYNRuqzX0+fpXepcMGTLew+gMANL+fG3A8KVrKEOGjKEMHkBJgcqberyILa5ZyJAhYxAjLVk7KWCtiEVIGTJkjGZ0lh7SY5FmXJqGogacDBkyNmf0lyR4Ey09aDDAkCFDxgsYa9O4TvAtjiVkyJAxmkFCXjqw5OPJzrIFKmJlyJAxiFFr0/NAycecvAkY9w5lyJAxgtF/KA/T8ZSVTzlkyJDxGkatdEzbarV1DVS4ypAhYxDjCK9VySIpUAOqDBkyRjP4xR/K00o+TqiNJWTIkDGJwYeL/WCa/mRBuStDhowXMGqBrzP+rKV9l0gZMmTIwKROkCXPCVbBZMiQIQMEytpwtNjIkyFDxgsYpIhdlcwV1ylW1eIyZMjYkJGmbp1AnC5kLB5qypAhYz/GHyx5A/FN9T+8AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQXIiMQwFUO5/aXIA0vAlWaRT9XqVGjD264WlkfR4xM/z5Zmsff9rV59W933g4eHhrfGSjfPvvH7/da/338/XJqvw8PDw9nhXN2py9OSlvGcnLyUJEnh4eHj35OVrq5d7nsrj4eHh/UdecqwE1iPh4eHh3YGXFxryKz5Jr5MSba84goeHh7fHy7tI9/l7pb+Hh4eHd6ipP0l/8wPlvMJp8fDw8BZ4+YWbD0jlbbBJOl44Jx4eHt5R3uS4p1r++ehVHn7w8PDw/oqXsKs1gd5L7I1q4eHh4W3w8jZVtUE1GauaFyPw8PDw9nhJUSDvLkUjUK3Gf5KIF0ICHh4e3oCXHyUPA8n2+S/k/1KIfnh4eHgDXi8w9Iq8+ahBr+hwLKXGw8PDa/GqF3GeQOfl3TyBPlZlwcPDw2s1wOb4fJQqf5K9oqErPDw8vEO8yZMXVXtrq4Hql6ErPDw8vKO85NrNN5uky3kDrDrWgIeHh3eWl1z3SfesNyzVS5cLZ8PDw8Nb4+XhoVkUWBuE/fB9PDw8vDVefolXk/IkRZ7nwJepOR4eHt4ar3rcvJyal3F7SfaHV4aHh4f3Fd6E1Ash1cJH/uLw8PDw9njVyzq5pnuJcq8YcfkpHh4e3gIvuZSrhdQ8p+2NpR7r8uHh4eEd5SXp9YRabbyNkm88PDy8NV5+rCo7wecFjmoAw8PDw/smLykZVF9ND/OYPHh4eHhHec/iUx0USGBRK6v3KR4eHt4Cr3fHVsPG+1X5K8jXjkIIHh4eXsDLg0GyfS8MnAoM5dEBPDw8vAGv2rLqlX17ZZFeaw0PDw/vnrwc0ytzJGf7sDseHh7eDXj52mrCnYMLIQcPDw9vjTe/spOAMWlf5b+Ph4eHt8078B/+YmCYgJMSMx4eHt4a7wc3XH7jfpjZNgAAAABJRU5ErkJggg==" alt="微信分享二维码">
 </div>
 
 

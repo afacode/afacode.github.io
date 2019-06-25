@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-06-20T09:21:07.346Z</updated>
+  <updated>2019-06-25T11:30:09.336Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(预告)前端脚手架工具cli与webpack自定义react环境</title>
+    <link href="https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/"/>
+    <id>https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/</id>
+    <published>2019-06-25T15:16:16.000Z</published>
+    <updated>2019-06-25T11:30:09.336Z</updated>
+    
+    <content type="html"><![CDATA[<p>以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。</p><p><strong>先预定下来</strong></p><ul><li>目标：</li></ul><ol><li>一个cli,可以选择一些loader与lint，react第三方库选择：如 redux,mobx</li><li>TS|JS + webpack + react + mobx|redux</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。&lt;/p&gt;
+&lt;p&gt;&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="-cli - webpack" scheme="https://blog.afacode.top/tags/cli-webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>webpack打包，文件删除</title>
@@ -382,11 +406,11 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
-    
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
   </entry>
   
