@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-07-26T06:47:57.295Z</updated>
+  <updated>2019-07-29T07:11:37.935Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>webpack资源收集</title>
+    <link href="https://blog.afacode.top/2019/07/28/webpack-collection/"/>
+    <id>https://blog.afacode.top/2019/07/28/webpack-collection/</id>
+    <published>2019-07-28T14:09:15.000Z</published>
+    <updated>2019-07-29T07:11:37.935Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="webpack-教程资源收集"><a href="#webpack-教程资源收集" class="headerlink" title="webpack 教程资源收集"></a>webpack 教程资源收集</h3><p><a href="https://github.com/kraaas/webpack-tutorial-collection" target="_blank" rel="noopener">转载</a></p><h5 id="官方文档"><a href="#官方文档" class="headerlink" title="官方文档"></a><a href="https://webpack.js.org/" target="_blank" rel="noopener">官方文档</a></h5><h5 id="中文文档"><a href="#中文文档" class="headerlink" title="中文文档"></a><a href="https://webpack.docschina.org/" target="_blank" rel="noopener">中文文档</a></h5><hr><h4 id="four-webpack-4-0"><a href="#four-webpack-4-0" class="headerlink" title=":four: webpack 4.0"></a>:four: webpack 4.0</h4><ul><li><a href="https://mp.weixin.qq.com/s/tvhEkWTuSs8X0d5N_s79oA" target="_blank" rel="noopener">(译)webpack4.0正式版重大更新与特性详细清单</a>  <code>译者：疯狂的技术宅</code></li><li><a href="https://mp.weixin.qq.com/s/mF56rpzmqdSyti1iJu4tCw" target="_blank" rel="noopener">(译)webpack 4正式发布，速度最高可提升98%！！</a>  <code>译者：怡红公子</code></li><li><a href="https://mp.weixin.qq.com/s/ScQdoysvLq8Pbc04LJII9w" target="_blank" rel="noopener">webpack4初探</a>  <code>作者：自然醒</code></li></ul><h5 id="v-初级教程"><a href="#v-初级教程" class="headerlink" title=":v: 初级教程"></a>:v: 初级教程</h5><ul><li><a href="https://github.com/petehunt/webpack-howto" target="_blank" rel="noopener">webpack-howto</a>  <code>作者：Pete Hunt</code></li><li><a href="http://segmentfault.com/a/1190000002551952" target="_blank" rel="noopener">Webpack 入门指迷</a>  <code>作者：题叶</code>  　</li><li><a href="https://github.com/ruanyf/webpack-demos" target="_blank" rel="noopener">webpack-demos</a> <code>作者：ruanyf</code></li><li><a href="http://www.cnblogs.com/vajoy/p/4650467.html" target="_blank" rel="noopener">一小时包教会 —— webpack 入门指南</a>  <code>作者：VaJoy Larn</code>　　</li><li><a href="http://www.w3ctech.com//topic/1557" target="_blank" rel="noopener">webpack 入门及实践</a>  <code>作者：zhouweicsu</code>　　</li><li><a href="http://zhuanlan.zhihu.com/FrontendMagazine/20367175" target="_blank" rel="noopener">Webpack傻瓜式指南（一）</a>  <code>译者：前端外刊评论</code>　　</li><li><a href="http://zhuanlan.zhihu.com/FrontendMagazine/20397902" target="_blank" rel="noopener">Webpack傻瓜式指南（二）</a>  <code>译者：前端外刊评论</code>　</li><li><a href="http://www.jianshu.com/p/42e11515c10f" target="_blank" rel="noopener">入门Webpack，看这篇就够了</a>  <code>作者：zhangwang</code>　</li></ul><h5 id="muscle-进阶教程"><a href="#muscle-进阶教程" class="headerlink" title=":muscle: 进阶教程"></a>:muscle: 进阶教程</h5><ul><li><a href="http://web.jobbole.com/84847/" target="_blank" rel="noopener">webpack使用优化</a>  <code>作者：alloyteam</code>　　</li><li><a href="http://www.alloyteam.com/2016/01/webpack-loader-1/" target="_blank" rel="noopener">如何开发一个 Webpack Loader ( 一 )</a>  <code>作者：alloyteam</code>　　</li><li><a href="https://github.com/cssmagic/blog/issues/56" target="_blank" rel="noopener">基于 Webpack 和 ES6 打造 JavaScript 类库</a>  <code>译者：CSS魔法</code>  </li><li><a href="http://www.h-simon.com/42/" target="_blank" rel="noopener">webpack常用配置总结</a> <code>作者：小凡哥</code></li><li><a href="https://github.com/chemdemo/chemdemo.github.io/issues/13" target="_blank" rel="noopener">(译)Webpack——令人困惑的地方</a> <code>作者：chemdemo</code></li><li><a href="https://github.com/chemdemo/chemdemo.github.io/issues/10" target="_blank" rel="noopener">基于webpack搭建前端工程解决方案探索</a> <code>作者：chemdemo</code></li><li><a href="https://github.com/icepy/_posts/issues/25" target="_blank" rel="noopener">webpack在PC项目中的应用</a> <code>作者：icepy</code></li><li><a href="https://github.com/icepy/_posts/issues/34" target="_blank" rel="noopener">webpack实践最后一篇</a> <code>作者：icepy</code></li><li><a href="https://github.com/wyvernnot/webpack_performance" target="_blank" rel="noopener">webpack_performance</a> <code>作者：wyvernnot</code></li><li><a href="https://segmentfault.com/a/1190000005770042" target="_blank" rel="noopener">如何 10 倍提高你的 Webpack 构建效率</a> <code>作者：紅白</code></li><li><a href="http://acgtofe.com/posts/2016/02/full-live-reload-for-express-with-webpack" target="_blank" rel="noopener">Express结合Webpack的全栈自动刷新</a> <code>来源：ACGTOFE</code></li><li><a href="https://segmentfault.com/a/1190000005866410#articleHeader11" target="_blank" rel="noopener">webpack 单页面应用实战</a> <code>作者：hsw</code></li><li><a href="https://segmentfault.com/a/1190000006843916#articleHeader5" target="_blank" rel="noopener">webpack多页应用架构系列</a> <code>作者：array_huang</code></li></ul><h4 id="fire-webpack-2-0"><a href="#fire-webpack-2-0" class="headerlink" title=":fire: webpack 2.0"></a>:fire: webpack 2.0</h4><ul><li><a href="https://github.com/cssmagic/blog/issues/58" target="_blank" rel="noopener">Webpack2 有哪些新东西</a>  <code>译者：cssmagic</code></li><li><a href="https://www.zhihu.com/question/41922432" target="_blank" rel="noopener">如何评价 Webpack 2 新引入的 Tree-shaking 代码优化技术?</a> <code>来源：知乎</code></li><li><a href="https://medium.com/modus-create-front-end-development/webpack-2-tree-shaking-configuration-9f1de90f3233#.hqv8bdir5" target="_blank" rel="noopener">Webpack 2 Tree Shaking Configuration</a> <code>来源：Medium</code></li><li><a href="https://github.com/egoist/vuepack" target="_blank" rel="noopener">Vue 2 + Webpack 2 脚手架</a> <code>作者：egoist</code></li><li><a href="https://github.com/vuets/webpack2-simple-vue2" target="_blank" rel="noopener">webpack2-simple-vue2</a> <code>来源：vuets</code></li><li><a href="https://github.com/ParryQiu/DevOpenClub-Tech-Webpack2" target="_blank" rel="noopener">超清 Webpack 2 视频教程 (持续更新)</a> <code>作者：Parry</code></li></ul><h5 id="diamond-shape-with-a-dot-inside-React-amp-webpack"><a href="#diamond-shape-with-a-dot-inside-React-amp-webpack" class="headerlink" title=":diamond_shape_with_a_dot_inside: React &amp; webpack"></a>:diamond_shape_with_a_dot_inside: React &amp; webpack</h5><ul><li><a href="https://github.com/erikras/react-redux-universal-hot-example" target="_blank" rel="noopener">react-redux-universal-hot-example</a> <code>作者：erikras</code> </li><li><a href="https://github.com/chemdemo/webpack-bootstrap" target="_blank" rel="noopener">webpack-seed</a> <code>作者：chemdemo</code>  </li><li><a href="http://www.cnblogs.com/skylar/p/React-Webpack-ES6.html" target="_blank" rel="noopener">Webpack+React+ES6开发模式入门指南</a> <code>作者：大额_skylar</code></li><li><a href="http://www.oschina.net/translate/react-static-site" target="_blank" rel="noopener">使用 React 和 Webpack 构建静态网站</a> <code>来源：开源中国</code></li><li><a href="https://segmentfault.com/a/1190000005037309" target="_blank" rel="noopener">手把手教你基于ES6架构自己的React Boilerplate项目</a> <code>作者：lhc</code></li><li><a href="https://github.com/ModusCreateOrg/budgeting-sample-app-webpack2" target="_blank" rel="noopener">budgeting-sample-app-webpack2</a> <code>来源：Modus Create</code></li></ul><h5 id="a-Angular-amp-webpack"><a href="#a-Angular-amp-webpack" class="headerlink" title=":a: Angular &amp; webpack"></a>:a: Angular &amp; webpack</h5><ul><li><a href="http://dmachat.github.io/angular-webpack-cookbook/" target="_blank" rel="noopener">angular-webpack-cookbook</a> <code>作者：Drew Machat</code></li><li><a href="https://github.com/preboot/angular-webpack" target="_blank" rel="noopener">angular-webpack</a> <code>来源：preboot</code></li><li><a href="https://github.com/preboot/angular2-webpack" target="_blank" rel="noopener">angular2-webpack</a> <code>来源：preboot</code></li><li><a href="https://github.com/AngularClass/angular2-webpack-starter" target="_blank" rel="noopener">angular2-webpack-starter</a> <code>来源：AngularClass</code></li><li><a href="https://segmentfault.com/a/1190000004358725" target="_blank" rel="noopener">es6+angular1.X+webpack 实现按路由功能打包项目</a> <code>作者：yang_j_j</code></li><li><a href="https://segmentfault.com/a/1190000004514747" target="_blank" rel="noopener">(译) 通过 Webpack 实现 AngularJS 的延迟加载</a> <code>作者：Cheng_Gu</code></li><li><a href="https://segmentfault.com/a/1190000003915443" target="_blank" rel="noopener">Webpack + Angular的组件化实践</a> <code>作者：王伟嘉</code></li></ul><h5 id="man-Vue-amp-webpack"><a href="#man-Vue-amp-webpack" class="headerlink" title=":man: Vue &amp; webpack"></a>:man: Vue &amp; webpack</h5><ul><li><a href="https://github.com/vuejs-templates/webpack" target="_blank" rel="noopener">vue-webpack-boilerplate</a>  <code>来源：vue官方</code></li><li><a href="https://github.com/Coffcer/vue-chat" target="_blank" rel="noopener">vue-chat</a> <code>作者：Coffcer</code></li><li><a href="http://guowenfh.github.io/2016/03/24/vue-webpack-01-base/" target="_blank" rel="noopener">webpack入坑之旅系列</a> <code>作者：guowenfh</code></li><li><a href="https://github.com/JsAaron/vue-gulp-webpack" target="_blank" rel="noopener">vue-gulp-webpack单页面组件开发</a> <code>作者：JsAaron</code>  </li><li><a href="https://segmentfault.com/a/1190000005891026" target="_blank" rel="noopener">使用 Vuex + Vue.js 构建单页应用</a> <code>作者：离尘不理人</code></li><li><a href="https://github.com/vingojw/vue-vueRouter-webpack" target="_blank" rel="noopener">vue-vueRouter-webpack</a> <code>作者：vingojw</code></li><li><a href="http://div.io/topic/1343?page=1#5517" target="_blank" rel="noopener">Vue.js 和 Webpack</a> <code>作者：djyde</code>　　</li><li><a href="https://www.talkingcoder.com/article/6309726065044556372" target="_blank" rel="noopener">Vue+Webpack使用规范</a></li><li><a href="https://github.com/egoist/vuepack" target="_blank" rel="noopener">Vue 2 + Webpack 2 脚手架</a> <code>作者：egoist</code></li><li><a href="https://github.com/vuets/webpack2-simple-vue2" target="_blank" rel="noopener">webpack2-simple-vue2</a> <code>来源：vuets</code></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h3 id=&quot;webpack-教程资源收集&quot;&gt;&lt;a href=&quot;#webpack-教程资源收集&quot; class=&quot;headerlink&quot; title=&quot;webpack 教程资源收集&quot;&gt;&lt;/a&gt;webpack 教程资源收集&lt;/h3&gt;&lt;p&gt;&lt;a href=&quot;https://githu
+      
+    
+    </summary>
+    
+    
+      <category term="webpack" scheme="https://blog.afacode.top/tags/webpack/"/>
+    
+  </entry>
   
   <entry>
     <title>TypeScript代码检查</title>
@@ -586,9 +609,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
@@ -747,9 +770,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
@@ -774,9 +797,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
