@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-07-31T08:00:24.574Z</updated>
+  <updated>2019-08-06T07:55:18.570Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>前端错误监控与错误上报</title>
+    <link href="https://blog.afacode.top/2019/08/06/fe-error-listener/"/>
+    <id>https://blog.afacode.top/2019/08/06/fe-error-listener/</id>
+    <published>2019-08-06T14:25:50.000Z</published>
+    <updated>2019-08-06T07:55:18.570Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="错误类型"><a href="#错误类型" class="headerlink" title="错误类型"></a>错误类型</h2><ol><li>及时运行错误(代码错误)<blockquote><p>try..catch<br>window.onerror</p></blockquote></li><li>资源加载错误<blockquote><p>object.onerror<br>performance.getEntries() //加载所有的资源链接,返回数组，间接判断<br>Error 事件捕获 </p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">'error'</span>, <span class="function"><span class="keyword">function</span>(<span class="params">e</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(e)</span><br><span class="line">&#125;, <span class="literal">true</span>)</span><br></pre></td></tr></table></figure></blockquote></li></ol><blockquote><p>js 跨域可以拿到错误吗，返回什么，怎么处理错误<br>返回<code>类型：Script error 出错行： 0 0  内容：null</code>,<br>script 增加 <code>crossorigin</code>；js后台加<code>Access-Control-Allow-Origin: *</code></p></blockquote><h2 id="错误上报："><a href="#错误上报：" class="headerlink" title="错误上报："></a>错误上报：</h2><ol><li>Ajax</li><li>利用Image对象上报</li></ol><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><p><a href="https://cdc.tencent.com/2018/09/13/frontend-exception-monitor-research/" target="_blank" rel="noopener">Tencent CDC（https://cdc.tencent.com/2018/09/13/frontend-exception-monitor-research/）</a></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;错误类型&quot;&gt;&lt;a href=&quot;#错误类型&quot; class=&quot;headerlink&quot; title=&quot;错误类型&quot;&gt;&lt;/a&gt;错误类型&lt;/h2&gt;&lt;ol&gt;
+&lt;li&gt;及时运行错误(代码错误)&lt;blockquote&gt;
+&lt;p&gt;try..catch&lt;br&gt;window.onerror
+      
+    
+    </summary>
+    
+    
+      <category term="错误上报" scheme="https://blog.afacode.top/tags/%E9%94%99%E8%AF%AF%E4%B8%8A%E6%8A%A5/"/>
+    
+  </entry>
   
   <entry>
     <title>小程序搜索结果全文关键字高亮</title>
@@ -499,11 +524,11 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
+    
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
-    
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
   </entry>
   
@@ -635,9 +660,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -796,9 +821,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -823,9 +848,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
