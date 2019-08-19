@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-08-06T07:55:18.570Z</updated>
+  <updated>2019-08-19T06:20:51.779Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,26 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react hooks学习</title>
+    <link href="https://blog.afacode.top/2019/08/17/react-hooks-demo/"/>
+    <id>https://blog.afacode.top/2019/08/17/react-hooks-demo/</id>
+    <published>2019-08-17T11:19:00.000Z</published>
+    <updated>2019-08-19T06:20:51.779Z</updated>
+    
+    <content type="html"><![CDATA[<p>react hooks 学习<br><a id="more"></a></p><h2 id="useState代替state"><a href="#useState代替state" class="headerlink" title="useState代替state"></a>useState代替state</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [ count , setCount ] = useState(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;button onClick=&#123;()=&gt;&#123;setCount(count+1)&#125;&#125;&gt;click me&lt;/</span>button&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure><h2 id="useEffect代替常用生命周期函数"><a href="#useEffect代替常用生命周期函数" class="headerlink" title="useEffect代替常用生命周期函数"></a>useEffect代替常用生命周期函数</h2><p>实现类似componentWillUnmount的效果,useEffect的第二个参数，它是一个数组，数组中可以写入很多状态对应的变量，意思是当<strong>状态值发生变化时，我们才进行解绑</strong>。但是当传空数组[]时，就是当组件将被销毁时才进行解绑，这也就实现了componentWillUnmount的生命周期函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// 初始化，更新时</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="comment">// 类似于销毁时</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,[]) <span class="comment">// [] 状态发生变化，在达到条件时才触发</span></span><br></pre></td></tr></table></figure></p><h2 id="useContext-让父子组件传值更简单"><a href="#useContext-让父子组件传值更简单" class="headerlink" title="useContext 让父子组件传值更简单"></a>useContext 让父子组件传值更简单</h2><p><code>useContext</code>跨越组件层级直接传递变量，实现共享<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CountContext = createContext()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [ count , setCount ] = useState(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;button onClick=&#123;()=&gt;&#123;setCount(count+1)&#125;&#125;&gt;click me&lt;/</span>button&gt;</span><br><span class="line">            &lt;CountContext.Provider value=&#123;count&#125;&gt; <span class="comment">//共享出去</span></span><br><span class="line">                &lt;Child /&gt;</span><br><span class="line">            &lt;<span class="regexp">/CountContext.Provider&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 接收</span></span><br><span class="line">    <span class="keyword">const</span> count = useContext(CountContext) </span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><h2 id="useReducer完成类似的Redux"><a href="#useReducer完成类似的Redux" class="headerlink" title="useReducer完成类似的Redux"></a>useReducer完成类似的Redux</h2><p>useReducer可以让代码具有更好的可读性和可维护性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReducerDemo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [ count , dispatch ] =useReducer(<span class="function">(<span class="params">state,action</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">switch</span>(action)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'add'</span>:</span><br><span class="line">                <span class="keyword">return</span> state+<span class="number">1</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'sub'</span>:</span><br><span class="line">                <span class="keyword">return</span> state<span class="number">-1</span></span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span> state</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">           &lt;h2&gt;现在的分数是&#123;count&#125;&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">           &lt;button onClick=&#123;()=&gt;dispatch('add')&#125;&gt;Increment&lt;/</span>button&gt;</span><br><span class="line">           &lt;button onClick=&#123;()=&gt;dispatch(<span class="string">'sub'</span>)&#125;&gt;Decrement&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">       &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p><p>待续</p><h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2><h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h2><h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><h2 id="useImperativeHandle"><a href="#useImperativeHandle" class="headerlink" title="useImperativeHandle"></a>useImperativeHandle</h2><h2 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a>useLayoutEffect</h2>]]></content>
+    
+    <summary type="html">
+    
+      &lt;p&gt;react hooks 学习&lt;br&gt;
+    
+    </summary>
+    
+    
+      <category term="react" scheme="https://blog.afacode.top/tags/react/"/>
+    
+  </entry>
   
   <entry>
     <title>前端错误监控与错误上报</title>
@@ -283,9 +303,9 @@
       <category term="js" scheme="https://blog.afacode.top/categories/js/"/>
     
     
-      <category term="react-router" scheme="https://blog.afacode.top/tags/react-router/"/>
-    
       <category term="react" scheme="https://blog.afacode.top/tags/react/"/>
+    
+      <category term="react-router" scheme="https://blog.afacode.top/tags/react-router/"/>
     
   </entry>
   
@@ -524,11 +544,11 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
-    
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
   </entry>
   
