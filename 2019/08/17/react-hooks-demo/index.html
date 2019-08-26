@@ -26,18 +26,18 @@
     
     
     <meta name="keywords" content="react">
-    <meta name="description" content="react hooks 学习">
+    <meta name="description" content="react hooks 学习. FAQ">
 <meta name="keywords" content="react">
 <meta property="og:type" content="article">
 <meta property="og:title" content="react hooks学习">
 <meta property="og:url" content="https://blog.afacode.top/2019/08/17/react-hooks-demo/index.html">
 <meta property="og:site_name" content="afacode的博客">
-<meta property="og:description" content="react hooks 学习">
+<meta property="og:description" content="react hooks 学习. FAQ">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-08-19T06:20:51.779Z">
+<meta property="og:updated_time" content="2019-08-19T06:35:23.760Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="react hooks学习">
-<meta name="twitter:description" content="react hooks 学习">
+<meta name="twitter:description" content="react hooks 学习. FAQ">
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
@@ -194,7 +194,7 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>react hooks 学习<br><a id="more"></a></p>
+            <p>react hooks 学习. <a href="https://zh-hans.reactjs.org/docs/hooks-faq.html#which-versions-of-react-include-hooks" target="_blank" rel="noopener">FAQ</a><br><a id="more"></a></p>
 <h2 id="useState代替state"><a href="#useState代替state" class="headerlink" title="useState代替state"></a>useState代替state</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Example</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [ count , setCount ] = useState(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;button onClick=&#123;()=&gt;&#123;setCount(count+1)&#125;&#125;&gt;click me&lt;/</span>button&gt;</span><br><span class="line">        &lt;<span class="regexp">/div&gt;</span></span><br><span class="line"><span class="regexp">    )</span></span><br><span class="line"><span class="regexp">&#125;</span></span><br></pre></td></tr></table></figure>
 <h2 id="useEffect代替常用生命周期函数"><a href="#useEffect代替常用生命周期函数" class="headerlink" title="useEffect代替常用生命周期函数"></a>useEffect代替常用生命周期函数</h2><p>实现类似componentWillUnmount的效果,useEffect的第二个参数，它是一个数组，数组中可以写入很多状态对应的变量，意思是当<strong>状态值发生变化时，我们才进行解绑</strong>。但是当传空数组[]时，就是当组件将被销毁时才进行解绑，这也就实现了componentWillUnmount的生命周期函数<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">useEffect(<span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">        <span class="comment">// 初始化，更新时</span></span><br><span class="line">        <span class="keyword">return</span> <span class="function"><span class="params">()</span>=&gt;</span>&#123;</span><br><span class="line">            <span class="comment">// 类似于销毁时</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,[]) <span class="comment">// [] 状态发生变化，在达到条件时才触发</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="useContext-让父子组件传值更简单"><a href="#useContext-让父子组件传值更简单" class="headerlink" title="useContext 让父子组件传值更简单"></a>useContext 让父子组件传值更简单</h2><p><code>useContext</code>跨越组件层级直接传递变量，实现共享<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> CountContext = createContext()</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Parent</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [ count , setCount ] = useState(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">        &lt;div&gt;</span><br><span class="line">            &lt;p&gt;You clicked &#123;count&#125; times&lt;<span class="regexp">/p&gt;</span></span><br><span class="line"><span class="regexp">            &lt;button onClick=&#123;()=&gt;&#123;setCount(count+1)&#125;&#125;&gt;click me&lt;/</span>button&gt;</span><br><span class="line">            &lt;CountContext.Provider value=&#123;count&#125;&gt; <span class="comment">//共享出去</span></span><br><span class="line">                &lt;Child /&gt;</span><br><span class="line">            &lt;<span class="regexp">/CountContext.Provider&gt;</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">        &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Child</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="comment">// 接收</span></span><br><span class="line">    <span class="keyword">const</span> count = useContext(CountContext) </span><br><span class="line">    <span class="keyword">return</span> <span class="xml"><span class="tag">&lt;<span class="name">h2</span>&gt;</span>&#123;count&#125;<span class="tag">&lt;/<span class="name">h2</span>&gt;</span></span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
@@ -246,7 +246,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/08/17/react-hooks-demo/&title=《react hooks学习》 — afacode的博客&source=react hooks 学习" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/08/17/react-hooks-demo/&title=《react hooks学习》 — afacode的博客&source=react hooks 学习. FAQ" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
@@ -281,7 +281,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/08/26/docker-start-1/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">docker学习-mac</h4>
+      </a>
+    </div>
   
 
   
@@ -374,7 +381,7 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/08/17/react-hooks-demo/&title=《react hooks学习》 — afacode的博客&source=react hooks 学习" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/08/17/react-hooks-demo/&title=《react hooks学习》 — afacode的博客&source=react hooks 学习. FAQ" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
