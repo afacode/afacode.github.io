@@ -23,4 +23,9 @@
 ## 联系方式
 > Email: lfqdalian@qq.com 或 lfqdalian@outlook.com
 
+## 使用
+```
+./depoly.sh
+```
+
 
