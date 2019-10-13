@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-09-23T02:10:28.584Z</updated>
+  <updated>2019-10-13T00:58:58.840Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nodemailer 简单使用</title>
+    <link href="https://blog.afacode.top/2019/10/13/use-nodemailer-send-email/"/>
+    <id>https://blog.afacode.top/2019/10/13/use-nodemailer-send-email/</id>
+    <published>2019-10-13T00:55:01.000Z</published>
+    <updated>2019-10-13T00:58:58.840Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="nodemailer-简单使用"><a href="#nodemailer-简单使用" class="headerlink" title="nodemailer 简单使用"></a>nodemailer 简单使用</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line">ts </span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> nodemailer <span class="keyword">from</span> <span class="string">'nodemailer'</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">main</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">const</span> testAccount = <span class="keyword">await</span> nodemailer.createTestAccount();</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> transporter = nodemailer.createTransport(&#123;</span><br><span class="line">        <span class="comment">// host: 'smtp.qq.com',</span></span><br><span class="line">        <span class="comment">// https://nodemailer.com/smtp/well-known/</span></span><br><span class="line">        service: <span class="string">'qq'</span>,</span><br><span class="line">        port: <span class="number">465</span>,</span><br><span class="line">        secure: <span class="literal">true</span>, <span class="comment">// true for 465, false for other ports</span></span><br><span class="line">        auth: &#123;</span><br><span class="line">            user: <span class="string">'lfqdalian@qq.com'</span>, <span class="comment">// 使用的邮箱</span></span><br><span class="line">            pass: <span class="string">''</span>, <span class="comment">// POP3/SMTP服务授权码，不是密码</span></span><br><span class="line">        &#125;,</span><br><span class="line">    &#125;);</span><br><span class="line"></span><br><span class="line">    <span class="comment">// send mail with defined transport object</span></span><br><span class="line">    <span class="keyword">const</span> mailOptions = &#123;</span><br><span class="line">        <span class="keyword">from</span>: <span class="string">'"afacode" &lt;lfqdalian@qq.com&gt;'</span>,</span><br><span class="line">        to: <span class="string">'lfqdalian@sina.com, lfqdalian@outlook.com'</span>,</span><br><span class="line">        subject: <span class="string">'Hello ✔'</span>,</span><br><span class="line">        <span class="comment">// text: 'Hello world?',</span></span><br><span class="line">        html: <span class="string">'&lt;b&gt;Hello world? nodemailer&lt;/b&gt;'</span>, <span class="comment">// html body</span></span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="keyword">const</span> info = <span class="keyword">await</span> transporter.sendMail(mailOptions);</span><br><span class="line"></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'Message sent: %s'</span>, info.messageId);</span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">main().catch(<span class="built_in">console</span>.error);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;nodemailer-简单使用&quot;&gt;&lt;a href=&quot;#nodemailer-简单使用&quot; class=&quot;headerlink&quot; title=&quot;nodemailer 简单使用&quot;&gt;&lt;/a&gt;nodemailer 简单使用&lt;/h2&gt;&lt;figure class=&quot;highli
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Could not find iPhone X simulator</title>
@@ -395,9 +416,9 @@
       <category term="js" scheme="https://blog.afacode.top/categories/js/"/>
     
     
-      <category term="react" scheme="https://blog.afacode.top/tags/react/"/>
-    
       <category term="react-router" scheme="https://blog.afacode.top/tags/react-router/"/>
+    
+      <category term="react" scheme="https://blog.afacode.top/tags/react/"/>
     
   </entry>
   
