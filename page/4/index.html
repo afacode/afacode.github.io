@@ -6,6 +6,11 @@
     
 
     
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
 
 
 
@@ -16,6 +21,8 @@
     
     <title>afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, python爬虫, afacode">
@@ -30,8 +37,8 @@
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
-    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -47,19 +54,54 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">afacode(阿发)</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -74,6 +116,20 @@
         </a>
         <div class="flex-col header-title ellipsis">afacode的博客</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -134,7 +190,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        sequelize基础知识学习整理sequelize文...
+        sequelize基础知识学习整理sequelize文档
+安装123456npm install --save sequelize# And one of the following:npm install --save pg pg-...
     
 
         <a href="/2019/03/11/node-sequelize-base/" class="post-more waves-effect waves-button">
@@ -181,7 +238,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        node(koa2)微信公众号接口认证使用微信测试号,...
+        node(koa2)微信公众号接口认证使用微信测试号, 花生壳内网穿透, 需要注意 token 两边都是自定义, 需要保持一致
+代码实现123456789101112131415161718192021222324252627cons...
     
 
         <a href="/2019/01/13/koa-wechat/" class="post-more waves-effect waves-button">
@@ -228,7 +286,11 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        git删除远程分支和本地分支当我们集体进行项目时，将自...
+        git删除远程分支和本地分支当我们集体进行项目时，将自定义分支push到主分支master之后，如何删除远程的自定义分支呢
+
+
+git branch -a 查看所有分支remote/origin/master表示的是远程分支
+删除远程...
     
 
         <a href="/2018/11/10/git-del-branch/" class="post-more waves-effect waves-button">
@@ -276,7 +338,7 @@
 
     
         Vue Router官网
-vue-router 钩子函...
+vue-router 钩子函数（路由拦截）有的时候，当路由跳转前或跳转后、进入、离开某一个路由前、后，需要做某些操作，就可以使用路由钩子来监听路由的变化，比如最常见的登录权限验证，当用户满足条件时，才让其进入...
     
 
         <a href="/2018/10/09/vue-router-1/" class="post-more waves-effect waves-button">
@@ -323,7 +385,7 @@ vue-router 钩子函...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        vue router123456789101112&l...
+        vue router123456789101112&lt;router-link to="/foo"&gt;Go to Foo&lt;/router-link&gt;this.$route.paramsthis.$router.go(...
     
 
         <a href="/2018/09/14/vue-router/" class="post-more waves-effect waves-button">
@@ -370,7 +432,7 @@ vue-router 钩子函...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        macOS 设置Homebrew 安装/usr/bin...
+        macOS 设置Homebrew 安装/usr/bin/ruby -e &quot;$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/inst...
     
 
         <a href="/2018/07/19/macos-terminal/" class="post-more waves-effect waves-button">
@@ -418,7 +480,7 @@ vue-router 钩子函...
 
     
         欢迎使用 Cmd Markdown 编辑阅读器
-我们理...
+我们理解您需要更便捷更高效的工具记录思想，整理笔记、知识，并将其中承载的价值传播给他人，Cmd Markdown 是我们给出的答案 —— 我们为记录思想和分享知识提供更专业的工具。 您可...
     
 
         <a href="/2018/03/09/markdown/" class="post-more waves-effect waves-button">
@@ -513,7 +575,14 @@ vue-router 钩子函...
 
     
         git代码分支合并，tag提交
-将自己分支代码合并到测...
+将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支
+
+git checkout dev
+
+
+当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突
+
+g...
     
 
         <a href="/2017/08/22/git-merge-and-tag/" class="post-more waves-effect waves-button">
@@ -560,7 +629,10 @@ vue-router 钩子函...
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        git 清空所有(历史)commit记录例如: 将代码...
+        git 清空所有(历史)commit记录例如: 将代码提交到git仓库，将一些敏感信息提交，所以需要删除提交记录以彻底清除提交信息，以得到一个干净的仓库且代码不变
+
+
+git checkout --orphan tmp_branch ...
     
 
         <a href="/2017/05/11/git-clean-log/" class="post-more waves-effect waves-button">
@@ -602,8 +674,10 @@ vue-router 钩子函...
         </p>
     </div>
     <div class="bottom">
-        <p><span>afacode(阿发) &copy; 2019</span>
+        <p><span>afacode(阿发) &copy; 2017 - 2019</span>
             <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
@@ -616,14 +690,80 @@ vue-router 钩子函...
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/page/4/&title=afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/page/4/&title=afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/page/4/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=afacode的博客&url=https://blog.afacode.top/page/4/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/page/4/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxUlEQVR42u3aQW7DMAwEwPz/0ynQW9HG2ZVsxgVGJwNJqHEOBEnp8YjX83s9ynX8q7WYuLi4M9zn4fod+tXz72j5bxMDLi7uPPc40bwJcfidPH6U7HBxcW/GXUtqbYLDxcX9X9xk5W0PLi7u/bnJ9q9KnLV26PJeDRcXd4Pbjj6veL5wvouLi1tyn+VKypFzC6YfMXFxcUe4yTijHaG2hyVtO4SLizvDzbdJPm1fe+3YBhcX92pu24QkI5L29fIjGVxc3Ku5+aWKdjC61ixFbQ8uLu4g99zktX9M+0dkXFzccW6bbvKUt5bC6v8MFxf3VO7OqPSs6xfR3AMXF/ej3LVLWmvPRWRcXNxxblLKrI1Bi9nt8V64uLiD3LUCpU1qO1cucHFxJ7l5WZMPONYudhQpEhcX92Juu1mbgNqBKS4u7n24eVtSjzg3vomLi/tZbnsxIr9QtdYUFXdAcHFxL+C2CWX/uCW/rrFTQuHi4u5z9xNQcljbJrKXr4qLizvIXUtebdrKh7BvjlJwcXFvw90pTfIIpyUyXFzcQW5yKLJTAL3ZFxcXd5DbDkmT8Wvb5ETJDhcXd4S7fzjaUvIWCxcXd5z7BXWolYzadAGKAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
 
-<script src="/js/main.min.js?v=1.7.2"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
@@ -631,6 +771,23 @@ var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 
 
 
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎收藏!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 
 

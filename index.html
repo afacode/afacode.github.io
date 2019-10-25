@@ -6,6 +6,11 @@
     
 
     
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
 
 
 
@@ -16,6 +21,8 @@
     
     <title>afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, python爬虫, afacode">
@@ -30,8 +37,8 @@
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
-    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -47,19 +54,54 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">afacode(阿发)</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect active">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -74,6 +116,20 @@
         </a>
         <div class="flex-col header-title ellipsis">afacode的博客</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -132,7 +188,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        vim ~/.zshrcsource ~/.zshrc...
+        vim ~/.zshrcsource ~/.zshrc 
+12345678910111213141516171819202122232425262728293031323334353637383940修改主体# ZSH_THEME="...
     
 
         <a href="/2019/10/16/mac-zsh-setting/" class="post-more waves-effect waves-button">
@@ -171,7 +228,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        nodemailer 简单使用123456789101...
+        nodemailer 简单使用123456789101112131415161718192021222324252627282930313233ts import * as nodemailer from 'nodemailer';a...
     
 
         <a href="/2019/10/13/use-nodemailer-send-email/" class="post-more waves-effect waves-button">
@@ -210,7 +267,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        Could not find iPhone X sim...
+        Could not find iPhone X simulator
+运行 react-native run-ios详情12345678910Found Xcode workspace DbysDriver.xcworkspaceCou...
     
 
         <a href="/2019/09/23/Could-not-find-iPhone-X-simulator/" class="post-more waves-effect waves-button">
@@ -255,7 +313,8 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        安装12apt-get updateapt-get i...
+        安装12apt-get updateapt-get install -y docker.io
+配置镜像源阿里云镜像加速麻烦未做1234567vim /etc/docker/daemon.json&#123;  "registry-mi...
     
 
         <a href="/2019/09/05/docker-use-1/" class="post-more waves-effect waves-button">
@@ -300,7 +359,17 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        环境https://jenkins.io/zh/doc...
+        环境https://jenkins.io/zh/doc/pipeline/tour/getting-started/
+
+centos 6.8
+内网环境
+git 
+java8
+node
+nginx
+
+ssh 连接
+确定Linux系统可以...
     
 
         <a href="/2019/09/05/jenkins-pre-start/" class="post-more waves-effect waves-button">
@@ -347,7 +416,11 @@
     
         下载官方阿里云
 文档Docker和传统虚拟化的区别
-镜...
+                
+                    
+                    
+                
+               ...
     
 
         <a href="/2019/08/26/docker-start-1/" class="post-more waves-effect waves-button">
@@ -439,7 +512,11 @@
     
         错误类型
 及时运行错误(代码错误)
-try..catc...
+try..catchwindow.onerror
+
+
+资源加载错误
+object.onerrorperformance.getEntries() //加载所有的资源链接,返回数组，间接判断Error...
     
 
         <a href="/2019/08/06/fe-error-listener/" class="post-more waves-effect waves-button">
@@ -485,7 +562,13 @@ try..catc...
 
     
         问题小程序动态数据全文关键字高亮
-解决思路得到搜索结果...
+解决思路得到搜索结果，使用数据副本
+
+使用正则匹配高亮关键词,
+在切割为数组，数据显示时， 
+将数组循环输出 判断是否有高亮关键词增加特殊样式
+
+注意事项复制数据时注意使用深度拷贝使用JSON.par...
     
 
         <a href="/2019/07/31/miniapp-wepy-search-high-light/" class="post-more waves-effect waves-button">
@@ -532,7 +615,9 @@ try..catc...
     
         webpack 教程资源收集转载
 官方文档中文文档
-:...
+:four: webpack 4.0
+(译)webpack4.0正式版重大更新与特性详细清单  译者：疯狂的技术宅
+(译)webpack 4正式发布，速度最高可提升98%！！  译者...
     
 
         <a href="/2019/07/28/webpack-collection/" class="post-more waves-effect waves-button">
@@ -574,8 +659,10 @@ try..catc...
         </p>
     </div>
     <div class="bottom">
-        <p><span>afacode(阿发) &copy; 2019</span>
+        <p><span>afacode(阿发) &copy; 2017 - 2019</span>
             <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
@@ -588,14 +675,80 @@ try..catc...
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/&title=afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/&title=afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=afacode的博客&url=https://blog.afacode.top/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAAAAAAZai4+AAABYElEQVR42u3ayw4DIQiFYd//pW3SVZtmyDmgi8Lvqknn8s1CFGEteez3+P0dX/M51o0BC1Yj1g7HEyVGPN2rvAsWrMksNyjEkz9mxdfDggWrvvQqAQIWLFinAoQeCGDBgqWzlI1vHCaUgHJlLw8LVgtW5SCpEhQunm/BgvVXrF0YytKbfDIsWMNYypGQO5dzaa10AyxYTVmV7Wy8ac4VO7/iFixYY1huauqWW9zEWFrtYcFqyspNcuXRbnEUFqyZLLdpQNkW5z7VSFxhwWrH0pPMXLlFf4KU0MKCNYDlHte6CW1p7wAL1gCWu2Arr1SIRusPLFhjWO401lNWN1WGBWsa60aTgVKphAULljmLl7swK//miqCwYPVm5YKC3luULHDCgjWSlUtcKwutVPmBBQtWYYOrtBAdDhCwYI1h6W0HB3qRYMEaydKbVk99htHuAwvWAFa9PhMj9A+GBWsk6wWj8TX941DmxgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
 
-<script src="/js/main.min.js?v=1.7.2"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
@@ -603,6 +756,23 @@ var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 
 
 
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎收藏!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 
 

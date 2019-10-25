@@ -6,6 +6,11 @@
     
 
     
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
 
 
 
@@ -16,6 +21,8 @@
     
     <title>afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
     
     
     <meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, python爬虫, afacode">
@@ -30,8 +37,8 @@
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
-    <link rel="shortcut icon" href="/">
-    <link rel="stylesheet" href="/css/style.css?v=1.7.2">
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
     <script>window.lazyScripts=[]</script>
 
     <!-- custom head -->
@@ -47,19 +54,54 @@
     <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
         <i class="icon icon-lg icon-close"></i>
     </a>
-    <div class="brand-wrap" style="background-image:url(/)">
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
       <div class="brand">
         <a href="/" class="avatar waves-effect waves-circle waves-light">
-          <img src="/">
+          <img src="/img/avatar.jpg">
         </a>
         <hgroup class="introduce">
           <h5 class="nickname">afacode(阿发)</h5>
-          <a href="mailto:undefined" class="mail">
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
         </hgroup>
       </div>
     </div>
     <div class="scroll-wrap flex-col">
       <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
         
       </ul>
     </div>
@@ -74,6 +116,20 @@
         </a>
         <div class="flex-col header-title ellipsis">afacode的博客</div>
         
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
         
     </div>
 </header>
@@ -222,7 +278,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        以前也学习了前端cli与webpack自定义配置环境，...
+        以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助...
     
 
         <a href="/2019/06/25/node-cli-webpack-config-preview/" class="post-more waves-effect waves-button">
@@ -267,7 +323,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        build/build.js1234567891011...
+        build/build.js12345678910111213141516171819202122232425262728293031323334const ora = require('ora')const rm = require...
     
 
         <a href="/2019/06/20/webpack-dist-node-env/" class="post-more waves-effect waves-button">
@@ -312,7 +368,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        创建json保存的pipeline1234567891...
+        创建json保存的pipeline1234567891011121314import jsonimport codecs # 可以处理好编码，避免各种编码繁杂工作class JsonPipeline(object):  def __i...
     
 
         <a href="/2019/06/18/scrapy-save-to-json/" class="post-more waves-effect waves-button">
@@ -357,7 +413,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        brew 工具，如果没有的话12# 安装 homebr...
+        brew 工具，如果没有的话12# 安装 homebrew，是的你没看错，在终端里粘贴以下命令即可/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Hom...
     
 
         <a href="/2019/06/15/mac-brew-install-mysql/" class="post-more waves-effect waves-button">
@@ -404,7 +460,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        python selenium 不加载图片123456...
+        python selenium 不加载图片1234567from selenium import webdriverchrome_options = webdriver.ChromeOptions()prefs = &#123;"pr...
     
 
         <a href="/2019/06/13/python-spdier-selenium-tips-1/" class="post-more waves-effect waves-button">
@@ -451,7 +507,7 @@
     <div class="post-content" id="post-content" itemprop="postContent">
 
     
-        完整的警告是：Warning: React does ...
+        完整的警告是：Warning: React does not recognize the computedMatch prop on a DOM element. If you intentionally want it to app...
     
 
         <a href="/2019/06/11/react-router-fragment-err/" class="post-more waves-effect waves-button">
@@ -497,7 +553,16 @@
 
     
         修改SSH默认端口
-打开 vi /etc/ssh/ss...
+打开 vi /etc/ssh/sshd_config
+
+
+Port 22 修改22端口号为自己的 1098
+
+
+保存重启 service sshd restart
+
+
+修改防火墙了 阿里云服务器，可以到安全组配置里...
     
 
         <a href="/2019/06/05/linux-ssh-port/" class="post-more waves-effect waves-button">
@@ -586,8 +651,10 @@
         </p>
     </div>
     <div class="bottom">
-        <p><span>afacode(阿发) &copy; 2019</span>
+        <p><span>afacode(阿发) &copy; 2017 - 2019</span>
             <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
                 
                 Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
             </span>
@@ -600,14 +667,80 @@
 <a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
 
 
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/page/2/&title=afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/page/2/&title=afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/page/2/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=afacode的博客&url=https://blog.afacode.top/page/2/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/page/2/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK4AAACuCAAAAACKZ2kyAAABxElEQVR42u3aO3LDMAwFQN//0kqbRsoDQDJKZll5bJlaqcDgw88nXte3Vf1X79fRwsXFHXOvx3V3TfUxqvvf7oyLi3uQ+xxo8qCTIPL9cXFx/wo3D2fJv3Bxcf8HN09cqg+Di4v7Nm6ejiThbFJELavVcHFxB9xeSbP285b+Li4ubot7FVcvZammR7d3x8XFPcLNA0re9ExSk94ABhcX9wx37Rg1P2CRt1Zv3ysuLu42brXpmVDy4PXcavnhHePi4m7j9hKX5Jb5iyg0YnBxcY9w86MS5YoqpvcGtLi4uPu4Sakzb3ZMHv42F8PFxd3MjS4djECS1xEd8sDFxT3OnRyZyhG9oImLi3uemyc0Obr62AuKH1xc3A1tkfktJ8csCq1SXFzcI9xku8mAJB/SRK1bXFzcg9xqkpF/n4ezaJSLi4t7nFu9Za9R0jvoiYuLe4Y7GYdUd8tTnHJlhouLu5RbbVX0Wqj54c5VjRVcXNw5dxKAJq2TZnqEi4t7kFsdaVQHotXmyO03uLi4r+Qm5VB1BFuu2HBxcV/JrYahSRNkQSDDxcVtcfMjWdVEZ1IC4eLi/hZ3Mvjckdz0jm7g4uIu4n4Bo9LYV9rFygoAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
     <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
 <script>
-var BLOG = { ROOT: '/', SHARE: , REWARD: false };
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 </script>
 
-<script src="/js/main.min.js?v=1.7.2"></script>
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
 
 
 
@@ -615,6 +748,23 @@ var BLOG = { ROOT: '/', SHARE: , REWARD: false };
 
 
 
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎收藏!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
 
 
 
