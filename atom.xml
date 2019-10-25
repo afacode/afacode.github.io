@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-10-13T00:58:58.840Z</updated>
+  <updated>2019-10-25T08:16:36.111Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>mac-zsh-setting</title>
+    <link href="https://blog.afacode.top/2019/10/16/mac-zsh-setting/"/>
+    <id>https://blog.afacode.top/2019/10/16/mac-zsh-setting/</id>
+    <published>2019-10-16T12:13:56.000Z</published>
+    <updated>2019-10-25T08:16:36.111Z</updated>
+    
+    <content type="html"><![CDATA[<p>vim ~/.zshrc<br>source ~/.zshrc </p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">修改主体</span><br><span class="line"><span class="meta">#</span><span class="bash"> ZSH_THEME=<span class="string">"ys"</span></span></span><br><span class="line">ZSH_THEME="maran"</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span><span class="bash">T系统时间（时：分）</span></span><br><span class="line"><span class="meta">%</span><span class="bash">*系统时间（时：分：秒）</span></span><br><span class="line"><span class="meta">%</span><span class="bash">D系统日期（年-月-日）</span></span><br><span class="line"><span class="meta">%</span><span class="bash">n你的用户名</span></span><br><span class="line"><span class="meta">%</span><span class="bash">B - %b开始到结束使用粗体打印</span></span><br><span class="line"><span class="meta">%</span><span class="bash">U - %u开始到结束使用下划线打印</span></span><br><span class="line"><span class="meta">%</span><span class="bash">d你目前的工作目录</span></span><br><span class="line"><span class="meta">%</span><span class="bash">~你目前的工作目录相对于～的相对路径（可能在某些zsh版本可能造成乱码）</span></span><br><span class="line"><span class="meta">%</span><span class="bash">M计算机的主机名</span></span><br><span class="line"><span class="meta">%</span><span class="bash">m计算机的主机名（在第一个句号之前截断）</span></span><br><span class="line"><span class="meta">%</span><span class="bash">l你当前的tty</span></span><br><span class="line"></span><br><span class="line">// 分解</span><br><span class="line">PROMPT="%&#123;$reset_color%&#125;[%T] </span><br><span class="line">时间</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[red]%&#125;%n </span></span><br><span class="line">用户</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$fg</span>[green]%&#125;%1|%~ </span></span><br><span class="line">路径</span><br><span class="line"></span><br><span class="line"><span class="meta">%</span><span class="bash">&#123;<span class="variable">$reset_color</span>%&#125;% $ <span class="string">"</span></span></span><br><span class="line">单纯字符</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> 开启颜色</span></span><br><span class="line">autoload -U colors &amp;&amp; colors</span><br><span class="line"><span class="meta">#</span><span class="bash"> 配置提示符模式。。 其实配置之前的PS1也是可以的 但是为了尊重说明文档。。。</span></span><br><span class="line"></span><br><span class="line"><span class="meta">#</span><span class="bash"> PROMPT=<span class="string">"%&#123;<span class="variable">$fg</span>[red]%&#125;%n%&#123;<span class="variable">$reset_color</span>%&#125;%&#123;<span class="variable">$fg</span>[green]%&#125;%1|%~ %&#123;<span class="variable">$reset_color</span>%&#125;% $"</span></span></span><br><span class="line"></span><br><span class="line">PROMPT="%&#123;$reset_color%&#125;[%T] %&#123;$fg[red]%&#125;%n %&#123;$fg[green]%&#125;%1|%~ %&#123;$reset_color%&#125;% $ "</span><br><span class="line"><span class="meta">#</span><span class="bash">在行末显示上一命令的返回状态</span></span><br><span class="line">RPROMPT="[%&#123;$fg_bold[yellow]%&#125;%?%&#123;$reset_color%&#125;]"</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;vim ~/.zshrc&lt;br&gt;source ~/.zshrc &lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;s
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>nodemailer 简单使用</title>
@@ -793,9 +815,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -954,9 +976,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -981,9 +1003,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
