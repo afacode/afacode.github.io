@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-10-25T08:16:36.111Z</updated>
+  <updated>2019-10-25T09:12:09.279Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>error Incorrect integrity when fetching from the cache</title>
+    <link href="https://blog.afacode.top/2019/10/21/yarn-cache-err/"/>
+    <id>https://blog.afacode.top/2019/10/21/yarn-cache-err/</id>
+    <published>2019-10-21T14:10:45.000Z</published>
+    <updated>2019-10-25T09:12:09.279Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="error-Incorrect-integrity-when-fetching-from-the-cache"><a href="#error-Incorrect-integrity-when-fetching-from-the-cache" class="headerlink" title="error Incorrect integrity when fetching from the cache"></a>error Incorrect integrity when fetching from the cache</h2><p>info Visit <a href="https://yarnpkg.com/en/docs/cli/global" target="_blank" rel="noopener">https://yarnpkg.com/en/docs/cli/global</a> for documentation about this command.</p><h2 id="use"><a href="#use" class="headerlink" title="use"></a>use</h2><blockquote><p>yarn cache clean</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;error-Incorrect-integrity-when-fetching-from-the-cache&quot;&gt;&lt;a href=&quot;#error-Incorrect-integrity-when-fetching-from-the-cache&quot; class=&quot;hea
+      
+    
+    </summary>
+    
+    
+      <category term="yarn" scheme="https://blog.afacode.top/tags/yarn/"/>
+    
+  </entry>
   
   <entry>
     <title>mac-zsh-setting</title>
@@ -815,9 +838,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -976,9 +999,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -1003,9 +1026,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
