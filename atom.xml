@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-10-25T09:12:09.279Z</updated>
+  <updated>2019-10-30T08:00:20.718Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>react-native-splash-screen 在ios使用</title>
+    <link href="https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/"/>
+    <id>https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/</id>
+    <published>2019-10-26T07:48:24.000Z</published>
+    <updated>2019-10-30T08:00:20.718Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="react-native-splash-screen-在ios中的使用"><a href="#react-native-splash-screen-在ios中的使用" class="headerlink" title="react-native-splash-screen 在ios中的使用"></a>react-native-splash-screen 在ios中的使用</h2><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">XCode <span class="keyword">Version</span> <span class="number">10.2</span> (<span class="number">10</span>E125)</span><br><span class="line"><span class="string">"react"</span>: <span class="string">"16.8.6"</span>,</span><br><span class="line"><span class="string">"react-native"</span>: <span class="string">"0.60.5"</span>,</span><br><span class="line"><span class="string">"react-native-splash-screen"</span>: <span class="string">"^3.2.0"</span>,</span><br></pre></td></tr></table></figure><h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">yarn <span class="keyword">add</span><span class="bash"> react-native-splash-screen</span></span><br><span class="line"><span class="bash"><span class="built_in">cd</span> ios </span></span><br><span class="line"><span class="bash">pod install</span></span><br><span class="line"><span class="bash"><span class="built_in">cd</span> ..</span></span><br></pre></td></tr></table></figure><h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import SplashScreen from <span class="string">'react-native-splash-screen'</span></span><br><span class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span> &#123;</span><br><span class="line">  SplashScreen.hide()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>添加启动图片<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/启动屏1-2019103015566.png" alt="启动屏1-2019103015566" title="">                </div>                <div class="image-caption">启动屏1-2019103015566</div>            </figure><br>启用自定义启动图<br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/启动屏2-20191030155626.png" alt="启动屏2-20191030155626" title="">                </div>                <div class="image-caption">启动屏2-20191030155626</div>            </figure><br><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/启动屏-20191030155636.png" alt="启动屏0-20191030155636" title="">                </div>                <div class="image-caption">启动屏0-20191030155636</div>            </figure></p><h2 id="参考1-amp-amp-参考2"><a href="#参考1-amp-amp-参考2" class="headerlink" title="参考1 &amp;&amp; 参考2"></a><a href="https://www.jianshu.com/p/bf907cdbcfad?_wv=1031" target="_blank" rel="noopener">参考1</a> &amp;&amp; <a href="https://www.jianshu.com/p/12813a59f993" target="_blank" rel="noopener">参考2</a></h2>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;react-native-splash-screen-在ios中的使用&quot;&gt;&lt;a href=&quot;#react-native-splash-screen-在ios中的使用&quot; class=&quot;headerlink&quot; title=&quot;react-native-splash-sc
+      
+    
+    </summary>
+    
+    
+      <category term="react-native" scheme="https://blog.afacode.top/tags/react-native/"/>
+    
+  </entry>
   
   <entry>
     <title>error Incorrect integrity when fetching from the cache</title>
@@ -702,11 +725,11 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
-    
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
   </entry>
   
@@ -838,9 +861,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -999,9 +1022,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -1026,9 +1049,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
