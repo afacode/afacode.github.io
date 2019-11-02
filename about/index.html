@@ -25,9 +25,9 @@
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, python爬虫, afacode">
+    <meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, afacode">
     <meta name="description" content="博客地址 本人比较懒。主要是自己的日常开发的偶尔记录， 和一些优秀博文的转载，方便自己的查找  关于我本人专职前端开发  公司项目主要使用vue, react, react native, 小程序等开发 小程序，APP，网页， 微信生态   个人一些学习项目主要增加使用node, python(scrapy), mysql, mongodb, linux等   小程序+react+react-na">
-<meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, python爬虫, afacode">
+<meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, afacode">
 <meta property="og:type" content="website">
 <meta property="og:title" content="about">
 <meta property="og:url" content="https://blog.afacode.top/about/index.html">
@@ -250,6 +250,15 @@
         <footer class="footer">
     <div class="top">
         
+<p>
+    <span id="busuanzi_container_site_uv" style='display:none'>
+        站点总访客数：<span id="busuanzi_value_site_uv"></span>
+    </span>
+    <span id="busuanzi_container_site_pv" style='display:none'>
+        站点总访问量：<span id="busuanzi_value_site_pv"></span>
+    </span>
+</p>
+
 
         <p>
             
@@ -355,6 +364,8 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
 
 
 
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+
 
 
 <script>
@@ -365,7 +376,7 @@ var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
             document.title = '你怎么走了！';
             clearTimeout(titleTime);
         } else {
-            document.title = '欢迎收藏!';
+            document.title = '欢迎讨论!';
             titleTime = setTimeout(function() {
                 document.title = OriginTitile;
             },2000);
