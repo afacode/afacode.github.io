@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-10-30T08:00:20.718Z</updated>
+  <updated>2019-11-02T09:05:18.669Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>MacOS HomeBrew更新慢的问题(替换国内源)</title>
+    <link href="https://blog.afacode.top/2019/11/02/macos-brew-setting-source/"/>
+    <id>https://blog.afacode.top/2019/11/02/macos-brew-setting-source/</id>
+    <published>2019-11-02T09:00:32.000Z</published>
+    <updated>2019-11-02T09:05:18.669Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="替换brew-git"><a href="#替换brew-git" class="headerlink" title="替换brew.git"></a>替换brew.git</h2><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cd </span><span class="string">"$(brew --repo)"</span></span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">https:</span>//<span class="string">mirrors.</span><span class="string">ustc.</span><span class="string">edu.</span><span class="string">cn/</span><span class="string">brew.</span><span class="string">git</span></span><br></pre></td></tr></table></figure><h2 id="换homebrew-core-git"><a href="#换homebrew-core-git" class="headerlink" title="换homebrew-core.git"></a>换homebrew-core.git</h2><figure class="highlight dsconfig"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">cd </span><span class="string">"$(brew --repo)/Library/Taps/homebrew/homebrew-core"</span></span><br><span class="line"><span class="string">git </span><span class="string">remote </span><span class="built_in">set-url</span> <span class="string">origin </span><span class="string">https:</span>//<span class="string">mirrors.</span><span class="string">ustc.</span><span class="string">edu.</span><span class="string">cn/</span><span class="string">homebrew-core.</span><span class="string">git</span></span><br></pre></td></tr></table></figure><h2 id="更新"><a href="#更新" class="headerlink" title="更新"></a>更新</h2><blockquote><p>brew update</p></blockquote><h2 id="国内源"><a href="#国内源" class="headerlink" title="国内源"></a>国内源</h2><figure class="highlight dts"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">清华大学源：</span><br><span class="line"><span class="symbol">https:</span><span class="comment">//mirrors.tuna.tsinghua.edu.cn/git/homebrew/brew.git</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git</span></span><br><span class="line"></span><br><span class="line">中科大源：</span><br><span class="line"><span class="symbol">https:</span><span class="comment">//mirrors.ustc.edu.cn/brew.git</span></span><br><span class="line"><span class="symbol">https:</span><span class="comment">//mirrors.ustc.edu.cn/homebrew-core.git</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;替换brew-git&quot;&gt;&lt;a href=&quot;#替换brew-git&quot; class=&quot;headerlink&quot; title=&quot;替换brew.git&quot;&gt;&lt;/a&gt;替换brew.git&lt;/h2&gt;&lt;figure class=&quot;highlight dsconfig&quot;&gt;&lt;table
+      
+    
+    </summary>
+    
+    
+      <category term="macos" scheme="https://blog.afacode.top/tags/macos/"/>
+    
+  </entry>
   
   <entry>
     <title>react-native-splash-screen 在ios使用</title>
