@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-11-07T09:26:04.638Z</updated>
+  <updated>2019-11-16T06:21:49.712Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>vscode Could not create temporary directory 权限被拒绝</title>
+    <link href="https://blog.afacode.top/2019/11/15/directory/"/>
+    <id>https://blog.afacode.top/2019/11/15/directory/</id>
+    <published>2019-11-15T01:03:15.000Z</published>
+    <updated>2019-11-16T06:21:49.712Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Mac-VSCode-更新失败解决方法"><a href="#Mac-VSCode-更新失败解决方法" class="headerlink" title="Mac VSCode 更新失败解决方法"></a>Mac VSCode 更新失败解决方法</h2><p><code>Could not create temporary directory: 权限被拒绝</code></p><h2 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h2><p><code>sudo chown $USER ~/Library/Caches/com.microsoft.VSCode.ShipIt/</code></p><blockquote><p>重启之后，再更新</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Mac-VSCode-更新失败解决方法&quot;&gt;&lt;a href=&quot;#Mac-VSCode-更新失败解决方法&quot; class=&quot;headerlink&quot; title=&quot;Mac VSCode 更新失败解决方法&quot;&gt;&lt;/a&gt;Mac VSCode 更新失败解决方法&lt;/h2&gt;&lt;p&gt;&lt;c
+      
+    
+    </summary>
+    
+    
+      <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>react-native-splash-screen 在android启动屏使用</title>
@@ -771,9 +794,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
-    
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
+    
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
     
