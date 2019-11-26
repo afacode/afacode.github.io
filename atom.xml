@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-11-16T06:21:49.712Z</updated>
+  <updated>2019-11-26T01:49:40.196Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>target与currentTarget的区别</title>
+    <link href="https://blog.afacode.top/2019/11/25/currentTarget/"/>
+    <id>https://blog.afacode.top/2019/11/25/currentTarget/</id>
+    <published>2019-11-25T11:58:25.000Z</published>
+    <updated>2019-11-26T01:49:40.196Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="转载：三言两语之js事件、事件流以及target、currentTarget、this那些事"><a href="#转载：三言两语之js事件、事件流以及target、currentTarget、this那些事" class="headerlink" title="转载：三言两语之js事件、事件流以及target、currentTarget、this那些事"></a><a href="https://www.cnblogs.com/54td/p/5936816.html" target="_blank" rel="noopener">转载：三言两语之js事件、事件流以及target、currentTarget、this那些事</a></h2><h2 id="异同"><a href="#异同" class="headerlink" title="异同"></a>异同</h2><ol><li>target:触发事件的某个具体对象，只会出现在事件流的目标阶段（谁触发谁命中，所以肯定是目标阶段）</li><li>currentTarget:绑定事件的对象，恒等于this，可能出现在事件流的任意一个阶段中</li><li>通常情况下terget和currentTarget是一致的，我们只要使用target即可，但有一种情况必须区分这三者的关系，那就是在父子嵌套的关系中，父元素绑定了事件，单击了子元素（根据事件流，在不阻止事件流的前提下他会传递至父元素，导致父元素的事件处理函数执行），这时候currentTarget指向的是父元素，因为他是绑定事件的对象，而target指向了子元素，因为他是触发事件的那个具体对象</li></ol>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;转载：三言两语之js事件、事件流以及target、currentTarget、this那些事&quot;&gt;&lt;a href=&quot;#转载：三言两语之js事件、事件流以及target、currentTarget、this那些事&quot; class=&quot;headerlink&quot; title=&quot;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>vscode Could not create temporary directory 权限被拒绝</title>
@@ -930,9 +951,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -1091,9 +1112,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -1118,9 +1139,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   

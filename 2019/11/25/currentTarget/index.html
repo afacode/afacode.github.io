@@ -19,25 +19,25 @@
     
     
     
-    <title>git代码分支合并(merge)，tag提交 | afacode的博客 | 人懒，日常记录</title>
+    <title>target与currentTarget的区别 | afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="tool,git">
-    <meta name="description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
-<meta name="keywords" content="tool,git">
+    <meta name="keywords" content="">
+    <meta name="description" content="转载：三言两语之js事件、事件流以及target、currentTarget、this那些事异同 target:触发事件的某个具体对象，只会出现在事件流的目标阶段（谁触发谁命中，所以肯定是目标阶段） currentTarget:绑定事件的对象，恒等于this，可能出现在事件流的任意一个阶段中 通常情况下terget和currentTarget是一致的，我们只要使用target即可，但有一种情况必须">
+<meta name="keywords" content="前端开发, 小程序, node, react, vue, react-native, electron, afacode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="git代码分支合并(merge)，tag提交">
-<meta property="og:url" content="https://blog.afacode.top/2017/08/22/git-merge-and-tag/index.html">
+<meta property="og:title" content="target与currentTarget的区别">
+<meta property="og:url" content="https://blog.afacode.top/2019/11/25/currentTarget/index.html">
 <meta property="og:site_name" content="afacode的博客">
-<meta property="og:description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
+<meta property="og:description" content="转载：三言两语之js事件、事件流以及target、currentTarget、this那些事异同 target:触发事件的某个具体对象，只会出现在事件流的目标阶段（谁触发谁命中，所以肯定是目标阶段） currentTarget:绑定事件的对象，恒等于this，可能出现在事件流的任意一个阶段中 通常情况下terget和currentTarget是一致的，我们只要使用target即可，但有一种情况必须">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-05-12T00:07:55.306Z">
+<meta property="og:updated_time" content="2019-11-26T01:49:40.196Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="git代码分支合并(merge)，tag提交">
-<meta name="twitter:description" content="git代码分支合并，tag提交 将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支  git checkout dev   当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突  git merge afacode   提交dev分支合并的代码到远程dev分支上 git push origin dev   测试通过，上线代码需要打tag,在mas">
+<meta name="twitter:title" content="target与currentTarget的区别">
+<meta name="twitter:description" content="转载：三言两语之js事件、事件流以及target、currentTarget、this那些事异同 target:触发事件的某个具体对象，只会出现在事件流的目标阶段（谁触发谁命中，所以肯定是目标阶段） currentTarget:绑定事件的对象，恒等于this，可能出现在事件流的任意一个阶段中 通常情况下terget和currentTarget是一致的，我们只要使用target即可，但有一种情况必须">
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
@@ -118,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">git代码分支合并(merge)，tag提交</div>
+        <div class="flex-col header-title ellipsis">target与currentTarget的区别</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -140,15 +140,13 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">git代码分支合并(merge)，tag提交</h1>
+        <h1 class="title">target与currentTarget的区别</h1>
         <h5 class="subtitle">
             
-                <time datetime="2017-08-21T23:48:19.000Z" itemprop="datePublished" class="page-time">
-  2017-08-22
+                <time datetime="2019-11-25T11:58:25.000Z" itemprop="datePublished" class="page-time">
+  2019-11-25
 </time>
 
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
 
             
         </h5>
@@ -165,22 +163,20 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#git代码分支合并，tag提交"><span class="post-toc-number">1.</span> <span class="post-toc-text">git代码分支合并，tag提交</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#转载：三言两语之js事件、事件流以及target、currentTarget、this那些事"><span class="post-toc-number">1.</span> <span class="post-toc-text">转载：三言两语之js事件、事件流以及target、currentTarget、this那些事</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异同"><span class="post-toc-number">2.</span> <span class="post-toc-text">异同</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-git-merge-and-tag"
-  class="post-article article-type-post fade" itemprop="blogPost">
+<article id="target-currentTarget"
+  class="post-article article-type-target fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">git代码分支合并(merge)，tag提交</h1>
+        <h1 class="post-card-title">target与currentTarget的区别</h1>
         <div class="post-meta">
-            <time class="post-time" title="2017-08-22 07:48:19" datetime="2017-08-21T23:48:19.000Z"  itemprop="datePublished">2017-08-22</time>
+            <time class="post-time" title="2019-11-25 19:58:25" datetime="2019-11-25T11:58:25.000Z"  itemprop="datePublished">2019-11-25</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
-
 
 
             
@@ -191,31 +187,11 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="git代码分支合并，tag提交"><a href="#git代码分支合并，tag提交" class="headerlink" title="git代码分支合并，tag提交"></a>git代码分支合并，tag提交</h2><ul>
-<li><p>将自己分支代码合并到测试分支以便测试人员测试 先切换版本到dev分支</p>
-<blockquote>
-<p><code>git checkout dev</code></p>
-</blockquote>
-</li>
-<li><p>当前dev分支在合并afacode分支的代码,出现冲突，寻找有关开发人员，手动解决冲突</p>
-<blockquote>
-<p><code>git merge afacode</code></p>
-</blockquote>
-</li>
-<li>提交dev分支合并的代码到远程dev分支上<blockquote>
-<p><code>git push origin dev</code></p>
-</blockquote>
-</li>
-<li>测试通过，上线代码需要打tag,在master分支打tag 打版本v1.0.0.0<blockquote>
-<p><code>git tag -a 版本号 -m &#39;注解&#39;</code></p>
-</blockquote>
-</li>
-<li>提交版本v1.0.0.0到仓库<blockquote>
-<p><code>git push origin v1.0.0.0</code></p>
-</blockquote>
-</li>
-</ul>
-<p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top">https://blog.afacode.top</a></p>
+            <h2 id="转载：三言两语之js事件、事件流以及target、currentTarget、this那些事"><a href="#转载：三言两语之js事件、事件流以及target、currentTarget、this那些事" class="headerlink" title="转载：三言两语之js事件、事件流以及target、currentTarget、this那些事"></a><a href="https://www.cnblogs.com/54td/p/5936816.html" target="_blank" rel="noopener">转载：三言两语之js事件、事件流以及target、currentTarget、this那些事</a></h2><h2 id="异同"><a href="#异同" class="headerlink" title="异同"></a>异同</h2><ol>
+<li>target:触发事件的某个具体对象，只会出现在事件流的目标阶段（谁触发谁命中，所以肯定是目标阶段）</li>
+<li>currentTarget:绑定事件的对象，恒等于this，可能出现在事件流的任意一个阶段中</li>
+<li>通常情况下terget和currentTarget是一致的，我们只要使用target即可，但有一种情况必须区分这三者的关系，那就是在父子嵌套的关系中，父元素绑定了事件，单击了子元素（根据事件流，在不阻止事件流的前提下他会传递至父元素，导致父元素的事件处理函数执行），这时候currentTarget指向的是父元素，因为他是绑定事件的对象，而target指向了子元素，因为他是触发事件的那个具体对象</li>
+</ol>
 
         </div>
 
@@ -242,8 +218,6 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/git/">git</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/">tool</a></li></ul>
-
 
             
 <div class="page-share-wrap">
@@ -252,7 +226,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/11/25/currentTarget/&title=《target与currentTarget的区别》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -262,22 +236,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/11/25/currentTarget/&title=《target与currentTarget的区别》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/11/25/currentTarget/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git代码分支合并(merge)，tag提交》 — afacode的博客&url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《target与currentTarget的区别》 — afacode的博客&url=https://blog.afacode.top/2019/11/25/currentTarget/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/11/25/currentTarget/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -297,21 +271,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2017/11/16/python-class/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">python类(学习)</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2017/05/11/git-clean-log/" id="post-next" class="post-nav-link">
+      <a href="/2019/11/15/directory/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">git 清空所有(历史)commit记录</h4>
+        <h4 class="title">vscode Could not create temporary directory 权限被拒绝</h4>
       </a>
     </div>
   
@@ -411,7 +378,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/11/25/currentTarget/&title=《target与currentTarget的区别》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -421,22 +388,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&title=《git代码分支合并(merge)，tag提交》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/11/25/currentTarget/&title=《target与currentTarget的区别》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/11/25/currentTarget/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git代码分支合并(merge)，tag提交》 — afacode的博客&url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《target与currentTarget的区别》 — afacode的博客&url=https://blog.afacode.top/2019/11/25/currentTarget/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2017/08/22/git-merge-and-tag/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/11/25/currentTarget/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -447,7 +414,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACGUlEQVR42u3aS3ICMQwFQO5/aXIAauA9eUgVdnuV4mf1LBTJ8uMRr+fLen396pOvn3n95atfu3lhYGD8LCPZuA0ufxBXmHpfDAyMAxhJKswDmqXRq+++jw0DAwNjhXRv8sXAwMBYYaw0pUlLjIGBgZE3se1mbSm51DxjYGBszciLuf//+yvzDQwMjJ9iPMv17aO352hhYGDszcgTXHu4n4c4S7gYGBjnMNoU2ba1Oen9g/gAw8DAOICRbJ8HnYQ+i+TyXQwMjAMYs1IvH2fmB/rDAQAGBsbWjDxd5pckZqm5PcLDwMA4h9GOAW5Ii/HjKB4xBgbGAYzZsX6ObAcD9TgBAwPjAEbeWOYJ94aKNU/NGBgYWzNmh/Ir4baJuxgwYGBgbMpYuUjRns+3D6LoUjEwMA5jrBR8swKxHXB+qHAxMDC2Y+Sl2L1DhdnVjaLOxcDA2I6RjyGf8VoZKtzWi2NgYGzESNrF9vV8y9llCwwMjNMY7Wazo/z2klk9rsDAwDiGMVt5sp5dO6sTLgYGxqaMtkxsj9JmvOJbGBgYmzJmiTVvON8XnTck2dl/DAwMjJ9i5GsW9PtQ2qa3PcjDwMDYidE2qO3AMkm7eQGKgYFxMmN2SavebKGJ/YDEwMDAiNNlfqli/TJHPRjAwMA4jNEWjrOmtyhMMTAwDmDkG+SbLTWlbUmKgYGxNWNW2LXInNQmcQwMjK0Zfw6FqHastpqMAAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aQW4CMQwF0N7/0nRbCRG+7UA1mZcVqkombxbGjv3zE6/Hn/XqL89/f/7/Vzuv99y2MDAwLst4LNeaMXlKsnNyNgwMjPswklC43nr9rUlYX58NAwMDI0ng8qA5eS4GBgZGdbteUbouU78acDEwMC7ImCR86xRwXXz+Qy2OgYFxQUZeXn7/80f6GxgYGJdiPIorvyabNz4Lp8LAwDiakQe4fIQiKVDn7QQMDIz7MJIBiDz4rneYXOS9gWFgYBzNqBaTkwSxepVWbotiYGAczeglhdUiNkd+5AYRAwPjCEb+yCSVTK7bemMZ5WwXAwPjCEavpKyOPlRfTR7uMTAwzmZUU71kh14JOmonYGBg3IaRf+4VovlBq8koBgbGfRi7LteSFHPX0EY56mNgYFyQMRm8yFuSybGqV2wYGBj3ZFSHKiZBtvqymsMWGBgYBzHyALrrMq7aPIj2x8DAOJoxCZd5Obrrl+FNmY2BgXEoI08E86v8vEmwbTgMAwPjBow8IPYSvuSlFEbBXmW4GBgYt2FMcsxeuZs/sRBwMTAwjmPMA2W+et9985OAgYFxKONRXMkhkhSzlxoW5kQwMDAOYsyDXe+IeWMyv5jDwMA4m1FtTE6anb1Xtu3WEAMD4+KMXhGb7NC8PqsiMTAwMAaHrr6UZrsUAwMDozjMmlyi9YbANgdcDAyMSzHmhyg/OG4PRMEdAwPjaEZeOuaZWN7gzNsDG5qaGBgY12P8AhJpapifwCPkAAAAAElFTkSuQmCC" alt="微信分享二维码">
 </div>
 
 
