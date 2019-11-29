@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-11-26T01:49:40.196Z</updated>
+  <updated>2019-11-29T07:48:42.235Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>NestJs 下使用 TypeORM 分页查询问题</title>
+    <link href="https://blog.afacode.top/2019/11/29/nestjs-typeorm-pagination/"/>
+    <id>https://blog.afacode.top/2019/11/29/nestjs-typeorm-pagination/</id>
+    <published>2019-11-29T15:43:27.000Z</published>
+    <updated>2019-11-29T07:48:42.235Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="NestJs-下使用-TypeORM-分页查询问题"><a href="#NestJs-下使用-TypeORM-分页查询问题" class="headerlink" title="NestJs 下使用 TypeORM 分页查询问题"></a>NestJs 下使用 TypeORM 分页查询问题</h2><p>开发应用程序时，大部分时间都需要分页功能。如果您的应用程序中有分页、页面滑块或无限滚动组件，则使用此选项。</p><h2 id="官方教程"><a href="#官方教程" class="headerlink" title="官方教程"></a><a href="http://typeorm.io/#/select-query-builder/using-pagination" target="_blank" rel="noopener">官方教程</a></h2><h2 id="DEMO"><a href="#DEMO" class="headerlink" title="DEMO"></a>DEMO</h2><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = <span class="keyword">await</span> getRepository(User)</span><br><span class="line">    .createQueryBuilder(<span class="string">"user"</span>)</span><br><span class="line">    .leftJoinAndSelect(<span class="string">"user.photos"</span>, <span class="string">"photo"</span>)</span><br><span class="line">    .take(<span class="number">10</span>)</span><br><span class="line">    .getManyAndCount();</span><br></pre></td></tr></table></figure><p>这将会查询前10条用户及其照片的数据。</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// getManyAndCount 返回一个长度为2的元组，[0] 是分页后的数据数组， [1] 是所有数据总数</span></span><br><span class="line"><span class="keyword">const</span> users = <span class="keyword">await</span> getRepository(User)</span><br><span class="line">    .createQueryBuilder(<span class="string">"user"</span>)</span><br><span class="line">    .leftJoinAndSelect(<span class="string">"user.photos"</span>, <span class="string">"photo"</span>)</span><br><span class="line">    .skip(<span class="number">10</span>)</span><br><span class="line">    .getManyAndCount();</span><br></pre></td></tr></table></figure><p>这将会查询除了前10条用户以外的所有人及其照片的数据。</p><p>您可以组合使用他们：</p><figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> users = <span class="keyword">await</span> getRepository(User)</span><br><span class="line">    .createQueryBuilder(<span class="string">"user"</span>)</span><br><span class="line">    .leftJoinAndSelect(<span class="string">"user.photos"</span>, <span class="string">"photo"</span>)</span><br><span class="line">    .skip(<span class="number">5</span>)</span><br><span class="line">    .take(<span class="number">10</span>)</span><br><span class="line">    .getManyAndCount();</span><br></pre></td></tr></table></figure><p>这将会在第6条记录开始查询10条记录，即查询6-16条用户及其照片的数据。</p><p>注意：<strong><code>take</code> 和 <code>skip</code> 可能看起来像 <code>limit</code> 和 <code>offset</code>，但它们不是。一旦您有更复杂的连接或子查询查询，<code>limit</code> 和 <code>offset</code> 可能无法正常工作。使用 <code>take</code> 和 <code>skip</code> 可以防止出现这些问题。</strong></p><h2 id="skip-take-与-offset-limit-的区别"><a href="#skip-take-与-offset-limit-的区别" class="headerlink" title="skip + take 与 offset + limit 的区别"></a>skip + take 与 offset + limit 的区别</h2><p>当查询中存在连接或子查询时，<code>skip + take</code> 的方式总是能正确的返回数据，而 <code>offset + limit</code> 返回的数据并不是我们期望的那样。所以查询分页数据时，应该使用 <code>skip + take</code>。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;NestJs-下使用-TypeORM-分页查询问题&quot;&gt;&lt;a href=&quot;#NestJs-下使用-TypeORM-分页查询问题&quot; class=&quot;headerlink&quot; title=&quot;NestJs 下使用 TypeORM 分页查询问题&quot;&gt;&lt;/a&gt;NestJs 下使用 
+      
+    
+    </summary>
+    
+    
+      <category term="NestJs" scheme="https://blog.afacode.top/tags/NestJs/"/>
+    
+      <category term="TypeORM" scheme="https://blog.afacode.top/tags/TypeORM/"/>
+    
+  </entry>
   
   <entry>
     <title>target与currentTarget的区别</title>
@@ -951,9 +976,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
@@ -1112,9 +1137,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
@@ -1139,9 +1164,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
-    
       <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
+    
+      <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
     
   </entry>
   
