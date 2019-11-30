@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-11-29T07:48:42.235Z</updated>
+  <updated>2019-11-30T03:21:47.231Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(vetur) cannot find name template</title>
+    <link href="https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/"/>
+    <id>https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/</id>
+    <published>2019-11-30T03:11:14.000Z</published>
+    <updated>2019-11-30T03:21:47.231Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">vscode</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">Version</span>: 1<span class="selector-class">.40</span><span class="selector-class">.2</span></span><br><span class="line"><span class="selector-tag">Commit</span>: <span class="selector-tag">f359dd69833dd8800b54d458f6d37ab7c78df520</span></span><br><span class="line"><span class="selector-tag">Date</span>: 2019<span class="selector-tag">-11-25T14</span><span class="selector-pseudo">:52</span><span class="selector-pseudo">:45.129Z</span></span><br><span class="line"><span class="selector-tag">Electron</span>: 6<span class="selector-class">.1</span><span class="selector-class">.5</span></span><br><span class="line"><span class="selector-tag">Chrome</span>: 76<span class="selector-class">.0</span><span class="selector-class">.3809</span><span class="selector-class">.146</span></span><br><span class="line"><span class="selector-tag">Node</span><span class="selector-class">.js</span>: 12<span class="selector-class">.4</span><span class="selector-class">.0</span></span><br><span class="line"><span class="selector-tag">V8</span>: 7<span class="selector-class">.6</span><span class="selector-class">.303</span><span class="selector-class">.31-electron</span><span class="selector-class">.0</span></span><br><span class="line"><span class="selector-tag">OS</span>: <span class="selector-tag">Darwin</span> <span class="selector-tag">x64</span> 18<span class="selector-class">.2</span><span class="selector-class">.0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">vetur</span>: 0<span class="selector-class">.22</span><span class="selector-class">.6</span></span><br><span class="line"></span><br><span class="line"><span class="selector-tag">language</span>: <span class="selector-tag">wpy</span>(<span class="selector-tag">wepy</span>小程序)</span><br></pre></td></tr></table></figure><h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line">vetur: cannot find name <span class="string">'template'</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/WechatIMG22-2019113011147.png" alt="报错" title="">                </div>                <div class="image-caption">报错</div>            </figure><h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">script</span> 未指定lang类型</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/WechatIMG23-20191130111418.png" alt="问题" title="">                </div>                <div class="image-caption">问题</div>            </figure><h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">lang</span>=<span class="string">"js"</span>&gt;</span><span class="undefined"></span></span><br><span class="line"><span class="undefined">...</span></span><br><span class="line"><span class="undefined"></span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">...</span><br></pre></td></tr></table></figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/WechatIMG24-20191130111425.png" alt="解决" title="">                </div>                <div class="image-caption">解决</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;环境&quot;&gt;&lt;a href=&quot;#环境&quot; class=&quot;headerlink&quot; title=&quot;环境&quot;&gt;&lt;/a&gt;环境&lt;/h2&gt;&lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span cl
+      
+    
+    </summary>
+    
+    
+      <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>NestJs 下使用 TypeORM 分页查询问题</title>
