@@ -5,7 +5,7 @@ date: 2019-10-26 15:48:24
 tags:
   - react-native
 ---
-## react-native-splash-screen 在ios中的使用
+## react-native-splash-screen 在ios启动屏中的使用
 ## 环境
 ```
 XCode Version 10.2 (10E125)
