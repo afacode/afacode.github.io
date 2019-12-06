@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-11-30T03:21:47.231Z</updated>
+  <updated>2019-12-06T03:14:33.885Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,35 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>nestjs中使用typeorm-model-generator将数据库生成数据模型</title>
+    <link href="https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/"/>
+    <id>https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/</id>
+    <published>2019-12-06T03:03:19.000Z</published>
+    <updated>2019-12-06T03:14:33.885Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote><p><code>npm install -g typeorm-model-generator</code></p></blockquote><h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="string">"script"</span>: &#123;</span><br><span class="line">  <span class="string">"db"</span>: <span class="string">"rm -rf entities &amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entities --noConfig true --ce pascal --cp camel"</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure><ul><li><code>rm -rf entities</code>表示先删除文件夹entities</li><li><code>npx typeorm-model-generator</code>如果全局安装了就不需要加npx没有全局安装就加上去</li><li><code>-h 数据库地址 -d 数据库名字 -p 端口 -u 用户名 -x 密码 -e 数据库类型</code></li><li>-o entities表示输出到指定的文件夹</li><li><code>--noConfig true</code>表示不生成ormconfig.json和tsconfig.json文件</li><li><code>--ce pascal</code>表示将类名转换首字母是大写的驼峰命名</li><li><code>--cp camel</code>表示将数据库中的字段比如create_at转换为createAt</li><li>-a表示会继承一个BaseEntity的类,根据自己需求加</li></ul><h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><blockquote><p>npm run db</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;blockquote&gt;
+&lt;p&gt;&lt;code&gt;npm install -g typeorm-model-generator&lt;/code&gt;&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+      <category term="node" scheme="https://blog.afacode.top/tags/node/"/>
+    
+      <category term="nestjs" scheme="https://blog.afacode.top/tags/nestjs/"/>
+    
+      <category term="typeorm" scheme="https://blog.afacode.top/tags/typeorm/"/>
+    
+  </entry>
   
   <entry>
     <title>(vetur) cannot find name template</title>
@@ -865,9 +894,9 @@
     
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
-    
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
   </entry>
   

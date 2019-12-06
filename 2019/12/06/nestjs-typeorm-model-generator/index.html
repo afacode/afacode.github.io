@@ -19,27 +19,25 @@
     
     
     
-    <title>vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云 | afacode的博客 | 人懒，日常记录</title>
+    <title>nestjs中使用typeorm-model-generator将数据库生成数据模型 | afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="vscode,七牛云,hexo">
-    <meta name="description" content="推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链">
-<meta name="keywords" content="vscode,七牛云,hexo">
+    <meta name="keywords" content="node,nestjs,typeorm">
+    <meta name="description" content="安装 npm install -g typeorm-model-generator  package.json12345...&quot;script&quot;: &amp;#123;  &quot;db&quot;: &quot;rm -rf entities &amp;amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entit">
+<meta name="keywords" content="node,nestjs,typeorm">
 <meta property="og:type" content="article">
-<meta property="og:title" content="vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云">
-<meta property="og:url" content="https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/index.html">
+<meta property="og:title" content="nestjs中使用typeorm-model-generator将数据库生成数据模型">
+<meta property="og:url" content="https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/index.html">
 <meta property="og:site_name" content="afacode的博客">
-<meta property="og:description" content="推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链">
+<meta property="og:description" content="安装 npm install -g typeorm-model-generator  package.json12345...&quot;script&quot;: &amp;#123;  &quot;db&quot;: &quot;rm -rf entities &amp;amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entit">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:image" content="http://imgs.afacode.top/1557910868343-201951517225.jpg">
-<meta property="og:updated_time" content="2019-05-15T09:20:02.479Z">
+<meta property="og:updated_time" content="2019-12-06T03:14:33.885Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云">
-<meta name="twitter:description" content="推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链">
-<meta name="twitter:image" content="http://imgs.afacode.top/1557910868343-201951517225.jpg">
+<meta name="twitter:title" content="nestjs中使用typeorm-model-generator将数据库生成数据模型">
+<meta name="twitter:description" content="安装 npm install -g typeorm-model-generator  package.json12345...&quot;script&quot;: &amp;#123;  &quot;db&quot;: &quot;rm -rf entities &amp;amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entit">
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
@@ -120,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</div>
+        <div class="flex-col header-title ellipsis">nestjs中使用typeorm-model-generator将数据库生成数据模型</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -142,15 +140,13 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</h1>
+        <h1 class="title">nestjs中使用typeorm-model-generator将数据库生成数据模型</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-04-23T14:53:43.000Z" itemprop="datePublished" class="page-time">
-  2019-04-23
+                <time datetime="2019-12-06T03:03:19.000Z" itemprop="datePublished" class="page-time">
+  2019-12-06
 </time>
 
-
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
 
             
         </h5>
@@ -167,22 +163,20 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vscode插件-写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云"><span class="post-toc-number">1.</span> <span class="post-toc-text">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#package-json"><span class="post-toc-number">2.</span> <span class="post-toc-text">package.json</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运行"><span class="post-toc-number">3.</span> <span class="post-toc-text">运行</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-hexo-vscode-qiniu-upload"
+<article id="post-nestjs-typeorm-model-generator"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</h1>
+        <h1 class="post-card-title">nestjs中使用typeorm-model-generator将数据库生成数据模型</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-04-23 22:53:43" datetime="2019-04-23T14:53:43.000Z"  itemprop="datePublished">2019-04-23</time>
+            <time class="post-time" title="2019-12-06 11:03:19" datetime="2019-12-06T03:03:19.000Z"  itemprop="datePublished">2019-12-06</time>
 
             
-	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/tools/">tools</a></li></ul>
-
 
 
             
@@ -193,30 +187,22 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <p>推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链<br><a id="more"></a></p>
-<h2 id="vscode插件-写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云"><a href="#vscode插件-写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云" class="headerlink" title="vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云"></a>vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</h2><ul>
-<li><p>github地址<a href="https://github.com/yscoder/vscode-qiniu-upload-image" target="_blank" rel="noopener">vscode-qiniu-upload-imag</a></p>
-</li>
-<li><p><a href="https://imys.net/20160726/vscode-extension-qiniu-upload.html" target="_blank" rel="noopener">作者的博客介绍</a></p>
-</li>
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
+<p><code>npm install -g typeorm-model-generator</code></p>
+</blockquote>
+<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="string">"script"</span>: &#123;</span><br><span class="line">  <span class="string">"db"</span>: <span class="string">"rm -rf entities &amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entities --noConfig true --ce pascal --cp camel"</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
+<ul>
+<li><code>rm -rf entities</code>表示先删除文件夹entities</li>
+<li><code>npx typeorm-model-generator</code>如果全局安装了就不需要加npx没有全局安装就加上去</li>
+<li><code>-h 数据库地址 -d 数据库名字 -p 端口 -u 用户名 -x 密码 -e 数据库类型</code></li>
+<li>-o entities表示输出到指定的文件夹</li>
+<li><code>--noConfig true</code>表示不生成ormconfig.json和tsconfig.json文件</li>
+<li><code>--ce pascal</code>表示将类名转换首字母是大写的驼峰命名</li>
+<li><code>--cp camel</code>表示将数据库中的字段比如create_at转换为createAt</li>
+<li>-a表示会继承一个BaseEntity的类,根据自己需求加</li>
 </ul>
-<p>配置如下(自己的):</p>
-<blockquote>
-<p>七牛图片上传空间: 你的七牛云存储空间名称</p>
-</blockquote>
-<blockquote>
-<p>七牛图床域名: 你自己图片对外链接的域名</p>
-</blockquote>
-<figure class="image-bubble">
-                <div class="img-lightbox">
-                    <div class="overlay"></div>
-                    <img src="http://imgs.afacode.top/1557910868343-201951517225.jpg" alt="1557910868343-201951517225" title="=300x300">
-                </div>
-                <div class="image-caption">=300x300</div>
-            </figure>
-<p>配置完成重启一下vs code即可使用</p>
-<blockquote>
-<p>推荐一个Markdown预览插件 <code>Markdown Preview Enhanced</code></p>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><blockquote>
+<p>npm run db</p>
 </blockquote>
 
         </div>
@@ -244,7 +230,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/hexo/">hexo</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/">vscode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/七牛云/">七牛云</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nestjs/">nestjs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typeorm/">typeorm</a></li></ul>
 
 
             
@@ -254,7 +240,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&title=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&title=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -264,22 +250,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&title=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&source=推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&title=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -299,21 +285,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/05/09/vue-computed-watch/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">Vue 的 computed 和 watch 的区别</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/04/14/vue-props/" id="post-next" class="post-nav-link">
+      <a href="/2019/11/30/vetur-cannot-find-name-template/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">vue组件之间的通信</h4>
+        <h4 class="title">(vetur) cannot find name template</h4>
       </a>
     </div>
   
@@ -413,7 +392,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&title=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&title=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -423,22 +402,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&title=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&source=推荐: 一个 VS Code 插件，编写 Markdown 时可以快捷上传本地图片获取七牛图床外链" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&title=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云》 — afacode的博客&url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/04/23/hexo-vscode-qiniu-upload/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -449,7 +428,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMUlEQVR42u3aS46DQAxF0ex/0/S0JQS5zy4ilbmMolaAOhm4/ft88HWcrv9/v//m+a7zN6/+sviSIUPGtgzy4nvA/Yv5868+kx9FhgwZb2BcvT4NrCRMEzA/mwwZMmTcM1JY/70yZMiQQR5HErsa5qcBV4YMGRsyeJFJCtdO+vh4LS5DhowNGbzr/vvPj8w3ZMiQsRXjCC9SvqbJ34JTyZAhYzSjluT1W/mdgejleWTIkDGaETe2wgWLVSOHOIeVIUPGCAZfj+g0vMhdnXUxGTJkzGaQkPrE+ilJGeMBgAwZMoYyyKNTau2IvIX3ZQYrQ4aMcQwSu/jqAyelbbji/xAZMmSMYNRuqzX0+fpXepcMGTLew+gMANL+fG3A8KVrKEOGjKEMHkBJgcqberyILa5ZyJAhYxAjLVk7KWCtiEVIGTJkjGZ0lh7SY5FmXJqGogacDBkyNmf0lyR4Ey09aDDAkCFDxgsYa9O4TvAtjiVkyJAxmkFCXjqw5OPJzrIFKmJlyJAxiFFr0/NAycecvAkY9w5lyJAxgtF/KA/T8ZSVTzlkyJDxGkatdEzbarV1DVS4ypAhYxDjCK9VySIpUAOqDBkyRjP4xR/K00o+TqiNJWTIkDGJwYeL/WCa/mRBuStDhowXMGqBrzP+rKV9l0gZMmTIwKROkCXPCVbBZMiQIQMEytpwtNjIkyFDxgsYpIhdlcwV1ylW1eIyZMjYkJGmbp1AnC5kLB5qypAhYz/GHyx5A/FN9T+8AAAAAElFTkSuQmCC" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aUW6DQAwFwNz/0u0BWuDZXqepNHyhBAKzlXa3z3694uPr9qhec3V98vlr48DDw8NbfvWf9+bnV792//RkaK7uwsPDw9vjXc2o+YR+j6nO4dUhu/wcDw8P7wN4vRdK7u2x8fDw8D6fN9kuJ7A8yMDDw8P7W94kfq2GCHvhBR4eHt57eHlM8DnnK/U9PDw8vHFV/dQicb9gVKPbwrPw8PDwFnj5hNtrKagGtRuBLx4eHt4G79QNeSybRw9JHFwdLDw8PLwJr7qNzqfvahms17w1yqfx8PDwBrxkczz5pDq5JwtMhMTDw8Nb4/VeNwf0lqL8DS+XKzw8PLwFXt4oMN8i51N/8vt5CQ0PDw/vLK8XN0zOJ4NSTqbx8PDwlnnJlnfeUlAtlVUbCx56IvDw8PAO8ZIIoFfcqrYO5MNxIGvBw8PDG/PyI19C8uJWPiiFYcLDw8Nb4E2aA/JveyHFJAR5VTF4eHh4A15voj/76qciDDw8PLwNXnUBqIat1aGZtIX9cj0eHh7eAq93w7x8lcTHvSi50EaAh4eH1+JVt7DVxql8jCcLzMNfDA8PD+8oLzkmE/SpCn4+6Hh4eHjv4VWn3V75vzetJ2HEwxDg4eHhrfGqgekkkE0KZvm390sLHh4e3jt5eUNAvjmuNh9Ut/ijccXDw8Mr8vI2rFNDk5e+8mjj4T8GPDw8vKO86gOqk3s1Du4dD1U+PDw8vDFvvjnOl5BqaJsvQpff4uHh4S3wzjYQ9KLeXkiRnOPh4eHt8XrNT3lM0BvE3sLQDCPw8PDwWry80SrZEM+n+F4Acbkw4OHh4X0MrxfdJtfnUTIeHh7ef+Hlm+8EmUfD5Y07Hh4e3hpvUvS6H5RqSSwPPqKn4OHh4S3wys1Mt9FD74Wq2+sDNT08PDy8Du8b0GUiFnuflMwAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 
