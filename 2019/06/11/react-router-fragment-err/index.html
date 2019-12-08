@@ -192,6 +192,21 @@
 <p><strong>引起警告的原因是</strong>： 在<code>react-router-dom</code>的<code>&lt;Switch&gt;</code>中使用了<code>&lt;div&gt;</code></p>
 <p>解决办法很简单，把<code>&lt;Switch&gt;</code>增加一层<code>&lt;Fragment&gt;</code>就行了<br><figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">render() &#123;</span><br><span class="line">    return (</span><br><span class="line">      <span class="tag">&lt;<span class="name">Switch</span>&gt;</span></span><br><span class="line">+       <span class="tag">&lt;<span class="name">Fragment</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">div</span> <span class="attr">className</span>=<span class="string">"App"</span>&gt;</span></span><br><span class="line">          <span class="tag">&lt;<span class="name">header</span> <span class="attr">className</span>=<span class="string">"App-header"</span>&gt;</span>  </span><br><span class="line">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">'/'</span>&gt;</span>Home<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">'/about'</span>&gt;</span>About<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Link</span> <span class="attr">to</span>=<span class="string">'/users'</span>&gt;</span>Users<span class="tag">&lt;/<span class="name">Link</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">exact</span> <span class="attr">path</span>=<span class="string">'/'</span> <span class="attr">component</span>=<span class="string">&#123;Index&#125;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">exact</span> <span class="attr">path</span>=<span class="string">'/about'</span> <span class="attr">component</span>=<span class="string">&#123;About&#125;</span> /&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">Route</span> <span class="attr">exact</span> <span class="attr">path</span>=<span class="string">'/users'</span> <span class="attr">component</span>=<span class="string">&#123;Users&#125;</span> /&gt;</span></span><br><span class="line">          <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">+       <span class="tag">&lt;/<span class="name">Fragment</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;/<span class="name">Switch</span>&gt;</span></span><br><span class="line">    )</span><br></pre></td></tr></table></figure></p>
 
+            
+            <h3>广告</h3>
+            阿里云活动云服务器低至 <br>
+            1核-2G-1M，1年89元，3年229。 <br>
+            2核-4G-3M，2年469元，3年799。<br>
+            2核-8G-5M，3年899元。 <br>
+            新老客户都有优惠
+            <a href="https://www.aliyun.com/minisite/goods?userCode=7hyxmumt&share_source=copy_link">点击查看详情/购买</a>
+            <br>
+            腾讯云现在活动<br>
+            1核 2G 1M 88一年<br>
+            2核 4G 5M 3年只要998。
+            <a href="https://cloud.tencent.com/act/cps/redirect?redirect=1048&cps_key=baa5c350ac5ae6df6ef04effa105f7ee&from=console">
+            点击查看详情/购买
+            </a> 
         </div>
 
         <blockquote class="post-copyright">

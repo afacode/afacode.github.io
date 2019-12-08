@@ -194,6 +194,21 @@
 <h2 id="useReducer完成类似的Redux"><a href="#useReducer完成类似的Redux" class="headerlink" title="useReducer完成类似的Redux"></a>useReducer完成类似的Redux</h2><p>useReducer可以让代码具有更好的可读性和可维护性<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">ReducerDemo</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">    <span class="keyword">const</span> [ count , dispatch ] =useReducer(<span class="function">(<span class="params">state,action</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">switch</span>(action)&#123;</span><br><span class="line">            <span class="keyword">case</span> <span class="string">'add'</span>:</span><br><span class="line">                <span class="keyword">return</span> state+<span class="number">1</span></span><br><span class="line">            <span class="keyword">case</span> <span class="string">'sub'</span>:</span><br><span class="line">                <span class="keyword">return</span> state<span class="number">-1</span></span><br><span class="line">            <span class="keyword">default</span>:</span><br><span class="line">                <span class="keyword">return</span> state</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;,<span class="number">0</span>)</span><br><span class="line">    <span class="keyword">return</span> (</span><br><span class="line">       &lt;div&gt;</span><br><span class="line">           &lt;h2&gt;现在的分数是&#123;count&#125;&lt;<span class="regexp">/h2&gt;</span></span><br><span class="line"><span class="regexp">           &lt;button onClick=&#123;()=&gt;dispatch('add')&#125;&gt;Increment&lt;/</span>button&gt;</span><br><span class="line">           &lt;button onClick=&#123;()=&gt;dispatch(<span class="string">'sub'</span>)&#125;&gt;Decrement&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">       &lt;/</span>div&gt;</span><br><span class="line">    )</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
 <p>待续</p>
 <h2 id="useCallback"><a href="#useCallback" class="headerlink" title="useCallback"></a>useCallback</h2><h2 id="useMemo"><a href="#useMemo" class="headerlink" title="useMemo"></a>useMemo</h2><h2 id="useRef"><a href="#useRef" class="headerlink" title="useRef"></a>useRef</h2><h2 id="useImperativeHandle"><a href="#useImperativeHandle" class="headerlink" title="useImperativeHandle"></a>useImperativeHandle</h2><h2 id="useLayoutEffect"><a href="#useLayoutEffect" class="headerlink" title="useLayoutEffect"></a>useLayoutEffect</h2>
+            
+            <h3>广告</h3>
+            阿里云活动云服务器低至 <br>
+            1核-2G-1M，1年89元，3年229。 <br>
+            2核-4G-3M，2年469元，3年799。<br>
+            2核-8G-5M，3年899元。 <br>
+            新老客户都有优惠
+            <a href="https://www.aliyun.com/minisite/goods?userCode=7hyxmumt&share_source=copy_link">点击查看详情/购买</a>
+            <br>
+            腾讯云现在活动<br>
+            1核 2G 1M 88一年<br>
+            2核 4G 5M 3年只要998。
+            <a href="https://cloud.tencent.com/act/cps/redirect?redirect=1048&cps_key=baa5c350ac5ae6df6ef04effa105f7ee&from=console">
+            点击查看详情/购买
+            </a> 
         </div>
 
         <blockquote class="post-copyright">

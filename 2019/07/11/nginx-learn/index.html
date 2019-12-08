@@ -193,6 +193,21 @@
 <h2 id="nginx-install"><a href="#nginx-install" class="headerlink" title="nginx install"></a>nginx install</h2><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Ubuntu</span><br><span class="line">sudo apt-get install nginx</span><br><span class="line">--------------------------</span><br><span class="line">centos</span><br><span class="line">sudo yum install epel-release</span><br><span class="line">＃更新存储库并安装Nginx </span><br><span class="line">sudo yum update </span><br><span class="line">sudo yum install nginx</span><br></pre></td></tr></table></figure>
 <h2 id="如何使用nginx配置负载均衡"><a href="#如何使用nginx配置负载均衡" class="headerlink" title="如何使用nginx配置负载均衡"></a><a href="http://www.nginx.cn/4996.html" target="_blank" rel="noopener">如何使用nginx配置负载均衡</a></h2><figure class="highlight x86asm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">＃定义要包含在负载均衡方案中的服务器。  </span><br><span class="line">＃最好使用服务器的私有<span class="built_in">IP</span>以获得更好的性能和安全性。 </span><br><span class="line">http &#123;</span><br><span class="line">    upstream backend &#123;</span><br><span class="line">       server <span class="number">10.1</span><span class="meta">.0</span><span class="meta">.101</span><span class="comment">;</span></span><br><span class="line">       server <span class="number">10.1</span><span class="meta">.0</span><span class="meta">.102</span><span class="comment">;</span></span><br><span class="line">       server <span class="number">10.1</span><span class="meta">.0</span><span class="meta">.103</span><span class="comment">;</span></span><br><span class="line">    &#125;</span><br><span class="line">  </span><br><span class="line">    ＃该服务器接受到端口<span class="number">80</span>的所有流量并将其传递给上游。</span><br><span class="line">    ＃请注意，上游名称和proxy_pass需要匹配。</span><br><span class="line">    server &#123;</span><br><span class="line">       listen <span class="number">80</span><span class="comment">;</span></span><br><span class="line">        location / &#123;</span><br><span class="line">           proxy_pass http://backend<span class="comment">;</span></span><br><span class="line">       &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <h2 id="屏蔽ip"><a href="#屏蔽ip" class="headerlink" title="屏蔽ip"></a><a href="http://www.nginx.cn/2487.html" target="_blank" rel="noopener">屏蔽ip</a></h2>
+            
+            <h3>广告</h3>
+            阿里云活动云服务器低至 <br>
+            1核-2G-1M，1年89元，3年229。 <br>
+            2核-4G-3M，2年469元，3年799。<br>
+            2核-8G-5M，3年899元。 <br>
+            新老客户都有优惠
+            <a href="https://www.aliyun.com/minisite/goods?userCode=7hyxmumt&share_source=copy_link">点击查看详情/购买</a>
+            <br>
+            腾讯云现在活动<br>
+            1核 2G 1M 88一年<br>
+            2核 4G 5M 3年只要998。
+            <a href="https://cloud.tencent.com/act/cps/redirect?redirect=1048&cps_key=baa5c350ac5ae6df6ef04effa105f7ee&from=console">
+            点击查看详情/购买
+            </a> 
         </div>
 
         <blockquote class="post-copyright">
