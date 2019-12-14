@@ -19,25 +19,25 @@
     
     
     
-    <title>nestjs中使用typeorm-model-generator将数据库生成数据模型 | afacode的博客 | 人懒，日常记录</title>
+    <title>VSCode生产效率插件 | afacode的博客 | 人懒，日常记录</title>
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     
     <meta name="theme-color" content="#3F51B5">
     
     
-    <meta name="keywords" content="node,nestjs,typeorm">
-    <meta name="description" content="安装 npm install -g typeorm-model-generator  package.json12345...&quot;script&quot;: &amp;#123;  &quot;db&quot;: &quot;rm -rf entities &amp;amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entit">
-<meta name="keywords" content="node,nestjs,typeorm">
+    <meta name="keywords" content="vscode">
+    <meta name="description" content="VS Code 生产效率插件 open-in-browser 在浏览器中查看VS Code 没有提供直接在浏览器中运行程序的内置功能，所以我们需要安装此插件，在浏览器中查看我们的程序运行效果  Live Server 实时预览安装这个插件之后，我们在编辑器中修改代码，按 Ctrl+S 保存，修改效果就会实时同步，显示在浏览器中，再不用手动刷新  Auto Close Tag 自动闭合标签输入标签名">
+<meta name="keywords" content="vscode">
 <meta property="og:type" content="article">
-<meta property="og:title" content="nestjs中使用typeorm-model-generator将数据库生成数据模型">
-<meta property="og:url" content="https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/index.html">
+<meta property="og:title" content="VSCode生产效率插件">
+<meta property="og:url" content="https://blog.afacode.top/2019/12/14/vscode-plugin/index.html">
 <meta property="og:site_name" content="afacode的博客">
-<meta property="og:description" content="安装 npm install -g typeorm-model-generator  package.json12345...&quot;script&quot;: &amp;#123;  &quot;db&quot;: &quot;rm -rf entities &amp;amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entit">
+<meta property="og:description" content="VS Code 生产效率插件 open-in-browser 在浏览器中查看VS Code 没有提供直接在浏览器中运行程序的内置功能，所以我们需要安装此插件，在浏览器中查看我们的程序运行效果  Live Server 实时预览安装这个插件之后，我们在编辑器中修改代码，按 Ctrl+S 保存，修改效果就会实时同步，显示在浏览器中，再不用手动刷新  Auto Close Tag 自动闭合标签输入标签名">
 <meta property="og:locale" content="zh-CN">
-<meta property="og:updated_time" content="2019-12-06T03:14:33.885Z">
+<meta property="og:updated_time" content="2019-12-14T10:03:32.921Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="nestjs中使用typeorm-model-generator将数据库生成数据模型">
-<meta name="twitter:description" content="安装 npm install -g typeorm-model-generator  package.json12345...&quot;script&quot;: &amp;#123;  &quot;db&quot;: &quot;rm -rf entities &amp;amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entit">
+<meta name="twitter:title" content="VSCode生产效率插件">
+<meta name="twitter:description" content="VS Code 生产效率插件 open-in-browser 在浏览器中查看VS Code 没有提供直接在浏览器中运行程序的内置功能，所以我们需要安装此插件，在浏览器中查看我们的程序运行效果  Live Server 实时预览安装这个插件之后，我们在编辑器中修改代码，按 Ctrl+S 保存，修改效果就会实时同步，显示在浏览器中，再不用手动刷新  Auto Close Tag 自动闭合标签输入标签名">
     
         <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
     
@@ -118,7 +118,7 @@
         <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
           <i class="icon icon-lg icon-navicon"></i>
         </a>
-        <div class="flex-col header-title ellipsis">nestjs中使用typeorm-model-generator将数据库生成数据模型</div>
+        <div class="flex-col header-title ellipsis">VSCode生产效率插件</div>
         
         <div class="search-wrap" id="search-wrap">
             <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
@@ -140,11 +140,11 @@
 <header class="content-header post-header">
 
     <div class="container fade-scale">
-        <h1 class="title">nestjs中使用typeorm-model-generator将数据库生成数据模型</h1>
+        <h1 class="title">VSCode生产效率插件</h1>
         <h5 class="subtitle">
             
-                <time datetime="2019-12-06T03:03:19.000Z" itemprop="datePublished" class="page-time">
-  2019-12-06
+                <time datetime="2019-12-14T09:36:43.000Z" itemprop="datePublished" class="page-time">
+  2019-12-14
 </time>
 
 
@@ -163,18 +163,18 @@
     <aside class="post-widget">
         <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
             <h4>TOC</h4>
-            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#package-json"><span class="post-toc-number">2.</span> <span class="post-toc-text">package.json</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#运行"><span class="post-toc-number">3.</span> <span class="post-toc-text">运行</span></a></li></ol>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#VS-Code-生产效率插件"><span class="post-toc-number">1.</span> <span class="post-toc-text">VS Code 生产效率插件</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#具体语言工具"><span class="post-toc-number">2.</span> <span class="post-toc-text">具体语言工具</span></a></li></ol>
         </nav>
     </aside>
 
 
-<article id="post-nestjs-typeorm-model-generator"
+<article id="post-vscode-plugin"
   class="post-article article-type-post fade" itemprop="blogPost">
 
     <div class="post-card">
-        <h1 class="post-card-title">nestjs中使用typeorm-model-generator将数据库生成数据模型</h1>
+        <h1 class="post-card-title">VSCode生产效率插件</h1>
         <div class="post-meta">
-            <time class="post-time" title="2019-12-06 11:03:19" datetime="2019-12-06T03:03:19.000Z"  itemprop="datePublished">2019-12-06</time>
+            <time class="post-time" title="2019-12-14 17:36:43" datetime="2019-12-14T09:36:43.000Z"  itemprop="datePublished">2019-12-14</time>
 
             
 
@@ -187,23 +187,80 @@
 
         </div>
         <div class="post-content" id="post-content" itemprop="postContent">
-            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><blockquote>
-<p><code>npm install -g typeorm-model-generator</code></p>
-</blockquote>
-<h2 id="package-json"><a href="#package-json" class="headerlink" title="package.json"></a>package.json</h2><figure class="highlight clean"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">...</span><br><span class="line"><span class="string">"script"</span>: &#123;</span><br><span class="line">  <span class="string">"db"</span>: <span class="string">"rm -rf entities &amp; npx typeorm-model-generator -h localhost -d nest -p 3306 -u root -x root -e mysql -o entities --noConfig true --ce pascal --cp camel"</span></span><br><span class="line">&#125;</span><br><span class="line">...</span><br></pre></td></tr></table></figure>
-<ul>
-<li><code>rm -rf entities</code>表示先删除文件夹entities</li>
-<li><code>npx typeorm-model-generator</code>如果全局安装了就不需要加npx没有全局安装就加上去</li>
-<li><code>-h 数据库地址 -d 数据库名字 -p 端口 -u 用户名 -x 密码 -e 数据库类型</code></li>
-<li>-o entities表示输出到指定的文件夹</li>
-<li><code>--noConfig true</code>表示不生成ormconfig.json和tsconfig.json文件</li>
-<li><code>--ce pascal</code>表示将类名转换首字母是大写的驼峰命名</li>
-<li><code>--cp camel</code>表示将数据库中的字段比如create_at转换为createAt</li>
-<li>-a表示会继承一个BaseEntity的类,根据自己需求加</li>
+            <h2 id="VS-Code-生产效率插件"><a href="#VS-Code-生产效率插件" class="headerlink" title="VS Code 生产效率插件"></a>VS Code 生产效率插件</h2><ul>
+<li><p><code>open-in-browser</code> 在浏览器中查看<br>VS Code 没有提供直接在浏览器中运行程序的内置功能，所以我们需要安装此插件，在浏览器中查看我们的程序运行效果</p>
+</li>
+<li><p><code>Live Server</code> 实时预览<br>安装这个插件之后，我们在编辑器中修改代码，按 Ctrl+S 保存，修改效果就会实时同步，显示在浏览器中，再不用手动刷新</p>
+</li>
+<li><p><code>Auto Close Tag</code> 自动闭合标签<br>输入标签名称的时候自动生成闭合标签，</p>
+</li>
+<li><p><code>Auto Rename Tag</code> 尾部闭合标签同步修改<br>自动检测配对标签，同步修改</p>
+</li>
+<li><p><code>Bracket Pair Colorizer 2</code> 用不同颜色高亮显示匹配的括号<br>对配对的括号进行着色，方便区分，未安装该插件之前括号统一都是白色的</p>
+</li>
+<li><p><code>Highlight Matching Tag</code> 高亮显示匹配标签<br>这个插件自动帮我们将选中的匹配标签高亮显示</p>
+</li>
+<li><p><code>Vscode-icons-mac</code> <code>Vscode-icons VSCode</code> 文件图标<br>可以帮助我们根据不同的文件类型生成对应的图标，这样我们在侧边栏查看文件列表的时候直接通过图标就可以区分文件类型</p>
+</li>
+<li><p><code>Code Spell Checker</code> 单词拼写检查<br>我们在编写代码的时候经常会不小心拼写错误造成软件运行失败，安装这个插件后会自动帮我们识别单词拼写错误并且给出修改建议，大大帮我们减轻了排除 bug 的压力</p>
+</li>
+<li><p><code>import Cost</code> 成本提示<br>这个插件可以在你导入工具包的时候提示这个包的体积，如果体积过大就需要考虑压缩包，为后期上线优化做准备</p>
+</li>
+<li><p><code>GitLens</code> 查看 Git 信息<br>将光标移到代码行上，即可显示当前行最近的 commit 信息和作者，多人开发的时候十分有用，责任到人，防止甩锅</p>
+</li>
+<li><p><code>Version Lens</code> 工具包版本信息<br>在 package.json 中显示你下载安装的 npm 工具包的版本信息，同时会告诉你当前包的最新版本。</p>
+</li>
+<li><p><code>WakaTime</code> 计算代码工作量<br>这是一款时间记录工具，它可以帮助你在 vs code 中记录有效的编程的时间 （用处不大）</p>
+</li>
 </ul>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><blockquote>
-<p>npm run db</p>
-</blockquote>
+<ul>
+<li><p><code>Beautify</code>  <code>Prettier - Code formatter</code><br>打码美化/格式化</p>
+</li>
+<li><p><code>Comment Translate</code><br>注释翻译工具</p>
+</li>
+<li><p><code>Git Emoji Commit</code><br>git 提交添加表情包</p>
+</li>
+<li><p><code>LeetCode</code> 在 vscode 里面学习</p>
+</li>
+<li><p><code>Markdown Preview Enhanced</code> markdown 预览</p>
+</li>
+<li><p><code>qiniu-upload-image</code><br>编写 markdown 时候图片直接上传七牛云并获取到外链</p>
+</li>
+<li><p><code>stylelint</code></p>
+</li>
+<li><p><code>TSlint</code></p>
+</li>
+</ul>
+<h2 id="具体语言工具"><a href="#具体语言工具" class="headerlink" title="具体语言工具"></a>具体语言工具</h2><ul>
+<li><p><code>Maven for Java</code></p>
+</li>
+<li><p><code>Language Support for Java(TM) by Red Hat</code></p>
+</li>
+<li><p><code>ES7 React/Redux/GraphQL/React-Native snippets</code></p>
+</li>
+<li><p><code>React Native Tools</code></p>
+</li>
+<li><p><code>小程序助手</code></p>
+</li>
+<li><p><code>Vetur</code> </p>
+</li>
+<li><code>vue</code> </li>
+<li><code>Vue VSCode Snippets</code> </li>
+<li><p><code>vscode-element-helper</code></p>
+</li>
+<li><p><code>Vetur-wepy</code></p>
+</li>
+<li><p><code>Vscode NestJs Snippets</code></p>
+</li>
+<li><p><code>Sequelize VSCode Association Snippet</code></p>
+</li>
+<li><p><code>go</code></p>
+</li>
+<li><p><code>C/C++</code></p>
+</li>
+<li><p><code>docker</code></p>
+</li>
+</ul>
 
             
             <h3>广告</h3>
@@ -245,7 +302,7 @@
 
         <div class="post-footer">
             
-	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/nestjs/">nestjs</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/node/">node</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typeorm/">typeorm</a></li></ul>
+	<ul class="article-tag-list"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/">vscode</a></li></ul>
 
 
             
@@ -255,7 +312,7 @@
 <div class="page-share" id="pageShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&title=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/12/14/vscode-plugin/&title=《VSCode生产效率插件》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -265,22 +322,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&title=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/12/14/vscode-plugin/&title=《VSCode生产效率插件》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/12/14/vscode-plugin/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VSCode生产效率插件》 — afacode的博客&url=https://blog.afacode.top/2019/12/14/vscode-plugin/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/12/14/vscode-plugin/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -300,21 +357,14 @@
     </div>
 
     
-<nav class="post-nav flex-row flex-justify-between">
-  
-    <div class="waves-block waves-effect prev">
-      <a href="/2019/12/14/vscode-plugin/" id="post-prev" class="post-nav-link">
-        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
-        <h4 class="title">VSCode生产效率插件</h4>
-      </a>
-    </div>
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
   
 
   
     <div class="waves-block waves-effect next">
-      <a href="/2019/11/30/vetur-cannot-find-name-template/" id="post-next" class="post-nav-link">
+      <a href="/2019/12/06/nestjs-typeorm-model-generator/" id="post-next" class="post-nav-link">
         <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
-        <h4 class="title">(vetur) cannot find name template</h4>
+        <h4 class="title">nestjs中使用typeorm-model-generator将数据库生成数据模型</h4>
       </a>
     </div>
   
@@ -414,7 +464,7 @@
 <div class="global-share" id="globalShare">
     <ul class="reset share-icons">
       <li>
-        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&title=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/12/14/vscode-plugin/&title=《VSCode生产效率插件》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
           <i class="icon icon-weibo"></i>
         </a>
       </li>
@@ -424,22 +474,22 @@
         </a>
       </li>
       <li>
-        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&title=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&source=" data-title=" QQ">
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/12/14/vscode-plugin/&title=《VSCode生产效率插件》 — afacode的博客&source=" data-title=" QQ">
           <i class="icon icon-qq"></i>
         </a>
       </li>
       <li>
-        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/" data-title=" Facebook">
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/12/14/vscode-plugin/" data-title=" Facebook">
           <i class="icon icon-facebook"></i>
         </a>
       </li>
       <li>
-        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《nestjs中使用typeorm-model-generator将数据库生成数据模型》 — afacode的博客&url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/&via=https://blog.afacode.top" data-title=" Twitter">
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《VSCode生产效率插件》 — afacode的博客&url=https://blog.afacode.top/2019/12/14/vscode-plugin/&via=https://blog.afacode.top" data-title=" Twitter">
           <i class="icon icon-twitter"></i>
         </a>
       </li>
       <li>
-        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/12/06/nestjs-typeorm-model-generator/" data-title=" Google+">
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/12/14/vscode-plugin/" data-title=" Google+">
           <i class="icon icon-google-plus"></i>
         </a>
       </li>
@@ -450,7 +500,7 @@
 <div class="page-modal wx-share" id="wxShare">
     <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
     <p>扫一扫，分享到微信</p>
-    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACsUlEQVR42u3aUW6DQAwFwNz/0u0BWuDZXqepNHyhBAKzlXa3z3694uPr9qhec3V98vlr48DDw8NbfvWf9+bnV792//RkaK7uwsPDw9vjXc2o+YR+j6nO4dUhu/wcDw8P7wN4vRdK7u2x8fDw8D6fN9kuJ7A8yMDDw8P7W94kfq2GCHvhBR4eHt57eHlM8DnnK/U9PDw8vHFV/dQicb9gVKPbwrPw8PDwFnj5hNtrKagGtRuBLx4eHt4G79QNeSybRw9JHFwdLDw8PLwJr7qNzqfvahms17w1yqfx8PDwBrxkczz5pDq5JwtMhMTDw8Nb4/VeNwf0lqL8DS+XKzw8PLwFXt4oMN8i51N/8vt5CQ0PDw/vLK8XN0zOJ4NSTqbx8PDwlnnJlnfeUlAtlVUbCx56IvDw8PAO8ZIIoFfcqrYO5MNxIGvBw8PDG/PyI19C8uJWPiiFYcLDw8Nb4E2aA/JveyHFJAR5VTF4eHh4A15voj/76qciDDw8PLwNXnUBqIat1aGZtIX9cj0eHh7eAq93w7x8lcTHvSi50EaAh4eH1+JVt7DVxql8jCcLzMNfDA8PD+8oLzkmE/SpCn4+6Hh4eHjv4VWn3V75vzetJ2HEwxDg4eHhrfGqgekkkE0KZvm390sLHh4e3jt5eUNAvjmuNh9Ut/ijccXDw8Mr8vI2rFNDk5e+8mjj4T8GPDw8vKO86gOqk3s1Du4dD1U+PDw8vDFvvjnOl5BqaJsvQpff4uHh4S3wzjYQ9KLeXkiRnOPh4eHt8XrNT3lM0BvE3sLQDCPw8PDwWry80SrZEM+n+F4Acbkw4OHh4X0MrxfdJtfnUTIeHh7ef+Hlm+8EmUfD5Y07Hh4e3hpvUvS6H5RqSSwPPqKn4OHh4S3wys1Mt9FD74Wq2+sDNT08PDy8Du8b0GUiFnuflMwAAAAASUVORK5CYII=" alt="微信分享二维码">
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACP0lEQVR42u3aS27DMAxFUe9/0+60QGv5PlJNIel6FCSBreMBwd914eseXuN/fv/+6Z9P30y+ZMiQsSyDHHF89NpTfv769Jm8PhkyZJzAeHow+c/4EIRH7vZyZhkyZMgYHohgxkG29vpkyJAhg5egHDBOLv8h4MqQIWMpBilieTBNy9eP1uIyZMhYkMGbZZ///CfzDRkyZCzFuMOrkz7ygjY+lQwZMrZmpO17vkLBo2JnnCBDhozTGGnI48NIvlqRvpqLR3cZMmRswUhbYyQRrC1t1EYOMmTI2JVRC51pacob+hNCrQwZMrZjdJaxSJgmSeeENQsZMmQcwEjTwdq6QzoSIGeTIUPGCQySAvJD8BFC5/6//CpDhoxjGCRFS5O/8RF5SH25pwwZMo5htGYL4WCy1norTjZkyJCxOIOndISXLpDVXlCx6SZDhoxlGenaRKe5XyuSEViGDBmHMWoPmLU8wZ/yEnBlyJCxEaOGmbUcRkg89ZQhQ8beDFKOpk389AX1y1oZMmTszeABkTfR0oEBfzrKc2XIkLEpgzTIeFstLYD5WOIl4MqQIeMARm15otaGqwXul1pchgwZ2zHu8KoNODujUESVIUPG1oxaiCRJYa25RhLN1mBVhgwZyzJ4kOVFbDqwDIaUna6hDBkyFmd0iliS/PWLWLQzIkOGDBnhwCC9G38FaFtEhgwZMvDaRJqA8kWxaQFXhgwZizBqh+CJIylHa+MHGTJknMDgpSPPxNJD8xK3NdSUIUPGeowvauyJh3Ci94MAAAAASUVORK5CYII=" alt="微信分享二维码">
 </div>
 
 

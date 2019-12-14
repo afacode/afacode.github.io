@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-12-06T03:14:33.885Z</updated>
+  <updated>2019-12-14T10:03:32.921Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>VSCode生产效率插件</title>
+    <link href="https://blog.afacode.top/2019/12/14/vscode-plugin/"/>
+    <id>https://blog.afacode.top/2019/12/14/vscode-plugin/</id>
+    <published>2019-12-14T09:36:43.000Z</published>
+    <updated>2019-12-14T10:03:32.921Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="VS-Code-生产效率插件"><a href="#VS-Code-生产效率插件" class="headerlink" title="VS Code 生产效率插件"></a>VS Code 生产效率插件</h2><ul><li><p><code>open-in-browser</code> 在浏览器中查看<br>VS Code 没有提供直接在浏览器中运行程序的内置功能，所以我们需要安装此插件，在浏览器中查看我们的程序运行效果</p></li><li><p><code>Live Server</code> 实时预览<br>安装这个插件之后，我们在编辑器中修改代码，按 Ctrl+S 保存，修改效果就会实时同步，显示在浏览器中，再不用手动刷新</p></li><li><p><code>Auto Close Tag</code> 自动闭合标签<br>输入标签名称的时候自动生成闭合标签，</p></li><li><p><code>Auto Rename Tag</code> 尾部闭合标签同步修改<br>自动检测配对标签，同步修改</p></li><li><p><code>Bracket Pair Colorizer 2</code> 用不同颜色高亮显示匹配的括号<br>对配对的括号进行着色，方便区分，未安装该插件之前括号统一都是白色的</p></li><li><p><code>Highlight Matching Tag</code> 高亮显示匹配标签<br>这个插件自动帮我们将选中的匹配标签高亮显示</p></li><li><p><code>Vscode-icons-mac</code> <code>Vscode-icons VSCode</code> 文件图标<br>可以帮助我们根据不同的文件类型生成对应的图标，这样我们在侧边栏查看文件列表的时候直接通过图标就可以区分文件类型</p></li><li><p><code>Code Spell Checker</code> 单词拼写检查<br>我们在编写代码的时候经常会不小心拼写错误造成软件运行失败，安装这个插件后会自动帮我们识别单词拼写错误并且给出修改建议，大大帮我们减轻了排除 bug 的压力</p></li><li><p><code>import Cost</code> 成本提示<br>这个插件可以在你导入工具包的时候提示这个包的体积，如果体积过大就需要考虑压缩包，为后期上线优化做准备</p></li><li><p><code>GitLens</code> 查看 Git 信息<br>将光标移到代码行上，即可显示当前行最近的 commit 信息和作者，多人开发的时候十分有用，责任到人，防止甩锅</p></li><li><p><code>Version Lens</code> 工具包版本信息<br>在 package.json 中显示你下载安装的 npm 工具包的版本信息，同时会告诉你当前包的最新版本。</p></li><li><p><code>WakaTime</code> 计算代码工作量<br>这是一款时间记录工具，它可以帮助你在 vs code 中记录有效的编程的时间 （用处不大）</p></li></ul><ul><li><p><code>Beautify</code>  <code>Prettier - Code formatter</code><br>打码美化/格式化</p></li><li><p><code>Comment Translate</code><br>注释翻译工具</p></li><li><p><code>Git Emoji Commit</code><br>git 提交添加表情包</p></li><li><p><code>LeetCode</code> 在 vscode 里面学习</p></li><li><p><code>Markdown Preview Enhanced</code> markdown 预览</p></li><li><p><code>qiniu-upload-image</code><br>编写 markdown 时候图片直接上传七牛云并获取到外链</p></li><li><p><code>stylelint</code></p></li><li><p><code>TSlint</code></p></li></ul><h2 id="具体语言工具"><a href="#具体语言工具" class="headerlink" title="具体语言工具"></a>具体语言工具</h2><ul><li><p><code>Maven for Java</code></p></li><li><p><code>Language Support for Java(TM) by Red Hat</code></p></li><li><p><code>ES7 React/Redux/GraphQL/React-Native snippets</code></p></li><li><p><code>React Native Tools</code></p></li><li><p><code>小程序助手</code></p></li><li><p><code>Vetur</code> </p></li><li><code>vue</code> </li><li><code>Vue VSCode Snippets</code> </li><li><p><code>vscode-element-helper</code></p></li><li><p><code>Vetur-wepy</code></p></li><li><p><code>Vscode NestJs Snippets</code></p></li><li><p><code>Sequelize VSCode Association Snippet</code></p></li><li><p><code>go</code></p></li><li><p><code>C/C++</code></p></li><li><p><code>docker</code></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;VS-Code-生产效率插件&quot;&gt;&lt;a href=&quot;#VS-Code-生产效率插件&quot; class=&quot;headerlink&quot; title=&quot;VS Code 生产效率插件&quot;&gt;&lt;/a&gt;VS Code 生产效率插件&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;&lt;code&gt;open-in
+      
+    
+    </summary>
+    
+    
+      <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
+    
+  </entry>
   
   <entry>
     <title>nestjs中使用typeorm-model-generator将数据库生成数据模型</title>
