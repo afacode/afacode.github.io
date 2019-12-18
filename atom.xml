@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-12-16T00:58:55.345Z</updated>
+  <updated>2019-12-18T06:47:00.664Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>pm2基础使用及简单配置</title>
+    <link href="https://blog.afacode.top/2019/12/18/pm2-use/"/>
+    <id>https://blog.afacode.top/2019/12/18/pm2-use/</id>
+    <published>2019-12-18T06:34:42.000Z</published>
+    <updated>2019-12-18T06:47:00.664Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><p><code>npm install -g pm2</code></p><h2 id="常用命令"><a href="#常用命令" class="headerlink" title="常用命令"></a>常用命令</h2><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">pm2 list</span><br><span class="line"></span><br><span class="line">pm2 <span class="built_in">start</span> app.js</span><br><span class="line">pm2 restart app_name/id</span><br><span class="line">pm2 <span class="built_in">stop</span> app_name/id</span><br><span class="line">pm2 <span class="built_in">delete</span> app_name/id</span><br><span class="line"></span><br><span class="line">pm2 <span class="built_in">log</span></span><br><span class="line">pm2 info</span><br><span class="line">pm2 monit</span><br><span class="line"></span><br><span class="line">pm2 <span class="built_in">start</span> app.js -i <span class="number">4</span>  <span class="comment"># 后台运行pm2，启动4个app.js</span></span><br><span class="line">                         <span class="comment"># 也可以把'max' 参数传递给 start</span></span><br><span class="line">                         <span class="comment"># 正确的进程数目依赖于Cpu的核心数目</span></span><br><span class="line">pm2 <span class="built_in">start</span> app.js <span class="comment">--name my-api # 命名进程</span></span><br><span class="line">pm2 list               <span class="comment"># 显示所有进程状态</span></span><br><span class="line">pm2 monit              <span class="comment"># 监视所有进程</span></span><br><span class="line">pm2 logs               <span class="comment"># 显示所有进程日志</span></span><br><span class="line">pm2 <span class="built_in">stop</span> all           <span class="comment"># 停止所有进程</span></span><br><span class="line">pm2 restart all        <span class="comment"># 重启所有进程</span></span><br><span class="line">pm2 reload all         <span class="comment"># 0 秒停机重载进程 (用于 NETWORKED 进程) 0 秒停机重载：这项功能允许你重新载入代码而不用失去请求连接。</span></span><br><span class="line">pm2 <span class="built_in">stop</span> <span class="number">0</span>             <span class="comment"># 停止指定的进程</span></span><br><span class="line">pm2 restart <span class="number">0</span>          <span class="comment"># 重启指定的进程</span></span><br><span class="line">pm2 startup            <span class="comment"># 产生 init 脚本 保持进程活着</span></span><br><span class="line">pm2 web                <span class="comment"># 运行健壮的 computer API endpoint (http://localhost:9615)</span></span><br><span class="line">pm2 <span class="built_in">delete</span> <span class="number">0</span>           <span class="comment"># 杀死指定的进程</span></span><br><span class="line">pm2 <span class="built_in">delete</span> all         <span class="comment"># 杀死全部进程</span></span><br></pre></td></tr></table></figure><blockquote><p>运行进程的不同方式</p></blockquote><figure class="highlight livecodeserver"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--watch：监听应用目录的变化，一旦发生变化，自动重启。如果要精确监听、不见听的目录，最好通过配置文件。</span></span><br><span class="line">-i <span class="comment">--instances：启用多少个实例，可用于负载均衡。如果-i 0或者-i max，则根据当前机器核数确定实例数目。</span></span><br><span class="line"><span class="comment">--ignore-watch：排除监听的目录/文件，可以是特定的文件名，也可以是正则。比如--ignore-watch="test node_modules "some scripts""</span></span><br><span class="line">-n <span class="comment">--name：应用的名称。查看应用信息的时候可以用到。</span></span><br><span class="line">-o <span class="comment">--output &lt;path&gt;：标准输出日志文件的路径。</span></span><br><span class="line">-e <span class="comment">--error &lt;path&gt;：错误输出日志文件的路径。</span></span><br><span class="line"></span><br><span class="line">pm2 <span class="built_in">start</span> app.js -i <span class="built_in">max</span>    <span class="comment"># 根据有效CPU数目启动最大进程数目</span></span><br><span class="line">pm2 <span class="built_in">start</span> app.js -i <span class="number">3</span>      <span class="comment"># 启动3个进程</span></span><br><span class="line">pm2 <span class="built_in">start</span> app.js -x        <span class="comment">#用fork模式启动 app.js 而不是使用 cluster</span></span><br><span class="line">pm2 <span class="built_in">start</span> app.js -x <span class="comment">-- -a 23   # 用fork模式启动 app.js 并且传递参数 (-a 23)</span></span><br><span class="line">pm2 <span class="built_in">start</span> app.js <span class="comment">--name serverone  # 启动一个进程并把它命名为 serverone</span></span><br><span class="line">pm2 <span class="built_in">stop</span> serverone       <span class="comment"># 停止 serverone 进程</span></span><br><span class="line">pm2 <span class="built_in">start</span> app.json        <span class="comment"># 启动进程, 在 app.json里设置选项</span></span><br><span class="line">pm2 <span class="built_in">start</span> app.js -i <span class="built_in">max</span> <span class="comment">-- -a 23   #在--之后给 app.js 传递参数</span></span><br><span class="line">pm2 <span class="built_in">start</span> app.js -i <span class="built_in">max</span> -e err.<span class="built_in">log</span> -o out.<span class="built_in">log</span>  <span class="comment"># 启动 并 生成一个配置文件</span></span><br></pre></td></tr></table></figure><h2 id="简单配置"><a href="#简单配置" class="headerlink" title="简单配置"></a>简单配置</h2><p>启动 <code>pm2 start pm2.conf.json</code></p><p>pm2.conf.json<br><figure class="highlight actionscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">"apps"</span>: &#123;</span><br><span class="line">    <span class="string">"name"</span>        : <span class="string">"fis-receiver"</span>,  <span class="comment">// 应用名称</span></span><br><span class="line">    <span class="string">"script"</span>      : <span class="string">"./bin/www"</span>,  <span class="comment">// 实际启动脚本</span></span><br><span class="line">    <span class="string">"cwd"</span>         : <span class="string">"./"</span>,  <span class="comment">// 当前工作路径</span></span><br><span class="line">    <span class="string">"watch"</span>: [  <span class="comment">// 监控变化的目录，一旦变化，自动重启</span></span><br><span class="line">      <span class="string">"bin"</span>,</span><br><span class="line">      <span class="string">"routers"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"ignore_watch"</span> : [  <span class="comment">// 从监控目录中排除</span></span><br><span class="line">      <span class="string">"node_modules"</span>,</span><br><span class="line">      <span class="string">"logs"</span>,</span><br><span class="line">      <span class="string">"public"</span></span><br><span class="line">    ],</span><br><span class="line">    <span class="string">"watch"</span>: <span class="literal">true</span>, <span class="comment">// 是否监听重启，</span></span><br><span class="line">    <span class="string">"instances"</span>: <span class="number">4</span>, <span class="comment">// 几核，多进程 多进程之间内存无法共享，使用redis共享数据</span></span><br><span class="line">    <span class="string">"error_file"</span> : <span class="string">"./logs/app-err.log"</span>,  <span class="comment">// 错误日志路径</span></span><br><span class="line">    <span class="string">"out_file"</span>   : <span class="string">"./logs/app-out.log"</span>,  <span class="comment">// 普通日志路径</span></span><br><span class="line">    <span class="string">"log_date_format"</span>: <span class="string">"YYYY-MM-DD HH:mm:ss"</span>, <span class="comment">// 日志输出时间格式</span></span><br><span class="line">    <span class="string">"env"</span>: &#123;</span><br><span class="line">        <span class="string">"NODE_ENV"</span>: <span class="string">"production"</span>  <span class="comment">// 环境参数，当前指定为生产环境</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;安装&quot;&gt;&lt;a href=&quot;#安装&quot; class=&quot;headerlink&quot; title=&quot;安装&quot;&gt;&lt;/a&gt;安装&lt;/h2&gt;&lt;p&gt;&lt;code&gt;npm install -g pm2&lt;/code&gt;&lt;/p&gt;
+&lt;h2 id=&quot;常用命令&quot;&gt;&lt;a href=&quot;#常用命令&quot; clas
+      
+    
+    </summary>
+    
+    
+      <category term="node" scheme="https://blog.afacode.top/tags/node/"/>
+    
+      <category term="pm2" scheme="https://blog.afacode.top/tags/pm2/"/>
+    
+  </entry>
   
   <entry>
     <title>oh-my-zsh更新出错</title>
@@ -1073,9 +1099,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -1234,9 +1260,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -1261,9 +1287,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
