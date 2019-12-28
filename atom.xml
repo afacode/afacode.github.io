@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2019-12-18T10:02:33.330Z</updated>
+  <updated>2019-12-28T07:46:30.579Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>解决electron无法安装问题</title>
+    <link href="https://blog.afacode.top/2019/12/28/electron-install/"/>
+    <id>https://blog.afacode.top/2019/12/28/electron-install/</id>
+    <published>2019-12-28T07:42:57.000Z</published>
+    <updated>2019-12-28T07:46:30.579Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="electron-无法安装解决方法"><a href="#electron-无法安装解决方法" class="headerlink" title="electron 无法安装解决方法"></a>electron 无法安装解决方法</h2><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">打开</span><br><span class="line">vim ~<span class="regexp">/.npmrc</span></span><br><span class="line"><span class="regexp"></span></span><br><span class="line"><span class="regexp">添加</span></span><br><span class="line"><span class="regexp">electron_mirror="https:/</span><span class="regexp">/npm.taobao.org/mirrors</span><span class="regexp">/electron/</span><span class="string">"</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">source ~/.npmrc</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;electron-无法安装解决方法&quot;&gt;&lt;a href=&quot;#electron-无法安装解决方法&quot; class=&quot;headerlink&quot; title=&quot;electron 无法安装解决方法&quot;&gt;&lt;/a&gt;electron 无法安装解决方法&lt;/h2&gt;&lt;figure class
+      
+    
+    </summary>
+    
+    
+      <category term="npm" scheme="https://blog.afacode.top/tags/npm/"/>
+    
+      <category term="electron" scheme="https://blog.afacode.top/tags/electron/"/>
+    
+  </entry>
   
   <entry>
     <title>nuxt服务部署SSR</title>
@@ -991,9 +1016,9 @@
     
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
-    
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
   </entry>
   
