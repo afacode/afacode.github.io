@@ -4,7 +4,7 @@ title: nestjs中使用typeorm-model-generator将数据库生成数据模型
 date: 2019-12-06 11:03:19
 tags:
   - node
-  - nestjs
+  - NestJs
   - typeorm
 ---
 
