@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2020-04-15T12:16:09.109Z</updated>
+  <updated>2020-05-08T09:57:12.948Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Waiting for another flutter command to release the startup lock</title>
+    <link href="https://blog.afacode.top/2020/05/08/lock/"/>
+    <id>https://blog.afacode.top/2020/05/08/lock/</id>
+    <published>2020-05-08T09:52:46.000Z</published>
+    <updated>2020-05-08T09:57:12.948Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="Waiting-for-another-flutter-command-to-release-the-startup-lock…"><a href="#Waiting-for-another-flutter-command-to-release-the-startup-lock…" class="headerlink" title="Waiting for another flutter command to release the startup lock…"></a>Waiting for another flutter command to release the startup lock…</h2><h2 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h2><p>找到flutter的环境配置地址<br>删除 /bin/cache/lockfile 文件</p><blockquote><p>which flutter<br>/Users/XXX/path/flutter/bin/flutter</p></blockquote><blockquote><p>删除 /flutter/bin/cache/lockfile 文件</p></blockquote>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;Waiting-for-another-flutter-command-to-release-the-startup-lock…&quot;&gt;&lt;a href=&quot;#Waiting-for-another-flutter-command-to-release-the-start
+      
+    
+    </summary>
+    
+    
+      <category term="flutter" scheme="https://blog.afacode.top/tags/flutter/"/>
+    
+  </entry>
   
   <entry>
     <title>NestJs简单实现文件上传</title>
@@ -182,9 +205,9 @@
     </summary>
     
     
-      <category term="nuxt" scheme="https://blog.afacode.top/tags/nuxt/"/>
-    
       <category term="pm2" scheme="https://blog.afacode.top/tags/pm2/"/>
+    
+      <category term="nuxt" scheme="https://blog.afacode.top/tags/nuxt/"/>
     
   </entry>
   
