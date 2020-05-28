@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2020-05-08T09:57:12.948Z</updated>
+  <updated>2020-05-28T06:57:09.697Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>微信小程序在IOS真机线上或体验版显示NAN</title>
+    <link href="https://blog.afacode.top/2020/05/28/wechatapp-ios-datetime-nan-bug/"/>
+    <id>https://blog.afacode.top/2020/05/28/wechatapp-ios-datetime-nan-bug/</id>
+    <published>2020-05-28T06:46:34.000Z</published>
+    <updated>2020-05-28T06:57:09.697Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="微信小程序在IOS真机线上或体验版显示NAN"><a href="#微信小程序在IOS真机线上或体验版显示NAN" class="headerlink" title="微信小程序在IOS真机线上或体验版显示NAN"></a>微信小程序在IOS真机线上或体验版显示NAN</h2><p>在微信开发工具测试时间显示正常、真机调试时间显示正常。<br>安卓手机体验版/线上版本时间显示正常。开发工具真机调试连接iOS手机测试时间显示正常。<br>但就是IOS真机线上或体验版显示NAN</p><h2 id="iOS手机或者浏览器不支持2018-05-03这种类型的日期格式。"><a href="#iOS手机或者浏览器不支持2018-05-03这种类型的日期格式。" class="headerlink" title="iOS手机或者浏览器不支持2018-05-03这种类型的日期格式。"></a>iOS手机或者浏览器不支持2018-05-03这种类型的日期格式。</h2><h2 id="将2018-05-03-转换为2018-05-03这样的时间格式"><a href="#将2018-05-03-转换为2018-05-03这样的时间格式" class="headerlink" title="将2018-05-03 转换为2018/05/03这样的时间格式"></a>将2018-05-03 转换为2018/05/03这样的时间格式</h2><p><code>&quot;2020-05-28 14:46:34&quot;.replace(/-/g,&#39;/&#39;)</code><br>然后可以进行获取时间戳的操作。</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;微信小程序在IOS真机线上或体验版显示NAN&quot;&gt;&lt;a href=&quot;#微信小程序在IOS真机线上或体验版显示NAN&quot; class=&quot;headerlink&quot; title=&quot;微信小程序在IOS真机线上或体验版显示NAN&quot;&gt;&lt;/a&gt;微信小程序在IOS真机线上或体验版显示N
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>Waiting for another flutter command to release the startup lock</title>
@@ -205,9 +226,9 @@
     </summary>
     
     
-      <category term="pm2" scheme="https://blog.afacode.top/tags/pm2/"/>
-    
       <category term="nuxt" scheme="https://blog.afacode.top/tags/nuxt/"/>
+    
+      <category term="pm2" scheme="https://blog.afacode.top/tags/pm2/"/>
     
   </entry>
   
@@ -1160,9 +1181,9 @@
     
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
-      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
-    
       <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
+    
+      <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
     
   </entry>
   
