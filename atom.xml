@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2020-05-28T06:57:09.697Z</updated>
+  <updated>2020-06-15T08:44:39.999Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>You may have an infinite update loop in a component render function</title>
+    <link href="https://blog.afacode.top/2020/06/15/vue-warning-update-loop/"/>
+    <id>https://blog.afacode.top/2020/06/15/vue-warning-update-loop/</id>
+    <published>2020-06-15T08:33:47.000Z</published>
+    <updated>2020-06-15T08:44:39.999Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><p>vue for 里面数组渲染翻转 警告<br>You may have an infinite update loop in a component render function</p><h2 id="修复"><a href="#修复" class="headerlink" title="修复"></a>修复</h2><p>issus回复 <a href="https://github.com/vuejs/vue/issues/1153" target="_blank" rel="noopener">https://github.com/vuejs/vue/issues/1153</a><br><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">div</span> v-<span class="keyword">for</span>=<span class="string">"(itemi, idxi) in productDetails.details"</span> :key=<span class="string">"idxi"</span>&gt;</span><br><span class="line">  &lt;<span class="selector-tag">ul</span> class=<span class="string">"status-list"</span>&gt;</span><br><span class="line">    &lt;<span class="selector-tag">li</span> v-<span class="keyword">for</span>=<span class="string">"(itemx, idxx) in itemi.kdinfo.Route.reverse()"</span> :class=<span class="string">"idxx=== 0 ?'latest':''"</span> :key=<span class="string">"idxx"</span>&gt;&#123;&#123;itemx.accept_time&#125;&#125;</span><br><span class="line"></span><br><span class="line">    修改为 itemi<span class="selector-class">.kdinfo</span><span class="selector-class">.Route</span><span class="selector-class">.slice</span>().reverse()</span><br><span class="line">  &lt;/ul&gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;问题&quot;&gt;&lt;a href=&quot;#问题&quot; class=&quot;headerlink&quot; title=&quot;问题&quot;&gt;&lt;/a&gt;问题&lt;/h2&gt;&lt;p&gt;vue for 里面数组渲染翻转 警告&lt;br&gt;You may have an infinite update loop in a compo
+      
+    
+    </summary>
+    
+    
+      <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
+    
+  </entry>
   
   <entry>
     <title>微信小程序在IOS真机线上或体验版显示NAN</title>
@@ -1181,9 +1204,9 @@
     
       <category term="vscode" scheme="https://blog.afacode.top/tags/vscode/"/>
     
-      <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
-    
       <category term="hexo" scheme="https://blog.afacode.top/tags/hexo/"/>
+    
+      <category term="七牛云" scheme="https://blog.afacode.top/tags/%E4%B8%83%E7%89%9B%E4%BA%91/"/>
     
   </entry>
   
