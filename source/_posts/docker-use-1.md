@@ -11,7 +11,7 @@ apt-get update
 apt-get install -y docker.io
 ```
 ## 配置镜像源
-`阿里云镜像加速`麻烦未做
+`阿里云镜像加速`
 ```
 vim /etc/docker/daemon.json
 {
@@ -22,11 +22,12 @@ vim /etc/docker/daemon.json
 service docker restart
 ```
 
-## 基础操作
+## 镜像
 ```
 docker version
 
-docker image ls || docker images 本地主机上的镜像
+查看本地主机上的镜像
+docker image ls || docker images 
 
 同一仓库源可以有多个 TAG
 REPOSITORY:TAG 来定义不同的镜像
@@ -36,8 +37,14 @@ docker pull REPOSITORY:TAG  获取一个新的镜像
 
 docker search REPOSITORY  查找镜像
 
-docker rmi REPOSITORY:TAG 删除镜像
+镜像别名 
+docker image tag REPOSITORY:TAG  newImage:v1
+docker tag 原镜像名称：TAG  新镜像：TAG
 
+删除镜像
+docker rmi REPOSITORY:TAG 
+docker image rm REPOSITORY:TAG
+docker image rm IMAGE-ID
 
 
 docker run REPOSITORY:TAG
@@ -55,15 +62,24 @@ docker build
 ## 容器
 ```
 容器运行
-docker run -t -i --name distserver imagesName /bin/bash
+docker run -d --name distserver imagesName /bin/bash
 
-# -t -i  /bin/bash 进入容器
-# demo  nginxserver别名 -p 端口映射 -d：表明容器的运行模式在后台 dist-docker 镜像名
+-it  /bin/bash 进入容器
+--name 命名
+-p 端口映射 
+-d：表明容器的运行模式在后台 
+dist-docker 镜像名
 docker run --name distserver -d -p 8099:80 dist-docker:1.0.0
 
 容器停止
 docker stop `CONTAINER ID`
 docker kill 
+
+启动
+docker start CONTAINER ID
+
+docker stats  查看CPU
+
 
 容器删除
 docker rm `CONTAINER ID`
@@ -71,6 +87,9 @@ dcoker rm `docker ps -a -q` 删除所有容器
 
 深入容器
 docker inspect `CONTAINER ID`
+
+获取容器IP
+docker inspect 5003a6cecaf1 | grep IPAddress
 
 
 端口映射
@@ -84,6 +103,8 @@ docker ps -a || docker container ls --all所有的
 
 进入容器
 docker exec -it 容器ID /bin/bash
+
+docker attach 容器ID
 
 退出容器
 exit
@@ -99,7 +120,126 @@ docker port containerID 80
 
 
 docker container ls || docker ps 查看当前运行的容器
+
+将容器内容拷贝至主机
+docker cp containerID:/home/demo.html /Users/afacode/private/
+
+docker run  参数
+-d
+--name
+-p 
+-v 数据挂载
+-e 配置环境
+
+
+多个容器数据卷相互共享，实际是备份
+--volumes-from mysql01
+
+docker run -d -p 3307:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw --name mysql01  mysql:5.7
+
+docker run -d -p 3307:3306 --volumes-from mysql01 -e MYSQL_ROOT_PASSWORD=my-secret-pw --name mysql01  mysql:5.7
+
+
+多个MySQL或者Redis实现数据共享
+
+容器之间配置信息的相互传递，数据卷生命周期一直持续到没有人使用容器为止
+
 ```
+
+## 容器数据卷
+* 容器内产生的数据，同步到本地。需要数据共享。将容器内目录挂载到本地
+
+
+```
+docker run -v
+-v 主机目录：容器内目录
+
+docker run -it -v /home/test:/home  centos /bin/bash
+容器内/home目录会同步到本机/home/test
+反之同理 双向绑定
+
+
+多个容器数据卷相互共享，实际是备份
+--volumes-from mysql01
+
+docker run -d -p 3307:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw --name mysql01  mysql:5.7
+
+docker run -d -p 3307:3306 --volumes-from mysql01 -e MYSQL_ROOT_PASSWORD=my-secret-pw --name mysql01  mysql:5.7
+
+
+多个MySQL或者Redis实现数据共享
+
+容器之间配置信息的相互传递，数据卷生命周期一直持续到没有人使用容器为止
+```
+
+### MySQL数据持久化
+
+```
+docker pull mysql:5.7
+
+docker images
+
+docker run -d -p 3307:3306 -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/data:/var/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw --name mysql-demo  mysql:5.7
+```
+
+具名挂载和匿名挂载
+
+```
+匿名挂载 是只指定容器内路径，没有指定本机路径
+
+docker run -d -v 
+
+查看所有卷
+docker volume ls
+这种事匿名挂载
+local               6ae0f43ce8eab7c422d4f83cebbbb3e2b801bdcacea7fb1aaabc59fb5296a96c
+
+具名挂载 
+docker run -d -v juming-nginx:/etc/nginx nginx:latest
+
+
+查看卷 
+docker volume inspect VOLUME-NAME
+
+[
+    {
+        "CreatedAt": "2020-07-13T03:12:37Z",
+        "Driver": "local",
+        "Labels": null,
+        "Mountpoint": "/var/lib/docker/volumes/6ae0f43ce8eab7c422d4f83cebbbb3e2b801bdcacea7fb1aaabc59fb5296a96c/_data",
+        "Name": "6ae0f43ce8eab7c422d4f83cebbbb3e2b801bdcacea7fb1aaabc59fb5296a96c",
+        "Options": null,
+        "Scope": "local"
+    }
+]
+
+所有没有指定卷的路径时，都是在 /var/lib/docker/volumes/****/_data
+
+
+
+如何确定是 具名挂载，匿名挂载还是指定路径挂载
+
+-v 容器内路径           匿名挂载
+-v 卷名:容器内路径      具名挂载
+-v 本机路径:容器内路径   指定路径挂载
+
+
+拓展
+读写权限
+ro readonly  只读  路径内文件只能通过本机操作，不能通过容器内操作
+rw readwrite
+
+
+
+docker run -d -v juming-nginx:/etc/nginx:ro nginx:latest
+
+docker run -d -v juming-nginx:/etc/nginx:rw nginx:latest
+
+```
+
+
+## 网络
+
 
 ## 自定义镜像
 ```
@@ -159,9 +299,14 @@ RUN
 ADD
 # 功能类似ADD，但是是不会自动解压文件，也不能访问网络资源
 COPY
-# 在容器启动时才进行调用
+# 在容器启动时才进行调用，cmd只有最后一个会生效
 CMD 
     CMD echo "This is a test."
+
+ENTRYPOINT  在容器启动时才进行调用 可以追加命令
+
+ONBUILD
+
     
 # 设置环境变量
 ENV
