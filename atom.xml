@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2020-08-17T07:36:35.376Z</updated>
+  <updated>2020-08-20T10:24:15.746Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>使用[wxParse](https://github.com/icindy/wxParse)小程序富文本解析img图片遇到的问题</title>
+    <link href="https://blog.afacode.top/2020/08/20/wxparse-img-error/"/>
+    <id>https://blog.afacode.top/2020/08/20/wxparse-img-error/</id>
+    <published>2020-08-20T10:03:19.000Z</published>
+    <updated>2020-08-20T10:24:15.746Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="使用wxParse小程序富文本解析img图片遇到的问题"><a href="#使用wxParse小程序富文本解析img图片遇到的问题" class="headerlink" title="使用wxParse小程序富文本解析img图片遇到的问题"></a>使用<a href="https://github.com/icindy/wxParse" target="_blank" rel="noopener">wxParse</a>小程序富文本解析img图片遇到的问题</h2><p>小程序需要使用微信公众号的文章,微信文章图片源使用的是data-src,还有其他来源文章图片有可能无src。<br>使用wxParse解析富文本图片无src属性是会报错，微信公众号文章图片地址为data-src,错误定位在</p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/image-20200820173729229.png" alt="01" title="">                </div>                <div class="image-caption">01</div>            </figure><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/image-20200820173758727.png" alt="02" title="">                </div>                <div class="image-caption">02</div>            </figure><p>只需要修改一行代码<br><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">var imgUrl = <span class="keyword">node</span>.<span class="title">attr</span>.src || <span class="keyword">node</span>.<span class="title">attr</span>['data-src'] || [];</span><br></pre></td></tr></table></figure></p><figure class="image-bubble">                <div class="img-lightbox">                    <div class="overlay"></div>                    <img src="http://imgs.afacode.top/image-20200820174254891.png" alt="03" title="">                </div>                <div class="image-caption">03</div>            </figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;使用wxParse小程序富文本解析img图片遇到的问题&quot;&gt;&lt;a href=&quot;#使用wxParse小程序富文本解析img图片遇到的问题&quot; class=&quot;headerlink&quot; title=&quot;使用wxParse小程序富文本解析img图片遇到的问题&quot;&gt;&lt;/a&gt;使用&lt;a 
+      
+    
+    </summary>
+    
+    
+      <category term="小程序" scheme="https://blog.afacode.top/tags/%E5%B0%8F%E7%A8%8B%E5%BA%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>工作找不到方向 迷茫的人看下吧</title>
@@ -1053,9 +1076,9 @@
       <category term="js" scheme="https://blog.afacode.top/categories/js/"/>
     
     
-      <category term="react-router" scheme="https://blog.afacode.top/tags/react-router/"/>
-    
       <category term="react" scheme="https://blog.afacode.top/tags/react/"/>
+    
+      <category term="react-router" scheme="https://blog.afacode.top/tags/react-router/"/>
     
   </entry>
   
