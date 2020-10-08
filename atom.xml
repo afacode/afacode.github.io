@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2020-08-20T10:24:15.746Z</updated>
+  <updated>2020-10-08T08:40:04.359Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>一行代码支持暗黑模式</title>
+    <link href="https://blog.afacode.top/2020/10/08/dark-mode/"/>
+    <id>https://blog.afacode.top/2020/10/08/dark-mode/</id>
+    <published>2020-10-08T08:33:29.000Z</published>
+    <updated>2020-10-08T08:40:04.359Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span><span class="selector-attr">[theme='dark-mode']</span> &#123;</span><br><span class="line">  <span class="attribute">filter</span>: <span class="built_in">invert</span>(1) <span class="built_in">hue-rotate</span>(180deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>filter 这个 CSS 属性将模糊或颜色偏移等图形效果应用于某个元素。这些滤镜通常用于调整图像、背景和边框的渲染。</p><p>参考：MDN Web 文档</p><p><a href="https://developer.mozilla.org/en-US/docs/Web/CSS/filter" target="_blank" rel="noopener">https://developer.mozilla.org/en-US/docs/Web/CSS/filter</a></p><p>对于这种黑暗模式，我们将使用两个滤镜，分别是 invert 和 hue-rotate</p><p>invert 滤镜用来反转应用程序的配色方案。也就是说黑色会变成白色，白色变成黑色，所有颜色以此类推。invert() 函数作为 filter 属性的值将取 0 到 1 之间的数字，或 0％到 100％的百分比。</p><p>hue-rotate 滤镜可以帮助我们处理所有非黑色和白色的颜色。它能将色相旋转 180 度，让我们可以确保应用程序的配色方案不变，而只是减弱其颜色。</p><p>使用这种方法的唯一陷阱是，它还将反转应用程序中的所有图像、图片和视频。因此，我们将向所有图像添加相同的规则以反转效果。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">html</span><span class="selector-attr">[theme='dark-mode']</span> <span class="selector-tag">img</span>,</span><br><span class="line"><span class="selector-tag">picture</span>,</span><br><span class="line"><span class="selector-tag">video</span>&#123;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">invert</span>(1) <span class="built_in">hue-rotate</span>(180deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>并且我们要添加一个类，以反转特定标签内的效果。</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.invert</span> &#123;</span><br><span class="line">    <span class="attribute">filter</span>: <span class="built_in">invert</span>(1) <span class="built_in">hue-rotate</span>(180deg);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight css&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;
+      
+    
+    </summary>
+    
+    
+      <category term="css" scheme="https://blog.afacode.top/tags/css/"/>
+    
+  </entry>
   
   <entry>
     <title>使用[wxParse](https://github.com/icindy/wxParse)小程序富文本解析img图片遇到的问题</title>
