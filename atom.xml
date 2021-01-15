@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2020-11-16T07:15:43.913Z</updated>
+  <updated>2021-01-15T06:57:00.619Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>小程序wxs new Date() 不能使用</title>
+    <link href="https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/"/>
+    <id>https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/</id>
+    <published>2021-01-15T06:49:46.000Z</published>
+    <updated>2021-01-15T06:57:00.619Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="小程序wxs获取时间方式"><a href="#小程序wxs获取时间方式" class="headerlink" title="小程序wxs获取时间方式"></a>小程序wxs获取时间方式</h2><p>在小程序wxs文件使用 new Date() 获取时间报错</p><h2 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h2><p>使用 getDate() 代替 new Date()<br><figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attribute">delHtmlTag</span>: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> reg = getRegExp(<span class="string">"&lt;[^&gt;]+&gt;"</span>, <span class="string">"g"</span>);</span><br><span class="line">    <span class="keyword">var</span> result = str.replace(reg, <span class="string">''</span>);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attribute">formatDate</span>: <span class="function"><span class="keyword">function</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">date</span> = getDate(time)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">date</span>.getFullYear() + <span class="string">'-'</span> + (<span class="built_in">date</span>.getMonth() + <span class="number">1</span>) + <span class="string">'-'</span> + <span class="built_in">date</span>.getDate()</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h2 id=&quot;小程序wxs获取时间方式&quot;&gt;&lt;a href=&quot;#小程序wxs获取时间方式&quot; class=&quot;headerlink&quot; title=&quot;小程序wxs获取时间方式&quot;&gt;&lt;/a&gt;小程序wxs获取时间方式&lt;/h2&gt;&lt;p&gt;在小程序wxs文件使用 new Date() 获取时间报错&lt;
+      
+    
+    </summary>
+    
+    
+  </entry>
   
   <entry>
     <title>The template root requires exactly one element.eslint-plugin-vue</title>
@@ -1523,9 +1544,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -1684,9 +1705,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
@@ -1711,9 +1732,9 @@
       <category term="tools" scheme="https://blog.afacode.top/categories/tools/"/>
     
     
-      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
-    
       <category term="tool" scheme="https://blog.afacode.top/tags/tool/"/>
+    
+      <category term="git" scheme="https://blog.afacode.top/tags/git/"/>
     
   </entry>
   
