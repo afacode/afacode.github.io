@@ -18,7 +18,7 @@
 本人专职前端开发
 > 公司项目主要使用vue, react, react native, 小程序等开发小程序，APP，网页， 微信生态
 
-> 个人一些学习项目主要增加使用node, python(scrapy), mysql, mongodb, linux(ubuntu)等
+> 个人一些学习项目主要增加使用node, go, python(scrapy), mysql, mongodb, linux(ubuntu)等
 
 ## 联系方式
 > Email: lfqdalian@qq.com 或 lfqdalian@outlook.com
@@ -26,6 +26,8 @@
 ## 使用
 ```
 ./depoly.sh
+
+// "hexo": "^3.7.1",
 ```
 
 
