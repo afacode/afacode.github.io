@@ -2,6 +2,11 @@
   "name": "hexo-site",
   "version": "0.0.0",
   "private": true,
+  "scripts": {
+    "clean": "hexo clean",
+    "g": "hexo g",
+    "d": "hexo d"
+  },
   "hexo": {
     "version": "4.2.1"
   },
