@@ -1,6 +1,6 @@
 ---
 layout: post
-title: vue2-ts支持jest测试
+title: vue3-ts支持jest测试
 date: 2021-06-29 23:34:55
 categories:
   - js
