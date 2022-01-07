@@ -21,6 +21,9 @@ tags:
 * 提交版本v1.0.0.0到仓库
   > `git push origin v1.0.0.0`
 
+* 更改本地branch 名称 master->main
+  > git branch -M main
+
 
 欢迎访问我的博客 &nbsp;[地址](blog.afacode.top) &nbsp; &nbsp; &nbsp;
 https://blog.afacode.top
