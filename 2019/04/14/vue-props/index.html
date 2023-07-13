@@ -1,0 +1,530 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vue组件之间的通信 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue">
+    <meta name="description" content="vue组件之间的通信:父–&gt;子、子–&gt;父、非父子">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vue组件之间的通信">
+<meta property="og:url" content="https://blog.afacode.top/2019/04/14/vue-props/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="vue组件之间的通信:父–&gt;子、子–&gt;父、非父子">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-04-14T14:34:55.000Z">
+<meta property="article:modified_time" content="2023-07-13T14:40:42.886Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vue组件之间的通信</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vue组件之间的通信</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-04-14T14:34:55.000Z" itemprop="datePublished" class="page-time">
+  2019-04-14
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/js/">js</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vue组件之间的通信"><span class="post-toc-number">1.</span> <span class="post-toc-text">vue组件之间的通信</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#父–-gt-子-props"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">父–&gt;子 props</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#子–-gt-父"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">子–&gt;父</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#非父子，比如兄弟组建"><span class="post-toc-number">1.3.</span> <span class="post-toc-text">非父子，比如兄弟组建</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue-props"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vue组件之间的通信</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-04-14 22:34:55" datetime="2019-04-14T14:34:55.000Z"  itemprop="datePublished">2019-04-14</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/js/">js</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>vue组件之间的通信:父–&gt;子、子–&gt;父、非父子</p>
+<a id="more"></a>
+
+<p><a href="https://segmentfault.com/a/1190000019208626?_ea=11267445" target="_blank" rel="noopener">vue组件间通信六种方式（完整版）</a>转载</p>
+<h2 id="vue组件之间的通信"><a href="#vue组件之间的通信" class="headerlink" title="vue组件之间的通信"></a>vue组件之间的通信</h2><p><a href="https://cn.vuejs.org/v2/guide/components-props.html" target="_blank" rel="noopener">vue.js官网prop</a><br>(不谈vuex)</p>
+<h3 id="父–-gt-子-props"><a href="#父–-gt-子-props" class="headerlink" title="父–&gt;子 props"></a>父–&gt;子 props</h3><p>prop是单向绑定</p>
+<blockquote>
+<p>Prop 类型</p>
+</blockquote>
+<ul>
+<li><code>String</code></li>
+<li><code>Number</code></li>
+<li><code>Boolean</code></li>
+<li><code>Array</code></li>
+<li><code>Object</code></li>
+<li><code>Date</code></li>
+<li><code>Function</code></li>
+<li><code>Symbol</code></li>
+</ul>
+<blockquote>
+<p>Prop 验证</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">props: &#123;</span><br><span class="line">  <span class="comment">// 基础的类型检查 (`null` 和 `undefined` 会通过任何类型验证)</span></span><br><span class="line">  propA: <span class="built_in">Number</span>,</span><br><span class="line">  <span class="comment">// 多个可能的类型</span></span><br><span class="line">  propB: [<span class="built_in">String</span>, <span class="built_in">Number</span>],</span><br><span class="line">  propC: &#123;</span><br><span class="line">    <span class="keyword">type</span>: <span class="built_in">Number</span>,</span><br><span class="line">    required: <span class="literal">true</span>,  <span class="comment">// 必填</span></span><br><span class="line">    <span class="keyword">default</span>: <span class="number">100</span> <span class="comment">//带有默认值的数字</span></span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 带有默认值的对象</span></span><br><span class="line">  propE: &#123;</span><br><span class="line">    <span class="keyword">type</span>: <span class="built_in">Object</span>,</span><br><span class="line">    <span class="comment">// 对象或数组默认值必须从一个工厂函数获取</span></span><br><span class="line">    <span class="keyword">default</span>: <span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">return</span> &#123; message: <span class="string">'hello'</span> &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="comment">// 自定义验证函数</span></span><br><span class="line">  propF: &#123;</span><br><span class="line">    validator: <span class="function"><span class="keyword">function</span> (<span class="params">value</span>) </span>&#123;</span><br><span class="line">      <span class="comment">// 这个值必须匹配下列字符串中的一个</span></span><br><span class="line">      <span class="keyword">return</span> [<span class="string">'success'</span>, <span class="string">'warning'</span>, <span class="string">'danger'</span>].indexOf(value) !== <span class="number">-1</span></span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line">**父组件代码**</span><br><span class="line">传递静态或动态</span><br><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">header-box</span> </span></span><br><span class="line"><span class="tag">      <span class="attr">:titleTxt</span>=<span class="string">"showTitleTxt"</span> </span></span><br><span class="line"><span class="tag">      <span class="attr">name</span>=<span class="string">"My journey with Vue"</span>&gt;</span><span class="tag">&lt;/<span class="name">header-box</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">blog-post</span> &gt;</span><span class="tag">&lt;/<span class="name">blog-post</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    <span class="keyword">import</span> Header <span class="keyword">from</span> <span class="string">'./header'</span></span></span><br><span class="line"><span class="javascript">    <span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">        name: <span class="string">'index'</span>,</span></span><br><span class="line">        components: &#123;</span><br><span class="line"><span class="actionscript">            <span class="string">'header-box'</span>: Header</span></span><br><span class="line">        &#125;,</span><br><span class="line">        data () &#123;</span><br><span class="line"><span class="actionscript">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">                showTitleTxt: <span class="string">'首页'</span></span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">**子组件代码**</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">header</span>&gt;</span></span></span><br><span class="line"><span class="xml">        </span><span class="template-variable">&#123;&#123;thisTitleTxt&#125;&#125;</span><span class="xml">-</span></span><br><span class="line"><span class="xml">        </span><span class="template-variable">&#123;&#123;name&#125;&#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">    export default &#123;</span></span><br><span class="line"><span class="xml">        name: 'header-box',</span></span><br><span class="line"><span class="xml">        props: &#123;</span></span><br><span class="line"><span class="xml">            titleTxt: String,</span></span><br><span class="line"><span class="xml">            name: String</span></span><br><span class="line"><span class="xml">        &#125;,</span></span><br><span class="line"><span class="xml">        data () &#123;</span></span><br><span class="line"><span class="xml">            return &#123;</span></span><br><span class="line"><span class="xml">                thisTitleTxt: this.titleTxt</span></span><br><span class="line"><span class="xml">            &#125;</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+<h3 id="子–-gt-父"><a href="#子–-gt-父" class="headerlink" title="子–&gt;父"></a>子–&gt;父</h3><blockquote>
+<p>子组件向父组件传递分为两种类型。<br>1、子组件改变父组件传递的props（你会发现通过props中的Object类型参数传输数据，可以通过子组件改变数据内容。这种方式是可行的，但是不推荐使用，因为官方定义prop是单向绑定）<br>2、通过$on和$emit</p>
+</blockquote>
+<ol>
+<li>不推荐<blockquote>
+<p>父组建代码同上</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">**子组件代码**</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">header</span> @<span class="attr">click</span>=<span class="string">"changeTitleTxt"</span>&gt;</span></span></span><br><span class="line"><span class="xml">        </span><span class="template-variable">&#123;&#123;thisTitleTxt.name&#125;&#125;</span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;/<span class="name">header</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">    export default &#123;</span></span><br><span class="line"><span class="xml">        name: 'header-box',</span></span><br><span class="line"><span class="xml">        props: &#123;</span></span><br><span class="line"><span class="xml">            titleTxt: Object</span></span><br><span class="line"><span class="xml">        &#125;,</span></span><br><span class="line"><span class="xml">        data () &#123;</span></span><br><span class="line"><span class="xml">            return &#123;</span></span><br><span class="line"><span class="xml">                thisTitleTxt: this.titleTxt.name</span></span><br><span class="line"><span class="xml">            &#125;</span></span><br><span class="line"><span class="xml">        &#125;,</span></span><br><span class="line"><span class="xml">        metheds: &#123;</span></span><br><span class="line"><span class="xml">            changeTitleTxt () &#123;</span></span><br><span class="line"><span class="xml">                this.titleTxt.name = '切换'</span></span><br><span class="line"><span class="xml">            &#125;</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<ol start="2">
+<li><em>通过$on,$emit</em> <figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">*通过<span class="variable">$on</span>,<span class="variable">$emit</span>*</span><br><span class="line">**父组件代码**</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="xml"><span class="tag">&lt;<span class="name">div</span> <span class="attr">id</span>=<span class="string">"counter-event-example"</span>&gt;</span></span></span><br><span class="line"><span class="xml">      </span><span class="xml"><span class="tag">&lt;<span class="name">p</span>&gt;</span></span><span class="xquery">&#123;&#123; total &#125;</span><span class="xml">&#125;<span class="tag">&lt;/<span class="name">p</span>&gt;</span></span></span><br><span class="line"><span class="xml">      </span><span class="xml"><span class="tag">&lt;<span class="name">button-counter</span> <span class="attr">v-on:increment</span>=<span class="string">"incrementTotal"</span>&gt;</span><span class="tag">&lt;/<span class="name">button-counter</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">div</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">    import ButtonCounter from './buttonCounter'</span></span><br><span class="line"><span class="xml">    export default </span><span class="xquery">&#123;</span></span><br><span class="line"><span class="xquery">       <span class="built_in"> name</span>: <span class="string">'index'</span>,</span></span><br><span class="line"><span class="xquery">        components: &#123;</span></span><br><span class="line"><span class="xquery">            <span class="string">'button-conuter'</span>: ButtonCounter</span></span><br><span class="line"><span class="xquery">        &#125;</span><span class="xml">,</span></span><br><span class="line"><span class="xml">        data () </span><span class="xquery">&#123;</span></span><br><span class="line"><span class="xquery">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="xquery">                total: <span class="number">0</span></span></span><br><span class="line"><span class="xquery">            &#125;</span></span><br><span class="line"><span class="xml">        &#125;,</span></span><br><span class="line"><span class="xml">        methods: </span><span class="xquery">&#123;</span></span><br><span class="line"><span class="xquery">            incrementTotal (val) &#123;</span></span><br><span class="line"><span class="xquery">                打印值分别是 val</span></span><br><span class="line"><span class="xquery">                this.total++</span></span><br><span class="line"><span class="xquery">            &#125;</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+incrementTotal<figure class="highlight xquery"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">**子组件代码**</span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">    </span><span class="xml"><span class="tag">&lt;<span class="name">button</span> @<span class="attr">click</span>=<span class="string">"incrementCounter"</span>&gt;</span></span><span class="xquery">&#123;&#123;counter&#125;</span><span class="xml">&#125;<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">    export default </span><span class="xquery">&#123;</span></span><br><span class="line"><span class="xquery">       <span class="built_in"> name</span>: <span class="string">'button-counter'</span>,</span></span><br><span class="line"><span class="xquery">        data () &#123;</span></span><br><span class="line"><span class="xquery">            <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="xquery">                counter: <span class="number">0</span></span></span><br><span class="line"><span class="xquery">            &#125;</span></span><br><span class="line"><span class="xml">        &#125;,</span></span><br><span class="line"><span class="xml">        metheds: </span><span class="xquery">&#123;</span></span><br><span class="line"><span class="xquery">            incrementCounter () &#123;</span></span><br><span class="line"><span class="xquery">                // 可传额外参数 this.<span class="variable">$emit</span>(<span class="string">'increment'</span>,this.counter,<span class="built_in"> true</span>);</span></span><br><span class="line"><span class="xquery">                this.<span class="variable">$emit</span>(<span class="string">'increment'</span>)</span></span><br><span class="line"><span class="xquery">                this.counter++</span></span><br><span class="line"><span class="xquery">            &#125;</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+<h3 id="非父子，比如兄弟组建"><a href="#非父子，比如兄弟组建" class="headerlink" title="非父子，比如兄弟组建"></a>非父子，比如兄弟组建</h3><blockquote>
+<p>通过使用一个空的Vue实例作为中央事件总线，（这里也可以使用app实例，而不需要新建一个空Vue实例）</p>
+</blockquote>
+</li>
+</ol>
+<figure class="highlight mipsasm"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">**main.<span class="keyword">js**</span></span><br><span class="line"><span class="keyword">let </span><span class="keyword">bus </span>= new Vue()</span><br><span class="line">Vue.prototype.<span class="keyword">bus </span>= <span class="keyword">bus</span></span><br><span class="line"><span class="keyword">或者</span></span><br><span class="line"><span class="keyword">**main.js**</span></span><br><span class="line"><span class="keyword">new </span>Vue(&#123;</span><br><span class="line"><span class="symbol">  el:</span> <span class="string">'#app'</span>,</span><br><span class="line">  router,</span><br><span class="line"><span class="symbol">  template:</span> <span class="string">'&lt;App/&gt;'</span>,</span><br><span class="line"><span class="symbol">  components:</span> &#123; App &#125;,</span><br><span class="line">  <span class="keyword">beforeCreate </span>() &#123;</span><br><span class="line">    Vue.prototype.<span class="keyword">bus </span>= this</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">**header组件传递给footer**</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">header</span> @<span class="attr">click</span>=<span class="string">"changeTitle"</span>&gt;</span></span><span class="template-variable">&#123;&#123;title&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">header</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">export default &#123;</span></span><br><span class="line"><span class="xml">    name: 'header',</span></span><br><span class="line"><span class="xml">    data () &#123;</span></span><br><span class="line"><span class="xml">        return &#123;</span></span><br><span class="line"><span class="xml">            title: '头部'</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    &#125;,</span></span><br><span class="line"><span class="xml">    methods: &#123;</span></span><br><span class="line"><span class="xml">        changeTitle () &#123;</span></span><br><span class="line"><span class="xml">            this.bus.$emit('toChangeTitle','首页')</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight django"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="xml">**footer组件**</span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml">    <span class="tag">&lt;<span class="name">footer</span>&gt;</span></span><span class="template-variable">&#123;&#123;txt&#125;&#125;</span><span class="xml"><span class="tag">&lt;/<span class="name">footer</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span></span><br><span class="line"><span class="xml"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span></span><br><span class="line"><span class="xml">export default &#123;</span></span><br><span class="line"><span class="xml">    name: 'footer',</span></span><br><span class="line"><span class="xml">    mounted () &#123;</span></span><br><span class="line"><span class="xml">        this.bus.$on('toChangeTitle', function (title) &#123;</span></span><br><span class="line"><span class="xml">            console.log(title)</span></span><br><span class="line"><span class="xml">        &#125;)</span></span><br><span class="line"><span class="xml">    &#125;,</span></span><br><span class="line"><span class="xml">    data () &#123;</span></span><br><span class="line"><span class="xml">        return &#123;</span></span><br><span class="line"><span class="xml">            txt: '尾部'</span></span><br><span class="line"><span class="xml">        &#125;</span></span><br><span class="line"><span class="xml">    &#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br></pre></td></tr></table></figure>
+
+
+<p>欢迎访问我的博客 &nbsp;<a href="blog.afacode.top">地址</a> &nbsp; &nbsp; &nbsp;<br><a href="https://blog.afacode.top/">https://blog.afacode.top</a></p>
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/04/14/vue-props/&title=《vue组件之间的通信》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/04/14/vue-props/&title=《vue组件之间的通信》 — afacode的博客&source=vue组件之间的通信:父–&gt;子、子–&gt;父、非父子" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/04/14/vue-props/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue组件之间的通信》 — afacode的博客&url=https://blog.afacode.top/2019/04/14/vue-props/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/04/14/vue-props/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/04/23/hexo-vscode-qiniu-upload/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">vscode插件,写Markdown时可以快捷上传本地图片获取七牛图床外链七牛云</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/04/10/react-native-jpush/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">react-native 集成极光推送, iOS/andriod</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/04/14/vue-props/&title=《vue组件之间的通信》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/04/14/vue-props/&title=《vue组件之间的通信》 — afacode的博客&source=vue组件之间的通信:父–&gt;子、子–&gt;父、非父子" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/04/14/vue-props/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vue组件之间的通信》 — afacode的博客&url=https://blog.afacode.top/2019/04/14/vue-props/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/04/14/vue-props/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACK0lEQVR42u3azY6DMAxF4b7/SzPbkUYw59qhUpzDqmqh5GNh4p/PBx/X4/F85u/v7/7577WfNw4ZMmRsyyBLfF50/y53YP74ZMiQcQKDhEKydH7mM5WvTYYMGTLIZx40yaJlyJAh442AywEpWIYMGTLSJLa2+ePluS/l4jJkyNiQwdPL739+pb8hQ4aMrRhXeKwKpmRzGaxKhgwZoxmrtnc8JU63nryFIEOGjKmMNKT2Gwb812CkQ4YMGaMZ/FTePEjbBqtaCDJkyJjK6JTgyZlpQR89b36ZDBkyRjD4iENaDkvDaPr4ZMiQcQ6DLJ0UyPjmkj+goMwnQ4aM0Qx+M96Y5KV/ngAveIfIkCFjW0Z6S34OT0fToB+0MGXIkDGOEVwWprK1UhpvqcqQIWM2o1buX1ulT5ugxSkSGTJkjGPU2gO1FmktBC+oI8qQIWMTBh+neKN5QBJjFNBlyJBxDKNTyue35BtNngzLkCFjNiPNAfsDFmmQ5WmtDBkyZjPIlq7WDKgttFh0kyFDxgEM3krkQXNtWe2fBy1DhowDGJ1WJd91BstKxyxkyJAxlHGFBwnHnWJckSpDhozRjDSwpgMTaVOTF/uKLwkZMmRsy+BLTFPZfvOSD4LIkCHjBEbayKwF3P4b4BYpQ4YMGbgcVqv5pWMWQX9DhgwZBzPSIl0tZPNrZciQcQKDl9I6AxO1ot7iXFyGDBkbMmpDFfHWLdwm8vaADBkyRjN+AMXS+ggnhCQfAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

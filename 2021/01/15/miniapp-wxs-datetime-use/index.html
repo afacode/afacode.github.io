@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>小程序wxs new Date() 不能使用 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="">
+    <meta name="description" content="小程序wxs获取时间方式在小程序wxs文件使用 new Date() 获取时间报错 解决方式使用 getDate() 代替 new Date() 1234567891011module.exports &#x3D; &amp;#123;  delHtmlTag: function (str) &amp;#123;    var reg &#x3D; getRegExp(&quot;&lt;[^&gt;]+&gt;&quot;, &quot;g&quot;);    var">
+<meta property="og:type" content="article">
+<meta property="og:title" content="小程序wxs new Date() 不能使用">
+<meta property="og:url" content="https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="小程序wxs获取时间方式在小程序wxs文件使用 new Date() 获取时间报错 解决方式使用 getDate() 代替 new Date() 1234567891011module.exports &#x3D; &amp;#123;  delHtmlTag: function (str) &amp;#123;    var reg &#x3D; getRegExp(&quot;&lt;[^&gt;]+&gt;&quot;, &quot;g&quot;);    var">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-01-15T06:49:46.000Z">
+<meta property="article:modified_time" content="2023-07-13T14:40:42.869Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="前端开发">
+<meta property="article:tag" content=" 小程序">
+<meta property="article:tag" content=" node">
+<meta property="article:tag" content=" react">
+<meta property="article:tag" content=" vue">
+<meta property="article:tag" content=" react-native">
+<meta property="article:tag" content=" electron">
+<meta property="article:tag" content=" afacode">
+<meta property="article:tag" content=" flutter">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">小程序wxs new Date() 不能使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">小程序wxs new Date() 不能使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-01-15T06:49:46.000Z" itemprop="datePublished" class="page-time">
+  2021-01-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#小程序wxs获取时间方式"><span class="post-toc-number">1.</span> <span class="post-toc-text">小程序wxs获取时间方式</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决方式"><span class="post-toc-number">2.</span> <span class="post-toc-text">解决方式</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="miniapp-miniapp-wxs-datetime-use"
+  class="post-article article-type-miniapp fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">小程序wxs new Date() 不能使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-01-15 14:49:46" datetime="2021-01-15T06:49:46.000Z"  itemprop="datePublished">2021-01-15</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="小程序wxs获取时间方式"><a href="#小程序wxs获取时间方式" class="headerlink" title="小程序wxs获取时间方式"></a>小程序wxs获取时间方式</h2><p>在小程序wxs文件使用 new Date() 获取时间报错</p>
+<h2 id="解决方式"><a href="#解决方式" class="headerlink" title="解决方式"></a>解决方式</h2><p>使用 getDate() 代替 new Date()</p>
+<figure class="highlight qml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">module</span>.exports = &#123;</span><br><span class="line">  <span class="attribute">delHtmlTag</span>: <span class="function"><span class="keyword">function</span> (<span class="params">str</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> reg = getRegExp(<span class="string">"&lt;[^&gt;]+&gt;"</span>, <span class="string">"g"</span>);</span><br><span class="line">    <span class="keyword">var</span> result = str.replace(reg, <span class="string">''</span>);</span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attribute">formatDate</span>: <span class="function"><span class="keyword">function</span>(<span class="params">time</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> <span class="built_in">date</span> = getDate(time)</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">date</span>.getFullYear() + <span class="string">'-'</span> + (<span class="built_in">date</span>.getMonth() + <span class="number">1</span>) + <span class="string">'-'</span> + <span class="built_in">date</span>.getDate()</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/&title=《小程序wxs new Date() 不能使用》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/&title=《小程序wxs new Date() 不能使用》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《小程序wxs new Date() 不能使用》 — afacode的博客&url=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/02/11/ts2307/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">找不到模块“XXX”或其相应的类型声明。ts(2307)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/11/16/valid-template-root/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">The template root requires exactly one element.eslint-plugin-vue</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/&title=《小程序wxs new Date() 不能使用》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/&title=《小程序wxs new Date() 不能使用》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《小程序wxs new Date() 不能使用》 — afacode的博客&url=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2021/01/15/miniapp-wxs-datetime-use/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACMElEQVR42u3aQW7DMAxE0dz/0i7QVYDU8h/SCRrqa1U0tayXBStp+HjgcfyO55+fx9nfvM7w+hT59LYhQ4aMr2Ucy0EY5Nn14mrvkiFDxm6M/tTpEtcz87XJkCFDBt+6pcuVIUOGjHcX3PW2j4P5wViGDBky+EGUbwfTYsrfK0OGjN0YtWDgMz+/Pd+QIUPGv2ccjZEWzU5hvViJDBkyRjN4xJjWvTRaSGdDr5chQ8YIRloc0+aw/teBwlEZMmSMZqTlMr2yTzeOvJmsWHxlyJDxtYx1geOfEl5ts4g2rzJkyBjNIA+k123pnGkrxgVMhgwZgxh8inuj0PSAetG6IUOGjNGMNCQgGzjeokGKON9oypAhYzaDtz7cdQyuBRIXPBkyZAxlpAFhLcK8K+wMDrEyZMgYxEijSlKIa9dq6Tbx9P+GDBkyhjJq11t845hGCMGiZciQsQGDN0/UCuL6qX7rhgwZMnZmpOWPvKzWVIFWIkOGjNEMXv46S681ivEoQoYMGbsxOotLL/c78UOx40yGDBkjGLxJgh9fgxiysfWUIUPGbAaPCvjNPCnNtcKdBhIyZMj4dsYRjj6jE46ePiVDhozRjLTMkdfwy7V+y4UMGTL2Ydx1TE1bKDrxwB+/lyFDxgYMfojlzVs3XJZxngwZMmRgBj9qcjw6TsuQIUMGbpJIt4Cd+WXIkLEbgxxieWNEGgYUbwFlyJCxDaMWDJCvgESbvLCmwaoMGTJGMH4A8q3bGepowxwAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

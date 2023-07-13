@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>vuex和redux记录 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vuex,redux">
+    <meta name="description" content="vuex和redux的用法，区别">
+<meta property="og:type" content="article">
+<meta property="og:title" content="vuex和redux记录">
+<meta property="og:url" content="https://blog.afacode.top/2019/05/18/vuex-redux-compare/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="vuex和redux的用法，区别">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://imgs.afacode.top/vuex@2x-20195181406.png">
+<meta property="article:published_time" content="2019-05-18T09:57:25.000Z">
+<meta property="article:modified_time" content="2023-07-13T14:40:42.888Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="vuex">
+<meta property="article:tag" content="redux">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://imgs.afacode.top/vuex@2x-20195181406.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">vuex和redux记录</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">vuex和redux记录</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-18T09:57:25.000Z" itemprop="datePublished" class="page-time">
+  2019-05-18
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/js/">js</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#状态管理"><span class="post-toc-number">1.</span> <span class="post-toc-text">状态管理</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#vuex"><span class="post-toc-number">2.</span> <span class="post-toc-text">vuex</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#vuex-localStorage"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">vuex&#x2F;localStorage</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#redux"><span class="post-toc-number">3.</span> <span class="post-toc-text">redux</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#异同"><span class="post-toc-number">4.</span> <span class="post-toc-text">异同</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vuex-redux-compare"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">vuex和redux记录</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-18 17:57:25" datetime="2019-05-18T09:57:25.000Z"  itemprop="datePublished">2019-05-18</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/js/">js</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>vuex和redux的用法，区别</p>
+<a id="more"></a>
+<h2 id="状态管理"><a href="#状态管理" class="headerlink" title="状态管理"></a>状态管理</h2><p>状态管理库，无论是Redux，还是Mobx，vuex这些，其本质都是为了解决状态管理混乱，无法有效同步的问题，它们都支持：</p>
+<ul>
+<li>统一维护管理应用状态；</li>
+<li>某一状态只有一个可信数据来源（通常命名为store，指状态容器）；</li>
+<li>操作更新状态方式统一，并且可控（通常以action方式提供更新状态的途径）；<br>react </li>
+<li>支持将store与React组件连接，如react-redux，mobx-react；通常使用状态管理库后，我们将React组件从业务上划分为两类：<ul>
+<li>容器组件（Container Components）：负责处理具体业务和状态数据，将业务或状态处理函数传入展示型组件；</li>
+<li>展示型组件（Presentation Components）：负责展示视图，视图交互回调内调用传入的处理函数；</li>
+</ul>
+</li>
+</ul>
+<h2 id="vuex"><a href="#vuex" class="headerlink" title="vuex"></a>vuex</h2><figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/vuex@2x-20195181406.png" alt="vuex@2x-20195181406" title="">
+                </div>
+                <div class="image-caption">vuex@2x-20195181406</div>
+            </figure>
+<ol>
+<li>vuex 通过 commit 提交 mutations 修改 state. 只能进行<strong>同步操作</strong>，且方法名只能全局唯一</li>
+<li>vuex 通过 dispatch 触发 actions, 然后由 commit 来触发 mutation 的调用, 间接更新 state。包含<strong>同步/异步</strong>操作，支持多个同名方法，按照注册的顺序依次触发</li>
+<li>vuex 的 getters 读取 state 在操作，同 computed, <strong>缓存</strong>，只有相关 state 改变才会更新，<strong>不会改变 state</strong></li>
+</ol>
+<blockquote>
+<p>State =&gt; (commit) =&gt; mutation=&gt; state <br><br>​&gt; State =&gt; (getter) =&gt; tmp(state) <br><br>​&gt; State =&gt; (dispatch) =&gt; action =&gt; (commit) =&gt; state <br> </p>
+</blockquote>
+<h3 id="vuex-localStorage"><a href="#vuex-localStorage" class="headerlink" title="vuex/localStorage"></a>vuex/localStorage</h3><p>vuex 是 vue 的状态管理器，存储的数据是响应式的。但是并不会保存起来，刷新之后就回到了初始状态，具体做法应该在vuex里数据改变的时候把数据拷贝一份保存到localStorage里面，刷新之后，如果localStorage里有保存的数据，取出来再替换store里的state</p>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">let <span class="keyword">default</span>City = <span class="string">"上海"</span></span><br><span class="line">try &#123;   // 用户关闭了本地存储功能，此时在外层加个try...catch</span><br><span class="line">  if (!<span class="keyword">default</span>City)&#123;</span><br><span class="line">    <span class="keyword">default</span>City = JSON.parse(window.localStorage.getItem('<span class="keyword">default</span>City'))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;catch(e)&#123;&#125;</span><br><span class="line">export <span class="keyword">default</span> new Vuex.Store(&#123;</span><br><span class="line">  <span class="keyword">state</span>: &#123;</span><br><span class="line">    city: <span class="keyword">default</span>City</span><br><span class="line">  &#125;,</span><br><span class="line">  mutations: &#123;</span><br><span class="line">    changeCity(<span class="keyword">state</span>, city) &#123;</span><br><span class="line">      <span class="keyword">state</span>.city = city</span><br><span class="line">      try &#123;</span><br><span class="line">      window.localStorage.<span class="built_in">set</span>Item('<span class="keyword">default</span>City', JSON.stringify(<span class="keyword">state</span>.city));</span><br><span class="line">      // 数据改变的时候把数据拷贝一份保存到localStorage里面</span><br><span class="line">      &#125; catch (e) &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>由于vuex里，我们保存的状态，都是数组，而localStorage只支持字符串，所以需要用JSON转换</p>
+<figure class="highlight smali"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">JSON.stringify(state.subscribe<span class="class">List);</span>   //<span class="built_in"> array </span>-&gt; string 序列化</span><br><span class="line">JSON.parse(window.localStorage.getItem(<span class="string">"subscribeList"</span>));    // string -&gt;<span class="built_in"> array </span>反序列号</span><br></pre></td></tr></table></figure>
+
+<h2 id="redux"><a href="#redux" class="headerlink" title="redux"></a>redux</h2><p>Redux 和 React 之间没有关系。Redux 支持 React、Angular、Ember、jQuery 甚至纯 JavaScript。</p>
+<ul>
+<li>redux<ul>
+<li>有Actions、Reducer、Store这三层</li>
+<li>通过createStore(reducer)得到store，换名话说store包含了reducer的逻辑实现</li>
+<li>通过store.dispath(action)去调用reducer，从而改变state</li>
+<li>通过store.getState()获取在reducer改变的state</li>
+</ul>
+</li>
+<li>react-redux<ul>
+<li>react-redux作用就是本来没有关系的 Redux 和 React 关联在一起</li>
+<li>它有组件Provier和方法connect</li>
+<li>connect将 React 的state和 Redux 的actions合并成一个对象props，再将这个对象和component生成一个新的组件</li>
+<li>Provider负责将 Redux 的store当属性传connect的新组件，从面将 React 和 Redux 关联到了一起</li>
+<li>当新组件调用action的时候，Provider.store就会映射调用reducer从而改变state，当state发生改变，就会触发新组件的render，重新更新组件</li>
+</ul>
+</li>
+<li>redux-thunk<ul>
+<li><code>redux-thunk</code>异步<blockquote>
+<p>目录：</p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li>src/index.js</li>
+<li>src/store/store.js</li>
+<li>src/store/actions/…</li>
+<li>src/store/reducers/…</li>
+<li>src/store/reducers/index.js<blockquote>
+<p>src/index.js 引入store</p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Provider &#125; <span class="keyword">from</span> <span class="string">'react-redux'</span></span><br><span class="line"><span class="keyword">import</span> store <span class="keyword">from</span> <span class="string">'./store/store'</span></span><br><span class="line">ReactDOM.render(</span><br><span class="line">  &lt;Provider store=&#123;store&#125;&gt;</span><br><span class="line">    &lt;Demo /&gt;</span><br><span class="line">  &lt;<span class="regexp">/Provider&gt;, </span></span><br><span class="line"><span class="regexp">  document.getElementById('root')</span></span><br><span class="line"><span class="regexp">)</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>src/store/store.js 统一一个store</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span>  &#123; createStore, applyMiddleware &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> thunk <span class="keyword">from</span> <span class="string">'redux-thunk'</span></span><br><span class="line"><span class="keyword">import</span> &#123; composeWithDevTools &#125; <span class="keyword">from</span> <span class="string">'redux-devtools-extension'</span></span><br><span class="line"><span class="keyword">import</span> rootReducer <span class="keyword">from</span> <span class="string">'./reducers'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> store = createStore(</span><br><span class="line">  rootReducer, </span><br><span class="line">  composeWithDevTools(applyMiddleware(thunk))</span><br><span class="line">  )</span><br><span class="line"><span class="comment">// 第二个参数为thunk中间件 用来处理函数类型的action</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> store</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>src/store/reducers/index.js 合并多个reducer</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; combineReducers &#125; <span class="keyword">from</span> <span class="string">'redux'</span></span><br><span class="line"><span class="keyword">import</span> productsReducer <span class="keyword">from</span> <span class="string">'./products-reducer'</span></span><br><span class="line"><span class="keyword">import</span> cartReducer <span class="keyword">from</span> <span class="string">'./cart-reducer'</span></span><br><span class="line"><span class="keyword">import</span> asyncNumReducer <span class="keyword">from</span> <span class="string">'./async-num-reducer'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> allReducers = &#123;</span><br><span class="line">  products: productsReducer,</span><br><span class="line">  shoppingCart: cartReducer,</span><br><span class="line">  asyncCount: asyncNumReducer</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// 多个reducer合并成一个rootReducer</span></span><br><span class="line"><span class="keyword">const</span> rootReducer = combineReducers(allReducers)</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> rootReducer</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>在业务组建使用 使用<code>this.props.count</code> 读取store状态，<code>this.props.plus()</code>使用reducer</p>
+</blockquote>
+<figure class="highlight pf"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">import &#123; connect &#125; <span class="keyword">from</span> 'react-redux'</span><br><span class="line">import &#123; plus &#125; <span class="keyword">from</span> '../store/actions/async-num-actions'</span><br><span class="line">import &#123; addToCart &#125; <span class="keyword">from</span> '../store/actions/cart-actions'</span><br><span class="line">const mapStateToProps = (<span class="keyword">state</span>) =&gt; &#123;</span><br><span class="line">  return &#123;</span><br><span class="line">    count: <span class="keyword">state</span>.asyncCount.count,</span><br><span class="line">    cart: <span class="keyword">state</span>.shoppingCart.cart</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">const mapDispatchToProps = &#123;</span><br><span class="line">  plus, addToCart</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">Demo = connect(mapStateToProps, mapDispatchToProps)(Demo)</span><br><span class="line">export <span class="keyword">default</span> Demo</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="异同"><a href="#异同" class="headerlink" title="异同"></a>异同</h2><ol>
+<li>都是单向数据</li>
+<li>action都可异步</li>
+<li>redux是只能通过dispatch触发action，从而用reducer更新state, 类似vuex的commit</li>
+</ol>
+<hr>
+<p>待更新</p>
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/redux/" rel="tag">redux</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vuex/" rel="tag">vuex</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/18/vuex-redux-compare/&title=《vuex和redux记录》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/18/vuex-redux-compare/&title=《vuex和redux记录》 — afacode的博客&source=vuex和redux的用法，区别" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/05/18/vuex-redux-compare/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex和redux记录》 — afacode的博客&url=https://blog.afacode.top/2019/05/18/vuex-redux-compare/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/05/18/vuex-redux-compare/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/20/aliyun-ssl/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">阿里云配置ssl证书</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/05/14/nginx-1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">域名跳转</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/18/vuex-redux-compare/&title=《vuex和redux记录》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/18/vuex-redux-compare/&title=《vuex和redux记录》 — afacode的博客&source=vuex和redux的用法，区别" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/05/18/vuex-redux-compare/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《vuex和redux记录》 — afacode的博客&url=https://blog.afacode.top/2019/05/18/vuex-redux-compare/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/05/18/vuex-redux-compare/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aQVLEMAwEwPz/0/CAJWHGdqDitE8UuyRuH4Qs6Tji9fWxrj89W2dP/nzOccfCwMB4LCN58TUg30T+nHxvGBgY72EkobB9dBtAz47vem8YGBgYZ9/JE8SxJ2BgYGDMM65/334HAwMDI2Hk4TIPpmPp4+13cQwMjAcy8lD49z/f0t/AwMB4FOOrXNftzPznmSboD2/HwMDYmtFeRGcamW3q2V53MTAw9mas3VDOTg5lKlnEwMDYgpEXsPIEcSxYJ4Nop59iYGBszRh7TT5CkYfmPNwfq04LAwPjIYw2wLVJZFvDb0dAMDAw3sNYlbrNFM7yoY3ibDAwMDZlzMwzjIXavLR3egQYGBgvYMwU1Gbwy4pxGBgYWzOSAlk+CpZcPtc+J7qRY2BgbMGYaRXMb7S9GBdTJBgYGFsw2tJ/W+OaTwGjVgQGBsYLGPlqGwBtYW6shIeBgbE3ox2euB7FyJO/Fl8cHwYGxisZSfOgDovlaFoRuDEwMDZl5Na8oPZvRTcMDIytGWMJYj4YMRagi2stBgbGaxirxibyslrLO/0rDAyMTRnzjYE2WOebK6gYGBhbM/LVIttSWp6qtseEgYGxByPZ3B2jFTMjFxgYGO9k5GW4duurWqG/IDEwMDCCNmQ7ZpEkiPm7MDAwMOZfk4fd5Fq77P8GBgbGoxhjjcmc2o5ZtIeCgYGxNyO/OubDFmPp4Fh7AAMDY2vGN9yKQc+FMVGSAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

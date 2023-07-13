@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Mac Python Selenium+WebDriver(chromedriver)安装下载 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="python,selenium,webDriver,chromedriver">
+    <meta name="description" content="Selenium 是一个开源测试框架，用来对web应用(比如网站)做自动化测试用的，因为它可以驱动浏览器，诸如Chrome，Firefox，IE等，所以可以较为真实的模拟人自动去点击网站的各个按钮，翻页，填写表单等，这样节省了很多测试时间">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Mac Python Selenium+WebDriver(chromedriver)安装下载">
+<meta property="og:url" content="https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="Selenium 是一个开源测试框架，用来对web应用(比如网站)做自动化测试用的，因为它可以驱动浏览器，诸如Chrome，Firefox，IE等，所以可以较为真实的模拟人自动去点击网站的各个按钮，翻页，填写表单等，这样节省了很多测试时间">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://imgs.afacode.top/mac-afacode%202019-05-25%2022.31.15-2019525223137.png">
+<meta property="article:published_time" content="2019-05-25T14:21:55.000Z">
+<meta property="article:modified_time" content="2023-07-13T14:40:42.873Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="python">
+<meta property="article:tag" content="selenium">
+<meta property="article:tag" content="webDriver">
+<meta property="article:tag" content="chromedriver">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://imgs.afacode.top/mac-afacode%202019-05-25%2022.31.15-2019525223137.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Mac Python Selenium+WebDriver(chromedriver)安装下载</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Mac Python Selenium+WebDriver(chromedriver)安装下载</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-05-25T14:21:55.000Z" itemprop="datePublished" class="page-time">
+  2019-05-25
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/python/">python</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#selenium安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">selenium安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#chromedriver安装"><span class="post-toc-number">2.</span> <span class="post-toc-text">chromedriver安装</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#下载"><span class="post-toc-number">2.1.</span> <span class="post-toc-text">下载</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置"><span class="post-toc-number">2.2.</span> <span class="post-toc-text">配置</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#验证"><span class="post-toc-number">2.3.</span> <span class="post-toc-text">验证</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#简单使用"><span class="post-toc-number">3.</span> <span class="post-toc-text">简单使用</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-python-selenium-webdriver-install"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Mac Python Selenium+WebDriver(chromedriver)安装下载</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-05-25 22:21:55" datetime="2019-05-25T14:21:55.000Z"  itemprop="datePublished">2019-05-25</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/python/">python</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>Selenium 是一个开源测试框架，用来对web应用(比如网站)做自动化测试用的，因为它可以驱动浏览器，诸如Chrome，Firefox，IE等，所以可以较为真实的模拟人自动去点击网站的各个按钮，翻页，填写表单等，这样节省了很多测试时间</p>
+<a id="more"></a>
+<h2 id="selenium安装"><a href="#selenium安装" class="headerlink" title="selenium安装"></a>selenium安装</h2><blockquote>
+<p>pip3 install selenium<br>pip3 list 查看</p>
+</blockquote>
+<h2 id="chromedriver安装"><a href="#chromedriver安装" class="headerlink" title="chromedriver安装"></a>chromedriver安装</h2><h3 id="下载"><a href="#下载" class="headerlink" title="下载"></a>下载</h3><p><a href="http://npm.taobao.org/mirrors/chromedriver/" target="_blank" rel="noopener">chromedriver下载地址|镜像</a> 注意chrome对应的版本</p>
+<h3 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h3><ul>
+<li>将可执行文件配置到环境变量或将文件移动到属于环境变量的目录里</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mv chromedriver /usr/<span class="built_in">local</span>/bin</span><br><span class="line">或修改~/.profile文件</span><br><span class="line"><span class="built_in">export</span> PATH=<span class="string">"<span class="variable">$PATH</span>:/usr/local/bin/chromedriver"</span></span><br><span class="line"><span class="built_in">source</span> ~/.profile</span><br></pre></td></tr></table></figure>
+<h3 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h3><p>命令行下直接执行chromedriver命令了打印出</p>
+<blockquote>
+<p>chromedriver</p>
+</blockquote>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Starting ChromeDriver 74.0.3729.6 (255758eccf3d244491b8a1317aa76e1ce10d57e9-refs/branch-heads/3729@&#123;#29&#125;) on<span class="built_in"> port </span>9515</span><br><span class="line">Only local connections are allowed.</span><br><span class="line">Please protect ports used by ChromeDriver <span class="keyword">and</span> related test frameworks <span class="keyword">to</span> prevent access by malicious code.</span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/mac-afacode%202019-05-25%2022.31.15-2019525223137.png" alt="mac-afacode 2019-05-25 22.31.15-2019525223137" title="">
+                </div>
+                <div class="image-caption">mac-afacode 2019-05-25 22.31.15-2019525223137</div>
+            </figure>
+<h2 id="简单使用"><a href="#简单使用" class="headerlink" title="简单使用"></a>简单使用</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> selenium import webdriver</span><br><span class="line"></span><br><span class="line">browser = webdriver.Chrome()</span><br><span class="line"></span><br><span class="line">browser.<span class="builtin-name">get</span>(<span class="string">'https://www.baidu.com'</span>)</span><br><span class="line"><span class="builtin-name">print</span>(browser.page_source)</span><br><span class="line">browser.close()</span><br></pre></td></tr></table></figure>    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/chromedriver/" rel="tag">chromedriver</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/python/" rel="tag">python</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/selenium/" rel="tag">selenium</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/webDriver/" rel="tag">webDriver</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/&title=《Mac Python Selenium+WebDriver(chromedriver)安装下载》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/&title=《Mac Python Selenium+WebDriver(chromedriver)安装下载》 — afacode的博客&source=Selenium 是一个开源测试框架，用来对web应用(比如网站)做自动化测试用的，因为它可以驱动浏览器，诸如Chrome，Firefox，IE等，所以可..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mac Python Selenium+WebDriver(chromedriver)安装下载》 — afacode的博客&url=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/05/27/python-scrapy-text/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">scrapy爬虫总体笔记记录</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/05/21/project-summary/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">项目开发工作</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/&title=《Mac Python Selenium+WebDriver(chromedriver)安装下载》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/&title=《Mac Python Selenium+WebDriver(chromedriver)安装下载》 — afacode的博客&source=Selenium 是一个开源测试框架，用来对web应用(比如网站)做自动化测试用的，因为它可以驱动浏览器，诸如Chrome，Firefox，IE等，所以可..." data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Mac Python Selenium+WebDriver(chromedriver)安装下载》 — afacode的博客&url=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/05/25/python-selenium-webdriver-install/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACpUlEQVR42u3aS3IbMQwEUN//0vYBkpG6QcJRpd6spiTN53FBUg18fcXH98Px9MvXVz3d5+mTP88vH3h4eHiXXv31gxP20+/zgZgNHB4eHt7v8JIpvh2O19cmz0oWjDcWPDw8vI/h3VoYkg06Hh4e3v/BO5nKz0l4eHh4n8Brp/h24s7D39dPWcxa8PDw8GJeXkX6nPOV+h4eHh7ecVV9VuDPp/t80h++LR4eHt4Cb+Ml2mtnW+ril3h4eHhXebNNbdJ61Qa+eTmtiE7w8PDwFnht21P7Qm0Im7CTYS3SFDw8PLxj3slUfqut6mT4HpF4eHh4l3ht/NqW/1vS+Z3rbjI8PDy8Y14bDdxtwJoV3t7U9/Dw8PAWeLN2gXzPnjcZ5OW06HM8PDy8Bd7ssjyoneHbDXRdAMPDw8M74M0i17xdIGcXEUPc6ICHh4e3zWtjhTxiOL/ncCHBw8PDW+Dl5fmT5eG8cSoZjqInAg8PD++Al2xh25c+2WTPYpG66QoPDw/vEi9ZEtoCf8uedU89buvx8PDwFnj5H/588TgPEW4FxHh4eHgbvPOIdtYW0G6sZ0OMh4eHt8GbNQHka87JMOUNWG825Xh4eHhrvPMt8smSsBhV4OHh4S3zZg/Ip+xbA1EsJ3h4eHhrvHzqbwv/baTbvknxjwEPDw9vjZc//vWt80Uln+jbwhgeHh7eNq8tdOUxwWzDfeHAw8PDu8r7Lo/2zslUPhuO6Fs8PDy8Bd5sjr0V426f4+Hh4e3x2raqdpySqbyNNoqFAQ8PD2+Nl0cJbeC7kqDkJTc8PDy8D+BtZKp5oDzcUuPh4eH9U17S9tRuzVtwseTg4eHhrfFOHpNHDLPSV15gO4px8fDw8GLe7A//LCBoN83JcKzkGXh4eHh/P34AMgzaT7YFGIMAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

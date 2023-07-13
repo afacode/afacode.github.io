@@ -1,0 +1,571 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>mac+brew 安装 mysql | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="tool,mysql">
+    <meta name="description" content="brew 工具，如果没有的话12# 安装 homebrew，是的你没看错，在终端里粘贴以下命令即可&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot; 查看mysql包情况 查看当前最新稳定包brew info mysql">
+<meta property="og:type" content="article">
+<meta property="og:title" content="mac+brew 安装 mysql">
+<meta property="og:url" content="https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="brew 工具，如果没有的话12# 安装 homebrew，是的你没看错，在终端里粘贴以下命令即可&#x2F;usr&#x2F;bin&#x2F;ruby -e &quot;$(curl -fsSL https:&#x2F;&#x2F;raw.githubusercontent.com&#x2F;Homebrew&#x2F;install&#x2F;master&#x2F;install)&quot; 查看mysql包情况 查看当前最新稳定包brew info mysql">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.15.02-2019615171527.png">
+<meta property="og:image" content="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.08.36-201961517166.png">
+<meta property="og:image" content="http://imgs.afacode.top/WX20190615-184621@2x-2019615184655.png">
+<meta property="og:image" content="http://imgs.afacode.top/WX20190615-184558@2x-2019615184646.png">
+<meta property="og:image" content="http://imgs.afacode.top/WX20190616-100036@2x-201961610056.png">
+<meta property="og:image" content="http://imgs.afacode.top/WX20190616-095947@2x-201961610116.png">
+<meta property="article:published_time" content="2019-06-15T09:00:38.000Z">
+<meta property="article:modified_time" content="2023-07-13T14:40:42.867Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="tool">
+<meta property="article:tag" content="mysql">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.15.02-2019615171527.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">mac+brew 安装 mysql</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">mac+brew 安装 mysql</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-15T09:00:38.000Z" itemprop="datePublished" class="page-time">
+  2019-06-15
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#brew-工具，如果没有的话"><span class="post-toc-number">1.</span> <span class="post-toc-text">brew 工具，如果没有的话</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#查看mysql包情况"><span class="post-toc-number">2.</span> <span class="post-toc-text">查看mysql包情况</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装mysql"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装mysql</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#MYSQL使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">MYSQL使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#设置密码"><span class="post-toc-number">5.</span> <span class="post-toc-text">设置密码</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#登陆"><span class="post-toc-number">6.</span> <span class="post-toc-text">登陆</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#navicat连接"><span class="post-toc-number">7.</span> <span class="post-toc-text">navicat连接</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#报错-2059-Authentication-plugin-39-caching-sha2-password-39-cannot-be-loaded-dlope"><span class="post-toc-number">7.1.</span> <span class="post-toc-text">报错 2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded dlope</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#解决方法"><span class="post-toc-number">7.2.</span> <span class="post-toc-text">解决方法</span></a></li></ol></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-mac-brew-install-mysql"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">mac+brew 安装 mysql</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-15 17:00:38" datetime="2019-06-15T09:00:38.000Z"  itemprop="datePublished">2019-06-15</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="brew-工具，如果没有的话"><a href="#brew-工具，如果没有的话" class="headerlink" title="brew 工具，如果没有的话"></a>brew 工具，如果没有的话</h2><figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 安装 homebrew，是的你没看错，在终端里粘贴以下命令即可</span></span><br><span class="line"><span class="regexp">/usr/</span>bin<span class="regexp">/ruby -e "$(curl -fsSL https:/</span><span class="regexp">/raw.githubusercontent.com/</span>Homebrew<span class="regexp">/install/m</span>aster<span class="regexp">/install)"</span></span><br></pre></td></tr></table></figure>
+<h2 id="查看mysql包情况"><a href="#查看mysql包情况" class="headerlink" title="查看mysql包情况"></a>查看mysql包情况</h2><blockquote>
+<p>查看当前最新稳定包<code>brew info mysql</code></p>
+</blockquote>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.15.02-2019615171527.png" alt="mysql msg" title="">
+                </div>
+                <div class="image-caption">mysql msg</div>
+            </figure>
+
+<ol>
+<li>MYSQL的版本</li>
+<li>它存在一些冲突包，没有办法和他们共存</li>
+<li>安装后默认是没有密码的，如果你想安全一点，可以执行 <code>mysql_secure_installation</code> 来进行引导安全设置</li>
+<li>你可以将MYSQL设置为开机启动， <code>brew services start mysql</code></li>
+<li>你也可以每次都手动启动或关闭MYSQL <code>mysql.server start/stop/restart</code></li>
+</ol>
+<blockquote>
+<p>查看当前包信息<code>brew search mysql</code></p>
+</blockquote>
+<h2 id="安装mysql"><a href="#安装mysql" class="headerlink" title="安装mysql"></a>安装mysql</h2><blockquote>
+<p><code>brew install mysql</code> 可以在mysql后面跟指定版本<code>mysql@5.7</code></p>
+</blockquote>
+<ul>
+<li>如果遇到权限问题，会有提示,按照提示完成<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/mac-afacode%202019-06-15%2017.08.36-201961517166.png" alt="权限问题" title="">
+                </div>
+                <div class="image-caption">权限问题</div>
+            </figure>
+<figure class="highlight awk"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo chown -R $(whoami) <span class="regexp">/usr/</span>local<span class="regexp">/share/m</span>an<span class="regexp">/man5 /u</span>sr<span class="regexp">/local/</span>share<span class="regexp">/man/m</span>an7</span><br><span class="line">chmod u+w <span class="regexp">/usr/</span>local<span class="regexp">/share/m</span>an<span class="regexp">/man5 /u</span>sr<span class="regexp">/local/</span>share<span class="regexp">/man/m</span>an</span><br></pre></td></tr></table></figure></li>
+</ul>
+<h2 id="MYSQL使用"><a href="#MYSQL使用" class="headerlink" title="MYSQL使用"></a>MYSQL使用</h2><ul>
+<li>重启 <code>brew service restart mysql</code></li>
+<li>设置为开机启动 <code>brew services start mysql</code></li>
+<li>关闭 <code>brew services stop mysql</code></li>
+<li>手动启动或关闭 <code>mysql.server start/stop/restart</code></li>
+<li>查看状态 <code>brew services list</code><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Name  Status <span class="built_in"> User </span>   Plist</span><br><span class="line">mysql started afacode /Users/<span class="built_in">..</span><span class="built_in">..</span>/Library/LaunchAgents/homebrew.mxcl.mysql.plist</span><br></pre></td></tr></table></figure>
+<h2 id="设置密码"><a href="#设置密码" class="headerlink" title="设置密码"></a>设置密码</h2><blockquote>
+<p><code>mysql_secure_installation</code> </p>
+</blockquote>
+<figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">Press</span> <span class="string">y|Y</span> <span class="string">for</span> <span class="literal">Yes</span><span class="string">,</span> <span class="attr">any other key for No:</span> <span class="string">y</span>   <span class="string">//使用密码验证</span></span><br><span class="line"></span><br><span class="line"><span class="string">LOW</span>    <span class="string">Length</span> <span class="string">&gt;=</span> <span class="number">8</span></span><br><span class="line"><span class="string">MEDIUM</span> <span class="string">Length</span> <span class="string">&gt;=</span> <span class="number">8</span><span class="string">,</span> <span class="string">numeric,</span> <span class="string">mixed</span> <span class="string">case,</span> <span class="string">and</span> <span class="string">special</span> <span class="string">characters</span></span><br><span class="line"><span class="string">STRONG</span> <span class="string">Length</span> <span class="string">&gt;=</span> <span class="number">8</span><span class="string">,</span> <span class="string">numeric,</span> <span class="string">mixed</span> <span class="string">case,</span> <span class="string">special</span> <span class="string">characters</span> <span class="string">and</span> <span class="string">dictionary</span> <span class="string">file</span></span><br><span class="line"></span><br><span class="line"><span class="string">Please</span> <span class="string">enter</span> <span class="number">0</span> <span class="string">=</span> <span class="string">LOW,</span> <span class="number">1</span> <span class="string">=</span> <span class="string">MEDIUM</span> <span class="string">and</span> <span class="number">2</span> <span class="string">=</span> <span class="attr">STRONG:</span> <span class="number">0</span>  <span class="string">//</span> <span class="string">选择密码验证等级</span></span><br><span class="line"></span><br><span class="line"><span class="attr">New password:</span>    <span class="string">//</span> <span class="string">输入新密码</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Re-enter new password:</span> </span><br><span class="line"></span><br><span class="line"><span class="string">Do</span> <span class="string">you</span> <span class="string">wish</span> <span class="string">to</span> <span class="string">continue</span> <span class="string">with</span> <span class="string">the</span> <span class="string">password</span> <span class="string">provided?(Press</span> <span class="string">y|Y</span> <span class="string">for</span> <span class="literal">Yes</span><span class="string">,</span> <span class="string">any</span> <span class="string">other</span> <span class="string">key</span> <span class="string">for</span> <span class="literal">No</span><span class="string">)</span> <span class="string">:</span> <span class="string">y</span>   <span class="string">//是否希望继续提供密码保护</span></span><br><span class="line"></span><br><span class="line"><span class="string">Remove</span> <span class="string">anonymous</span> <span class="string">users?</span> <span class="string">(Press</span> <span class="string">y|Y</span> <span class="string">for</span> <span class="literal">Yes</span><span class="string">,</span> <span class="string">any</span> <span class="string">other</span> <span class="string">key</span> <span class="string">for</span> <span class="literal">No</span><span class="string">)</span> <span class="string">:</span> <span class="string">y</span>   <span class="string">//删除匿名用户</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="string">Disallow</span> <span class="string">root</span> <span class="string">login</span> <span class="string">remotely?</span> <span class="string">(Press</span> <span class="string">y|Y</span> <span class="string">for</span> <span class="literal">Yes</span><span class="string">,</span> <span class="string">any</span> <span class="string">other</span> <span class="string">key</span> <span class="string">for</span> <span class="literal">No</span><span class="string">)</span> <span class="string">:</span> <span class="string">n</span> <span class="string">//</span> <span class="string">是否禁止远程登录</span></span><br><span class="line"></span><br><span class="line"><span class="string">Remove</span> <span class="string">test</span> <span class="string">database</span> <span class="string">and</span> <span class="string">access</span> <span class="string">to</span> <span class="string">it?</span> <span class="string">(Press</span> <span class="string">y|Y</span> <span class="string">for</span> <span class="literal">Yes</span><span class="string">,</span> <span class="string">any</span> <span class="string">other</span> <span class="string">key</span> <span class="string">for</span> <span class="literal">No</span><span class="string">)</span> <span class="string">:</span> <span class="string">n</span>  <span class="string">//</span> <span class="string">是否删除测试库</span></span><br><span class="line"></span><br><span class="line"><span class="string">Reload</span> <span class="string">privilege</span> <span class="string">tables</span> <span class="string">now?</span> <span class="string">(Press</span> <span class="string">y|Y</span> <span class="string">for</span> <span class="literal">Yes</span><span class="string">,</span> <span class="string">any</span> <span class="string">other</span> <span class="string">key</span> <span class="string">for</span> <span class="literal">No</span><span class="string">)</span> <span class="string">:</span> <span class="string">y</span>  <span class="string">//</span> <span class="string">刷新数据库权限</span></span><br></pre></td></tr></table></figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WX20190615-184621@2x-2019615184655.png" alt="安装过程" title="">
+                </div>
+                <div class="image-caption">安装过程</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WX20190615-184558@2x-2019615184646.png" alt="安装过程2" title="">
+                </div>
+                <div class="image-caption">安装过程2</div>
+            </figure></li>
+</ul>
+<h2 id="登陆"><a href="#登陆" class="headerlink" title="登陆"></a>登陆</h2><blockquote>
+<p>mysql -uroot -p</p>
+</blockquote>
+<blockquote>
+<p>show databases;</p>
+</blockquote>
+<blockquote>
+<p>use mysql;</p>
+</blockquote>
+<blockquote>
+<p>show tables;</p>
+</blockquote>
+<blockquote>
+<p>exit;</p>
+</blockquote>
+<h2 id="navicat连接"><a href="#navicat连接" class="headerlink" title="navicat连接"></a>navicat连接</h2><h3 id="报错-2059-Authentication-plugin-39-caching-sha2-password-39-cannot-be-loaded-dlope"><a href="#报错-2059-Authentication-plugin-39-caching-sha2-password-39-cannot-be-loaded-dlope" class="headerlink" title="报错 2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded dlope"></a>报错 <code>2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded dlope</code></h3><p><code>2059 - Authentication plugin &#39;caching_sha2_password&#39; cannot be loaded: dlopen(../Frameworks/caching_sha2_password.so, 2): image not found</code></p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WX20190616-100036@2x-201961610056.png" alt="2059 error" title="">
+                </div>
+                <div class="image-caption">2059 error</div>
+            </figure>
+
+<h3 id="解决方法"><a href="#解决方法" class="headerlink" title="解决方法"></a>解决方法</h3><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ALTER<span class="built_in"> USER </span><span class="string">'root'</span>@<span class="string">'localhost'</span> IDENTIFIED WITH mysql_native_password BY <span class="string">'密码'</span>;</span><br><span class="line"></span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WX20190616-095947@2x-201961610116.png" alt="success" title="">
+                </div>
+                <div class="image-caption">success</div>
+            </figure>
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/mysql/" rel="tag">mysql</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tool/" rel="tag">tool</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/&title=《mac+brew 安装 mysql》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/&title=《mac+brew 安装 mysql》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mac+brew 安装 mysql》 — afacode的博客&url=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/06/18/scrapy-save-to-json/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">scrapy导出JSON格式</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/13/python-spdier-selenium-tips-1/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">selenium 不加载图片</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/&title=《mac+brew 安装 mysql》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/&title=《mac+brew 安装 mysql》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《mac+brew 安装 mysql》 — afacode的博客&url=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/06/15/mac-brew-install-mysql/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aQW4DIQwF0Nz/0tNtpSj0G5NKwGM1UkjgZeHBxq9XPJ5fI5nzPv/9u5/mjFdpDQwMjG0Zz3CMFxh/qzrn03PyCxgYGDcwPkWw6jJjQDWsJ3vDwMDAGM+phuzkCIiBgYHxjYCbhNF8oxgYGBidJDYPnU8w8iLd4lwcAwNjQ0Zedf//56/cb2BgYGzFeIoj+YXOFp+pgYGBcTajmohWYeOQ3U+MMTAwbmOsPcDNhemkADd5/4mBgXEEoxouOzlmpzAXvTcwMDAOZYwX6KSveUF/MtRiYGBcxphrdKgmrtWLzAiGgYFxKGNVAlm9HqiW4f4I1hgYGBcwOolrzs4DbvV4ioGBcQ8j2VZnZl5uy68uMDAwbmAUMt1GI0W12SIP3NF1JgYGxuaMzrbyslpepJtsv8DAwDia0Sm69Y90q/4sDAyMsxnVon/n02pRr9CWgYGBcTSjeg1QLeKvbRGL9omBgXE0o7qVPImN6nzttBYDA+NsxlzTQ/7cKboVmlkxMDCuYeRNFdULgE5ZrfCuwMDAuICRHOByalKAmyv8tbJwDAyMrRhPcSz75xrXnNFiGBgYBzHyMffTq1pd546YGBgYJzGqQXZtyWwuWGNgYNzJ6Kep1dDZSZ4xMDAw5jYxV4DLg3iUkWNgYGAU09S8tFdNa5e9NzAwMLZi5AtU2yzmLgm+mItjYGBsyJhrrchD8FwpbVWLBgYGxuaMH65XLLoc2BFXAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

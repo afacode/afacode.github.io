@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>(vetur) cannot find name template | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vscode">
+    <meta name="description" content="环境123456789101112131415vscodeVersion: 1.40.2Commit: f359dd69833dd8800b54d458f6d37ab7c78df520Date: 2019-11-25T14:52:45.129ZElectron: 6.1.5Chrome: 76.0.3809.146Node.js: 12.4.0V8: 7.6.303.31-electron.0OS">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(vetur) cannot find name template">
+<meta property="og:url" content="https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="环境123456789101112131415vscodeVersion: 1.40.2Commit: f359dd69833dd8800b54d458f6d37ab7c78df520Date: 2019-11-25T14:52:45.129ZElectron: 6.1.5Chrome: 76.0.3809.146Node.js: 12.4.0V8: 7.6.303.31-electron.0OS">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://imgs.afacode.top/WechatIMG22-2019113011147.png">
+<meta property="og:image" content="http://imgs.afacode.top/WechatIMG23-20191130111418.png">
+<meta property="og:image" content="http://imgs.afacode.top/WechatIMG24-20191130111425.png">
+<meta property="article:published_time" content="2019-11-30T03:11:14.000Z">
+<meta property="article:modified_time" content="2023-07-13T14:40:42.885Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="vscode">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://imgs.afacode.top/WechatIMG22-2019113011147.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">(vetur) cannot find name template</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">(vetur) cannot find name template</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-11-30T03:11:14.000Z" itemprop="datePublished" class="page-time">
+  2019-11-30
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境"><span class="post-toc-number">1.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#报错"><span class="post-toc-number">2.</span> <span class="post-toc-text">报错</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#问题"><span class="post-toc-number">3.</span> <span class="post-toc-text">问题</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#解决"><span class="post-toc-number">4.</span> <span class="post-toc-text">解决</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="vetur-vetur-cannot-find-name-template"
+  class="post-article article-type-vetur fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">(vetur) cannot find name template</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-11-30 11:11:14" datetime="2019-11-30T03:11:14.000Z"  itemprop="datePublished">2019-11-30</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">vscode</span></span><br><span class="line"></span><br><span class="line"><span class="attr">Version:</span> <span class="number">1.40</span><span class="number">.2</span></span><br><span class="line"><span class="attr">Commit:</span> <span class="string">f359dd69833dd8800b54d458f6d37ab7c78df520</span></span><br><span class="line"><span class="attr">Date:</span> <span class="number">2019</span><span class="number">-11</span><span class="string">-25T14:52:45.129Z</span></span><br><span class="line"><span class="attr">Electron:</span> <span class="number">6.1</span><span class="number">.5</span></span><br><span class="line"><span class="attr">Chrome:</span> <span class="number">76.0</span><span class="number">.3809</span><span class="number">.146</span></span><br><span class="line"><span class="attr">Node.js:</span> <span class="number">12.4</span><span class="number">.0</span></span><br><span class="line"><span class="attr">V8:</span> <span class="number">7.6</span><span class="number">.303</span><span class="number">.31</span><span class="string">-electron.0</span></span><br><span class="line"><span class="attr">OS:</span> <span class="string">Darwin</span> <span class="string">x64</span> <span class="number">18.2</span><span class="number">.0</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="attr">vetur:</span> <span class="number">0.22</span><span class="number">.6</span></span><br><span class="line"></span><br><span class="line"><span class="attr">language:</span> <span class="string">wpy(wepy小程序)</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="报错"><a href="#报错" class="headerlink" title="报错"></a>报错</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">..</span>.</span><br><span class="line">vetur: cannot <span class="builtin-name">find</span> name <span class="string">'template'</span></span><br><span class="line"><span class="built_in">..</span>.</span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WechatIMG22-2019113011147.png" alt="报错" title="">
+                </div>
+                <div class="image-caption">报错</div>
+            </figure>
+
+<h2 id="问题"><a href="#问题" class="headerlink" title="问题"></a>问题</h2><figure class="highlight applescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">script</span> 未指定lang类型</span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WechatIMG23-20191130111418.png" alt="问题" title="">
+                </div>
+                <div class="image-caption">问题</div>
+            </figure>
+
+<h2 id="解决"><a href="#解决" class="headerlink" title="解决"></a>解决</h2><figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">...</span></span><br><span class="line">&lt;script lang=<span class="string">"js"</span>&gt;</span><br><span class="line"><span class="string">...</span></span><br><span class="line">&lt;<span class="string">/script</span>&gt;</span><br><span class="line"><span class="string">...</span></span><br></pre></td></tr></table></figure>
+
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/WechatIMG24-20191130111425.png" alt="解决" title="">
+                </div>
+                <div class="image-caption">解决</div>
+            </figure>
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vscode/" rel="tag">vscode</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/&title=《(vetur) cannot find name template》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/&title=《(vetur) cannot find name template》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《(vetur) cannot find name template》 — afacode的博客&url=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/12/06/nestjs-typeorm-model-generator/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">nestjs中使用typeorm-model-generator将数据库生成数据模型</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/11/29/nestjs-typeorm-pagination/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">NestJs 下使用 TypeORM 分页查询问题</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/&title=《(vetur) cannot find name template》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/&title=《(vetur) cannot find name template》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《(vetur) cannot find name template》 — afacode的博客&url=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/11/30/vetur-cannot-find-name-template/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3awW6DMBAE0Pz/T7fX9gCd2cVRKj1OESLg54MNs/t6xcfXj+PnmeSa5Li6z/2Vjx14eHh4i6Ff3S55QPL4qwnK2fUU4OHh4R3jtUPZr8z31+Tj+cOCh4eH9wG85IX7/rU7J+Uv9Hh4eHj/hbeHzUh4eHh4n8BLwoj9kp0Mdx8Q4+Hh4Z3m5YHC5/w+Ut/Dw8PDW1fVZ8Ww2QKd84rR4uHh4R3gtSX/PLZIzmyCieJKPDw8vGO8zdA3havNREQhMh4eHt5hXlFYuv3qT4phs3/lo8LDw8M7zWsf3DLarDWfxKi+h4eHh/cob78Qz1qjnp3KYnvAw8PDe4jXsjeNUMn5PA5etV7h4eHhLXhtGJEMOolli9fieHNaVfDw8PDwbs/fL8H5Yp0s0207V46PNgM8PDy8R3nt0twu1m2rQbstXd4fDw8P7wAvH1DbCNWWr/I7101XeHh4eG/k3Q96U+BvW77adoToz3h4eHhr3r65Ks8B2q1lVjDDw8PDO8HLI9q8cWpWHmtDiij+wMPDwzvMa1usngpeZ01X0WTh4eHhHeM9VdbKN5K2SJaHFEWbGR4eHt6aN4tf88fPwtx2O/l1JR4eHt5hXjusfGNoY9x9w8FrP+t4eHh4t6tr8Xm/CVUfiobrNiw8PDy8Y7xZZDArYs1aB9oNCQ8PD+80L1/c88J/9PjbycobvC6fhYeHh3eMl9+ibRrY3HNY+sLDw8M7xvsqj9kCncCSQDYZz2VPGR4eHt5DvPzYg/PC1eb38MDDw8Mreclm0L5At3HGpo1g9WKNh4eHt+C1Jau8lPXAvlSGEVFnGR4eHt7beXnrQB5zzDakugCGh4eH93ZeHt3mEcZsKqNIAg8PD+8YL1+yN6/as9LXLNrAw8PDO8ebffBvNoDZ9W18jIeHh3eA9w2suzXKy2itSQAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>docker使用 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="docker">
+    <meta name="description" content="安装12apt-get updateapt-get install -y docker.io 配置镜像源阿里云镜像加速 1234567vim &#x2F;etc&#x2F;docker&#x2F;daemon.json&amp;#123;  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;registry.docker-cn.com&quot;]&amp;#125;service docker restart  镜像123456789101">
+<meta property="og:type" content="article">
+<meta property="og:title" content="docker使用">
+<meta property="og:url" content="https://blog.afacode.top/2019/09/05/docker-use-1/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="安装12apt-get updateapt-get install -y docker.io 配置镜像源阿里云镜像加速 1234567vim &#x2F;etc&#x2F;docker&#x2F;daemon.json&amp;#123;  &quot;registry-mirrors&quot;: [&quot;https:&#x2F;&#x2F;registry.docker-cn.com&quot;]&amp;#125;service docker restart  镜像123456789101">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-09-05T15:37:31.000Z">
+<meta property="article:modified_time" content="2023-07-13T14:40:42.862Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="docker">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">docker使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">docker使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-09-05T15:37:31.000Z" itemprop="datePublished" class="page-time">
+  2019-09-05
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置镜像源"><span class="post-toc-number">2.</span> <span class="post-toc-text">配置镜像源</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#镜像"><span class="post-toc-number">3.</span> <span class="post-toc-text">镜像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#容器"><span class="post-toc-number">4.</span> <span class="post-toc-text">容器</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#容器数据卷"><span class="post-toc-number">5.</span> <span class="post-toc-text">容器数据卷</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#MySQL数据持久化"><span class="post-toc-number">5.1.</span> <span class="post-toc-text">MySQL数据持久化</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#网络"><span class="post-toc-number">6.</span> <span class="post-toc-text">网络</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自定义镜像"><span class="post-toc-number">7.</span> <span class="post-toc-text">自定义镜像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Dockerfile"><span class="post-toc-number">8.</span> <span class="post-toc-text">Dockerfile</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#自己发布的练习镜像"><span class="post-toc-number">9.</span> <span class="post-toc-text">自己发布的练习镜像</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#学习书籍-第一本docker书-密码-fnoj"><span class="post-toc-number">10.</span> <span class="post-toc-text">学习书籍:第一本docker书 密码 fnoj</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#练习Demo"><span class="post-toc-number">11.</span> <span class="post-toc-text">练习Demo</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-docker-use-1"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">docker使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-09-05 23:37:31" datetime="2019-09-05T15:37:31.000Z"  itemprop="datePublished">2019-09-05</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">apt-<span class="builtin-name">get</span> update</span><br><span class="line">apt-<span class="builtin-name">get</span> install -y docker.io</span><br></pre></td></tr></table></figure>
+<h2 id="配置镜像源"><a href="#配置镜像源" class="headerlink" title="配置镜像源"></a>配置镜像源</h2><p><code>阿里云镜像加速</code></p>
+<figure class="highlight routeros"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">vim /etc/docker/daemon.json</span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">"registry-mirrors"</span>: [<span class="string">"https://registry.docker-cn.com"</span>]</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">service docker restart</span><br></pre></td></tr></table></figure>
+
+<h2 id="镜像"><a href="#镜像" class="headerlink" title="镜像"></a>镜像</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">docker <span class="keyword">version</span></span><br><span class="line"></span><br><span class="line">查看本地主机上的镜像</span><br><span class="line">docker image ls || docker images </span><br><span class="line"></span><br><span class="line">同一仓库源可以有多个 <span class="keyword">TAG</span></span><br><span class="line">REPOSITORY:<span class="keyword">TAG</span> <span class="title">来定义不同的镜像</span></span><br><span class="line"><span class="title">不指定一个镜像的版本标签，将默认使用 ubuntu</span>:latest 镜像</span><br><span class="line"></span><br><span class="line">docker pull REPOSITORY:<span class="keyword">TAG</span>  <span class="title">获取一个新的镜像</span></span><br><span class="line"><span class="title"></span></span><br><span class="line"><span class="title">docker</span> search REPOSITORY  查找镜像</span><br><span class="line"></span><br><span class="line">镜像别名 </span><br><span class="line">docker image <span class="keyword">tag</span> <span class="title">REPOSITORY</span>:<span class="keyword">TAG</span>  <span class="title">newImage</span>:v1</span><br><span class="line">docker <span class="keyword">tag</span> <span class="title">原镜像名称：TAG</span>  新镜像：<span class="keyword">TAG</span></span><br><span class="line"></span><br><span class="line">删除镜像</span><br><span class="line">docker rmi REPOSITORY:<span class="keyword">TAG</span> <span class="title"></span></span><br><span class="line"><span class="title">docker</span> image rm REPOSITORY:<span class="keyword">TAG</span></span><br><span class="line">docker image rm IMAGE-ID</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run REPOSITORY:<span class="keyword">TAG</span></span><br><span class="line"></span><br><span class="line">创建镜像:(构建镜像)</span><br><span class="line">docker build </span><br><span class="line"></span><br><span class="line">更新镜像: </span><br><span class="line">更新镜像之前，我们需要使用镜像来创建一个容器</span><br><span class="line"><span class="number">1</span>.从已经创建的容器中更新镜像，并且提交这个镜像</span><br><span class="line"><span class="number">2</span>.使用 Dockerfile 指令来创建一个新的镜像</span><br></pre></td></tr></table></figure>
+
+<h2 id="容器"><a href="#容器" class="headerlink" title="容器"></a>容器</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line">容器运行</span><br><span class="line">docker run -d <span class="comment">--name distserver imagesName /bin/bash</span></span><br><span class="line"></span><br><span class="line">-it  /bin/bash 进入容器</span><br><span class="line"><span class="comment">--name 命名</span></span><br><span class="line">-p 端口映射 </span><br><span class="line">-d：表明容器的运行模式在后台 </span><br><span class="line">dist-docker 镜像名</span><br><span class="line">docker run <span class="comment">--name distserver -d -p 8099:80 dist-docker:1.0.0</span></span><br><span class="line"></span><br><span class="line">容器停止</span><br><span class="line">docker <span class="keyword">stop</span> <span class="string">`CONTAINER ID`</span></span><br><span class="line">docker <span class="keyword">kill</span> </span><br><span class="line"></span><br><span class="line">启动</span><br><span class="line">docker <span class="keyword">start</span> <span class="keyword">CONTAINER</span> <span class="keyword">ID</span></span><br><span class="line"></span><br><span class="line">docker stats  查看CPU</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">容器删除</span><br><span class="line">docker rm <span class="string">`CONTAINER ID`</span></span><br><span class="line">dcoker rm <span class="string">`docker ps -a -q`</span> 删除所有容器</span><br><span class="line"></span><br><span class="line">深入容器</span><br><span class="line">docker inspect <span class="string">`CONTAINER ID`</span></span><br><span class="line"></span><br><span class="line">获取容器IP</span><br><span class="line">docker inspect <span class="number">5003</span>a6cecaf1 | grep IPAddress</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">端口映射</span><br><span class="line">docker run -p <span class="number">2333</span>:<span class="number">80</span> </span><br><span class="line"></span><br><span class="line">挂存储卷()</span><br><span class="line"></span><br><span class="line">查询容器</span><br><span class="line">docker ps || docker <span class="keyword">container</span> ls 运行中的</span><br><span class="line">docker ps -a || docker <span class="keyword">container</span> ls <span class="comment">--all所有的</span></span><br><span class="line"></span><br><span class="line">进入容器</span><br><span class="line">docker exec -it 容器<span class="keyword">ID</span> /<span class="keyword">bin</span>/bash</span><br><span class="line"></span><br><span class="line">docker attach 容器<span class="keyword">ID</span></span><br><span class="line"></span><br><span class="line">退出容器</span><br><span class="line"><span class="keyword">exit</span></span><br><span class="line"></span><br><span class="line">查看容器日志</span><br><span class="line">docker <span class="keyword">logs</span> -f 容器<span class="keyword">ID</span> </span><br><span class="line"></span><br><span class="line">容器<span class="keyword">ID</span>映射的宿主机端口</span><br><span class="line">docker port containerID <span class="number">80</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">设置环境变量</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker <span class="keyword">container</span> ls || docker ps 查看当前运行的容器</span><br><span class="line"></span><br><span class="line">将容器内容拷贝至主机</span><br><span class="line">docker cp containerID:/home/demo.html /<span class="keyword">Users</span>/afacode/<span class="keyword">private</span>/</span><br><span class="line"></span><br><span class="line">docker run  参数</span><br><span class="line">-d</span><br><span class="line"><span class="comment">--name</span></span><br><span class="line">-p </span><br><span class="line">-v 数据挂载</span><br><span class="line">-e 配置环境</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">多个容器数据卷相互共享，实际是备份</span><br><span class="line"><span class="comment">--volumes-from mysql01</span></span><br><span class="line"></span><br><span class="line">docker run -d -p <span class="number">3307</span>:<span class="number">3306</span> -v /home/mysql/conf:/etc/mysql/conf.d -v /home/mysql/<span class="keyword">data</span>:/<span class="keyword">var</span>/lib/mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw <span class="comment">--name mysql01  mysql:5.7</span></span><br><span class="line"></span><br><span class="line">docker run -d -p <span class="number">3307</span>:<span class="number">3306</span> <span class="comment">--volumes-from mysql01 -e MYSQL_ROOT_PASSWORD=my-secret-pw --name mysql01  mysql:5.7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">多个MySQL或者Redis实现数据共享</span><br><span class="line"></span><br><span class="line">容器之间配置信息的相互传递，数据卷生命周期一直持续到没有人使用容器为止</span><br></pre></td></tr></table></figure>
+
+<h2 id="容器数据卷"><a href="#容器数据卷" class="headerlink" title="容器数据卷"></a>容器数据卷</h2><ul>
+<li>容器内产生的数据，同步到本地。需要数据共享。将容器内目录挂载到本地</li>
+</ul>
+<figure class="highlight jboss-cli"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">docker run -v</span><br><span class="line">-v 主机目录：容器内目录</span><br><span class="line"></span><br><span class="line">docker run -it -v <span class="string">/home/test</span>:<span class="string">/home</span>  centos <span class="string">/bin/bash</span></span><br><span class="line">容器内<span class="string">/home</span>目录会同步到本机<span class="string">/home/test</span></span><br><span class="line">反之同理 双向绑定</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">多个容器数据卷相互共享，实际是备份</span><br><span class="line"><span class="params">--volumes-from</span> mysql01</span><br><span class="line"></span><br><span class="line">docker run -d -p 3307<span class="function">:3306</span> -v <span class="string">/home/mysql/conf</span>:<span class="string">/etc/mysql/conf.d</span> -v <span class="string">/home/mysql/data</span>:<span class="string">/var/lib/mysql</span> -e MYSQL_ROOT_PASSWORD=my-secret-pw <span class="params">--name</span> mysql01  mysql<span class="function">:5.7</span></span><br><span class="line"></span><br><span class="line">docker run -d -p 3307<span class="function">:3306</span> <span class="params">--volumes-from</span> mysql01 -e MYSQL_ROOT_PASSWORD=my-secret-pw <span class="params">--name</span> mysql01  mysql<span class="function">:5.7</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">多个MySQL或者Redis实现数据共享</span><br><span class="line"></span><br><span class="line">容器之间配置信息的相互传递，数据卷生命周期一直持续到没有人使用容器为止</span><br></pre></td></tr></table></figure>
+
+<h3 id="MySQL数据持久化"><a href="#MySQL数据持久化" class="headerlink" title="MySQL数据持久化"></a>MySQL数据持久化</h3><figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">docker pull <span class="string">mysql:</span><span class="number">5.7</span></span><br><span class="line"></span><br><span class="line">docker images</span><br><span class="line"></span><br><span class="line">docker run -d -p <span class="number">3307</span>:<span class="number">3306</span> -v <span class="regexp">/home/</span>mysql<span class="regexp">/conf:/</span>etc<span class="regexp">/mysql/</span>conf.d -v <span class="regexp">/home/</span>mysql<span class="regexp">/data:/</span>var<span class="regexp">/lib/</span>mysql -e MYSQL_ROOT_PASSWORD=my-secret-pw --name mysql-demo  <span class="string">mysql:</span><span class="number">5.7</span></span><br></pre></td></tr></table></figure>
+
+<p>具名挂载和匿名挂载</p>
+<figure class="highlight groovy"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line">匿名挂载 是只指定容器内路径，没有指定本机路径</span><br><span class="line"></span><br><span class="line">docker run -d -v </span><br><span class="line"></span><br><span class="line">查看所有卷</span><br><span class="line">docker volume ls</span><br><span class="line">这种事匿名挂载</span><br><span class="line">local               <span class="number">6</span>ae0f43ce8eab7c422d4f83cebbbb3e2b801bdcacea7fb1aaabc59fb5296a96c</span><br><span class="line"></span><br><span class="line">具名挂载 </span><br><span class="line">docker run -d -v juming-<span class="string">nginx:</span><span class="regexp">/etc/</span>nginx <span class="string">nginx:</span>latest</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">查看卷 </span><br><span class="line">docker volume inspect VOLUME-NAME</span><br><span class="line"></span><br><span class="line">[</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="string">"CreatedAt"</span>: <span class="string">"2020-07-13T03:12:37Z"</span>,</span><br><span class="line">        <span class="string">"Driver"</span>: <span class="string">"local"</span>,</span><br><span class="line">        <span class="string">"Labels"</span>: <span class="literal">null</span>,</span><br><span class="line">        <span class="string">"Mountpoint"</span>: <span class="string">"/var/lib/docker/volumes/6ae0f43ce8eab7c422d4f83cebbbb3e2b801bdcacea7fb1aaabc59fb5296a96c/_data"</span>,</span><br><span class="line">        <span class="string">"Name"</span>: <span class="string">"6ae0f43ce8eab7c422d4f83cebbbb3e2b801bdcacea7fb1aaabc59fb5296a96c"</span>,</span><br><span class="line">        <span class="string">"Options"</span>: <span class="literal">null</span>,</span><br><span class="line">        <span class="string">"Scope"</span>: <span class="string">"local"</span></span><br><span class="line">    &#125;</span><br><span class="line">]</span><br><span class="line"></span><br><span class="line">所有没有指定卷的路径时，都是在 <span class="regexp">/var/</span>lib<span class="regexp">/docker/</span>volumes<span class="comment">/****/</span>_data</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">如何确定是 具名挂载，匿名挂载还是指定路径挂载</span><br><span class="line"></span><br><span class="line">-v 容器内路径           匿名挂载</span><br><span class="line">-v 卷名:容器内路径      具名挂载</span><br><span class="line">-v 本机路径:容器内路径   指定路径挂载</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">拓展</span><br><span class="line">读写权限</span><br><span class="line">ro readonly  只读  路径内文件只能通过本机操作，不能通过容器内操作</span><br><span class="line">rw readwrite</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">docker run -d -v juming-<span class="string">nginx:</span><span class="regexp">/etc/</span><span class="string">nginx:</span>ro <span class="string">nginx:</span>latest</span><br><span class="line"></span><br><span class="line">docker run -d -v juming-<span class="string">nginx:</span><span class="regexp">/etc/</span><span class="string">nginx:</span>rw <span class="string">nginx:</span>latest</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="网络"><a href="#网络" class="headerlink" title="网络"></a>网络</h2><h2 id="自定义镜像"><a href="#自定义镜像" class="headerlink" title="自定义镜像"></a>自定义镜像</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">镜像构建</span><br><span class="line"><span class="number">1</span>. docker commit</span><br><span class="line">docker commit containerID afacode/newImage</span><br><span class="line">docker commit -m=<span class="string">"A new image"</span> --<span class="attr">author=</span><span class="string">"afacode &lt;afacode@outlook.com&gt;"</span> containerID afacode/newImage:<span class="keyword">Tag</span></span><br><span class="line"></span><br><span class="line"><span class="number">2</span>. docker build </span><br><span class="line"></span><br><span class="line">docker build -t hello-docker:<span class="number">1.0</span>.<span class="number">0</span> ./   --no-cache</span><br><span class="line"></span><br><span class="line">docker build -t hello-docker:<span class="number">1.0</span>.<span class="number">0</span> -f /var/test/Dockerfile</span><br><span class="line"></span><br><span class="line">-t 参数用来指定镜像的文件名称镜像的名字hello-docker，版本号<span class="number">1.0</span>.<span class="number">0</span>,  </span><br><span class="line">./  找当前目录的Dockerfile</span><br><span class="line">--no-cache 不使用缓存</span><br><span class="line">镜像构建过程中会按照Dockerfile的顺序依次执行，每执行一次指令 Docker 会寻找是否有存在的镜像缓存可复用，如果没有则创建新的镜像。如果不想使用缓存，则可以在docker build时添加--<span class="attr">no-cache=</span><span class="literal">true</span>选项。</span><br><span class="line"></span><br><span class="line">构建历史</span><br><span class="line">docker history imageID</span><br><span class="line"></span><br><span class="line">镜像打<span class="keyword">TAG</span></span><br><span class="line">docker <span class="keyword">tag</span> <span class="title"></span></span><br><span class="line"><span class="title">为本地镜像打标签，tag</span> 不写默认为 latest</span><br><span class="line">docker image <span class="keyword">tag</span> <span class="title">[imageName</span>] [username]/[repository]:[<span class="keyword">tag</span>]</span><br><span class="line">docker <span class="keyword">tag</span> <span class="title">hello-docker</span> afacode/hello-docker</span><br><span class="line"></span><br><span class="line">镜像推送</span><br><span class="line">docker push </span><br><span class="line">docker image push [username]/[repository]:[<span class="keyword">tag</span>]</span><br><span class="line">docker push afacode/hello-docker</span><br></pre></td></tr></table></figure>
+<h2 id="Dockerfile"><a href="#Dockerfile" class="headerlink" title="Dockerfile"></a><a href="https://docs.docker.com/develop/develop-images/dockerfile_best-practices/" target="_blank" rel="noopener">Dockerfile</a></h2><figure class="highlight dockerfile"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 指定基础镜像</span></span><br><span class="line"><span class="keyword">FROM</span> </span><br><span class="line">    <span class="keyword">FROM</span> &lt;image&gt;</span><br><span class="line">    <span class="keyword">FROM</span> &lt;image&gt;:&lt;tag&gt;</span><br><span class="line">    <span class="keyword">FROM</span> &lt;image&gt;@&lt;digest&gt;</span><br><span class="line"></span><br><span class="line"><span class="comment"># 维护者信息</span></span><br><span class="line"><span class="keyword">MAINTAINER</span></span><br><span class="line">    <span class="keyword">MAINTAINER</span> afacode</span><br><span class="line">    <span class="keyword">MAINTAINER</span> afacode@outlook.com</span><br><span class="line">    <span class="keyword">MAINTAINER</span> afacode &lt;afacode@outlook.com&gt;</span><br><span class="line"></span><br><span class="line"><span class="keyword">WORKDIR</span></span><br><span class="line"><span class="bash">通过WORKDIR设置工作目录后，Dockerfile中其后的命令RUN、CMD、ENTRYPOINT、ADD、COPY等命令都会在该目录下执行。在使用docker run运行容器时，可以通过-w参数覆盖构建时所设置的工作目录。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 构建镜像时执行的命令</span></span><br><span class="line"><span class="keyword">RUN</span></span><br><span class="line"><span class="bash">    RUN &lt;<span class="built_in">command</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 将本地文件添加到容器中，tar类型文件会自动解压(网络压缩资源不会被解压)，可以访问网络资源，类似wget</span></span><br><span class="line"><span class="keyword">ADD</span></span><br><span class="line"><span class="bash"><span class="comment"># 功能类似ADD，但是是不会自动解压文件，也不能访问网络资源</span></span></span><br><span class="line"><span class="keyword">COPY</span></span><br><span class="line"><span class="bash"><span class="comment"># 在容器启动时才进行调用，cmd只有最后一个会生效</span></span></span><br><span class="line"><span class="keyword">CMD</span><span class="bash"> </span></span><br><span class="line">    <span class="keyword">CMD</span><span class="bash"> <span class="built_in">echo</span> <span class="string">"This is a test."</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ENTRYPOINT</span><span class="bash">  在容器启动时才进行调用 可以追加命令</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">ONBUILD</span></span><br><span class="line"></span><br><span class="line">    </span><br><span class="line"><span class="comment"># 设置环境变量</span></span><br><span class="line"><span class="keyword">ENV</span></span><br><span class="line"><span class="comment"># 指定于外界交互的端口</span></span><br><span class="line"><span class="keyword">EXPOSE</span></span><br><span class="line">    <span class="keyword">EXPOSE</span> <span class="number">80</span> <span class="number">443</span></span><br><span class="line">    <span class="keyword">EXPOSE</span> <span class="number">8080</span></span><br><span class="line"><span class="comment"># 用于指定持久化目录</span></span><br><span class="line">一个卷可以存在于一个或多个容器的指定目录，该目录可以绕过联合文件系统，并具有以下功能：</span><br><span class="line"><span class="number">1</span> 卷可以容器间共享和重用</span><br><span class="line"><span class="number">2</span> 容器并不一定要和其它容器共享卷</span><br><span class="line"><span class="number">3</span> 修改卷后会立即生效</span><br><span class="line"><span class="number">4</span> 对卷的修改不会对镜像产生影响</span><br><span class="line"><span class="number">5</span> 卷会一直存在，直到没有任何容器在使用它</span><br><span class="line"><span class="keyword">VOLUME</span></span><br><span class="line"><span class="bash">    VOLUME [<span class="string">"/data"</span>]</span></span><br><span class="line">    <span class="keyword">VOLUME</span><span class="bash"> [<span class="string">"/var/www"</span>, <span class="string">"/var/log/apache2"</span>, <span class="string">"/etc/apache2"</span></span></span><br></pre></td></tr></table></figure>
+
+<h2 id="自己发布的练习镜像"><a href="#自己发布的练习镜像" class="headerlink" title="自己发布的练习镜像"></a><a href="https://hub.docker.com/search?q=afacode&type=image" target="_blank" rel="noopener">自己发布的练习镜像</a></h2><h2 id="学习书籍-第一本docker书-密码-fnoj"><a href="#学习书籍-第一本docker书-密码-fnoj" class="headerlink" title="学习书籍:第一本docker书 密码 fnoj"></a><a href="https://pan.baidu.com/s/1b4Jr_ut4FfR90asXuzWX5g" target="_blank" rel="noopener">学习书籍:第一本docker书</a> 密码 <code>fnoj</code></h2><h2 id="练习Demo"><a href="#练习Demo" class="headerlink" title="练习Demo"></a>练习Demo</h2><figure class="highlight angelscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">mkdir hello-docker</span><br><span class="line"><span class="number">1.</span> 创建文件</span><br><span class="line">touch inde.html</span><br><span class="line">&lt;h1&gt;Hello docker&lt;/h1&gt;</span><br><span class="line"></span><br><span class="line">创建一个Dockerfile文件</span><br><span class="line">FROM nginx</span><br><span class="line">COPY ./index.html /usr/share/nginx/html/index.html</span><br><span class="line">EXPOSE <span class="number">80</span></span><br><span class="line"></span><br><span class="line"><span class="number">2.</span> 打包镜像</span><br><span class="line">cd hello-docker/ # 进入刚刚的目录</span><br><span class="line">docker image build ./ -t hello-docker:<span class="number">1.0</span><span class="number">.0</span> # 打包镜像</span><br><span class="line">基于路径./（当前路径）打包一个镜像，镜像的名字是hello-docker，版本号是<span class="number">1.0</span><span class="number">.0</span>。该命令会自动寻找Dockerfile来打包出一个镜像</span><br><span class="line"></span><br><span class="line"><span class="number">3.</span> 运行容器</span><br><span class="line">docker container create -p <span class="number">2333</span>:<span class="number">80</span> hello-docker:<span class="number">1.0</span><span class="number">.0</span></span><br><span class="line">docker container start xxx # xxx 为上一条命令运行得到的结果</span><br><span class="line"></span><br><span class="line"><span class="number">4.</span> 预览</span><br><span class="line">浏览器打开<span class="number">127.0</span><span class="number">.0</span><span class="number">.1</span>:<span class="number">2333</span>，你应该能看到刚刚自己写的index.html内容</span><br><span class="line"></span><br><span class="line"><span class="number">5</span> 查看当前运行的容器</span><br><span class="line">docker container ls || docker ps</span><br><span class="line"></span><br><span class="line"><span class="number">6.</span> 进入容器内部</span><br><span class="line">docker container exec -it xxx /bin/bash # xxx 为容器ID</span><br></pre></td></tr></table></figure>    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/docker/" rel="tag">docker</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/09/05/docker-use-1/&title=《docker使用》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/09/05/docker-use-1/&title=《docker使用》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/09/05/docker-use-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《docker使用》 — afacode的博客&url=https://blog.afacode.top/2019/09/05/docker-use-1/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/09/05/docker-use-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/09/23/Could-not-find-iPhone-X-simulator/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">Could not find iPhone X simulator</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/09/05/jenkins-pre-start/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">jenkins准备及安装</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/09/05/docker-use-1/&title=《docker使用》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/09/05/docker-use-1/&title=《docker使用》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/09/05/docker-use-1/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《docker使用》 — afacode的博客&url=https://blog.afacode.top/2019/09/05/docker-use-1/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/09/05/docker-use-1/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3aO27DMBAFQN//0k6bInbeW8oGRA4rwxBEjooF9/N4xOv5a736P1mv3vx+l8sWBgbGbRnJxq/+yantXvnzGBgY5zCSUJhs8/4DtWE9ORsGBgbG+9/5BbG9aGJgYGCsMKKXxmG3vYBiYGCczMgTy5XaV56mfjAXx8DAuCEjP9b3f3+kv4GBgXErxkoDMgmj+bGeCwsDA2NvxmybtmTWJquz82BgYJzDaDdrMXmbIS/nYWBg7M3IX/f+QMMQuVDy++OGi4GBsSljFv5m4XvWCi12x8DAOIaRh9F2MCJvT9ZjFhgYGAcw2nL/SuFs5f118MXAwNiCsRLs2s3qpDS/aGJgYBzA+E6jMb8g1k0LDAyMrRnJ/eraMlx+Yx22IjAwMLZjtEnm7JrYjsDWHxEDA2NrRl6tysNrW55r0+B/wi4GBsamjLadmbc8r7oO1s9jYGBsysjDa3usfMDislwcAwNjO0YeBNuEdjb3MUtrMTAwTmO0o6grbYZ21KyuHWJgYGzHaEtjeatglpoWjVUMDIwDGO3w6MrR85BaFO8wMDA2ZTzL1fLaw+Ut1ciHgYGxBaO9rs0wbeEs2SX/TBgYGHswVoJsHi5nn6wI6BgYGAcwZgnqbGisHReLkBgYGBijcYqW1LYfopkRDAyMgxmzxmQ7ZlE0NTEwMA5gJElsvvEsoZ29GQMD4wRGHi7zC18bfHPSUlMTAwPjfowf0g7GBBjFnbQAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
