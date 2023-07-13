@@ -1,6 +1,6 @@
 ---
 layout: post
-title: vue router
+title: vue-router 使用需要添加多余参数(默认params 参数) 会有ts提示
 date: 2022-01-04 23:34:55
 categories:
   - js
