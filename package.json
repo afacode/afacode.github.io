@@ -5,7 +5,8 @@
   "scripts": {
     "clean": "hexo clean",
     "g": "hexo g",
-    "d": "hexo d"
+    "d": "hexo d",
+    "s": "hexo s"
   },
   "hexo": {
     "version": "3.7.1"
