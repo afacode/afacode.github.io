@@ -1,0 +1,497 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>TypeScript代码检查 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="typescript,eslint,tslint">
+    <meta name="description" content="目前 TypeScript 的代码检查主要有两个方案：使用 TSLint 或使用 ESLint + typescript-eslint-parser">
+<meta property="og:type" content="article">
+<meta property="og:title" content="TypeScript代码检查">
+<meta property="og:url" content="https://blog.afacode.top/2019/07/24/typescript-lint/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="目前 TypeScript 的代码检查主要有两个方案：使用 TSLint 或使用 ESLint + typescript-eslint-parser">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-07-24T13:13:21.000Z">
+<meta property="article:modified_time" content="2023-07-13T15:06:15.433Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="typescript">
+<meta property="article:tag" content="eslint">
+<meta property="article:tag" content="tslint">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">TypeScript代码检查</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">TypeScript代码检查</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-07-24T13:13:21.000Z" itemprop="datePublished" class="page-time">
+  2019-07-24
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#ESLint"><span class="post-toc-number">1.</span> <span class="post-toc-text">ESLint</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装"><span class="post-toc-number">1.1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件"><span class="post-toc-number">1.2.</span> <span class="post-toc-text">配置文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检查"><span class="post-toc-number">2.</span> <span class="post-toc-text">检查</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#TSLint"><span class="post-toc-number">3.</span> <span class="post-toc-text">TSLint</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#安装-1"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#配置文件-1"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">配置文件</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#检查-1"><span class="post-toc-number">4.</span> <span class="post-toc-text">检查</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-typescript-lint"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">TypeScript代码检查</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-07-24 21:13:21" datetime="2019-07-24T13:13:21.000Z"  itemprop="datePublished">2019-07-24</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>目前 TypeScript 的代码检查主要有两个方案：使用 <code>TSLint</code> 或使用 <code>ESLint + typescript-eslint-parser</code></p>
+<a id="more"></a>
+
+<h2 id="ESLint"><a href="#ESLint" class="headerlink" title="ESLint"></a>ESLint</h2><p>由于 ESLint 默认使用 <a href="https://github.com/eslint/espree" target="_blank" rel="noopener">Espree</a> 进行语法解析，无法识别 TypeScript 的一些语法，故我们需要安装 <code>typescript-eslint-parser</code> 替代掉默认的解析器.</p>
+<p>由于 <code>typescript-eslint-parser</code> 对一部分 <code>ESLint</code> 规则支持性不好，故我们需要安装 <code>eslint-plugin-typescript</code>，弥补一些支持性不好的规则</p>
+<h3 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">npm <span class="keyword">install</span> eslint <span class="comment">--save-dev</span></span><br><span class="line">npm <span class="keyword">install</span> typescript-eslint-parser <span class="comment">--save-dev</span></span><br><span class="line">npm <span class="keyword">install</span> eslint-<span class="keyword">plugin</span>-typescript <span class="comment">--save-dev</span></span><br><span class="line">npm <span class="keyword">install</span> <span class="comment">--save-dev eslint-plugin-react # 检查 tsx 文件</span></span><br></pre></td></tr></table></figure>
+<h3 id="配置文件"><a href="#配置文件" class="headerlink" title="配置文件"></a>配置文件</h3><p>一般为根目录<code>.eslintrc.js</code> 或 <code>.eslintrc.json</code></p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">module</span>.<span class="keyword">exports</span> = &#123;</span><br><span class="line">    parser: <span class="string">'typescript-eslint-parser'</span>,</span><br><span class="line">    plugins: [</span><br><span class="line">        <span class="string">'typescript'</span></span><br><span class="line">    ],</span><br><span class="line">    rules: &#123;</span><br><span class="line">        <span class="comment">// @fixable 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外</span></span><br><span class="line">        <span class="string">'eqeqeq'</span>: [</span><br><span class="line">            <span class="string">'error'</span>,</span><br><span class="line">            <span class="string">'always'</span>,</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">null</span>: <span class="string">'ignore'</span></span><br><span class="line">            &#125;</span><br><span class="line">        ],</span><br><span class="line">        <span class="comment">// 类和接口的命名必须遵守帕斯卡命名法，比如 PersianCat</span></span><br><span class="line">        <span class="string">'typescript/class-name-casing'</span>: <span class="string">'error'</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>以上配置中，我们指定了两个规则，其中 eqeqeq 是 ESLint 原生的规则（它要求必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外），typescript/class-name-casing 是 eslint-plugin-typescript 为 ESLint 增加的规则（它要求类和接口的命名必须遵守帕斯卡命名法，比如 PersianCat）</p>
+<h2 id="检查"><a href="#检查" class="headerlink" title="检查"></a>检查</h2><p>检查整个项目的 ts 文件<br>package.json</p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"eslint"</span>: <span class="string">"eslint src --ext .ts, tsx"</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>npm run eslint</code></p>
+</blockquote>
+<h2 id="TSLint"><a href="#TSLint" class="headerlink" title="TSLint"></a>TSLint</h2><h3 id="安装-1"><a href="#安装-1" class="headerlink" title="安装"></a>安装</h3><figure class="highlight q"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --<span class="built_in">save</span>-<span class="built_in">dev</span> tslint</span><br></pre></td></tr></table></figure>
+<h3 id="配置文件-1"><a href="#配置文件-1" class="headerlink" title="配置文件"></a>配置文件</h3><p><code>tslint.json</code></p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="attr">"rules"</span>: &#123;</span><br><span class="line">        <span class="comment">// 必须使用 === 或 !==，禁止使用 == 或 !=，与 null 比较时除外</span></span><br><span class="line">        <span class="attr">"triple-equals"</span>: [</span><br><span class="line">            <span class="literal">true</span>,</span><br><span class="line">            <span class="string">"allow-null-check"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="attr">"linterOptions"</span>: &#123;</span><br><span class="line">        <span class="attr">"exclude"</span>: [</span><br><span class="line">            <span class="string">"**/node_modules/**"</span></span><br><span class="line">        ]</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="检查-1"><a href="#检查-1" class="headerlink" title="检查"></a>检查</h2><p>检查整个项目的 ts 文件<br><code>package.json</code></p>
+<figure class="highlight 1c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">"scripts"</span>: &#123;</span><br><span class="line">    <span class="string">"tslint"</span>: <span class="string">"tslint --project . src/**/*.ts src/**/*.tsx"</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p><code>npm run eslint</code></p>
+</blockquote>
+<p><a href="https://ts.xcatliu.com/engineering/lint" target="_blank" rel="noopener">来源</a></p>
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/eslint/" rel="tag">eslint</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/tslint/" rel="tag">tslint</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/typescript/" rel="tag">typescript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/07/24/typescript-lint/&title=《TypeScript代码检查》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/07/24/typescript-lint/&title=《TypeScript代码检查》 — afacode的博客&source=目前 TypeScript 的代码检查主要有两个方案：使用 TSLint 或使用 ESLint + typescript-eslint-parser" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/07/24/typescript-lint/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《TypeScript代码检查》 — afacode的博客&url=https://blog.afacode.top/2019/07/24/typescript-lint/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/07/24/typescript-lint/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/28/webpack-collection/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">webpack资源收集</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/07/11/nginx-learn/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">nginx 学习</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/07/24/typescript-lint/&title=《TypeScript代码检查》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/07/24/typescript-lint/&title=《TypeScript代码检查》 — afacode的博客&source=目前 TypeScript 的代码检查主要有两个方案：使用 TSLint 或使用 ESLint + typescript-eslint-parser" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/07/24/typescript-lint/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《TypeScript代码检查》 — afacode的博客&url=https://blog.afacode.top/2019/07/24/typescript-lint/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/07/24/typescript-lint/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACLUlEQVR42u3aO3LDMAxFUe9/00rrRvR9AO2JwMsqk8gijwuE+LxeeF1v6/036yf583e7bF4yZMh4LONarvUGfEv+5ru/3r1BhgwZ5zBIKFy/ev2pNa8W1mXIkCGDMGrPr98gQ4YMGX3G+rM1gAwZMmQQBr/wrZNSnr7yi+bmXFyGDBkPZPBi2e9//kp/Q4YMGY9iXOGqXRM7RTd0KhkyZIxmpOX79Wa7hipq55EhQ8ZUxq40lQRNXsiLRzpkyJAxmrGrGVBrbXZKfh++XBkyZAxi7Dp0rejP09cfhVcZMmT8Y0bncsYbkGlLkp9NhgwZJzDSbuCuFJfcW9EuMmTIOIaRBlneNuChuRbQZciQcQ6j1jDoNDvToj8qt8mQIWMoozMGkR6XB9yg/SBDhozRjFpC20l60wtlPH4hQ4aMcYzaKFgt3U3bADy4y5AhYzajlnzWmgEkZSUFuHjwQoYMGSMYvKyfFsXI15GG1Ns3yJAhYzQjHYZIt+kE2bidIEOGjKEMUixLhy04LB1B+1B0kyFDxmhGLaS22o3hUMWHs8mQIeMYRlru5+2EtA0Qf0qGDBlDGVe4+Db8ipk2JOKNZciQ8XBGpz/4vR5ip9gnQ4aMqYza+ClPXzvFuyA9liFDxgGMWnMxDbi7hjlkyJAhg1/LOuNiKTWYFpEhQ8bxDBI0eULbGTXb9n9DhgwZD2Gkg1mEwRPaTlNBhgwZJzD6FzsSoDuHqO0iQ4aMEYw/fRcsuhAiMg0AAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

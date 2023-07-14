@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>Vue 3 将成为新的默认版本(转) | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue">
+    <meta name="description" content="作者：尤雨溪链接：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;460055155来源：知乎  划重点：Vue 3 将在 2022 年 2 月 7 日 成为新的默认版本！   请务必阅读文末的 可能需要采取的措施 部分，来确认你是否需要在默认版本切换之前做相应改动以避免发生异常。 本文章开放授权，在注明原文地址，内容不做修改的前提下可以随意转载。 Markdown 源文件 | 英文原文">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Vue 3 将成为新的默认版本(转)">
+<meta property="og:url" content="https://blog.afacode.top/2022/01/21/vue-news-00/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="作者：尤雨溪链接：https:&#x2F;&#x2F;zhuanlan.zhihu.com&#x2F;p&#x2F;460055155来源：知乎  划重点：Vue 3 将在 2022 年 2 月 7 日 成为新的默认版本！   请务必阅读文末的 可能需要采取的措施 部分，来确认你是否需要在默认版本切换之前做相应改动以避免发生异常。 本文章开放授权，在注明原文地址，内容不做修改的前提下可以随意转载。 Markdown 源文件 | 英文原文">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-01-21T14:34:55.000Z">
+<meta property="article:modified_time" content="2023-07-13T15:06:15.435Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">Vue 3 将成为新的默认版本(转)</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">Vue 3 将成为新的默认版本(转)</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-01-21T14:34:55.000Z" itemprop="datePublished" class="page-time">
+  2022-01-21
+</time>
+
+
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/js/">js</a></li></ul>
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#从库到框架"><span class="post-toc-number">1.</span> <span class="post-toc-text">从库到框架</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Vue-3-的-“软发布”"><span class="post-toc-number">2.</span> <span class="post-toc-text">Vue 3 的 “软发布”</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#崭新的-Vue"><span class="post-toc-number">3.</span> <span class="post-toc-text">崭新的 Vue</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#版本切换细节"><span class="post-toc-number">4.</span> <span class="post-toc-text">版本切换细节</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#npm-发布标签"><span class="post-toc-number">5.</span> <span class="post-toc-text">npm 发布标签</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#官方文档与站点"><span class="post-toc-number">6.</span> <span class="post-toc-text">官方文档与站点</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#GitHub-仓库"><span class="post-toc-number">7.</span> <span class="post-toc-text">GitHub 仓库</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#开发者工具扩展"><span class="post-toc-number">8.</span> <span class="post-toc-text">开发者工具扩展</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#可能需要采取的措施"><span class="post-toc-number">9.</span> <span class="post-toc-text">可能需要采取的措施</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#未指定版本的-CDN-链接"><span class="post-toc-number">10.</span> <span class="post-toc-text">未指定版本的 CDN 链接</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#npm-latest-标签"><span class="post-toc-number">11.</span> <span class="post-toc-text">npm latest 标签</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-vue-news-00"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">Vue 3 将成为新的默认版本(转)</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-01-21 22:34:55" datetime="2022-01-21T14:34:55.000Z"  itemprop="datePublished">2022-01-21</time>
+
+            
+	<ul class="article-category-list"><li class="article-category-list-item"><a class="article-category-list-link" href="/categories/js/">js</a></li></ul>
+
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>作者：尤雨溪<br>链接：<a href="https://zhuanlan.zhihu.com/p/460055155" target="_blank" rel="noopener">https://zhuanlan.zhihu.com/p/460055155</a><br>来源：知乎 </p>
+<p>划重点：Vue 3 将在 <strong>2022 年 2 月 7 日</strong> 成为新的默认版本！  </p>
+<p>请务必阅读文末的 <strong>可能需要采取的措施</strong> 部分，来确认你是否需要在默认版本切换之前做相应改动以避免发生异常。</p>
+<p>本文章开放授权，在注明原文地址，内容不做修改的前提下可以随意转载。</p>
+<p><a href="https://link.zhihu.com/?target=https://gist.github.com/yyx990803/bf9a625eeff8b471bf0701afb8e3fe75">Markdown 源文件</a> | <a href="https://link.zhihu.com/?target=https://blog.vuejs.org/posts/vue-3-as-the-new-default.html">英文原文</a></p>
+<hr>
+<h3 id="从库到框架"><a href="#从库到框架" class="headerlink" title="从库到框架"></a>从库到框架</h3><p>在最开始的时候，Vue 仅仅是一个运行时库。但这些年来，它已经逐步发展成了一个包含许多子项目的框架：</p>
+<ul>
+<li>  核心库，即 <code>vue</code> npm 包</li>
+<li>  内容足够当作一本书的文档</li>
+<li>  构建工具链（Vue CLI、Vue Loader 和其他支持包）</li>
+<li>  用于构建单页应用的路由 Vue Router</li>
+<li>  用于状态管理的 Vuex</li>
+<li>  用于调试和分析的浏览器开发者工具扩展</li>
+<li>  用于支持开发单文件组件的 VSCode 扩展 Vetur</li>
+<li>  用于进行静态风格/错误检查的 ESLint 插件</li>
+<li>  用于组件测试的 Vue Test Utils</li>
+<li>  利用 Vue 运行时功能的定制 JSX Babel 插件</li>
+<li>  用于静态网站生成的 VuePress</li>
+</ul>
+<p>正因为 Vue 是一个社区驱动的项目，才让这一切成为可能。这些项目中的许多都是由社区成员发起，他们后来成为了 Vue 团队的成员。其余的项目最初由我发起，但现在除了核心库之外，几乎都完全由团队维护。</p>
+<h3 id="Vue-3-的-“软发布”"><a href="#Vue-3-的-“软发布”" class="headerlink" title="Vue 3 的 “软发布”"></a>Vue 3 的 “软发布”</h3><p>随着核心库发布新的大版本，框架的所有其他部分也需要一起同步更新。我们还需要为 Vue 2 用户提供一个升级方案。对于 Vue 这样一个社区驱动的团队来说，这是一个巨大的工程。在 Vue 3 的核心库完成的时候，框架的其他部分要么还在 beta 状态，要么还没有开始适配 Vue 3。当时我们的决定是先发布核心库，这样早期用户可以先用起来，库和上层框架的开发者也可以先适配起来，而我们则继续更新框架的其余部分。</p>
+<p>在这个过程中，我们依然将 Vue 2 保留为文档和 npm 安装时的默认版本。这是因为我们知道对于大部分用户来说，在 Vue 3 的其余部分完善以前，Vue 2 仍然提供了更一致且完整的体验。</p>
+<h3 id="崭新的-Vue"><a href="#崭新的-Vue" class="headerlink" title="崭新的 Vue"></a>崭新的 Vue</h3><p>“软发布” 的过程比预期要长，但这个时刻终于到了：我们很高兴地宣布，Vue 3 将在 <strong>2022 年 2 月 7 日</strong> 成为新的默认版本。  </p>
+<p>除了 Vue 核心库以外，我们还几乎改进了框架的每个方面。</p>
+<ul>
+<li>  基于 <a href="https://link.zhihu.com/?target=https://vitejs.dev/">Vite</a> 的极速构建工具链</li>
+<li>  <code>&lt;script setup&gt;</code> 带来的开发体验更丝滑的组合式 API 语法</li>
+<li>  <a href="https://link.zhihu.com/?target=https://marketplace.visualstudio.com/items?itemName=johnsoncodehk.volar">Volar</a> 提供的单文件组件 TypeScript IDE 支持</li>
+<li>  <a href="https://link.zhihu.com/?target=https://github.com/johnsoncodehk/volar/tree/master/packages/vue-tsc">vue-tsc</a> 提供的针对单文件组件的命令行类型检查和生成</li>
+<li>  <a href="https://link.zhihu.com/?target=https://pinia.vuejs.org/">Pinia</a> 提供的更简洁的状态管理</li>
+<li>新的开发者工具扩展，同时支持 Vue 2/Vue 3，并且提供一个<a href="https://link.zhihu.com/?target=https://devtools.vuejs.org/plugin/plugins-guide.html">插件系统</a>来允许社区库自行扩展开发者工具面板。    我们还彻底重写了主文档。<a href="https://link.zhihu.com/?target=https://staging.vuejs.org/">全新的 vuejs.org</a> (目前处于待发布状态，<a href="https://link.zhihu.com/?target=https://staging-cn.vuejs.org/">中文版</a>的翻译还在进行中) 将提供最新的框架概述与开发建议、针对不同背景的用户的灵活的学习路径，在整个指南与示例中都能够在选项式 API 和组合式 API 之间进行切换，以及许多新的深入章节。新文档本身的网站性能也非常优秀——我们将在不久后的另一篇博文中详细探讨一下。</li>
+</ul>
+<h3 id="版本切换细节"><a href="#版本切换细节" class="headerlink" title="版本切换细节"></a>版本切换细节</h3><p>下面是我们所说的“新的默认版本”的具体细节。此外，请务必阅读文末的 <strong>可能需要采取的措施</strong> 部分，来确认你是否需要在默认版本切换之前做相应改动以避免发生异常。</p>
+<h3 id="npm-发布标签"><a href="#npm-发布标签" class="headerlink" title="npm 发布标签"></a>npm 发布标签</h3><ul>
+<li>  <code>npm install vue</code> 将默认安装 Vue 3。</li>
+<li>  所有其他官方 npm 包的 <code>latest</code> 发布标签将指向其 Vue 3 的兼容版本，包括 <code>vue-router</code>、<code>vuex</code>、<code>vue-loader</code> 和 <code>@vue/test-utils</code>。</li>
+</ul>
+<h3 id="官方文档与站点"><a href="#官方文档与站点" class="headerlink" title="官方文档与站点"></a>官方文档与站点</h3><p>所有的文档和官方站点将默认切换到 Vue 3 版本。包括：  </p>
+<ul>
+<li><a href="https://link.zhihu.com/?target=http://vuejs.org">http://vuejs.org</a>  </li>
+<li><a href="https://link.zhihu.com/?target=http://router.vuejs.org">http://router.vuejs.org</a>  </li>
+<li><a href="https://link.zhihu.com/?target=http://vuex.vuejs.org">http://vuex.vuejs.org</a>  </li>
+<li><a href="https://link.zhihu.com/?target=http://vue-test-utils.vuejs.org">http://vue-test-utils.vuejs.org</a> (将迁移到 <a href="https://link.zhihu.com/?target=http://test-utils.vuejs.org">http://test-utils.vuejs.org</a>)  </li>
+<li><a href="https://link.zhihu.com/?target=http://template-explorer.vuejs.org">http://template-explorer.vuejs.org</a>  </li>
+</ul>
+<p>请注意，新的 <a href="https://link.zhihu.com/?target=http://vuejs.org">http://vuejs.org</a> 将是<a href="https://link.zhihu.com/?target=https://staging.vuejs.org/">完全重写的版本</a>，而不是目前部署在 v3.vuejs.org 的版本。  </p>
+<p>这些站点当前的 Vue 2 版本将被迁移到新地址 (版本前缀表示库的各自版本，而非 Vue 核心库的版本)：  </p>
+<ul>
+<li><a href="https://link.zhihu.com/?target=http://vuejs.org">http://vuejs.org</a> -&gt; <a href="https://link.zhihu.com/?target=http://v2.vuejs.org">http://v2.vuejs.org</a> (旧的 v2 网址将自动重定向到新地址上)  </li>
+<li><a href="https://link.zhihu.com/?target=http://router.vuejs.org">http://router.vuejs.org</a> -&gt; <a href="https://link.zhihu.com/?target=http://v3.router.vuejs.org">http://v3.router.vuejs.org</a>  </li>
+<li><a href="https://link.zhihu.com/?target=http://vuex.vuejs.org">http://vuex.vuejs.org</a> -&gt; <a href="https://link.zhihu.com/?target=http://v3.vuex.vuejs.org">http://v3.vuex.vuejs.org</a>  </li>
+<li><a href="https://link.zhihu.com/?target=http://vue-test-utils.vuejs.org">http://vue-test-utils.vuejs.org</a> -&gt; <a href="https://link.zhihu.com/?target=http://v1.test-utils.vuejs.org">http://v1.test-utils.vuejs.org</a>  </li>
+<li><a href="https://link.zhihu.com/?target=http://template-explorer.vuejs.org">http://template-explorer.vuejs.org</a> -&gt; <a href="https://link.zhihu.com/?target=http://v2.template-explorer.vuejs.org">http://v2.template-explorer.vuejs.org</a></li>
+</ul>
+<h3 id="GitHub-仓库"><a href="#GitHub-仓库" class="headerlink" title="GitHub 仓库"></a>GitHub 仓库</h3><p><em>在写这篇文章时，仓库相关的变化已经生效了。</em>  </p>
+<p><code>vuejs</code> 组织下的所有 GitHub 仓库将把默认分支切换到 Vue 3 对应的版本。此外，以下仓库将被重命名，以删除其名称中的 <code>next</code>：  </p>
+<ul>
+<li>vuejs/vue-next -&gt; <a href="https://link.zhihu.com/?target=https://github.com/vuejs/core">vuejs/core</a>  </li>
+<li>vuejs/vue-router-next -&gt; <a href="https://link.zhihu.com/?target=https://github.com/vuejs/router">vuejs/router</a>  </li>
+<li>vuejs/docs-next -&gt; <a href="https://link.zhihu.com/?target=https://github.com/vuejs/docs">vuejs/docs</a>  </li>
+<li>vuejs/vue-test-utils-next -&gt; <a href="https://link.zhihu.com/?target=https://github.com/vuejs/test-utils">vuejs/test-utils</a>  </li>
+<li>vuejs/jsx-next -&gt; <a href="https://link.zhihu.com/?target=https://github.com/vuejs/babel-plugin-jsx">vuejs/babel-plugin-jsx</a>  </li>
+</ul>
+<p>此外，主文档的翻译仓库将被移至 <a href="https://link.zhihu.com/?target=https://github.com/vuejs-translations">vuejs-translations 组织</a>下。  </p>
+<p>GitHub 会自动处理仓库的重定向，所以之前的源码与 issue 问题的链接应该仍然有效。</p>
+<h3 id="开发者工具扩展"><a href="#开发者工具扩展" class="headerlink" title="开发者工具扩展"></a>开发者工具扩展</h3><p>开发者工具 v6 目前是发布到 Chrome Web Store 的 <a href="https://link.zhihu.com/?target=https://chrome.google.com/webstore/detail/vuejs-devtools/ljjemllljcmogpfapbkkighbhhppjdbg">beta 频道</a>下的，在版本切换后，将移至<a href="https://link.zhihu.com/?target=https://chrome.google.com/webstore/detail/vuejs-devtools/nhdogjmejiglipccpnnnanhbledajbpd">稳定频道</a>。  </p>
+<p>目前的稳定频道仍然可用。它将被迁移到<a href="https://link.zhihu.com/?target=https://chrome.google.com/webstore/detail/vuejs-devtools/iaajmlceplecbljialhhkmedjlpdblhp">遗留频道</a>。</p>
+<h3 id="可能需要采取的措施"><a href="#可能需要采取的措施" class="headerlink" title="可能需要采取的措施"></a>可能需要采取的措施</h3><h3 id="未指定版本的-CDN-链接"><a href="#未指定版本的-CDN-链接" class="headerlink" title="未指定版本的 CDN 链接"></a>未指定版本的 CDN 链接</h3><p>如果你通过 CDN 链接使用 Vue 2 而没有指定版本，请确保通过 <code>@2</code> 来指定一个版本范围：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="deletion">- &lt;script src="https://unpkg.com/vue"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="addition">+ &lt;script src="https://unpkg.com/vue@2"&gt;&lt;/script&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="deletion">- &lt;script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.min.js"&gt;&lt;/script&gt;</span></span><br><span class="line"><span class="addition">+ &lt;script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.min.js"&gt;&lt;/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>注意：即使使用 Vue 3，你也应该始终在生产环境指定一个版本范围，以避免意外地加载到未来的大版本。</p>
+<h3 id="npm-latest-标签"><a href="#npm-latest-标签" class="headerlink" title="npm latest 标签"></a>npm <code>latest</code> 标签</h3><p>如果你使用 <code>latest</code> 标签或 <code>*</code> 来从 npm 安装 Vue 或其他官方库，请更新为明确使用兼容 Vue 2 的版本：</p>
+<figure class="highlight diff"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  "dependencies": &#123;</span><br><span class="line"><span class="deletion">-   "vue": "latest",</span></span><br><span class="line"><span class="addition">+   "vue": "^2.6.14",</span></span><br><span class="line"><span class="deletion">-   "vue-router": "latest",</span></span><br><span class="line"><span class="addition">+   "vue-router": "^3.5.3",</span></span><br><span class="line"><span class="deletion">-   "vuex": "latest"</span></span><br><span class="line"><span class="addition">+   "vuex": "^3.6.2"</span></span><br><span class="line">  &#125;,</span><br><span class="line">  "devDependencies": &#123;</span><br><span class="line"><span class="deletion">-   "vue-loader": "latest",</span></span><br><span class="line"><span class="addition">+   "vue-loader": "^15.9.8",</span></span><br><span class="line"><span class="deletion">-   "@vue/test-utils": "latest"</span></span><br><span class="line"><span class="addition">+   "@vue/test-utils": "^1.3.0"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2022/01/21/vue-news-00/&title=《Vue 3 将成为新的默认版本(转)》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2022/01/21/vue-news-00/&title=《Vue 3 将成为新的默认版本(转)》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2022/01/21/vue-news-00/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue 3 将成为新的默认版本(转)》 — afacode的博客&url=https://blog.afacode.top/2022/01/21/vue-news-00/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2022/01/21/vue-news-00/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2022/04/21/goland-load-error/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">goland配置goland.vmoptions后不能启动问题解决</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/01/04/vue-router-ts/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue-router 使用需要添加多余参数(默认params 参数) 会有ts提示</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2022/01/21/vue-news-00/&title=《Vue 3 将成为新的默认版本(转)》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2022/01/21/vue-news-00/&title=《Vue 3 将成为新的默认版本(转)》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2022/01/21/vue-news-00/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《Vue 3 将成为新的默认版本(转)》 — afacode的博客&url=https://blog.afacode.top/2022/01/21/vue-news-00/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2022/01/21/vue-news-00/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACJklEQVR42u3aQW7EIAwF0Ln/pdPtbJJ+27RS4LGqUibDo5JrsD+feFxf4/vJ88zn+Xdz7t68YGBgYLyWcT2OfM7dm595dzPL34uBgXEAI1lEEhZz5DysY2BgYCSJXRWWP8fAwMCYM6rpYH5MxcDAwJgcYqPXFZPFZYdnDAyMrRm9MPo/P/9JfQMDA+NVjKs4qkFwkhoWVoWBgbE1o5feVZsq8hRwsh4MDIy9Gc9X/9VgOmmtyJ9EOSwGBsZ2jGpZsZcI5puVbxMGBsbejF5DWC9xrAbfQgEAAwNja0bhcBgkf3nQLF+lVdNEDAyMjRjJB/LLr8kGVS/1MDAwzmH0rvgnwbda2iw0q2FgYBzAWNUEVj2OrrqMw8DA2JXRTMKK5YE84OZXgbd/BwwMjO0Y1YVWr/vzokK+Bc0uEgwMjNcyJiXDXnlycqFWTg0xMDC2YCQv6hUa83hfbez4JexiYGAcwOg9yQuT+VE231YMDIyTGZPlVp9UNytqDsPAwNiO0VtQrySQp57l1BADA2NrRlIyrNYZJu1fzZ4RDAyMYxirErjqgXZUisDAwNiUcRVHfvWff3Z0cM1rFxgYGK9l5CPh5YfhaqPYvPsLAwPj7Yy1S5xcn+WJJgYGxpmMSeCblwoWIDEwMDBaZYOc1NuCT/ILDAyMIxl5Kpm/oRegF/zfwMDAeBWjuqx5g8UkvGJgYJzGyI+OSVCeLPr5MJwnrBgYGBsxfgDJ3ImHX+9HzAAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

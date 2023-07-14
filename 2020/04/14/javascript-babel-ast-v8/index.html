@@ -1,0 +1,536 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>抽象语法树AST | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="AST">
+    <meta name="description" content="原文-【你应该了解的】抽象语法树AST作者：skFeTeam链接：https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5e942d926fb9a03c7d3d07a4 什么是抽象语法树 AST（Abstract Syntax Tree）是源代码的抽象语法结构树状表现形式。下面这张图示意了一段JavaScript代码的抽象语法树的表现形式。抽象语法树的作用 IDE的错误提示、代码格式化、代码高亮、代码自动">
+<meta property="og:type" content="article">
+<meta property="og:title" content="抽象语法树AST">
+<meta property="og:url" content="https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="原文-【你应该了解的】抽象语法树AST作者：skFeTeam链接：https:&#x2F;&#x2F;juejin.im&#x2F;post&#x2F;5e942d926fb9a03c7d3d07a4 什么是抽象语法树 AST（Abstract Syntax Tree）是源代码的抽象语法结构树状表现形式。下面这张图示意了一段JavaScript代码的抽象语法树的表现形式。抽象语法树的作用 IDE的错误提示、代码格式化、代码高亮、代码自动">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2020-04-14T13:11:21.000Z">
+<meta property="article:modified_time" content="2023-07-13T15:06:15.414Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="AST">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">抽象语法树AST</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">抽象语法树AST</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2020-04-14T13:11:21.000Z" itemprop="datePublished" class="page-time">
+  2020-04-14
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#什么是抽象语法树"><span class="post-toc-number">1.</span> <span class="post-toc-text">什么是抽象语法树</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#抽象语法树的作用"><span class="post-toc-number">2.</span> <span class="post-toc-text">抽象语法树的作用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AST解析器"><span class="post-toc-number">3.</span> <span class="post-toc-text">AST解析器</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#JS-Parser解析器"><span class="post-toc-number">3.1.</span> <span class="post-toc-text">JS Parser解析器</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#词法分析（Lexical-Analysis）"><span class="post-toc-number">3.2.</span> <span class="post-toc-text">词法分析（Lexical Analysis）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#语法分析（Syntax-Analysis）"><span class="post-toc-number">3.3.</span> <span class="post-toc-text">语法分析（Syntax Analysis）</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#示例"><span class="post-toc-number">3.4.</span> <span class="post-toc-text">示例</span></a></li><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#工具网站"><span class="post-toc-number">3.5.</span> <span class="post-toc-text">工具网站</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#AST-in-Babel"><span class="post-toc-number">4.</span> <span class="post-toc-text">AST in Babel</span></a><ol class="post-toc-child"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#Babel的运行原理"><span class="post-toc-number">4.1.</span> <span class="post-toc-text">Babel的运行原理</span></a></li></ol></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#Demo-with-esprima"><span class="post-toc-number">5.</span> <span class="post-toc-text">Demo with esprima</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#思考题"><span class="post-toc-number">6.</span> <span class="post-toc-text">思考题</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-javascript-babel-ast-v8"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">抽象语法树AST</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2020-04-14 21:11:21" datetime="2020-04-14T13:11:21.000Z"  itemprop="datePublished">2020-04-14</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p><a href="https://juejin.im/post/5e942d926fb9a03c7d3d07a4" target="_blank" rel="noopener">原文-【你应该了解的】抽象语法树AST</a><br>作者：<a href="https://skfeteam.github.io/" target="_blank" rel="noopener">skFeTeam</a><br>链接：<a href="https://juejin.im/post/5e942d926fb9a03c7d3d07a4" target="_blank" rel="noopener">https://juejin.im/post/5e942d926fb9a03c7d3d07a4</a></p>
+<h2 id="什么是抽象语法树"><a href="#什么是抽象语法树" class="headerlink" title="什么是抽象语法树"></a>什么是抽象语法树</h2><ul>
+<li>AST（Abstract Syntax Tree）是源代码的抽象语法结构树状表现形式。下面这张图示意了一段JavaScript代码的抽象语法树的表现形式。<h2 id="抽象语法树的作用"><a href="#抽象语法树的作用" class="headerlink" title="抽象语法树的作用"></a>抽象语法树的作用</h2></li>
+<li>IDE的错误提示、代码格式化、代码高亮、代码自动补全等</li>
+<li>JSLint、JSHint、ESLint对代码错误或风格的检查等</li>
+<li>webpack、rollup进行代码打包等</li>
+<li>Babel 转换 ES6 到 ES5 语法</li>
+<li>注入代码统计单元测试覆盖率</li>
+</ul>
+<h2 id="AST解析器"><a href="#AST解析器" class="headerlink" title="AST解析器"></a>AST解析器</h2><h3 id="JS-Parser解析器"><a href="#JS-Parser解析器" class="headerlink" title="JS Parser解析器"></a>JS Parser解析器</h3><p>AST是如何生成的？</p>
+<ul>
+<li>能够将JavaScript源码转化为抽象语法树（AST）的工具叫做JS Parser解析器。</li>
+</ul>
+<p>JS Parser的解析过程包括两部分</p>
+<ul>
+<li>词法分析（Lexical Analysis）：将整个代码字符串分割成最小语法单元数组</li>
+<li>语法分析（Syntax Analysis）：在分词基础上建立分析语法单元之间的关系</li>
+</ul>
+<p>常见的AST parser</p>
+<ul>
+<li>早期有uglifyjs和esprima</li>
+<li>Espree，基于esprima，用于eslint</li>
+<li>Acorn，号称是相对于esprima性能更优，体积更小</li>
+<li>Babylon，出自acorn，用于babel</li>
+<li>Babel-eslint，babel团队维护，用于配合使用ESLint</li>
+</ul>
+<h3 id="词法分析（Lexical-Analysis）"><a href="#词法分析（Lexical-Analysis）" class="headerlink" title="词法分析（Lexical Analysis）"></a>词法分析（Lexical Analysis）</h3><p>语法单元是被解析语法当中具备实际意义的最小单元，简单的来理解就是自然语言中的词语。</p>
+<p>Javascript 代码中的语法单元主要包括以下这么几种：</p>
+<ul>
+<li>关键字：例如 var、let、const等</li>
+<li>标识符：没有被引号括起来的连续字符，可能是一个变量，也可能是 if、else 这些关键- 字，又或者是 true、false 这些内置常量</li>
+<li>运算符： +、-、 *、/ 等</li>
+<li>数字：像十六进制，十进制，八进制以及科学表达式等</li>
+<li>字符串：因为对计算机而言，字符串的内容会参与计算或显示</li>
+<li>空格：连续的空格，换行，缩进等</li>
+<li>注释：行注释或块注释都是一个不可拆分的最小语法单元</li>
+<li>其他：大括号、小括号、分号、冒号等<h3 id="语法分析（Syntax-Analysis）"><a href="#语法分析（Syntax-Analysis）" class="headerlink" title="语法分析（Syntax Analysis）"></a>语法分析（Syntax Analysis）</h3>组合分词的结果，确定词语之间的关系，确定词语最终的表达含义，生成抽象语法树。<h3 id="示例"><a href="#示例" class="headerlink" title="示例"></a>示例</h3><a href="https://juejin.im/post/5e942d926fb9a03c7d3d07a4#heading-6" target="_blank" rel="noopener">见原文</a><h3 id="工具网站"><a href="#工具网站" class="headerlink" title="工具网站"></a>工具网站</h3><a href="https://juejin.im/post/5e942d926fb9a03c7d3d07a4#heading-7" target="_blank" rel="noopener">见原文</a></li>
+</ul>
+<h2 id="AST-in-Babel"><a href="#AST-in-Babel" class="headerlink" title="AST in Babel"></a>AST in Babel</h2><h3 id="Babel的运行原理"><a href="#Babel的运行原理" class="headerlink" title="Babel的运行原理"></a>Babel的运行原理</h3><p>Babel的工作过程经过三个阶段，parse、transform、generate</p>
+<ul>
+<li>parse阶段，将源代码转换为AST</li>
+<li>transform阶段，利用各种插件进行代码转换</li>
+<li>generator阶段，再利用代码生成工具，将AST转换成代码</li>
+</ul>
+<p>Parse-解析</p>
+<ul>
+<li>Babel 使用 @babel/parser 解析代码，输入的 js 代码字符串根据 ESTree 规范生成 AST</li>
+<li>Babel 使用的解析器是 babylon</li>
+</ul>
+<p>Transform-转换</p>
+<ul>
+<li>接收 AST 并对其进行遍历，在此过程中对节点进行添加、更新及移除等操作。也是Babel- 插件接入工作的部分。</li>
+<li>Babel提供了@babel/traverse(遍历)方法维护AST树的整体状态，方法的参数为原始AST和自定义的转换规则，返回结果为转换后的AST。</li>
+</ul>
+<p>Generator-生成</p>
+<ul>
+<li>代码生成步骤把最终（经过一系列转换之后）的 AST 转换成字符串形式的代码，同时还会创建源码映射（source maps）。</li>
+<li>遍历整个 AST，然后构建可以表示转换后代码的字符串。</li>
+<li>Babel使用 @babel/generator 将修改后的 AST 转换成代码，生成过程可以对是否压缩以及是否删除注释等进行配置，并且支持 sourceMap。</li>
+</ul>
+<h2 id="Demo-with-esprima"><a href="#Demo-with-esprima" class="headerlink" title="Demo with esprima"></a>Demo with esprima</h2><p>了解了babel的运行原理，我们根据babel的三个步骤来动手写一个demo，加深对AST的理解。<br><a href="https://juejin.im/post/5e942d926fb9a03c7d3d07a4#heading-10" target="_blank" rel="noopener">https://juejin.im/post/5e942d926fb9a03c7d3d07a4#heading-10</a></p>
+<h2 id="思考题"><a href="#思考题" class="headerlink" title="思考题"></a>思考题</h2><blockquote>
+<p>假设a是一个对象，var a = { b : 1}，那么a.b和a[‘b’] ，哪个性能更高呢？</p>
+</blockquote>
+<p>a.b和a[‘b’]的写法，大家经常会用到，也许没有注意过这两种写法会有性能差异。事实上，有人做过测试，两者的性能差距不大，a.b会比a[‘b’]性能稍微好一点。那么，为什么a.b比a[‘b’]性能稍微好一点呢？<br>我认为，a.b可以直接解析b为a的属性，而a[‘b’]可能会多一个判断的过程，因为[]里面的内容可能是一个变量，也可能是个常量。</p>
+<p><a href="https://juejin.im/post/5e942d926fb9a03c7d3d07a4#heading-12" target="_blank" rel="noopener">https://juejin.im/post/5e942d926fb9a03c7d3d07a4#heading-12</a></p>
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/AST/" rel="tag">AST</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/&title=《抽象语法树AST》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/&title=《抽象语法树AST》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《抽象语法树AST》 — afacode的博客&url=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2020/04/15/nestjs-upload-file/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">NestJs简单实现文件上传</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2020/04/06/nestjs-typeorm/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">nestjs 与 typeorm结合</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/&title=《抽象语法树AST》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/&title=《抽象语法树AST》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《抽象语法树AST》 — afacode的博客&url=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2020/04/14/javascript-babel-ast-v8/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIUlEQVR42u3ay07DMBAFUP7/p4vEFjW91xMhYh+vqtDGOVkMnsfXV7xeP2vy+ff6ff93f71tYWBgPJbxulz5YyUrefR8LwwMjNMYeZBNYt1aML0mfXhmDAwMjGCDBDPfBQMDAyMPuEkYzdPR5JiIgYGBkSSx+WbtHdpfYWBgnMb4m8bA2ud/19/AwMD4c8a9Jf7r4JuX1eonwcDA2Jrx7qZ5fJsfLq/T1CIQY2BgbMpoS2ZJ0W2tJTBpeWJgYJzGaEta80Nh8v0P38TAwDiAkYw+zMtkbeJaHF4xMDC2ZiRhdH67uwbF6n8JGBgYxzDygbBJuT8J5ddXMDAw9mbkR7HJNEf7OurQj4GBsTUjb0+2jcy15mUevhe7rBgYGI9ltMNe95bt2mT47YvAwMA4gJGnju3BMQ+voyYEBgbGdoy6DheE1DVAMVoxeRQMDIzHMvJCfxum2zsvHh8xMDC2ZrSNgbtK/HlhLv8tBgbGCYy1olhS6G8DbrsvBgbGOYw8jczB7ZU2kR5lwxgYGA9krB3j2ryyDfF5uouBgbE3I9+4uFGcDM9HLjAwMPZmvMq1dlictA2iQIyBgbE1Y57o5qlsPkaWT7RhYGCcw8iD4FrgW2uR1qNmGBgYBzDmgW8SWG/IwjEwMDCWAm4dNMskGQMDA6Md5MpDZH7l5rYlBgbGwxl3FevXXsFoIAwDA+MAxrwxcP062nR0bZgMAwNjU8Y383q8KkrzWGIAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

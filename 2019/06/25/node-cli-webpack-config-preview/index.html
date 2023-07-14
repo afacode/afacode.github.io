@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>(预告)前端脚手架工具cli与webpack自定义react环境 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="-cli - webpack">
+    <meta name="description" content="以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。 先预定下来  目标：   一个cli,可以选择一些loader与lint，react第三方库选择：如 redux,mobx TS|JS + w">
+<meta property="og:type" content="article">
+<meta property="og:title" content="(预告)前端脚手架工具cli与webpack自定义react环境">
+<meta property="og:url" content="https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。 先预定下来  目标：   一个cli,可以选择一些loader与lint，react第三方库选择：如 redux,mobx TS|JS + w">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2019-06-25T15:16:16.000Z">
+<meta property="article:modified_time" content="2023-07-13T15:06:15.419Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="-cli - webpack">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">(预告)前端脚手架工具cli与webpack自定义react环境</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">(预告)前端脚手架工具cli与webpack自定义react环境</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-06-25T15:16:16.000Z" itemprop="datePublished" class="page-time">
+  2019-06-25
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="post-node-cli-webpack-config-preview"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">(预告)前端脚手架工具cli与webpack自定义react环境</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-06-25 23:16:16" datetime="2019-06-25T15:16:16.000Z"  itemprop="datePublished">2019-06-25</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <p>以前也学习了前端cli与webpack自定义配置环境，自己也写了一个脚手架cli,但是当时的脚手架cli直接硬处理，直接clone下来，不能自定义配置。工作忙也就放下了，也看了一些其他优秀的cli, 环境配置，感觉自己也可以hold助，现在打算重新拾起来。</p>
+<p><strong>先预定下来</strong></p>
+<ul>
+<li>目标：</li>
+</ul>
+<ol>
+<li>一个cli,可以选择一些loader与lint，react第三方库选择：如 redux,mobx</li>
+<li>TS|JS + webpack + react + mobx|redux</li>
+</ol>
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/cli-webpack/" rel="tag">-cli - webpack</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&title=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&title=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/07/11/nginx-learn/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">nginx 学习</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/06/20/webpack-dist-node-env/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">webpack打包，文件删除</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&title=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&title=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《(预告)前端脚手架工具cli与webpack自定义react环境》 — afacode的博客&url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/06/25/node-cli-webpack-config-preview/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACrUlEQVR42u3aQXIiMQwFUO5/aXIA0vAlWaRT9XqVGjD264WlkfR4xM/z5Zmsff9rV59W933g4eHhrfGSjfPvvH7/da/338/XJqvw8PDw9nhXN2py9OSlvGcnLyUJEnh4eHj35OVrq5d7nsrj4eHh/UdecqwE1iPh4eHh3YGXFxryKz5Jr5MSba84goeHh7fHy7tI9/l7pb+Hh4eHd6ipP0l/8wPlvMJp8fDw8BZ4+YWbD0jlbbBJOl44Jx4eHt5R3uS4p1r++ehVHn7w8PDw/oqXsKs1gd5L7I1q4eHh4W3w8jZVtUE1GauaFyPw8PDw9nhJUSDvLkUjUK3Gf5KIF0ICHh4e3oCXHyUPA8n2+S/k/1KIfnh4eHgDXi8w9Iq8+ahBr+hwLKXGw8PDa/GqF3GeQOfl3TyBPlZlwcPDw2s1wOb4fJQqf5K9oqErPDw8vEO8yZMXVXtrq4Hql6ErPDw8vKO85NrNN5uky3kDrDrWgIeHh3eWl1z3SfesNyzVS5cLZ8PDw8Nb4+XhoVkUWBuE/fB9PDw8vDVefolXk/IkRZ7nwJepOR4eHt4ar3rcvJyal3F7SfaHV4aHh4f3Fd6E1Ash1cJH/uLw8PDw9njVyzq5pnuJcq8YcfkpHh4e3gIvuZSrhdQ8p+2NpR7r8uHh4eEd5SXp9YRabbyNkm88PDy8NV5+rCo7wecFjmoAw8PDw/smLykZVF9ND/OYPHh4eHhHec/iUx0USGBRK6v3KR4eHt4Cr3fHVsPG+1X5K8jXjkIIHh4eXsDLg0GyfS8MnAoM5dEBPDw8vAGv2rLqlX17ZZFeaw0PDw/vnrwc0ytzJGf7sDseHh7eDXj52mrCnYMLIQcPDw9vjTe/spOAMWlf5b+Ph4eHt8078B/+YmCYgJMSMx4eHt4a7wc3XH7jfpjZNgAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

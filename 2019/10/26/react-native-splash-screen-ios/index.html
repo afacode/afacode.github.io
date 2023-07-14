@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>react-native-splash-screen 在ios使用 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="react-native">
+    <meta name="description" content="react-native-splash-screen 在ios启动屏中的使用环境1234XCode Version 10.2 (10E125)&quot;react&quot;: &quot;16.8.6&quot;,&quot;react-native&quot;: &quot;0.60.5&quot;,&quot;react-native-splash-screen&quot;: &quot;^3.2.0&quot;, 安装1234yarn add react-native-splash-screencd io">
+<meta property="og:type" content="article">
+<meta property="og:title" content="react-native-splash-screen 在ios使用">
+<meta property="og:url" content="https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="react-native-splash-screen 在ios启动屏中的使用环境1234XCode Version 10.2 (10E125)&quot;react&quot;: &quot;16.8.6&quot;,&quot;react-native&quot;: &quot;0.60.5&quot;,&quot;react-native-splash-screen&quot;: &quot;^3.2.0&quot;, 安装1234yarn add react-native-splash-screencd io">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="http://imgs.afacode.top/%E5%90%AF%E5%8A%A8%E5%B1%8F1-2019103015566.png">
+<meta property="og:image" content="http://imgs.afacode.top/%E5%90%AF%E5%8A%A8%E5%B1%8F2-20191030155626.png">
+<meta property="og:image" content="http://imgs.afacode.top/%E5%90%AF%E5%8A%A8%E5%B1%8F-20191030155636.png">
+<meta property="article:published_time" content="2019-10-26T07:48:24.000Z">
+<meta property="article:modified_time" content="2023-07-13T15:06:15.432Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="react-native">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://imgs.afacode.top/%E5%90%AF%E5%8A%A8%E5%B1%8F1-2019103015566.png">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">react-native-splash-screen 在ios使用</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">react-native-splash-screen 在ios使用</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2019-10-26T07:48:24.000Z" itemprop="datePublished" class="page-time">
+  2019-10-26
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#react-native-splash-screen-在ios启动屏中的使用"><span class="post-toc-number">1.</span> <span class="post-toc-text">react-native-splash-screen 在ios启动屏中的使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#环境"><span class="post-toc-number">2.</span> <span class="post-toc-text">环境</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#安装"><span class="post-toc-number">3.</span> <span class="post-toc-text">安装</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#使用"><span class="post-toc-number">4.</span> <span class="post-toc-text">使用</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#配置"><span class="post-toc-number">5.</span> <span class="post-toc-text">配置</span></a></li><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#参考1-amp-amp-参考2"><span class="post-toc-number">6.</span> <span class="post-toc-text">参考1 &amp;&amp; 参考2</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="react-native-react-native-splash-screen-ios"
+  class="post-article article-type-react-native fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">react-native-splash-screen 在ios使用</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2019-10-26 15:48:24" datetime="2019-10-26T07:48:24.000Z"  itemprop="datePublished">2019-10-26</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="react-native-splash-screen-在ios启动屏中的使用"><a href="#react-native-splash-screen-在ios启动屏中的使用" class="headerlink" title="react-native-splash-screen 在ios启动屏中的使用"></a>react-native-splash-screen 在ios启动屏中的使用</h2><h2 id="环境"><a href="#环境" class="headerlink" title="环境"></a>环境</h2><figure class="highlight crmsh"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">XCode <span class="keyword">Version</span> <span class="number">10.2</span> (<span class="number">10</span>E125)</span><br><span class="line"><span class="string">"react"</span>: <span class="string">"16.8.6"</span>,</span><br><span class="line"><span class="string">"react-native"</span>: <span class="string">"0.60.5"</span>,</span><br><span class="line"><span class="string">"react-native-splash-screen"</span>: <span class="string">"^3.2.0"</span>,</span><br></pre></td></tr></table></figure>
+<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight properties"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">yarn</span> <span class="string">add react-native-splash-screen</span></span><br><span class="line"><span class="attr">cd</span> <span class="string">ios </span></span><br><span class="line"><span class="attr">pod</span> <span class="string">install</span></span><br><span class="line"><span class="attr">cd</span> <span class="string">..</span></span><br></pre></td></tr></table></figure>
+<h2 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h2><figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">import SplashScreen from <span class="string">'react-native-splash-screen'</span></span><br><span class="line"><span class="function"><span class="title">componentDidMount</span><span class="params">()</span></span> &#123;</span><br><span class="line">  SplashScreen.hide()</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>添加启动图片</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/启动屏1-2019103015566.png" alt="启动屏1-2019103015566" title="">
+                </div>
+                <div class="image-caption">启动屏1-2019103015566</div>
+            </figure>
+<p>启用自定义启动图</p>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/启动屏2-20191030155626.png" alt="启动屏2-20191030155626" title="">
+                </div>
+                <div class="image-caption">启动屏2-20191030155626</div>
+            </figure>
+<figure class="image-bubble">
+                <div class="img-lightbox">
+                    <div class="overlay"></div>
+                    <img src="http://imgs.afacode.top/启动屏-20191030155636.png" alt="启动屏0-20191030155636" title="">
+                </div>
+                <div class="image-caption">启动屏0-20191030155636</div>
+            </figure>
+
+<h2 id="参考1-amp-amp-参考2"><a href="#参考1-amp-amp-参考2" class="headerlink" title="参考1 &amp;&amp; 参考2"></a><a href="https://www.jianshu.com/p/bf907cdbcfad?_wv=1031" target="_blank" rel="noopener">参考1</a> &amp;&amp; <a href="https://www.jianshu.com/p/12813a59f993" target="_blank" rel="noopener">参考2</a></h2>    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/react-native/" rel="tag">react-native</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/&title=《react-native-splash-screen 在ios使用》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/&title=《react-native-splash-screen 在ios使用》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-native-splash-screen 在ios使用》 — afacode的博客&url=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2019/11/02/macos-brew-setting-source/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">MacOS HomeBrew更新慢的问题(替换国内源)</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2019/10/21/yarn-cache-err/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">error Incorrect integrity when fetching from the cache</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/&title=《react-native-splash-screen 在ios使用》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/&title=《react-native-splash-screen 在ios使用》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《react-native-splash-screen 在ios使用》 — afacode的博客&url=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2019/10/26/react-native-splash-screen-ios/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACtklEQVR42u3aQY4bMQwEQP//0xsgtyBru5uUnA1QczLGsmZKB1Em+XjE19fv6+87yf3Xn9vxjxsXHh4e3ujVn10t7/XM7VLmS/P0KXh4eHjXeMlj2jtJANiz31jw8PDw/ilvNj4JG+1IPDw8vP+Fd+MAnf8WDw8P76fxkmREPiYPAF/B9aFcCx4eHl7MO5ta/czni/U9PDw8vEVVfVPanx2O9yHkjxnw8PDwLvBetwVEf/XjQLI5pucFuUfy0nh4eHgL3ix5Oiv5z9q58maFb+bEw8PDu8Bry/P5t8kLJcGmnTPKVePh4eEteMe23bIh4HWprKU+xePh4eFd4M1appJDcNJGkBf+24VYdYTh4eHhLdoC2gJVu2RnOyDehAQ8PDy8Q7y2+JRs9/nhOBnfLs2bLDUeHh7eId6s2L8PFS2m/RUeHh7ebd6B6eJvN8EmDyd4eHh4N3izzGf7T78tVs3arY4ldvHw8PACXp5OTUbmIaEtvNXtAnh4eHgXeLN0Q9siMAsq7czfLB8eHh7eBV5boMoTuMlLtImMTW4WDw8P7xRvk0htG6qSpWkDxptwgoeHh3eBN5s62daTV8+P2nkiAw8PD++TvDZtmpfzZ3fyJxZNA3h4eHgXeJvteIbfZ1CKxcLDw8Nb8/Ij7KwhIN/ik9BSp3fx8PDwrvHyY+umbH/qV0VwwsPDw7vASzbitjC22ZPb2aKDOx4eHt5RXp4saJsJ9s1beb45Skbg4eHhXeAl12fK/G1b1ZuIh4eHh3eUd6qBYBZUTqWJhyQ8PDy8Ba/d4vPXbY/aeSIjP9bj4eHh3ePNyvxtInh2TJ+FLjw8PLyfwJsdxGelrPao/XQ8Hh4e3g/gzQpam/TEJhTh4eHh3eOdSh/skwttqHizuHh4eHgXePsCWP7gDWwFwMPDwzvD+wUMOZxxR/Nx/wAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

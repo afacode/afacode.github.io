@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>git commit 规范校验 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue,yorkie">
+    <meta name="description" content="使用yorkie yarn add yorkie -D  This is a fork of husky with a few changeshttps:&#x2F;&#x2F;github.com&#x2F;yyx990803&#x2F;yorkie 尤大婶的 增加钩子 package.json 123456&amp;#123;  ...  &quot;gitHooks&quot;: &amp;#123;    &quot;commit-msg&quot;: &quot;node scripts&#x2F;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="git commit 规范校验">
+<meta property="og:url" content="https://blog.afacode.top/2021/07/12/git-commit-check/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="使用yorkie yarn add yorkie -D  This is a fork of husky with a few changeshttps:&#x2F;&#x2F;github.com&#x2F;yyx990803&#x2F;yorkie 尤大婶的 增加钩子 package.json 123456&amp;#123;  ...  &quot;gitHooks&quot;: &amp;#123;    &quot;commit-msg&quot;: &quot;node scripts&#x2F;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2021-07-12T14:22:34.000Z">
+<meta property="article:modified_time" content="2023-07-13T15:06:15.412Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="yorkie">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">git commit 规范校验</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">git commit 规范校验</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2021-07-12T14:22:34.000Z" itemprop="datePublished" class="page-time">
+  2021-07-12
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+
+<article id="vue3-git-commit-check"
+  class="post-article article-type-vue3 fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">git commit 规范校验</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2021-07-12 22:22:34" datetime="2021-07-12T14:22:34.000Z"  itemprop="datePublished">2021-07-12</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <blockquote>
+<p>使用yorkie <code>yarn add yorkie -D</code></p>
+</blockquote>
+<p>This is a fork of <code>husky</code> with a few changes<br><a href="https://github.com/yyx990803/yorkie" target="_blank" rel="noopener">https://github.com/yyx990803/yorkie</a> 尤大婶的</p>
+<p>增加钩子 package.json</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  ...</span><br><span class="line">  "gitHooks": &#123;</span><br><span class="line">    "commit-msg": "node scripts/verifyCommit.js"</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>添加验证规则 scripts/verifyCommit.js<br>下载chalk <code>yarn add chalk@4.0.0 -D</code><br>chalk5.0 后 只支持ESM  <a href="https://github.com/chalk/chalk/releases/tag/v5.0.0" target="_blank" rel="noopener">https://github.com/chalk/chalk/releases/tag/v5.0.0</a></p>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> chalk = <span class="built_in">require</span>(<span class="string">'chalk'</span>)</span><br><span class="line"><span class="keyword">const</span> msgPath = process.env.GIT_PARAMS <span class="comment">// 获取 git msg path</span></span><br><span class="line"><span class="keyword">const</span> msg = <span class="built_in">require</span>(<span class="string">'fs'</span>).readFileSync(msgPath, <span class="string">'utf-8'</span>).trim()</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> commitRE = <span class="regexp">/^(revert: )?(feat|fix|docs|dx|style|refactor|perf|test|workflow|build|ci|chore|types|wip|release)(\(.+\))?(.&#123;1,10&#125;)?: .&#123;1,50&#125;/</span></span><br><span class="line"><span class="keyword">const</span> mergeRe = <span class="regexp">/^(Merge pull request|Merge branch)/</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (!commitRE.test(msg)) &#123;</span><br><span class="line">  <span class="keyword">if</span> (!mergeRe.test(msg)) &#123;</span><br><span class="line">    <span class="built_in">console</span>.error(</span><br><span class="line">      <span class="string">`  <span class="subst">$&#123;chalk.bgRed.white(<span class="string">' ERROR '</span>)&#125;</span> <span class="subst">$&#123;chalk.red(</span></span></span><br><span class="line"><span class="string"><span class="subst">        <span class="string">`无效的commit格式.`</span>,</span></span></span><br><span class="line"><span class="string"><span class="subst">      )&#125;</span>\n\n`</span> +</span><br><span class="line">        chalk.red(</span><br><span class="line">          <span class="string">`  commit需要正确的格式. 例如:\n\n`</span>,</span><br><span class="line">        ) +</span><br><span class="line">        <span class="string">`    <span class="subst">$&#123;chalk.green(<span class="string">`feat(compiler): add 'comments' option`</span>)&#125;</span>\n`</span> +</span><br><span class="line">        <span class="string">`    <span class="subst">$&#123;chalk.green(</span></span></span><br><span class="line"><span class="string"><span class="subst">          <span class="string">`fix(v-model): handle events on blur (close #28)`</span>,</span></span></span><br><span class="line"><span class="string"><span class="subst">        )&#125;</span>\n\n`</span> +</span><br><span class="line">        chalk.red(</span><br><span class="line">          <span class="string">`  查看 https://github.com/vuejs/vue-next/blob/master/.github/commit-convention.md 更多细节.\n`</span>,</span><br><span class="line">        ),</span><br><span class="line">    )</span><br><span class="line">    process.exit(<span class="number">1</span>)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/yorkie/" rel="tag">yorkie</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2021/07/12/git-commit-check/&title=《git commit 规范校验》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2021/07/12/git-commit-check/&title=《git commit 规范校验》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2021/07/12/git-commit-check/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git commit 规范校验》 — afacode的博客&url=https://blog.afacode.top/2021/07/12/git-commit-check/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2021/07/12/git-commit-check/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2021/07/28/el-table-bigdata-virtual/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">解决el-table大数据加载优化</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2021/06/29/vue-jest-base/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">vue3-ts支持jest测试</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2021/07/12/git-commit-check/&title=《git commit 规范校验》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2021/07/12/git-commit-check/&title=《git commit 规范校验》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2021/07/12/git-commit-check/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《git commit 规范校验》 — afacode的博客&url=https://blog.afacode.top/2021/07/12/git-commit-check/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2021/07/12/git-commit-check/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACIklEQVR42u3aO3LDMAwFQN//0k6bmYyUB4DJWOSySiFLXBYI8Xm94vX+sZJnvj/581dXz1y9f8HCwMB4LON9u3qM/CDuwcneMDAwzmFcfTh55urVCT4Jwfd7w8DAwLgPgr2rXhKaMTAwMFYxkmB6xfiggIuBgfEQRl4sy7eegKvJ84JcHAMD44GMvOr+/3//SX8DAwPjUYx3cfXKZMnV8D1YGBgYezPyAJfD7q+A1XJbfnAYGBgnM3qXuUnpPy/PFfQYGBiPZUyCYB4W8/f3xsUwMDBOYDR/HKej+XE0GwAYGBgHMHrbrV4E88JZ9SAwMDD2ZqwKmj18fnxR8MXAwNiU0UtikwGvXpuzWbbDwMA4gNFrSfaS0vyZwlFiYGAcw1iVrM7HNaoXUAwMjBMY89Q0H0ittiWiL2JgYGzNWLvdavksD+WFqhoGBsamjHnrMU9Qqxt95QsDA2NTRv6ZJFDmQ2bzJPaXxgAGBsZGjGqIjGY3BkW6nB3NuGFgYGzNmKSj1c9XL52FgIuBgbEdI39dNYuctEiT1gIGBsZpjLVluDwQ966YGBgYJzDmpf/J4NeCxHVVBwMDA+ODGWtLZmsHL6pJNQYGxt6MeZBddlrx9REDA+NMxmRIKy/9R1l1D4mBgYExvuRVL53ld2JgYGAMNlS9gCZp7Z/838DAwPh4xmQkKwnNydhErxWKgYFxAiNPHZMgOG8z9BoPGBgYmzK+AFfCIuA/lMFZAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
