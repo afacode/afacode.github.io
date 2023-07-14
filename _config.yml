@@ -79,7 +79,7 @@ feed:
   path: atom.xml
   limit: 0
 ## Themes: https://hexo.io/themes/
-# theme: yilia
+# theme: jelly
 theme: indigo
 
 # Deployment 部署
