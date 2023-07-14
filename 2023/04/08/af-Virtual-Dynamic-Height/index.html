@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>虚拟列表（动态高度） | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="virtual,vue">
+    <meta name="description" content="虚拟列表（动态高度） afVirtualDynamicHeight.vue  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485">
+<meta property="og:type" content="article">
+<meta property="og:title" content="虚拟列表（动态高度）">
+<meta property="og:url" content="https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="虚拟列表（动态高度） afVirtualDynamicHeight.vue  12345678910111213141516171819202122232425262728293031323334353637383940414243444546474849505152535455565758596061626364656667686970717273747576777879808182838485">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-04-08T14:19:30.000Z">
+<meta property="article:modified_time" content="2023-07-14T03:37:52.036Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="virtual">
+<meta property="article:tag" content="vue">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">虚拟列表（动态高度）</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">虚拟列表（动态高度）</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-04-08T14:19:30.000Z" itemprop="datePublished" class="page-time">
+  2023-04-08
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#虚拟列表（动态高度）"><span class="post-toc-number">1.</span> <span class="post-toc-text">虚拟列表（动态高度）</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-af-Virtual-Dynamic-Height"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">虚拟列表（动态高度）</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-04-08 22:19:30" datetime="2023-04-08T14:19:30.000Z"  itemprop="datePublished">2023-04-08</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="虚拟列表（动态高度）"><a href="#虚拟列表（动态高度）" class="headerlink" title="虚拟列表（动态高度）"></a>虚拟列表（动态高度）</h2><blockquote>
+<p><code>afVirtualDynamicHeight.vue</code></p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div ref&#x3D;&quot;virtualRefs&quot; @scroll&#x3D;&quot;_handleScroll&quot; :style&#x3D;&quot;virtualFixedHeight&quot; class&#x3D;&quot;af-virtual_fixed-height&quot;&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;af-virtual_scroll&quot; :style&#x3D;&quot;virtualScrollHeight&quot;&gt;&lt;&#x2F;div&gt;</span><br><span class="line">    &lt;div class&#x3D;&quot;af-virtual_content&quot; :style&#x3D;&quot;virtualTranslate&quot;&gt;</span><br><span class="line">      &lt;div</span><br><span class="line">        ref&#x3D;&quot;virtualListRefs&quot;</span><br><span class="line">        class&#x3D;&quot;content-item&quot;</span><br><span class="line">        :data-index&#x3D;&quot;item.$index&quot;</span><br><span class="line">        v-for&#x3D;&quot;item in virtualList&quot;</span><br><span class="line">        :key&#x3D;&quot;&#96;$&#123;item[rowKey]&#125;_$&#123;item.$index&#125;&#96;&quot;</span><br><span class="line">      &gt;</span><br><span class="line">        &lt;slot :item&#x3D;&quot;item&quot; :index&#x3D;&quot;item.$index&quot;&gt;&lt;&#x2F;slot&gt;</span><br><span class="line">      &lt;&#x2F;div&gt;</span><br><span class="line">    &lt;&#x2F;div&gt;</span><br><span class="line">  &lt;&#x2F;div&gt;</span><br><span class="line">&lt;&#x2F;template&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">import &#123; unThrottle &#125; from &#39;@&#x2F;af3.0&#x2F;plugins&#x2F;utils&#x2F;index.js&#39;;</span><br><span class="line">export default &#123;</span><br><span class="line">  name: &#39;afVirtualDynamicHeight&#39;,</span><br><span class="line">  props: &#123;</span><br><span class="line">    &#x2F;&#x2F; 列表数据</span><br><span class="line">    list: &#123;</span><br><span class="line">      type: Array,</span><br><span class="line">      required: true,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 列表高度</span><br><span class="line">    virtualMaxHeight: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      default: &#39;250px&#39;,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 数据总数量</span><br><span class="line">    virtualTotal: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      required: true,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 单个高度</span><br><span class="line">    itemHeight: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      default: 40,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 默认展示条数</span><br><span class="line">    limit: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      default: 15,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 唯一标识</span><br><span class="line">    rowKey: &#123;</span><br><span class="line">      type: String,</span><br><span class="line">      required: true,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 距离顶部缓冲区条数</span><br><span class="line">    bufferSize: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      default: 5,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 是否开启分页</span><br><span class="line">    isPaging: &#123;</span><br><span class="line">      type: Boolean,</span><br><span class="line">      default: false,</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 距离滚动底部 多少px 触发分页</span><br><span class="line">    offsetBottom: &#123;</span><br><span class="line">      type: Number,</span><br><span class="line">      default: 100,</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line">    this._virtualRefs &#x3D; null; &#x2F;&#x2F; 滚动实例</span><br><span class="line">    this._cacheListOption &#x3D; []; &#x2F;&#x2F; 缓存数据的高度</span><br><span class="line">    this._currentStartIndex &#x3D; 0; &#x2F;&#x2F; 当前滚动的位置</span><br><span class="line">    this._handleScroll &#x3D; () &#x3D;&gt; &#123;&#125;; &#x2F;&#x2F; 节流函数</span><br><span class="line">    return &#123;</span><br><span class="line">      isLoad: true, &#x2F;&#x2F; 分页节流触发</span><br><span class="line">      endIndex: 0,</span><br><span class="line">      scrollTop: 0,</span><br><span class="line">      startIndex: 0,</span><br><span class="line">      virtualList: [],</span><br><span class="line">      currentIndex: 0,</span><br><span class="line">      dynamicHeight: 0, &#x2F;&#x2F; 动态高度</span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  computed: &#123;</span><br><span class="line">    &#x2F;&#x2F; 当前list长度</span><br><span class="line">    getListCount() &#123;</span><br><span class="line">      return (Array.isArray(this.list) &amp;&amp; this.list.length) || 0;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 滚动可视区最大高度</span><br><span class="line">    virtualFixedHeight() &#123;</span><br><span class="line">      return &#96;max-height:$&#123;this.virtualMaxHeight&#125;;&#96;;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 滚动的高度</span><br><span class="line">    virtualScrollHeight() &#123;</span><br><span class="line">      return &#96;height:$&#123;this.dynamicHeight&#125;px;&#96;;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 每一项高度样式</span><br><span class="line">    virtualItemHeight() &#123;</span><br><span class="line">      return &#96;height:$&#123;this.itemHeight&#125;px;&#96;;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 动画</span><br><span class="line">    virtualTranslate() &#123;</span><br><span class="line">      &#x2F;&#x2F; 每次滚动的Y</span><br><span class="line">      const y &#x3D; this.startIndex &gt;&#x3D; 1 ? this._cacheListOption[this.startIndex - 1].offset : 0;</span><br><span class="line">      return &#96;transform:translate3d(0,$&#123;y&#125;px,0); transform 0.01s cubic-bezier(0.25, 0.02, 0.35, 0.89) 0s&#96;;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    list(arr) &#123;</span><br><span class="line">      if (!this.startIndex) &#123;</span><br><span class="line">        if (!Array.isArray(arr) || arr.length &lt;&#x3D; 0) &#123;</span><br><span class="line">          this.virtualList &#x3D; [];</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          this.init();</span><br><span class="line">        &#125;</span><br><span class="line">      &#125; else &#123;</span><br><span class="line">        this.isLoad &#x3D; true;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  &#x2F;**</span><br><span class="line">   * 不固定高度的虚拟列表逻辑</span><br><span class="line">   * 不必在意每一项的高度</span><br><span class="line">   * 只要在意这个滚动列表的高度，在滚动的时候，去计算每一项的高度 ，然后去加剪总高度即可</span><br><span class="line">   *&#x2F;</span><br><span class="line">  mounted() &#123;</span><br><span class="line">    if (!this._virtualRefs) &#123;</span><br><span class="line">      this._virtualRefs &#x3D; this.$refs.virtualRefs;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 有时候父级使用v-if 的时候，第一次watch 并不会执行</span><br><span class="line">    if (Array.isArray(this.list) &amp;&amp; this.list.length) &#123;</span><br><span class="line">      this.init();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 滚动防抖</span><br><span class="line">    this._handleScroll &#x3D; unThrottle(this.handleScroll, 180);</span><br><span class="line">  &#125;,</span><br><span class="line">  methods: &#123;</span><br><span class="line">    &#x2F;&#x2F; 初始化数据</span><br><span class="line">    init() &#123;</span><br><span class="line">      this.isLoad &#x3D; true;</span><br><span class="line">      this.startIndex &#x3D; 0;</span><br><span class="line">      this.endIndex &#x3D; this.limit + this.bufferSize;</span><br><span class="line">      this._cacheListOption &#x3D; this.cacheVirtualList();</span><br><span class="line">      this._virtualRefs &amp;&amp; (this._virtualRefs.scrollTop &#x3D; 0);</span><br><span class="line">      if (Array.isArray(this.list) &amp;&amp; this.list.length &gt; 0) &#123;</span><br><span class="line">        this.virtualList &#x3D; this.getVirtualList();</span><br><span class="line">        this.getDynamicHeight();</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 判断数据是否相等</span><br><span class="line">      if (!this.isPaging &amp;&amp; this.list.length - this.virtualTotal &lt; 0) &#123;</span><br><span class="line">        console.error(</span><br><span class="line">          &#96;当前不是分页获取数据，传入数据【list：$&#123;this.list.length&#125;】与数据总数【virtualTotal：$&#123;this.virtualTotal&#125;】不相等，请注意查看数据是否正确&#96;</span><br><span class="line">        );</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 搜索初始化</span><br><span class="line">    initSearch() &#123;</span><br><span class="line">      this.scrollTop &#x3D; 0;</span><br><span class="line">      this.startIndex &#x3D; 0;</span><br><span class="line">      this.isLoad &#x3D; false;</span><br><span class="line">      this.endIndex &#x3D; this.limit + this.bufferSize;</span><br><span class="line">      this._virtualRefs &amp;&amp; (this._virtualRefs.scrollTop &#x3D; 0);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 缓存计算高度</span><br><span class="line">    cacheVirtualList() &#123;</span><br><span class="line">      const arr &#x3D; [];</span><br><span class="line">      &#x2F;&#x2F; 注意这块我们用了 &lt;&#x3D; 是为了渲染x+1个元素用来在让滚动变得连续（永远渲染在判断&amp;渲染x+2）</span><br><span class="line">      for (let i &#x3D; 0; i &lt; this.virtualTotal; i++) &#123;</span><br><span class="line">        arr.push(&#123;</span><br><span class="line">          currentIndex: i, &#x2F;&#x2F; 当前位置</span><br><span class="line">          isComputed: false, &#x2F;&#x2F; 是否计算过高度</span><br><span class="line">          height: this.itemHeight, &#x2F;&#x2F; 默认高度</span><br><span class="line">          offset: (i + 1) * this.itemHeight, &#x2F;&#x2F; 所在的位置</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;</span><br><span class="line">      this.dynamicHeight &#x3D; arr[arr.length - 1].offset;</span><br><span class="line">      return arr;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 动态计算高度</span><br><span class="line">    getDynamicHeight() &#123;</span><br><span class="line">      this.clearTimeout();</span><br><span class="line">      this._timeout &#x3D; setTimeout(() &#x3D;&gt; &#123;</span><br><span class="line">        const nodeList &#x3D; this.$refs.virtualListRefs;</span><br><span class="line">        let index &#x3D; 0;</span><br><span class="line">        let item &#x3D; null; &#x2F;&#x2F; 当前个</span><br><span class="line">        let prevItem &#x3D; null; &#x2F;&#x2F; 上一个</span><br><span class="line">        for (let i &#x3D; 0; i &lt; nodeList.length; i++) &#123;</span><br><span class="line">          if (!nodeList[i]) continue;</span><br><span class="line">          &#x2F;&#x2F; 当前下标</span><br><span class="line">          index &#x3D; nodeList[i].getAttribute(&#39;data-index&#39;);</span><br><span class="line">          &#x2F;&#x2F; 当前数据</span><br><span class="line">          item &#x3D; this._cacheListOption[index];</span><br><span class="line">          &#x2F;&#x2F; 如果计算过，就不计算</span><br><span class="line">          if (item.isComputed) continue;</span><br><span class="line">          &#x2F;&#x2F; 自身的高度</span><br><span class="line">          item.height &#x3D; nodeList[i].getBoundingClientRect().height;</span><br><span class="line">          &#x2F;&#x2F; 上一个</span><br><span class="line">          prevItem &#x3D; this._cacheListOption[index - 1];</span><br><span class="line">          &#x2F;&#x2F; 缓存 offset &#x3D; 当前个height + 上有给的offset</span><br><span class="line">          item.offset &#x3D; prevItem ? prevItem.offset + item.height : item.height;</span><br><span class="line">          &#x2F;&#x2F; 缓存起来</span><br><span class="line">          item.isComputed &#x3D; true;</span><br><span class="line"></span><br><span class="line">          &#x2F;&#x2F; 计算高度</span><br><span class="line">          if (i &#x3D;&#x3D; nodeList.length - 1) &#123;</span><br><span class="line">            this.getComputedList(index);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        this.clearTimeout();</span><br><span class="line">      &#125;, 0);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 重新计算位置</span><br><span class="line">    getComputedList(endIndex &#x3D; 0) &#123;</span><br><span class="line">      let item &#x3D; null;</span><br><span class="line">      for (let i &#x3D; endIndex; i &lt; this._cacheListOption.length; i++) &#123;</span><br><span class="line">        if (!this._cacheListOption[i]) continue;</span><br><span class="line">        item &#x3D; this._cacheListOption[i];</span><br><span class="line">        item.offset &#x3D; this._cacheListOption[i - 1].offset + item.height;</span><br><span class="line">        this._isScrollBottom &#x3D; item.isComputed;</span><br><span class="line">      &#125;</span><br><span class="line">      this.dynamicHeight &#x3D; this._cacheListOption[this._cacheListOption.length - 1].offset;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 滚动获取值</span><br><span class="line">    handleScroll(e) &#123;</span><br><span class="line">      if (e.target !&#x3D;&#x3D; this._virtualRefs) return false;</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 是否开启分页</span><br><span class="line">      if (this.isPaging) &#123;</span><br><span class="line">        if (</span><br><span class="line">          this._cacheListOption[this.list.length - 1].offset - (e.target.scrollTop + e.target.offsetHeight) &lt;&#x3D;</span><br><span class="line">          this.offsetBottom</span><br><span class="line">        ) &#123;</span><br><span class="line">          &#x2F;&#x2F; 分页节流触发</span><br><span class="line">          if (this.isLoad &amp;&amp; this.list.length &lt; this.virtualTotal) &#123;</span><br><span class="line">            this.isLoad &#x3D; false;</span><br><span class="line">            this.$emit(&#39;load&#39;, e);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 计算当前startIndex</span><br><span class="line">      this._currentStartIndex &#x3D; this.getStartIndex(e.target.scrollTop);</span><br><span class="line"></span><br><span class="line">      &#x2F;&#x2F; 如果currentStartIndex 和 startIndex 不同（我们需要更新数据了）</span><br><span class="line">      if (this._currentStartIndex !&#x3D;&#x3D; this.currentIndex) &#123;</span><br><span class="line">        &#x2F;&#x2F; 保存当前第一位</span><br><span class="line">        this.currentIndex &#x3D; this._currentStartIndex;</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 重新计算开始位置 - 头部缓冲区位置</span><br><span class="line">        this.startIndex &#x3D; Math.max(this._currentStartIndex - this.bufferSize, 0);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 结束位置 &#x3D; 当前位置  + 显示条数 + 缓冲区条数</span><br><span class="line">        this.endIndex &#x3D; Math.min(this._currentStartIndex + this.limit + this.bufferSize, this.getListCount - 1);</span><br><span class="line"></span><br><span class="line">        &#x2F;&#x2F; 获取数据</span><br><span class="line">        this.virtualList &#x3D; this.getVirtualList();</span><br><span class="line">        this.getDynamicHeight();</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 获取startIndex位置</span><br><span class="line">    getStartIndex(scrollTop &#x3D; 0) &#123;</span><br><span class="line">      return this.handleBinarySearch(this._cacheListOption, scrollTop);</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 获取当前展示区域的数据</span><br><span class="line">    getVirtualList() &#123;</span><br><span class="line">      const content &#x3D; [];</span><br><span class="line">      let item &#x3D; null;</span><br><span class="line">      &#x2F;&#x2F; 注意这块我们用了 &lt;&#x3D; 是为了渲染x+1个元素用来在让滚动变得连续（永远渲染在判断&amp;渲染x+2）</span><br><span class="line">      for (let i &#x3D; this.startIndex; i &lt;&#x3D; this.endIndex; ++i) &#123;</span><br><span class="line">        if (!this.list[i]) continue;</span><br><span class="line">        item &#x3D; this.list[i];</span><br><span class="line">        item.$index &#x3D; i;</span><br><span class="line">        content.push(item);</span><br><span class="line">      &#125;</span><br><span class="line">      item &#x3D; null;</span><br><span class="line">      return content;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    &#x2F;&#x2F; 二分查找位置</span><br><span class="line">    handleBinarySearch(list &#x3D; [], offset &#x3D; 0) &#123;</span><br><span class="line">      let low &#x3D; 0;</span><br><span class="line">      let mid &#x3D; 0;</span><br><span class="line">      let _offset &#x3D; 0;</span><br><span class="line">      let high &#x3D; list.length - 1;</span><br><span class="line"></span><br><span class="line">      while (low &lt;&#x3D; high) &#123;</span><br><span class="line">        &#x2F;&#x2F; 获取中间数</span><br><span class="line">        mid &#x3D; Math.floor((high - low) &#x2F; 2) + low;</span><br><span class="line">        &#x2F;&#x2F; 中间的位置</span><br><span class="line">        _offset &#x3D; list[mid].offset;</span><br><span class="line">        &#x2F;&#x2F; 如果当前滚动和某个位置相等，返回对应坐标</span><br><span class="line">        if (_offset &#x3D;&#x3D;&#x3D; offset) &#123;</span><br><span class="line">          return mid;</span><br><span class="line">        &#125; else if (_offset &lt; offset) &#123;</span><br><span class="line">          &#x2F;&#x2F; 如果当前位置小于滚动的位置，那就往后找</span><br><span class="line">          low &#x3D; mid + 1;</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">          &#x2F;&#x2F; 如果滚动小于当前位置，那就往前找</span><br><span class="line">          high &#x3D; mid - 1;</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      &#x2F;&#x2F; 最后返回</span><br><span class="line">      return high &lt; 0 ? 0 : high;</span><br><span class="line">    &#125;,</span><br><span class="line"></span><br><span class="line">    clearTimeout() &#123;</span><br><span class="line">      if (this._timeout) &#123;</span><br><span class="line">        clearTimeout(this._timeout);</span><br><span class="line">        this._timeout &#x3D; null;</span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  beforeDestroy() &#123;</span><br><span class="line">    this._virtualRefs &#x3D; null; &#x2F;&#x2F; 滚动实例</span><br><span class="line">    this._handleScroll &#x3D; null; &#x2F;&#x2F; 节流函数</span><br><span class="line">    this._cacheListOption &#x3D; []; &#x2F;&#x2F; 缓存数据的高度</span><br><span class="line">    this._currentStartIndex &#x3D; 0; &#x2F;&#x2F; 当前滚动的位置</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line">&lt;&#x2F;script&gt;</span><br><span class="line"></span><br><span class="line">&lt;style lang&#x3D;&quot;scss&quot; scoped&gt;</span><br><span class="line">.af-virtual_fixed-height &#123;</span><br><span class="line">  position: relative;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">  flex: 1;</span><br><span class="line">  overflow: hidden;</span><br><span class="line">  overflow-y: auto;</span><br><span class="line"></span><br><span class="line">  .af-virtual_scroll &#123;</span><br><span class="line">    position: relative;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  .af-virtual_content &#123;</span><br><span class="line">    position: absolute;</span><br><span class="line">    top: 0;</span><br><span class="line">    left: 0;</span><br><span class="line">    width: 100%;</span><br><span class="line">    display: flex;</span><br><span class="line">    flex-direction: column;</span><br><span class="line">    align-content: flex-start;</span><br><span class="line">    overflow: hidden;</span><br><span class="line">    will-change: transform;</span><br><span class="line"></span><br><span class="line">    .content-item &#123;</span><br><span class="line">      box-sizing: border-box;</span><br><span class="line">      overflow: hidden;</span><br><span class="line">      background: transparent;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">&lt;&#x2F;style&gt;</span><br></pre></td></tr></table></figure>
+
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/virtual/" rel="tag">virtual</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/&title=《虚拟列表（动态高度）》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/&title=《虚拟列表（动态高度）》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《虚拟列表（动态高度）》 — afacode的博客&url=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/03/28/af-Virtual-Fixed-Height/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">虚拟列表（固定高度）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/&title=《虚拟列表（动态高度）》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/&title=《虚拟列表（动态高度）》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《虚拟列表（动态高度）》 — afacode的博客&url=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2023/04/08/af-Virtual-Dynamic-Height/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKklEQVR42u3aS27DMAxF0ex/0+4CAin3kXYBU1ejInVsHQ8YfvT54HUtFr/m+/rvz1d3vm3JkCHjtYxru8g1+8fvN7oHB8+SIUPGAQzy+NWtOZXHTL43GTJkyEgTuH4KKEOGDBl9Ri35u/e7MmTIOJPBm2W1VK/TpLu5FpchQ8YLGbzr/v9/PzLfkCFDxqsYV7j2ydk+mJJUr7ZkyJAxm8EDXGdImRarxf3IkCFjKIMERFJekgCa/pc0BIO4LkOGjJcz0k3zthffEA/Ty4ArQ4aM0QwSFtMt1orh2vhBhgwZsxl80FhLFvnAsnXMQoYMGQcw9ptIW2NpoORDzfg3RIYMGYMYnTBXC9OdYcDyExkyZBzA4KleSiIpYDpCWE5iZciQMY7BS8c0fUxL5dYIQYYMGaMZ/YFBrfRNA3p8/EKGDBnjGP2gmYI5iYxIZciQMZvxdOu/MxwNxhgyZMg4jFEbDPASlz8luEaGDBmjGaRQ7LTyeQvvrhchQ4aMqYy0J5cmi+lYNC19ZciQcQ6DH6F4oihNX9OPwYAMGTKGMjptel701tJH9FJkyJAxlHGFix+VKLb4w+MaMmTIOIGRpmvpyLMTWNM7y5AhYzaDBFk+XKwVumQg8SNNlCFDxgGMztGH9A6dtG+JlCFDhoyQ8cQwAFXkMmTIkNFoh6XHLPY7uSHgypAh44UMUsTWxpa8rOWvRoYMGacx0tStNqpMN/HIUFOGDBnvY/wBOg4i4Bz6W0wAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>

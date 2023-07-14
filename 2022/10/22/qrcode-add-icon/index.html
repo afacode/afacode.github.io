@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>基于qrcode给二维码上面加图片/icon等,并支持下载 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="vue,qrcode">
+    <meta name="description" content="实现 afQrcode.vue  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596">
+<meta property="og:type" content="article">
+<meta property="og:title" content="基于qrcode给二维码上面加图片&#x2F;icon等,并支持下载">
+<meta property="og:url" content="https://blog.afacode.top/2022/10/22/qrcode-add-icon/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="实现 afQrcode.vue  123456789101112131415161718192021222324252627282930313233343536373839404142434445464748495051525354555657585960616263646566676869707172737475767778798081828384858687888990919293949596">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2022-10-22T15:19:30.000Z">
+<meta property="article:modified_time" content="2023-07-14T03:31:47.979Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="vue">
+<meta property="article:tag" content="qrcode">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">基于qrcode给二维码上面加图片/icon等,并支持下载</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">基于qrcode给二维码上面加图片/icon等,并支持下载</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2022-10-22T15:19:30.000Z" itemprop="datePublished" class="page-time">
+  2022-10-22
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#实现"><span class="post-toc-number">1.</span> <span class="post-toc-text">实现</span></a></li><li class="post-toc-item post-toc-level-4"><a class="post-toc-link" href="#使用"><span class="post-toc-number">2.</span> <span class="post-toc-text">使用</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-qrcode-add-icon"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">基于qrcode给二维码上面加图片/icon等,并支持下载</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2022-10-22 23:19:30" datetime="2022-10-22T15:19:30.000Z"  itemprop="datePublished">2022-10-22</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h4 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h4><blockquote>
+<p><code>afQrcode.vue</code></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">template</span>&gt;</span></span><br><span class="line">  <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"-qrcode"</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"qrcode-box"</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">canvas</span> <span class="attr">:width</span>=<span class="string">"imgWidth"</span> <span class="attr">:height</span>=<span class="string">"imgWidth"</span> <span class="attr">ref</span>=<span class="string">"canvas"</span> <span class="attr">id</span>=<span class="string">"canvas"</span>&gt;</span><span class="tag">&lt;/<span class="name">canvas</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">:src</span>=<span class="string">"dataUrl"</span> <span class="attr">:alt</span>=<span class="string">"downloadTitle"</span> <span class="attr">:title</span>=<span class="string">"downloadTitle"</span> /&gt;</span></span><br><span class="line">  <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">template</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript"><span class="keyword">import</span> QRCode <span class="keyword">from</span> <span class="string">'qrcode'</span>;</span></span><br><span class="line"><span class="actionscript"><span class="keyword">const</span> TYPES = [<span class="string">'image/png'</span>, <span class="string">'image/jpeg'</span>, <span class="string">'image/webp'</span>];</span></span><br><span class="line"></span><br><span class="line"><span class="javascript"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span></span><br><span class="line"><span class="actionscript">  name: <span class="string">'iccQrcode'</span>,</span></span><br><span class="line">  props: &#123;</span><br><span class="line">    imgMargin: &#123;</span><br><span class="line"><span class="javascript">      type: <span class="built_in">Number</span>,</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">default</span>: <span class="number">2</span>,</span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    <span class="comment">// 二维码实际大小</span></span></span><br><span class="line">    imgWidth: &#123;</span><br><span class="line"><span class="javascript">      type: <span class="built_in">Number</span>,</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">default</span>: <span class="number">400</span>,</span></span><br><span class="line">    &#125;,</span><br><span class="line">    type: &#123;</span><br><span class="line"><span class="javascript">      type: <span class="built_in">String</span>,</span></span><br><span class="line"><span class="javascript">      validator: <span class="function"><span class="params">type</span> =&gt;</span> TYPES.includes(type),</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">default</span>: <span class="string">'image/png'</span>,</span></span><br><span class="line">    &#125;,</span><br><span class="line">    url: &#123;</span><br><span class="line"><span class="javascript">      type: <span class="built_in">String</span>,</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">default</span>: <span class="string">''</span>,</span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    <span class="comment">// 下载名称</span></span></span><br><span class="line">    downloadTitle: &#123;</span><br><span class="line"><span class="javascript">      type: <span class="built_in">String</span>,</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">default</span>: <span class="string">'二维码'</span>,</span></span><br><span class="line">    &#125;,</span><br><span class="line"><span class="actionscript">    <span class="comment">// 显示中间logo url</span></span></span><br><span class="line">    logoUrl: &#123;</span><br><span class="line"><span class="javascript">      type: <span class="built_in">String</span>,</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">default</span>: <span class="string">''</span>,</span></span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  data() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">return</span> &#123;</span></span><br><span class="line"><span class="actionscript">      dataUrl: <span class="string">''</span>,</span></span><br><span class="line"><span class="actionscript">      qrLogoSize: <span class="number">80</span>, <span class="comment">//logo size</span></span></span><br><span class="line">    &#125;;</span><br><span class="line">  &#125;,</span><br><span class="line">  watch: &#123;</span><br><span class="line">    url(val) &#123;</span><br><span class="line">      if (val) &#123;</span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.toDataURL();</span></span><br><span class="line"><span class="actionscript">      &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">this</span>.dataUrl = <span class="string">''</span>;</span></span><br><span class="line">      &#125;</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">  mounted() &#123;</span><br><span class="line"><span class="actionscript">    <span class="keyword">this</span>.url &amp;&amp; <span class="keyword">this</span>.toDataURL();</span></span><br><span class="line">  &#125;,</span><br><span class="line"></span><br><span class="line">  methods: &#123;</span><br><span class="line">    downLoadImg() &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">if</span> (!<span class="keyword">this</span>.dataUrl) <span class="keyword">return</span>;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">this</span>.downloadFile(&#123;</span></span><br><span class="line"><span class="actionscript">        type: <span class="string">'link'</span>,</span></span><br><span class="line"><span class="actionscript">        fileType: <span class="string">'png'</span>,</span></span><br><span class="line"><span class="actionscript">        title: <span class="keyword">this</span>.downloadTitle,</span></span><br><span class="line"><span class="actionscript">        link: <span class="keyword">this</span>.dataUrl,</span></span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">    toDataURL() &#123;</span><br><span class="line"><span class="actionscript">      QRCode.toDataURL(<span class="keyword">this</span>.url, &#123; width: <span class="keyword">this</span>.imgWidth, margin: <span class="keyword">this</span>.imgMargin &#125;)</span></span><br><span class="line"><span class="javascript">        .then(<span class="function"><span class="params">dataUrl</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">this</span>.dataUrl = dataUrl;</span></span><br><span class="line"><span class="actionscript">          <span class="keyword">if</span> (<span class="keyword">this</span>.logoUrl) &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">this</span>.$nextTick(<span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">              <span class="keyword">this</span>.makeCode(dataUrl);</span></span><br><span class="line">            &#125;);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;)</span><br><span class="line"><span class="javascript">        .catch(<span class="function"><span class="params">err</span> =&gt;</span> <span class="keyword">this</span>.$emit(<span class="string">'error'</span>, err));</span></span><br><span class="line">    &#125;,</span><br><span class="line">    makeCode(dataUrl) &#123;</span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> canvas = <span class="keyword">this</span>.$refs.canvas;</span></span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> that = <span class="keyword">this</span>;</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 生成二维码-img</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> qrCodeImg = <span class="keyword">new</span> Image();</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 生成logo-img</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> logoImg = <span class="keyword">new</span> Image();</span></span><br><span class="line"><span class="actionscript">      <span class="comment">// 画二维码里的logo 在canvas里进行拼接</span></span></span><br><span class="line"><span class="actionscript">      <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span></span><br><span class="line">      qrCodeImg.src = dataUrl;</span><br><span class="line"><span class="javascript">      qrCodeImg.onload = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="actionscript">        <span class="comment">// 绘制二维码</span></span></span><br><span class="line">        ctx.drawImage(qrCodeImg, 0, 0, that.imgWidth, that.imgWidth);</span><br><span class="line"><span class="actionscript">        <span class="comment">//设置logo大小 设置获取的logo将其变为圆角以及添加白色背景</span></span></span><br><span class="line"><span class="actionscript">        ctx.fillStyle = <span class="string">'#fff'</span>;</span></span><br><span class="line">        ctx.beginPath();</span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> logoPosition = (that.imgWidth - that.qrLogoSize) / <span class="number">2</span>; <span class="comment">//logo相对于canvas居中定位</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> h = that.qrLogoSize + <span class="number">10</span>; <span class="comment">//圆角高 10为基数(logo四周白色背景为10/2)</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> w = that.qrLogoSize + <span class="number">10</span>; <span class="comment">//圆角宽</span></span></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> x = logoPosition - <span class="number">5</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> y = logoPosition - <span class="number">5</span>;</span></span><br><span class="line"><span class="actionscript">        <span class="keyword">const</span> r = <span class="number">5</span>; <span class="comment">//圆角半径</span></span></span><br><span class="line">        ctx.moveTo(x + r, y);</span><br><span class="line">        ctx.arcTo(x + w, y, x + w, y + h, r);</span><br><span class="line">        ctx.arcTo(x + w, y + h, x, y + h, r);</span><br><span class="line">        ctx.arcTo(x, y + h, x, y, r);</span><br><span class="line">        ctx.arcTo(x, y, x + w, y, r);</span><br><span class="line">        ctx.closePath();</span><br><span class="line">        ctx.fill();</span><br><span class="line"><span class="actionscript">        ctx.restore(); <span class="comment">//需要编辑canvas内容则需要写入</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">this</span>.imgUrlToBase64(<span class="keyword">this</span>.logoUrl).then(<span class="function"><span class="params">res</span> =&gt;</span> &#123;</span></span><br><span class="line">          logoImg.src = res;</span><br><span class="line"><span class="actionscript">          <span class="comment">// logoImg.src = this.logoUrl + '?time=' + new Date().valueOf();</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// logoImg.setAttribute('crossOrigin', 'anonymous');</span></span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 绘制logo</span></span></span><br><span class="line"><span class="javascript">          logoImg.onload = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line">            ctx.drawImage(logoImg, logoPosition, logoPosition, that.qrLogoSize, that.qrLogoSize);</span><br><span class="line"><span class="actionscript">            <span class="comment">// 赋值链接</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">this</span>.dataUrl = canvas.toDataURL();</span></span><br><span class="line">          &#125;;</span><br><span class="line">        &#125;);</span><br><span class="line">      &#125;;</span><br><span class="line">    &#125;,</span><br><span class="line">    imgUrlToBase64(url) &#123;</span><br><span class="line"><span class="javascript">      <span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function">(<span class="params">resolve, reject</span>) =&gt;</span> &#123;</span></span><br><span class="line">        if (!url) &#123;</span><br><span class="line"><span class="actionscript">          reject(<span class="string">'请传入url内容'</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line"><span class="javascript">        <span class="keyword">if</span> (<span class="regexp">/\.(png|jpe?g|gif|svg)(\?.*)?$/</span>.test(url)) &#123;</span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 图片地址</span></span></span><br><span class="line"><span class="actionscript">          <span class="keyword">const</span> image = <span class="keyword">new</span> Image();</span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 设置跨域问题</span></span></span><br><span class="line"><span class="actionscript">          image.setAttribute(<span class="string">'crossOrigin'</span>, <span class="string">'anonymous'</span>);</span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 图片地址</span></span></span><br><span class="line"><span class="javascript">          image.src = url + <span class="string">'?time='</span> + <span class="keyword">new</span> <span class="built_in">Date</span>().valueOf();</span></span><br><span class="line"><span class="javascript">          image.onload = <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span></span><br><span class="line"><span class="javascript">            <span class="keyword">const</span> canvas = <span class="built_in">document</span>.createElement(<span class="string">'canvas'</span>);</span></span><br><span class="line"><span class="actionscript">            <span class="keyword">const</span> ctx = canvas.getContext(<span class="string">'2d'</span>);</span></span><br><span class="line">            canvas.width = image.width;</span><br><span class="line">            canvas.height = image.height;</span><br><span class="line">            ctx.drawImage(image, 0, 0, image.width, image.height);</span><br><span class="line"><span class="actionscript">            <span class="comment">// 获取图片后缀</span></span></span><br><span class="line"><span class="actionscript">            <span class="keyword">const</span> ext = url.substring(url.lastIndexOf(<span class="string">'.'</span>) + <span class="number">1</span>).toLowerCase();</span></span><br><span class="line"><span class="actionscript">            <span class="comment">// 转base64</span></span></span><br><span class="line"><span class="javascript">            <span class="keyword">const</span> dataUrl = canvas.toDataURL(<span class="string">`image/<span class="subst">$&#123;ext&#125;</span>`</span>);</span></span><br><span class="line"><span class="actionscript">            resolve(dataUrl || <span class="string">''</span>);</span></span><br><span class="line">          &#125;;</span><br><span class="line"><span class="actionscript">        &#125; <span class="keyword">else</span> &#123;</span></span><br><span class="line"><span class="actionscript">          <span class="comment">// 非图片地址</span></span></span><br><span class="line"><span class="actionscript">          reject(<span class="string">'非(png/jpe?g/gif/svg等)图片地址'</span>);</span></span><br><span class="line">        &#125;</span><br><span class="line">      &#125;);</span><br><span class="line">    &#125;,</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">style</span> <span class="attr">lang</span>=<span class="string">"scss"</span> <span class="attr">scoped</span>&gt;</span></span><br><span class="line"><span class="css"><span class="selector-class">.qrcode-box</span> &#123;</span></span><br><span class="line">  display: none;</span><br><span class="line">  img &#123;</span><br><span class="line">    display: none;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="css"><span class="selector-class">.qrcode</span>,</span></span><br><span class="line">img &#123;</span><br><span class="line">  width: 100%;</span><br><span class="line">  height: 100%;</span><br><span class="line">&#125;</span><br><span class="line"><span class="tag">&lt;/<span class="name">style</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">&lt;af-qr-code</span><br><span class="line">   class&#x3D;&quot;code-info&quot;</span><br><span class="line">   :downloadTitle&#x3D;&quot;downloadTitle&quot;</span><br><span class="line">   ref&#x3D;&quot;qrCodeUrl&quot;</span><br><span class="line">   :url&#x3D;&quot;shareUrl&quot;</span><br><span class="line">   :isLogo&#x3D;&quot;true&quot;</span><br><span class="line">    :logoUrl&#x3D;&quot;activityLogo&quot;</span><br><span class="line">&#x2F;&gt;</span><br><span class="line">&#x2F;&#x2F; 下载二维码</span><br><span class="line">downloadFileFn() &#123;</span><br><span class="line">      this.$refs.qrCodeUrl.downLoadImg();</span><br><span class="line">    &#125;,</span><br></pre></td></tr></table></figure>
+
+    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/qrcode/" rel="tag">qrcode</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/vue/" rel="tag">vue</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2022/10/22/qrcode-add-icon/&title=《基于qrcode给二维码上面加图片/icon等,并支持下载》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2022/10/22/qrcode-add-icon/&title=《基于qrcode给二维码上面加图片/icon等,并支持下载》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2022/10/22/qrcode-add-icon/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于qrcode给二维码上面加图片/icon等,并支持下载》 — afacode的博客&url=https://blog.afacode.top/2022/10/22/qrcode-add-icon/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2022/10/22/qrcode-add-icon/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between">
+  
+    <div class="waves-block waves-effect prev">
+      <a href="/2023/03/28/af-Virtual-Fixed-Height/" id="post-prev" class="post-nav-link">
+        <div class="tips"><i class="icon icon-angle-left icon-lg icon-pr"></i> Prev</div>
+        <h4 class="title">虚拟列表（固定高度）</h4>
+      </a>
+    </div>
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2022/08/04/af-confirm-use/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">确认弹窗 (调用方式跟element this.$message 类似)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2022/10/22/qrcode-add-icon/&title=《基于qrcode给二维码上面加图片/icon等,并支持下载》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2022/10/22/qrcode-add-icon/&title=《基于qrcode给二维码上面加图片/icon等,并支持下载》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2022/10/22/qrcode-add-icon/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《基于qrcode给二维码上面加图片/icon等,并支持下载》 — afacode的博客&url=https://blog.afacode.top/2022/10/22/qrcode-add-icon/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2022/10/22/qrcode-add-icon/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACNUlEQVR42u3awY6DMAxFUf7/p+l2JES4z6YdJblZVS0tOSxc2/Fx4HXerL+f3l15veb6y9fvHt9YMmTImJZxDlfnBoR3dyXfmwwZMvZhkE0Q0sPNwoBL9iZDhgwZnEFg/EHIkCFDRp9BQiQB/HPAlSFDxlSMtKE2vg1PFnnx/FotLkOGjAkZtcbZb15/5XxDhgwZUzHOcKUFZ7/phnYlQ4aMpRlvpXe1kvitdFOGDBn7MNJ2//i7tdEK/k6xVpYhQ8bkjP6hY3oM0G/5PfxvyJAhYyFG2vzityTFcBp8X+gLypAhY1oGb5Cl4bXPa2W7MmTIWILBm++d4NgZMkMHDDJkyFiUwdvx7xa0aZH8UBLLkCFjG0ZnhCJNENPD0YfflCFDxpaM8eYIgLTVOkMbwbSIDBkyJmekm05DYS1wt8YvZMiQsRwjHWXgrbdaOC4W0jJkyFiawYtM8g4Psmk6GOS5MmTIWI5BbkzCYjqcUUs6bx+ZDBkylmaQBK7TRKu11WolsQwZMvZh8A3VUkkSQGtjajJkyNiHkW43HZLg6WN8hCBDhozNGLWUsdPzS6nxQaYMGTKmZdQSsn7pSwrUgCpDhoylGXzVEsHaoWb6ByBDhowdGHFja/gt8mn/kd1muDJkyFiaMb6IpG61gYnOQJgMGTJk1NpwfKgipaKKXIYMGTLwkScvaEmFjR6cDBkyNmDwopQ399OmG+8LypAhYzcGLx35OUN6bMlL3NahpgwZMuZjfABPlPoI0KCPWwAAAABJRU5ErkJggg==" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
