@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>前端埋点及js错误上报demo | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="javscript">
+    <meta name="description" content="前端埋点及js错误上报demo后期发布npm包继续完善 (如添加键盘事件，当前运行环境，数据报警，通知等，统计页面点击热点生成热力图。。。)  主要技术点   路由导航history模式 重写pushState， replaceState js错误上报主要监听 window.addEventListener(&#39;error&#39;), promise使用window.addEventLis">
+<meta property="og:type" content="article">
+<meta property="og:title" content="前端埋点及js错误上报demo">
+<meta property="og:url" content="https://blog.afacode.top/2023/05/28/fe-logger-error-demo/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="前端埋点及js错误上报demo后期发布npm包继续完善 (如添加键盘事件，当前运行环境，数据报警，通知等，统计页面点击热点生成热力图。。。)  主要技术点   路由导航history模式 重写pushState， replaceState js错误上报主要监听 window.addEventListener(&#39;error&#39;), promise使用window.addEventLis">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-05-28T14:19:30.000Z">
+<meta property="article:modified_time" content="2023-08-03T09:40:08.407Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="javscript">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">前端埋点及js错误上报demo</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">前端埋点及js错误上报demo</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-05-28T14:19:30.000Z" itemprop="datePublished" class="page-time">
+  2023-05-28
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-2"><a class="post-toc-link" href="#前端埋点及js错误上报demo"><span class="post-toc-number">1.</span> <span class="post-toc-text">前端埋点及js错误上报demo</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-fe-logger-error-demo"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">前端埋点及js错误上报demo</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-05-28 22:19:30" datetime="2023-05-28T14:19:30.000Z"  itemprop="datePublished">2023-05-28</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h2 id="前端埋点及js错误上报demo"><a href="#前端埋点及js错误上报demo" class="headerlink" title="前端埋点及js错误上报demo"></a>前端埋点及js错误上报demo</h2><p><code>后期发布npm包</code>继续完善 (如添加键盘事件，当前运行环境，数据报警，通知等，统计页面点击热点生成热力图。。。)</p>
+<blockquote>
+<p>主要技术点</p>
+</blockquote>
+<ul>
+<li>路由导航history模式 重写pushState， replaceState</li>
+<li>js错误上报主要监听 <code>window.addEventListener(&#39;error&#39;)</code>, <code>promise</code>使用<code>window.addEventListener(&#39;unhandledrejection&#39;)</code>监听</li>
+<li>数据上报使用<code>navigator.sendBeacon</code>, 优势<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/Navigator/sendBeacon" target="_blank" rel="noopener">sendBeacon</a>比<a href="https://developer.mozilla.org/zh-CN/docs/Web/API/XMLHttpRequest" target="_blank" rel="noopener"><code>XMLHttpRequest</code></a>的优势</li>
+<li>DOM事件上报</li>
+</ul>
+<blockquote>
+<p>使用</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> LoggerAndError(&#123;</span><br><span class="line">  ...</span><br><span class="line">&#125;)</span><br><span class="line"></span><br><span class="line">可选参数</span><br><span class="line"><span class="keyword">export</span> interface DefaultOptions &#123;</span><br><span class="line">  uuid: string | <span class="literal">undefined</span>,</span><br><span class="line">  postUrl: string | <span class="literal">undefined</span>,</span><br><span class="line">  historyRouter: boolean,</span><br><span class="line">  hashRouter: boolean,</span><br><span class="line">  domLogger: boolean,</span><br><span class="line">  jsError: boolean,</span><br><span class="line">  sdkVersion: string | number,</span><br><span class="line">  extra: Record&lt;string, any&gt; | <span class="literal">undefined</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>目录结构</p>
+</blockquote>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">dist <span class="comment">// 打包结果</span></span><br><span class="line">	index<span class="selector-class">.cjs</span>.js</span><br><span class="line">	index<span class="selector-class">.d</span>.ts</span><br><span class="line">	index<span class="selector-class">.esm</span>.js</span><br><span class="line">	index.js</span><br><span class="line">src</span><br><span class="line">	core</span><br><span class="line">		index.ts</span><br><span class="line">	types</span><br><span class="line">		index.ts</span><br><span class="line">rollup<span class="selector-class">.config</span>.js</span><br><span class="line">package.json</span><br><span class="line">tsconfig.json</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>rollup配置</p>
+</blockquote>
+<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> path <span class="keyword">from</span> <span class="string">'path'</span></span><br><span class="line"><span class="keyword">import</span> ts <span class="keyword">from</span> <span class="string">'rollup-plugin-typescript2'</span></span><br><span class="line"><span class="keyword">import</span> dts <span class="keyword">from</span> <span class="string">'rollup-plugin-dts'</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> [&#123;</span><br><span class="line">  input: <span class="string">'./src/core/index.ts'</span>,</span><br><span class="line">  output: [</span><br><span class="line">    <span class="comment">// esModule  import export</span></span><br><span class="line">    &#123;</span><br><span class="line">      file: path.resolve(__dirname, <span class="string">'./dist/index.esm.js'</span>),</span><br><span class="line">      format: <span class="string">'es'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// commonjs  require exports</span></span><br><span class="line">    &#123;</span><br><span class="line">      file: path.resolve(__dirname, <span class="string">'./dist/index.cjs.js'</span>),</span><br><span class="line">      format: <span class="string">'cjs'</span></span><br><span class="line">    &#125;,</span><br><span class="line">    <span class="comment">// UMD =&gt; AMD CMD global</span></span><br><span class="line">    &#123;</span><br><span class="line">      input: <span class="string">'./src/core/index.ts'</span>,</span><br><span class="line">      file: path.resolve(__dirname, <span class="string">'./dist/index.js'</span>),</span><br><span class="line">      format: <span class="string">'umd'</span>,</span><br><span class="line">      name: <span class="string">'logger'</span></span><br><span class="line">    &#125;,</span><br><span class="line">  ],</span><br><span class="line">  plugins: [</span><br><span class="line">    ts()</span><br><span class="line">  ]</span><br><span class="line">&#125;, &#123;</span><br><span class="line">  input: <span class="string">'./src/core/index.ts'</span>,</span><br><span class="line">  output: &#123;</span><br><span class="line">    file: path.resolve(__dirname, <span class="string">'./dist/index.d.ts'</span>),</span><br><span class="line">    format: <span class="string">'es'</span></span><br><span class="line">  &#125;,</span><br><span class="line">  plugins: [</span><br><span class="line">    dts()</span><br><span class="line">  ]</span><br><span class="line">&#125;];</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>src/core/index.ts</p>
+</blockquote>
+<figure class="highlight typescript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> &#123; Options, DefaultOptions, LoggerAndErrorConfig, PostLoggerAndErrorData &#125; <span class="keyword">from</span> <span class="string">"../types"</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> MouseEventList: <span class="built_in">string</span>[] = [<span class="string">'click'</span>, <span class="string">'dblclick'</span>, <span class="string">'mousedown'</span>, <span class="string">'mouseup'</span>, <span class="string">'mouseenter'</span>, <span class="string">'mouseout'</span>, <span class="string">'mouseenter'</span>];</span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> <span class="keyword">class</span> LoggerAndError &#123;</span><br><span class="line">  <span class="keyword">public</span> opt: Options</span><br><span class="line">  <span class="keyword">private</span> version: <span class="built_in">string</span>;</span><br><span class="line">  <span class="keyword">public</span> <span class="keyword">constructor</span>(<span class="params">options: Options</span>) &#123;</span><br><span class="line">    <span class="keyword">this</span>.opt = <span class="built_in">Object</span>.assign(<span class="keyword">this</span>.init(), options)</span><br><span class="line">    <span class="keyword">this</span>.installEvent()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> init(): DefaultOptions &#123;</span><br><span class="line">    <span class="keyword">this</span>.version = LoggerAndErrorConfig.version</span><br><span class="line">    <span class="comment">// 重写 history</span></span><br><span class="line"></span><br><span class="line">    <span class="built_in">window</span>.history[<span class="string">'pushState'</span>] = <span class="keyword">this</span>.createHistoryEvent(<span class="string">'pushState'</span>)</span><br><span class="line">    <span class="built_in">window</span>.history[<span class="string">'replaceState'</span>] = <span class="keyword">this</span>.createHistoryEvent(<span class="string">'replaceState'</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> &lt;DefaultOptions&gt;&#123;</span><br><span class="line">      sdkVersion: <span class="keyword">this</span>.version,</span><br><span class="line">      historyRouter: <span class="literal">false</span>,</span><br><span class="line">      hashRouter: <span class="literal">false</span>,</span><br><span class="line">      jsError: <span class="literal">false</span>,</span><br><span class="line">      domLogger: <span class="literal">false</span>,</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> createHistoryEvent = &lt;T <span class="keyword">extends</span> keyof History&gt;<span class="function">(<span class="params"><span class="keyword">type</span>: T</span>): <span class="params">()</span> =&gt;</span> <span class="built_in">any</span> =&gt; &#123;</span><br><span class="line">    <span class="keyword">const</span> original = history[<span class="keyword">type</span>]</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"><span class="keyword">this</span>: <span class="built_in">any</span></span>) </span>&#123;</span><br><span class="line">      <span class="keyword">var</span> e = <span class="keyword">new</span> Event(<span class="keyword">type</span>)</span><br><span class="line">      <span class="built_in">window</span>.dispatchEvent(e)</span><br><span class="line">      <span class="keyword">const</span> res = original.apply(<span class="keyword">this</span>, <span class="built_in">arguments</span>)</span><br><span class="line">      <span class="keyword">return</span> res</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> installEvent() &#123;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.opt.historyRouter) &#123;</span><br><span class="line">      <span class="keyword">this</span>.captureEvents([<span class="string">'pushState'</span>, <span class="string">'replaceState'</span>, <span class="string">'popstate'</span>], <span class="string">'history-pv'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.opt.hashRouter) &#123;</span><br><span class="line">      <span class="keyword">this</span>.captureEvents([<span class="string">'hashchange'</span>], <span class="string">'hash-pv'</span>)</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.opt.domLogger) &#123;</span><br><span class="line">      <span class="keyword">this</span>.domEvents()</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span> (<span class="keyword">this</span>.opt.jsError) &#123;</span><br><span class="line">      <span class="keyword">this</span>.jsError()</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> captureEvents&lt;T&gt;(MouseEventList: <span class="built_in">string</span>[], targetKey: <span class="built_in">string</span>, data?: T) &#123;</span><br><span class="line">    MouseEventList.forEach(<span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(event, <span class="function"><span class="params">()</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.sendLoggerAndError(&#123;event, targetKey, data&#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> domEvents() &#123;</span><br><span class="line">    MouseEventList.forEach(<span class="function"><span class="params">event</span> =&gt;</span> &#123;</span><br><span class="line">      <span class="built_in">window</span>.addEventListener(event, <span class="function">(<span class="params">e</span>) =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> target = e.target <span class="keyword">as</span> HTMLElement</span><br><span class="line">        <span class="keyword">const</span> targetKey = target.getAttribute(<span class="string">'target-key'</span>)</span><br><span class="line">        <span class="keyword">if</span> (targetKey) &#123;</span><br><span class="line">          <span class="keyword">this</span>.sendLoggerAndError(&#123;</span><br><span class="line">            targetKey,</span><br><span class="line">            event,</span><br><span class="line">          &#125;)</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> setUuid&lt;T <span class="keyword">extends</span> DefaultOptions[<span class="string">'uuid'</span>]&gt;(uuid: T) &#123;</span><br><span class="line">    <span class="keyword">this</span>.opt.uuid = uuid</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> seExtra&lt;T <span class="keyword">extends</span> DefaultOptions[<span class="string">'extra'</span>]&gt;(extra: T) &#123;</span><br><span class="line">    <span class="keyword">this</span>.opt.extra = extra</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> jsError() &#123;</span><br><span class="line">    <span class="keyword">this</span>.errorEvent()</span><br><span class="line">    <span class="keyword">this</span>.promiseReject()</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> errorEvent() &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'error'</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">      <span class="keyword">this</span>.sendLoggerAndError(&#123;</span><br><span class="line">        targetKey: <span class="string">'message'</span>,</span><br><span class="line">        event: <span class="string">'error'</span>,</span><br><span class="line">        message: event.message,</span><br><span class="line">        detail: event</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> promiseReject() &#123;</span><br><span class="line">    <span class="built_in">window</span>.addEventListener(<span class="string">'unhandledrejection'</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">      event.promise.catch(<span class="function"><span class="params">error</span> =&gt;</span> &#123;</span><br><span class="line">        <span class="keyword">this</span>.sendLoggerAndError(&#123;</span><br><span class="line">          targetKey: <span class="string">'reject'</span>,</span><br><span class="line">          event: <span class="string">'promise'</span>,</span><br><span class="line">          message: error</span><br><span class="line">        &#125;)</span><br><span class="line">      &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">public</span> sendLoggerAndError&lt;T <span class="keyword">extends</span> PostLoggerAndErrorData&gt;(data: T) &#123;</span><br><span class="line">    <span class="keyword">this</span>.postData(data)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> postData&lt;T&gt;(data: T) &#123;</span><br><span class="line">    <span class="keyword">const</span> params = <span class="built_in">Object</span>.assign(<span class="keyword">this</span>.opt, data, &#123;time: <span class="keyword">new</span> <span class="built_in">Date</span>().getTime&#125;)</span><br><span class="line">    <span class="keyword">let</span> headers = &#123;</span><br><span class="line">      <span class="keyword">type</span>: <span class="string">'application/x-www-form-urlencoded'</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> blob = <span class="keyword">new</span> Blob([<span class="built_in">JSON</span>.stringify(params)], headers)</span><br><span class="line"></span><br><span class="line">    navigator.sendBeacon(<span class="keyword">this</span>.opt.postUrl, blob)</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>package.json</p>
+</blockquote>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="attr">"main"</span>: <span class="string">"dist/index.cjs.js"</span>,</span><br><span class="line">  <span class="attr">"module"</span>: <span class="string">"dist/index.esm.js"</span>,</span><br><span class="line">  <span class="attr">"browser"</span>: <span class="string">"dist/index.js"</span>,</span><br><span class="line">  <span class="attr">"scripts"</span>: &#123;</span><br><span class="line">    <span class="attr">"build"</span>: <span class="string">"rollup -c"</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">"devDependencies"</span>: &#123;</span><br><span class="line">    <span class="attr">"rollup"</span>: <span class="string">"^2.76.0"</span>,</span><br><span class="line">    <span class="attr">"rollup-plugin-dts"</span>: <span class="string">"^4.2.2"</span>,</span><br><span class="line">    <span class="attr">"rollup-plugin-typescript2"</span>: <span class="string">"^0.32.1"</span>,</span><br><span class="line">    <span class="attr">"typescript"</span>: <span class="string">"^4.7.4"</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/javscript/" rel="tag">javscript</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/&title=《前端埋点及js错误上报demo》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/&title=《前端埋点及js错误上报demo》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端埋点及js错误上报demo》 — afacode的博客&url=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/04/08/af-Virtual-Dynamic-Height/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">虚拟列表（动态高度）</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/&title=《前端埋点及js错误上报demo》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/&title=《前端埋点及js错误上报demo》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《前端埋点及js错误上报demo》 — afacode的博客&url=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2023/05/28/fe-logger-error-demo/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMYAAADGCAAAAACs8KCBAAACKElEQVR42u3aS27DMAxF0ex/0y7Qca3eR9oBRF2NCsSVcjxgxM/ng9f1u8gz67Xeef3kA0uGDBnbMsjBd4etnyGvY80IXooMGTIOYPBQyIMpZ6/PRT8AMmTIkNH+ojxky5AhQ0Y/4NaeJOH7q78bMmTI2JBBtl5vGhwJwvGLubgMGTI2ZKSNgW/+/WJ/Q4YMGZswrnCREj8JyrUnb3eQIUPGaAZpK9YO4NT0SnobjmXIkDGUkTYp+60C/mkwlCZDhoxjGJ0yGWlPkk/ToC9DhoxzGGm5P20edPZHLVIZMmQcxiApaDqKkQ5YtMYsZMiQMY5RSyk7KXEauIMXLUOGjNEMPu7Qv/bxNDj9LxkyZExlpAlkWmJLg2YxYZYhQ8YBDN6w7BxZa0WgtFmGDBnHMHjymV4E0wtofBmVIUPGkYxaKY2EYN62jJNYGTJkDGXU2o0k4NaaAf1GqQwZMuYxePk+/dLPNj7/CdAyZMgYzUhL83wKqzOuUYPJkCFjKoOPgj11yePBtFVukyFDxjgGvwh20k6e6MaptQwZMkYzakNaPAVNr4ApA4VdGTJkbM64wpXW4ckOaXr8B16GDBmjGXzxUFs8AP8AyJAh40wGD7J8FIOPa9RaDvEFUYYMGSMYnTGIDqMfiGXIkCGDXPVqg1xp2hw0MmXIkHE8g4+OESop5KFSnQwZMg5g8APeuOo9kNzKkCFjNKPfGODNg07pvzNSJkOGjG0ZP+ZOiYcAdqgHAAAAAElFTkSuQmCC" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
