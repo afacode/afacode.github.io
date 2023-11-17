@@ -6,7 +6,7 @@
   <link href="https://blog.afacode.top/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2023-10-24T00:11:34.498Z</updated>
+  <updated>2023-11-17T12:00:41.671Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>electron-builder在window下打包报错</title>
+    <link href="https://blog.afacode.top/2023/11/04/electron-builder-window-error/"/>
+    <id>https://blog.afacode.top/2023/11/04/electron-builder-window-error/</id>
+    <published>2023-11-04T14:20:33.000Z</published>
+    <updated>2023-11-17T12:00:41.671Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="electron-builder在window下打包报错"><a href="#electron-builder在window下打包报错" class="headerlink" title="electron-builder在window下打包报错"></a>electron-builder在window下打包报错</h3><p>报错详情</p><figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\.pnpm\app-builder-<span class="class"><span class="keyword">lib</span>@24.6.4\<span class="title">node_modules</span>\<span class="title">app</span>-<span class="title">builder</span>-<span class="title">lib</span>\<span class="title">src</span>\<span class="title">asar</span>\<span class="title">asarFileChecker</span>.<span class="title">ts</span>:7</span></span><br><span class="line">    <span class="keyword">return</span> new Error(<span class="string">`$&#123;messagePrefix&#125; "$&#123;relativeFile&#125;" in the "$&#123;asarFile&#125;" $&#123;text&#125;`</span>)</span><br><span class="line">           ^</span><br><span class="line"><span class="symbol">Error:</span> Application entry file <span class="string">"background.js"</span> in the <span class="string">"****\release\win-unpacked\resources\app.asar"</span> does not exist.</span><br></pre></td></tr></table></figure><p>解决方式: <code>electron-builder</code>增加win字段配置</p><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">打包配置</span><br><span class="line">config: &#123;</span><br><span class="line">  # 新增</span><br><span class="line">  win: &#123;</span><br><span class="line">  artifactName: '$&#123;productName&#125;-$&#123;platform&#125;-$&#123;arch&#125;-$&#123;version&#125;.$&#123;ext&#125;',</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;electron-builder在window下打包报错&quot;&gt;&lt;a href=&quot;#electron-builder在window下打包报错&quot; class=&quot;headerlink&quot; title=&quot;electron-builder在window下打包报错&quot;&gt;&lt;/a&gt;el</summary>
+      
+    
+    
+    
+    
+    <category term="electron" scheme="https://blog.afacode.top/tags/electron/"/>
+    
+    <category term="electron-builder" scheme="https://blog.afacode.top/tags/electron-builder/"/>
+    
+  </entry>
   
   <entry>
     <title>Property &#39;DailyRotateFile&#39; does not exist on type &#39;typeof TransportStream&#39;.ts(2339)</title>
@@ -108,9 +132,9 @@
     
     
     
-    <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
-    
     <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
+    
+    <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
     
   </entry>
   
@@ -135,9 +159,9 @@
     
     
     
-    <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
-    
     <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
+    
+    <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
     
   </entry>
   
@@ -189,9 +213,9 @@
     
     
     
-    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
-    
     <category term="element" scheme="https://blog.afacode.top/tags/element/"/>
+    
+    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
     
   </entry>
   
@@ -1110,9 +1134,9 @@
     
     
     
-    <category term="npm" scheme="https://blog.afacode.top/tags/npm/"/>
-    
     <category term="electron" scheme="https://blog.afacode.top/tags/electron/"/>
+    
+    <category term="npm" scheme="https://blog.afacode.top/tags/npm/"/>
     
   </entry>
   

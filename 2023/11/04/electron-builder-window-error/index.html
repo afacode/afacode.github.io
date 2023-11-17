@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+
+    
+
+    
+<!-- Baidu Tongji -->
+<script>var _hmt = _hmt || []</script>
+<script async src="//hm.baidu.com/hm.js?29d5d4407fd60d03b6916e1bfd41d668"></script>
+<!-- End Baidu Tongji -->
+
+
+
+
+    <meta charset="utf-8">
+    
+    
+    
+    
+    <title>electron-builder在window下打包报错 | afacode的博客 | 人懒，偶尔记录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    
+    <meta name="theme-color" content="#3F51B5">
+    
+    
+    <meta name="keywords" content="electron,electron-builder">
+    <meta name="description" content="electron-builder在window下打包报错报错详情 1234\.pnpm\app-builder-lib@24.6.4\node_modules\app-builder-lib\src\asar\asarFileChecker.ts:7    return new Error(&#96;$&amp;#123;messagePrefix&amp;#125; &quot;$&amp;#123;relativeFile&amp;#125;">
+<meta property="og:type" content="article">
+<meta property="og:title" content="electron-builder在window下打包报错">
+<meta property="og:url" content="https://blog.afacode.top/2023/11/04/electron-builder-window-error/index.html">
+<meta property="og:site_name" content="afacode的博客">
+<meta property="og:description" content="electron-builder在window下打包报错报错详情 1234\.pnpm\app-builder-lib@24.6.4\node_modules\app-builder-lib\src\asar\asarFileChecker.ts:7    return new Error(&#96;$&amp;#123;messagePrefix&amp;#125; &quot;$&amp;#123;relativeFile&amp;#125;">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2023-11-04T14:20:33.000Z">
+<meta property="article:modified_time" content="2023-11-17T12:00:41.671Z">
+<meta property="article:author" content="afacode(阿发)">
+<meta property="article:tag" content="electron">
+<meta property="article:tag" content="electron-builder">
+<meta name="twitter:card" content="summary">
+    
+        <link rel="alternate" type="application/atom+xml" title="afacode的博客" href="/atom.xml">
+    
+    <link rel="shortcut icon" href="/favicon.ico">
+    <link rel="stylesheet" href="//unpkg.com/hexo-theme-material-indigo@latest/css/style.css">
+    <script>window.lazyScripts=[]</script>
+
+    <!-- custom head -->
+    
+
+<meta name="generator" content="Hexo 4.2.1"></head>
+
+<body>
+    <div id="loading" class="active"></div>
+
+    <aside id="menu" class="hide" >
+  <div class="inner flex-row-vertical">
+    <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menu-off">
+        <i class="icon icon-lg icon-close"></i>
+    </a>
+    <div class="brand-wrap" style="background-image:url(/img/brand.jpg)">
+      <div class="brand">
+        <a href="/" class="avatar waves-effect waves-circle waves-light">
+          <img src="/img/avatar.jpg">
+        </a>
+        <hgroup class="introduce">
+          <h5 class="nickname">afacode(阿发)</h5>
+          <a href="mailto:afacode@outlook.com" title="afacode@outlook.com" class="mail">afacode@outlook.com</a>
+        </hgroup>
+      </div>
+    </div>
+    <div class="scroll-wrap flex-col">
+      <ul class="nav">
+        
+            <li class="waves-block waves-effect">
+              <a href="/"  >
+                <i class="icon icon-lg icon-home"></i>
+                index
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/archives"  >
+                <i class="icon icon-lg icon-archives"></i>
+                Archives
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/tags"  >
+                <i class="icon icon-lg icon-tags"></i>
+                Tags
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="https://github.com/afacode" target="_blank" >
+                <i class="icon icon-lg icon-github"></i>
+                Github
+              </a>
+            </li>
+        
+            <li class="waves-block waves-effect">
+              <a href="/about"  >
+                <i class="icon icon-lg icon-link"></i>
+                about
+              </a>
+            </li>
+        
+      </ul>
+    </div>
+  </div>
+</aside>
+
+    <main id="main">
+        <header class="top-header" id="header">
+    <div class="flex-row">
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light on" id="menu-toggle">
+          <i class="icon icon-lg icon-navicon"></i>
+        </a>
+        <div class="flex-col header-title ellipsis">electron-builder在window下打包报错</div>
+        
+        <div class="search-wrap" id="search-wrap">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="back">
+                <i class="icon icon-lg icon-chevron-left"></i>
+            </a>
+            <input type="text" id="key" class="search-input" autocomplete="off" placeholder="输入感兴趣的关键字">
+            <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="search">
+                <i class="icon icon-lg icon-search"></i>
+            </a>
+        </div>
+        
+        
+        <a href="javascript:;" class="header-icon waves-effect waves-circle waves-light" id="menuShare">
+            <i class="icon icon-lg icon-share-alt"></i>
+        </a>
+        
+    </div>
+</header>
+<header class="content-header post-header">
+
+    <div class="container fade-scale">
+        <h1 class="title">electron-builder在window下打包报错</h1>
+        <h5 class="subtitle">
+            
+                <time datetime="2023-11-04T14:20:33.000Z" itemprop="datePublished" class="page-time">
+  2023-11-04
+</time>
+
+
+            
+        </h5>
+    </div>
+
+    
+
+
+</header>
+
+
+<div class="container body-wrap">
+    
+    <aside class="post-widget">
+        <nav class="post-toc-wrap post-toc-shrink" id="post-toc">
+            <h4>TOC</h4>
+            <ol class="post-toc"><li class="post-toc-item post-toc-level-3"><a class="post-toc-link" href="#electron-builder在window下打包报错"><span class="post-toc-number">1.</span> <span class="post-toc-text">electron-builder在window下打包报错</span></a></li></ol>
+        </nav>
+    </aside>
+
+
+<article id="post-electron-builder-window-error"
+  class="post-article article-type-post fade" itemprop="blogPost">
+
+    <div class="post-card">
+        <h1 class="post-card-title">electron-builder在window下打包报错</h1>
+        <div class="post-meta">
+            <time class="post-time" title="2023-11-04 22:20:33" datetime="2023-11-04T14:20:33.000Z"  itemprop="datePublished">2023-11-04</time>
+
+            
+
+
+            
+
+        </div>
+        <div class="post-content" id="post-content" itemprop="postContent">
+            <h3 id="electron-builder在window下打包报错"><a href="#electron-builder在window下打包报错" class="headerlink" title="electron-builder在window下打包报错"></a>electron-builder在window下打包报错</h3><p>报错详情</p>
+<figure class="highlight crystal"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">\.pnpm\app-builder-<span class="class"><span class="keyword">lib</span>@24.6.4\<span class="title">node_modules</span>\<span class="title">app</span>-<span class="title">builder</span>-<span class="title">lib</span>\<span class="title">src</span>\<span class="title">asar</span>\<span class="title">asarFileChecker</span>.<span class="title">ts</span>:7</span></span><br><span class="line">    <span class="keyword">return</span> new Error(<span class="string">`$&#123;messagePrefix&#125; "$&#123;relativeFile&#125;" in the "$&#123;asarFile&#125;" $&#123;text&#125;`</span>)</span><br><span class="line">           ^</span><br><span class="line"><span class="symbol">Error:</span> Application entry file <span class="string">"background.js"</span> in the <span class="string">"****\release\win-unpacked\resources\app.asar"</span> does not exist.</span><br></pre></td></tr></table></figure>
+
+<p>解决方式: <code>electron-builder</code>增加win字段配置</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">打包配置</span><br><span class="line">config: &#123;</span><br><span class="line">  # 新增</span><br><span class="line">  win: &#123;</span><br><span class="line">  	artifactName: '$&#123;productName&#125;-$&#123;platform&#125;-$&#123;arch&#125;-$&#123;version&#125;.$&#123;ext&#125;',</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>    
+        </div>
+
+        <blockquote class="post-copyright">
+    
+    <div class="content">
+        
+
+        
+        如有问题可联系 Email:afacode@outlook.com 或 微信:afacode
+        
+    </div>
+    
+    <footer>
+        <a href="https://blog.afacode.top">
+            <img src="/img/avatar.jpg" alt="afacode(阿发)">
+            afacode(阿发)
+        </a>
+    </footer>
+</blockquote>
+
+        
+
+
+        <div class="post-footer">
+            
+	<ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/electron/" rel="tag">electron</a></li><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/electron-builder/" rel="tag">electron-builder</a></li></ul>
+
+
+            
+<div class="page-share-wrap">
+    
+
+<div class="page-share" id="pageShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2023/11/04/electron-builder-window-error/&title=《electron-builder在window下打包报错》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2023/11/04/electron-builder-window-error/&title=《electron-builder在window下打包报错》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2023/11/04/electron-builder-window-error/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《electron-builder在window下打包报错》 — afacode的博客&url=https://blog.afacode.top/2023/11/04/electron-builder-window-error/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2023/11/04/electron-builder-window-error/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+
+    <a href="javascript:;" id="shareFab" class="page-share-fab waves-effect waves-circle">
+        <i class="icon icon-share-alt icon-lg"></i>
+    </a>
+</div>
+
+
+
+        </div>
+    </div>
+
+    
+<nav class="post-nav flex-row flex-justify-between flex-row-reverse">
+  
+
+  
+    <div class="waves-block waves-effect next">
+      <a href="/2023/10/22/nestjs-winstion-not-find-ts/" id="post-next" class="post-nav-link">
+        <div class="tips">Next <i class="icon icon-angle-right icon-lg icon-pl"></i></div>
+        <h4 class="title">Property &#39;DailyRotateFile&#39; does not exist on type &#39;typeof TransportStream&#39;.ts(2339)</h4>
+      </a>
+    </div>
+  
+</nav>
+
+
+
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<section class="comments" id="comments">
+    <div id="gitalk-container"></div>
+    <link rel="stylesheet" href="https://unpkg.com/gitalk/dist/gitalk.css">
+    <script src="https://unpkg.com/gitalk/dist/gitalk.min.js"></script>
+    <script>
+        var id = location.pathname
+        if (location.pathname.length > 50) {
+          id = location.pathname.replace(/\/\d+\/\d+\/\d+\//, '').replace('/', '').substring(0, 50)
+        }
+        const gitalk = new Gitalk({
+          clientID: '16e31c2c3358a34e2259',
+          clientSecret: '4db152f6b7c930baf8d23d43e8634d93be9e6395',
+          repo: 'afacode.github.io',
+          owner: 'afacode',
+          admin: ['afacode'],
+          id: id,      // Ensure uniqueness and length less than 50
+          title: document.title.split('|')[0],
+          distractionFreeMode: false  // Facebook-like distraction free mode
+        })
+
+        gitalk.render('gitalk-container')
+    </script>
+</section>
+
+
+
+
+</article>
+
+
+
+</div>
+
+        <footer class="footer">
+    <div class="top">
+        
+
+        <p>
+            
+                <span><a href="/atom.xml" target="_blank" class="rss" title="rss"><i class="icon icon-lg icon-rss"></i></a></span>
+            
+            <span>博客内容遵循 <a rel="license noopener" href="https://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh" target="_blank">知识共享 署名 - 非商业性 - 相同方式共享 4.0 国际协议</a></span>
+        </p>
+    </div>
+    <div class="bottom">
+        <p><span>afacode(阿发) &copy; 2017 - 2023</span>
+            <span>
+                
+                <a href="http://www.miitbeian.gov.cn/" target="_blank">辽ICP备16018834号-2</a><br>
+                
+                Power by <a href="http://hexo.io/" target="_blank">Hexo</a> Theme <a href="https://github.com/yscoder/hexo-theme-indigo" target="_blank">indigo</a>
+            </span>
+        </p>
+    </div>
+</footer>
+
+    </main>
+    <div class="mask" id="mask"></div>
+<a href="javascript:;" id="gotop" class="waves-effect waves-circle waves-light"><span class="icon icon-lg icon-chevron-up"></span></a>
+
+
+
+<div class="global-share" id="globalShare">
+    <ul class="reset share-icons">
+      <li>
+        <a class="weibo share-sns" target="_blank" href="http://service.weibo.com/share/share.php?url=https://blog.afacode.top/2023/11/04/electron-builder-window-error/&title=《electron-builder在window下打包报错》 — afacode的博客&pic=https://blog.afacode.top/img/avatar.jpg" data-title="微博">
+          <i class="icon icon-weibo"></i>
+        </a>
+      </li>
+      <li>
+        <a class="weixin share-sns wxFab" href="javascript:;" data-title="微信">
+          <i class="icon icon-weixin"></i>
+        </a>
+      </li>
+      <li>
+        <a class="qq share-sns" target="_blank" href="http://connect.qq.com/widget/shareqq/index.html?url=https://blog.afacode.top/2023/11/04/electron-builder-window-error/&title=《electron-builder在window下打包报错》 — afacode的博客&source=" data-title=" QQ">
+          <i class="icon icon-qq"></i>
+        </a>
+      </li>
+      <li>
+        <a class="facebook share-sns" target="_blank" href="https://www.facebook.com/sharer/sharer.php?u=https://blog.afacode.top/2023/11/04/electron-builder-window-error/" data-title=" Facebook">
+          <i class="icon icon-facebook"></i>
+        </a>
+      </li>
+      <li>
+        <a class="twitter share-sns" target="_blank" href="https://twitter.com/intent/tweet?text=《electron-builder在window下打包报错》 — afacode的博客&url=https://blog.afacode.top/2023/11/04/electron-builder-window-error/&via=https://blog.afacode.top" data-title=" Twitter">
+          <i class="icon icon-twitter"></i>
+        </a>
+      </li>
+      <li>
+        <a class="google share-sns" target="_blank" href="https://plus.google.com/share?url=https://blog.afacode.top/2023/11/04/electron-builder-window-error/" data-title=" Google+">
+          <i class="icon icon-google-plus"></i>
+        </a>
+      </li>
+    </ul>
+ </div>
+
+
+<div class="page-modal wx-share" id="wxShare">
+    <a class="close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAN4AAADeCAAAAAB3DOFrAAACq0lEQVR42u3aS47jMAwFwNz/0j3bBhpJ3hPFgRfllZGPrFIAiSH5esXXz6/r3SvJJ/Pr93f/3l++8PDw8AZT//yYHJO/myzl55HfzRkPDw9vm/fuMfnQOS+HnS0NHh4e3tN4yUQ/f6sd4TMbDw8P7/m8zyHsZFvPSXh4eHhP4E3SqUlSoH19khrGw8PD2+blVaTn3K/U9/Dw8PDGVfU2dM5TBpPlK2aLh4eHt8DLJ5EXrubtBWcJ37efxMPDw1vgtWX+hJrA2mPmbGnw8PDw9nhJyf8sjD5LwrYLXaQq8PDw8Aa8ZBPPw+h5Y1b+xGgOeHh4eGu8NnWbh9STtqrkoLpQAMPDw8M74iWPvFvyP0s01KE5Hh4e3gLvbOi8OaBdmsmR8yV8x8PDw7vEaw+GSXtWnrptQ/lr5x4eHh5enHFtQ96N1oG2lSoJ2fHw8PA2eGfb/aTQ1aZuR2kRPDw8vAXevIQ/mdy8vaA4ZvDw8PCu8uap1byUlR8zbSGtKH3h4eHhjXmTNMTkALi7fEWVDw8PD+8qryXlvKQJIB/5bLHw8PDwbvGSYDffiM+2+LMgO2rJwsPDw7vKawPWZNC8QWpSHosWCA8PD2+B1zY2FaX6QaA839vx8PDwtnnJH/55orZdiDy8/lIGw8PDw1vj1VneuHEqT8jmKeDiW3h4eHj/nddu9GfNAWcJ5ejnwcPDw1vj5WnTya47CaDz+bzOctJ4eHh4Ae+nvJKj4gzWpnSjd/Hw8PAWePN0Q17az+/bkluNwcPDwxvz2sMgB0wKZtcOBjw8PLw13nzSeZPB3evLz4CHh4f3GF4brd8qsNWv4+Hh4T2A14a2n2E5+LBVCw8PD2+Nl08ln0ReMJunht+OjIeHh7fAa//wt5Wm9sBIjo3LCQ48PDy8lPcPFNJBBYNe6TYAAAAASUVORK5CYII=" alt="微信分享二维码">
+</div>
+
+
+
+
+    <script src="//cdn.bootcss.com/node-waves/0.7.4/waves.min.js"></script>
+<script>
+var BLOG = { ROOT: '/', SHARE: true, REWARD: false };
+
+
+</script>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/main.min.js"></script>
+
+
+<div class="search-panel" id="search-panel">
+    <ul class="search-result" id="search-result"></ul>
+</div>
+<template id="search-tpl">
+<li class="item">
+    <a href="{path}" class="waves-block waves-effect">
+        <div class="title ellipsis" title="{title}">{title}</div>
+        <div class="flex-row flex-middle">
+            <div class="tags ellipsis">
+                {tags}
+            </div>
+            <time class="flex-col time">{date}</time>
+        </div>
+    </a>
+</li>
+</template>
+
+<script src="//unpkg.com/hexo-theme-material-indigo@latest/js/search.min.js" async></script>
+
+
+
+
+
+
+
+
+<script>
+(function() {
+    var OriginTitile = document.title, titleTime;
+    document.addEventListener('visibilitychange', function() {
+        if (document.hidden) {
+            document.title = '你怎么走了！';
+            clearTimeout(titleTime);
+        } else {
+            document.title = '欢迎讨论!';
+            titleTime = setTimeout(function() {
+                document.title = OriginTitile;
+            },2000);
+        }
+    });
+})();
+</script>
+
+
+
+</body>
+</html>
