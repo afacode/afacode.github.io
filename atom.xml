@@ -41,6 +41,28 @@
   </entry>
   
   <entry>
+    <title>electron启动报`Electron failed to install correctly,`</title>
+    <link href="https://blog.afacode.top/2023/11/03/electron-install-error/"/>
+    <id>https://blog.afacode.top/2023/11/03/electron-install-error/</id>
+    <published>2023-11-03T13:19:30.000Z</published>
+    <updated>2023-11-17T11:57:14.482Z</updated>
+    
+    <content type="html"><![CDATA[<h3 id="electron启动报Electron-failed-to-install-correctly"><a href="#electron启动报Electron-failed-to-install-correctly" class="headerlink" title="electron启动报Electron failed to install correctly,"></a>electron启动报<code>Electron failed to install correctly,</code></h3><p>报错详情</p><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">.pnpm\electron@27.1.0\node_modules\electron\index.js:17</span><br><span class="line">    throw new Error('Electron failed to install correctly, please delete node_modules/electron and try installing again');</span><br></pre></td></tr></table></figure><p>解决方式</p><p><code>node node_modules/electron/install.js</code></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h3 id=&quot;electron启动报Electron-failed-to-install-correctly&quot;&gt;&lt;a href=&quot;#electron启动报Electron-failed-to-install-correctly&quot; class=&quot;headerlink&quot; title</summary>
+      
+    
+    
+    
+    
+    <category term="electron" scheme="https://blog.afacode.top/tags/electron/"/>
+    
+  </entry>
+  
+  <entry>
     <title>Property &#39;DailyRotateFile&#39; does not exist on type &#39;typeof TransportStream&#39;.ts(2339)</title>
     <link href="https://blog.afacode.top/2023/10/22/nestjs-winstion-not-find-ts/"/>
     <id>https://blog.afacode.top/2023/10/22/nestjs-winstion-not-find-ts/</id>
@@ -132,9 +154,9 @@
     
     
     
-    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
-    
     <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
+    
+    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
     
   </entry>
   
@@ -159,9 +181,9 @@
     
     
     
-    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
-    
     <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
+    
+    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
     
   </entry>
   
@@ -213,9 +235,9 @@
     
     
     
-    <category term="element" scheme="https://blog.afacode.top/tags/element/"/>
-    
     <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
+    
+    <category term="element" scheme="https://blog.afacode.top/tags/element/"/>
     
   </entry>
   
