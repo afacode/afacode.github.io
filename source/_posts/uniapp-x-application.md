@@ -14,4 +14,5 @@ uni-app x 没有使用js和webview，它基于 uts 语言。在App端，uts在iO
 [官方文档](https://doc.dcloud.net.cn/uni-app-x/)
 
 自己打包 APK 地址
+uni-x-application-test
 链接: https://pan.baidu.com/s/14WUNqWmG7zclRrhaJTPxvA?pwd=8uir 提取码: 8uir
