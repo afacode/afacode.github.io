@@ -6,7 +6,7 @@
   <link href="https://blog.afacode.top/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2023-11-17T12:00:41.671Z</updated>
+  <updated>2023-12-26T10:02:25.029Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>uniapp-x初次打包体验</title>
+    <link href="https://blog.afacode.top/2023/12/13/uniapp-x-application/"/>
+    <id>https://blog.afacode.top/2023/12/13/uniapp-x-application/</id>
+    <published>2023-12-13T13:13:21.000Z</published>
+    <updated>2023-12-26T10:02:25.029Z</updated>
+    
+    <content type="html"><![CDATA[<p>uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。</p><p>uni-app x 没有使用js和webview，它基于 uts 语言。在App端，uts在iOS编译为swift、在Android编译为kotlin，完全达到了原生应用的功能、性能。</p><p><a href="https://doc.dcloud.net.cn/uni-app-x/" target="_blank" rel="noopener">官方文档</a></p><p>自己打包 APK 地址<br>uni-x-application-test<br>链接: <a href="https://pan.baidu.com/s/14WUNqWmG7zclRrhaJTPxvA?pwd=8uir" target="_blank" rel="noopener">https://pan.baidu.com/s/14WUNqWmG7zclRrhaJTPxvA?pwd=8uir</a> 提取码: 8uir</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;uni-app x，是下一代 uni-app，是一个跨平台应用开发引擎。&lt;/p&gt;
+&lt;p&gt;uni-app x 没有使用js和webview，它基于 uts 语言。在App端，uts在iOS编译为swift、在Android编译为kotlin，完全达到了原生应用的功能、性能。&lt;</summary>
+      
+    
+    
+    
+    
+    <category term="uniapp" scheme="https://blog.afacode.top/tags/uniapp/"/>
+    
+    <category term="application" scheme="https://blog.afacode.top/tags/application/"/>
+    
+  </entry>
   
   <entry>
     <title>electron-builder在window下打包报错</title>
