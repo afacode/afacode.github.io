@@ -6,7 +6,7 @@
   <link href="https://blog.afacode.top/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2023-12-26T10:02:25.029Z</updated>
+  <updated>2024-06-19T10:21:59.488Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Nestjs 设置https</title>
+    <link href="https://blog.afacode.top/2024/02/09/nestjs-add-https/"/>
+    <id>https://blog.afacode.top/2024/02/09/nestjs-add-https/</id>
+    <published>2024-02-09T15:00:58.000Z</published>
+    <updated>2024-06-19T10:21:59.488Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="只是用https"><a href="#只是用https" class="headerlink" title="只是用https"></a>只是用https</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fs <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> &#123; NestFactory &#125; <span class="keyword">from</span> <span class="string">'@nestjs/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppModule &#125; <span class="keyword">from</span> <span class="string">'./app.module'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> httpsOptions = &#123;</span><br><span class="line">  key: fs.readFileSync(<span class="string">'/Users/afacode/localhost_ssl/blog.afacode.top.key'</span>),</span><br><span class="line">  cert: fs.readFileSync(<span class="string">'/Users/afacode/localhost_ssl/blog.afacode.top.crt'</span>),</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">bootstrap</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> app = <span class="keyword">await</span> NestFactory.create(AppModule, &#123;</span><br><span class="line">    httpsOptions,</span><br><span class="line">  &#125;);</span><br><span class="line">  app.enableCors();</span><br><span class="line">  <span class="comment">// 配置了hosts文件，让blog.afacode.top指向127.0.0.1</span></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`https://blog.afacode.top:3000/`</span>);</span><br><span class="line">  <span class="keyword">await</span> app.listen(<span class="number">3000</span>);</span><br><span class="line">&#125;</span><br><span class="line">bootstrap();</span><br></pre></td></tr></table></figure><h2 id="http和https"><a href="#http和https" class="headerlink" title="http和https"></a>http和https</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> fs <span class="keyword">from</span> <span class="string">'fs'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> http <span class="keyword">from</span> <span class="string">"http"</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> https <span class="keyword">from</span> <span class="string">"https"</span>;</span><br><span class="line"> </span><br><span class="line"> </span><br><span class="line"><span class="keyword">import</span> &#123; NestFactory &#125; <span class="keyword">from</span> <span class="string">'@nestjs/core'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; AppModule &#125; <span class="keyword">from</span> <span class="string">'./app.module'</span>;</span><br><span class="line"><span class="keyword">import</span> * <span class="keyword">as</span> express <span class="keyword">from</span> <span class="string">'express'</span>;</span><br><span class="line"><span class="keyword">import</span> &#123; ExpressAdapter &#125; <span class="keyword">from</span> <span class="string">'@nestjs/platform-express'</span>;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">const</span> httpsOptions = &#123;</span><br><span class="line">  key: fs.readFileSync(<span class="string">'/Users/afacode/localhost_ssl/blog.afacode.top.key'</span>),</span><br><span class="line">  cert: fs.readFileSync(<span class="string">'/Users/afacode/localhost_ssl/blog.afacode.top.crt'</span>),</span><br><span class="line">&#125;;</span><br><span class="line"> </span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">bootstrap</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> server = express();</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">const</span> app = <span class="keyword">await</span> NestFactory.create(</span><br><span class="line">    AppModule, </span><br><span class="line">    <span class="keyword">new</span> ExpressAdapter(server)</span><br><span class="line">  );</span><br><span class="line"> </span><br><span class="line">  app.setGlobalPrefix(<span class="string">'api'</span>);</span><br><span class="line">  app.enableCors();</span><br><span class="line"> </span><br><span class="line">  <span class="keyword">await</span> app.init();</span><br><span class="line"> </span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`http://blog.afacode.top:3000`</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`https://blog.afacode.top`</span>);</span><br><span class="line">  http.createServer(server).listen(<span class="number">3000</span>);</span><br><span class="line">  https.createServer(httpsOptions, server).listen(<span class="number">443</span>);</span><br><span class="line">&#125;</span><br><span class="line">bootstrap();</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;只是用https&quot;&gt;&lt;a href=&quot;#只是用https&quot; class=&quot;headerlink&quot; title=&quot;只是用https&quot;&gt;&lt;/a&gt;只是用https&lt;/h2&gt;&lt;figure class=&quot;highlight js&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class</summary>
+      
+    
+    
+    
+    
+    <category term="NestJs" scheme="https://blog.afacode.top/tags/NestJs/"/>
+    
+  </entry>
   
   <entry>
     <title>uniapp-x初次打包体验</title>
@@ -179,9 +201,9 @@
     
     
     
-    <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
-    
     <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
+    
+    <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
     
   </entry>
   
@@ -206,9 +228,9 @@
     
     
     
-    <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
-    
     <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
+    
+    <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
     
   </entry>
   
@@ -260,9 +282,9 @@
     
     
     
-    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
-    
     <category term="element" scheme="https://blog.afacode.top/tags/element/"/>
+    
+    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
     
   </entry>
   
@@ -1181,9 +1203,9 @@
     
     
     
-    <category term="electron" scheme="https://blog.afacode.top/tags/electron/"/>
-    
     <category term="npm" scheme="https://blog.afacode.top/tags/npm/"/>
+    
+    <category term="electron" scheme="https://blog.afacode.top/tags/electron/"/>
     
   </entry>
   
