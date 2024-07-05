@@ -6,7 +6,7 @@
   <link href="https://blog.afacode.top/atom.xml" rel="self"/>
   
   <link href="https://blog.afacode.top/"/>
-  <updated>2024-06-19T10:21:59.488Z</updated>
+  <updated>2024-07-05T06:44:10.390Z</updated>
   <id>https://blog.afacode.top/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2024使用Typora免费使用(mac)</title>
+    <link href="https://blog.afacode.top/2024/07/05/typora-license/"/>
+    <id>https://blog.afacode.top/2024/07/05/typora-license/</id>
+    <published>2024-07-05T13:13:21.000Z</published>
+    <updated>2024-07-05T06:44:10.390Z</updated>
+    
+    <content type="html"><![CDATA[<ul><li>版本1.8.10 (7132) 请在官网支持<a href="https://typoraio.cn/" target="_blank" rel="noopener">https://typoraio.cn</a></li></ul><h2 id="下载安装"><a href="#下载安装" class="headerlink" title="下载安装"></a>下载安装</h2><h2 id="判断是否已激活"><a href="#判断是否已激活" class="headerlink" title="判断是否已激活"></a>判断是否已激活</h2><ul><li>找到Typora安装目录对应文件<figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/Applications/Typora.app/Contents/Resources/TypeMark/page-dist/<span class="keyword">static</span>/js/LicenseIndex.XX.XXX.chunk.js</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找</span></span><br><span class="line">e.hasActivated=<span class="string">"true"</span>==e.hasActivated,</span><br><span class="line"><span class="comment">// 替换为</span></span><br><span class="line">e.hasActivated=<span class="string">"true"</span>==<span class="string">"true"</span>,</span><br></pre></td></tr></table></figure>保存失败的话复制一份代码 修改 替换</li></ul><h2 id="关闭激活弹窗"><a href="#关闭激活弹窗" class="headerlink" title="关闭激活弹窗"></a>关闭激活弹窗</h2><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/Applications/Typora.app/Contents/Resources/TypeMark/page-dist/license.html</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找</span></span><br><span class="line">&lt;<span class="regexp">/body&gt;&lt;/</span>html&gt;</span><br><span class="line"><span class="comment">// 修改为</span></span><br><span class="line">&lt;<span class="regexp">/body&gt;&lt;script&gt;window.onload=function()&#123;setTimeout(()=&gt;&#123;window.close();&#125;,5);&#125;&lt;/</span>script&gt;&lt;<span class="regexp">/html&gt;</span></span><br></pre></td></tr></table></figure><h2 id="去除右下角未激活提示"><a href="#去除右下角未激活提示" class="headerlink" title="去除右下角未激活提示"></a>去除右下角未激活提示</h2><ul><li><p>可以找对应的语言</p><figure class="highlight js"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">/Applications/Typora.app/Contents/Resources/TypeMark/locales/zh-Hans.lproj/Panel.json</span><br><span class="line"></span><br><span class="line"><span class="comment">// 查找</span></span><br><span class="line"><span class="string">"UNREGISTERED"</span>:<span class="string">"未激活"</span></span><br><span class="line"><span class="comment">// 修改为</span></span><br><span class="line"><span class="string">"UNREGISTERED"</span>:<span class="string">" "</span></span><br></pre></td></tr></table></figure></li><li><p>如果有能力的话支持下Typora作者</p></li></ul>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;ul&gt;
+&lt;li&gt;版本1.8.10 (7132) 请在官网支持&lt;a href=&quot;https://typoraio.cn/&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;https://typoraio.cn&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id=&quot;下载安装</summary>
+      
+    
+    
+    
+    
+    <category term="Typora" scheme="https://blog.afacode.top/tags/Typora/"/>
+    
+  </entry>
   
   <entry>
     <title>Nestjs 设置https</title>
@@ -201,9 +226,9 @@
     
     
     
-    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
-    
     <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
+    
+    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
     
   </entry>
   
@@ -228,9 +253,9 @@
     
     
     
-    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
-    
     <category term="virtual" scheme="https://blog.afacode.top/tags/virtual/"/>
+    
+    <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
     
   </entry>
   
@@ -282,9 +307,9 @@
     
     
     
-    <category term="element" scheme="https://blog.afacode.top/tags/element/"/>
-    
     <category term="vue" scheme="https://blog.afacode.top/tags/vue/"/>
+    
+    <category term="element" scheme="https://blog.afacode.top/tags/element/"/>
     
   </entry>
   
@@ -1228,9 +1253,9 @@
     
     
     
-    <category term="pm2" scheme="https://blog.afacode.top/tags/pm2/"/>
-    
     <category term="nuxt" scheme="https://blog.afacode.top/tags/nuxt/"/>
+    
+    <category term="pm2" scheme="https://blog.afacode.top/tags/pm2/"/>
     
   </entry>
   
