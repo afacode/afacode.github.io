@@ -1,9 +1,8 @@
 #!/bin/bash
+npm run clean
 
-hexo clean
+npm run g
 
-hexo g
-
-hexo d 
+npm run d 
 
 echo -e "\033[32m\n$(date)\nn文章发布成功\n\033[0m"

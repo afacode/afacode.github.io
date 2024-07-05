@@ -14,9 +14,9 @@ tags:
 
 > 个人一些学习项目主要增加使用node, python(scrapy), mysql, mongodb, linux等
 
-* 小程序+react+react-native+vue
-* node (koa NestJs)
-* mysql mongodb redis
+* 小程序,前端
+* node (koa NestJs) go
+* mysql mongodb redis 
 * python (scrapy scrapy-redis)
 * docker Jenkins travisCI
 
@@ -25,5 +25,8 @@ tags:
 
 > Email: lfqdalian@qq.com 或 lfqdalian@outlook.com
 
-> 微信: ![afacode](http://imgs.afacode.top/WechatIMG4-2019515171327.jpg)
+> 微信: afacode 
 
+![afacode](http://imgs.afacode.top/WechatIMG4-2019515171327.jpg)
+
+> 打赏 币安ID：911341544 支付ID：911330910
